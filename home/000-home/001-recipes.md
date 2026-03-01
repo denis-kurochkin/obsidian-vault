@@ -10,6 +10,9 @@
 
 [[CE_Home_Recipes_ES_Паэлья с курицей]]
 
+---
+
 # us
 
 [spaghetti with sausages](001-recipes-us-spaghetti-with-sausages)
+---
