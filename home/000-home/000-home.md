@@ -1,11 +1,11 @@
 
-## [recipes](001-recipes)
+## [recipes](001-recipes.md)
 
 ---
 
-## [mydev](002-mydev)
+## [mydev](002-mydev.md)
 
 ---
 
-## [gym](003-Gym)
+## [gym](003-gymy.md)
 ---
