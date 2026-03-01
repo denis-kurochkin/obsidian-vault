@@ -1,5 +1,5 @@
 # СТРУКТУРА РАЗДЕЛА
-## [Общие Правила](localrules)
+## [Общие Правила](001-obsidian-local-rules)
 ---
 ## [Форматирование в Obsidian](BC_RA_Obsidian_Formatting)
 ---
