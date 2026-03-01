@@ -8,6 +8,6 @@
 ---
 # [Home](000-home.md)
 ---
-# [Hobby](000_hobby)
+# [Hobby](000-hobby.md)
 ---
 
