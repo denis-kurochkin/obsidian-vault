@@ -12,4 +12,4 @@
 
 # Американская кухня 
 
-[[CD_Home_Recipes_US_Спагетти с сосисочками]]
+[[001-recipes-us-spagetti]]
