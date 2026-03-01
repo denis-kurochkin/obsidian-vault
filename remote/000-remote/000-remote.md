@@ -1,5 +1,5 @@
 
-## [obsidian](001-obsidian)
+## [obsidian](001-obsidian.md)
 ---
-## [git](002_git)
+## [git](002-git.md)
 ---
