@@ -1,6 +1,6 @@
 
 ---
-# [Altium Designer](000_ad)
+# [Altium Designer](000_ad.md)
 ---
 # [FPGA](000_fpga)
 ---
