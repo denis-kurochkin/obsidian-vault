@@ -8,7 +8,7 @@
 
 # es
 
-[paella with chicken](CE_Home_Recipes_ES_Паэлья с курицей)
+[paella with chicken](001-recipes-es-paella-with chicken)
 
 ---
 # us
