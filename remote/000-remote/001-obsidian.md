@@ -3,5 +3,5 @@
 ---
 ## [formatting](001-obsidian-formatting.md)
 ---
-## [obsidian+github](BD_RA_Obsidian_GitHub)
+## [obsidian+github](001-obsidian-github.md)
 ---
