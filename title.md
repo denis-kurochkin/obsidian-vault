@@ -4,7 +4,7 @@
 ---
 # [FPGA](000-fpga.md)
 ---
-# [Remote](000_remote_access)
+# [Remote](000-remote.md)
 ---
 # [Home](000_home)
 ---
