@@ -6,7 +6,7 @@
 ---
 # [Remote](000-remote.md)
 ---
-# [Home](000_home)
+# [Home](000-home.md)
 ---
 # [Hobby](000_hobby)
 ---
