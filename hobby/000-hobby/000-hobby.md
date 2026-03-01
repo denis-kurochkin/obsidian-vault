@@ -1,13 +1,13 @@
 
-## [video](001-Video)
+## [video](001-video)
 
 ---
 
-## [music](002-Music)
+## [music](002-music)
 
 ---
 
-## [ИГРАТЬ](DA_Hobby_Games)
+## [games](003-games)
 
 ------
 
