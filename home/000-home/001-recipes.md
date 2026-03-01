@@ -1,7 +1,7 @@
 # it
 
 [pasta carbonara](001-recipes-it-pasta-carbonara)
-[pasta rimini](001-recipes-it-)
+[pasta rimini](001-recipes-it-pasta-rimini)
 Панини
 Цыпленок Парминьяна
 Ризотто
