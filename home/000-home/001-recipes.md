@@ -1,6 +1,7 @@
-# Итальянская кухня 
+# it
 
-[[CC_Home_Recipes_IT_Паста Карбонара]]
+[pasta carbonara](001-recipes)
+
 [[CC_Home_Recipes_IT_Паста Римини]]
 Панини
 Цыпленок Парминьяна
