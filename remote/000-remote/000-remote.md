@@ -2,7 +2,7 @@
 
 ---
 
-## [Obsidian](BA_RA_Obsidian_Main)
+## [obsidian](001-Obsidian)
 
 ---
 
