@@ -3,7 +3,7 @@
 
 ---
 
-## [mydev](002-mydev.md)
+## [mydev](002-my-dev.md)
 
 ---
 
