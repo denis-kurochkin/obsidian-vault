@@ -1,8 +1,8 @@
 # it
 
-[pasta carbonara](001-recipes)
+[pasta carbonara](001-recipes-it-pasta-carbonara)
 
-[[CC_Home_Recipes_IT_Паста Римини]]
+
 Панини
 Цыпленок Парминьяна
 Ризотто
