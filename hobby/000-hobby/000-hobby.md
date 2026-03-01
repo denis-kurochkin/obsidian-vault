@@ -1,9 +1,9 @@
 
-## [СМОТРЕТЬ](001Video)
+## [video](001-Video)
 
 ---
 
-## [СЛУШАТЬ](CA_Hobby_Music)
+## [music](002-Music)
 
 ---
 
