@@ -2,7 +2,7 @@
 ---
 # [Altium Designer](000_ad.md)
 ---
-# [FPGA](000_fpga)
+# [FPGA](000_fpga.md)
 ---
 # [Remote](000_remote_access)
 ---
