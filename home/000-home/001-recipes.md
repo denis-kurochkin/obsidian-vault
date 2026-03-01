@@ -12,4 +12,4 @@
 
 # Американская кухня 
 
-[[001-recipes-us-spaghettiwith sausages]]
+().[001-recipes-us-spaghetti-with-sausages]]
