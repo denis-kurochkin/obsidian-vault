@@ -10,6 +10,6 @@
 
 [[CE_Home_Recipes_ES_Паэлья с курицей]]
 
-# Американская кухня 
+# us
 
 [spaghetti with sausages](001-recipes-us-spaghetti-with-sausages)
