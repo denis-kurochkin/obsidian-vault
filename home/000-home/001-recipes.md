@@ -2,7 +2,7 @@
 
 [pasta carbonara](001-recipes-it-pasta-carbonara)
 [pasta rimini](001-recipes-it-pasta-rimini)
-Панини
+panini
 Цыпленок Парминьяна
 Ризотто
 
