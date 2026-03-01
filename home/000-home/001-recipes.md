@@ -1,7 +1,7 @@
 # it
 
-[pasta carbonara](001-recipes-it-pasta-carbonara)
-[pasta rimini](001-recipes-it-pasta-rimini)
+[pasta carbonara](001-recipes-it-pasta-carbonara.md)
+[pasta rimini](001-recipes-it-pasta-rimini.md)
 panini
 chicken parmigiana
 risotto
@@ -9,11 +9,11 @@ risotto
 ---
 # es
 
-[paella with chicken](001-recipes-es-paella-with-chicken)
+[paella with chicken](001-recipes-es-paella-with-chicken.md)
 
 ---
 # us
 
-[spaghetti with sausages](001-recipes-us-spaghetti-with-sausages)
+[spaghetti with sausages](001-recipes-us-spaghetti-with-sausages.md)
 
 ---
