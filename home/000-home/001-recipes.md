@@ -3,8 +3,8 @@
 [pasta carbonara](001-recipes-it-pasta-carbonara)
 [pasta rimini](001-recipes-it-pasta-rimini)
 panini
-Цыпленок Парминьяна
-Ризотто
+chicken parmigiana
+risotto
 
 # es
 
