@@ -2,14 +2,9 @@
 
 ---
 
-## [obsidian](001-Obsidian)
+## [obsidian](001-obsidian)
 
 ---
 
-## [Git](002_Git)
-
----
-
-## [RustDesk](DA_RA_RustDesk_Main)
-
+## [git](002_git)
 ---
