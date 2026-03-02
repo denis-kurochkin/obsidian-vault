@@ -4,7 +4,6 @@
 ### [literature](003-fpga-lit)
 ### [guides](004-fpga-guides)
 
-### [ЕСТЬ В ДОСТУПЕ](EA_FPGA_In_stock)
 
 ---
 
