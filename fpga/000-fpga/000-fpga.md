@@ -1,9 +1,7 @@
-[common](BA_FPGA_Organisation)
+### [common](001-common)
 ### [lessons](CA_FPGA_Lessons)
 
----
-
-### [ЛИТЕРАТУРА ПО FPGA](DA_FPGA_Lit)
+### [ЛИТЕРАТУРА ПО FPGA](001-lit)
 
 ---
 
