@@ -1,4 +1,4 @@
-### [common](001-fpga-common)
+### [common](001-fpga-common.md)
 ### [lessons](002-fpga-lessons)
 
 ### [literature](003-fpga-lit)
