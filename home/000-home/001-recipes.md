@@ -17,3 +17,8 @@ risotto
 [spaghetti with sausages](001-recipes-us-spaghetti-with-sausages.md)
 
 ---
+# ru
+
+[olivier salad](001-recipes-ru-olivier-salad)
+
+---
