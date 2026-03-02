@@ -1,6 +1,6 @@
 ## IP Vivado
 
-[aurora64b/66b](004-)
+[aurora64b/66b](004-fpga-specs-ip-xilinx-aurora64b66b)
 
 ---
 
