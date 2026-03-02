@@ -1,1 +1,1 @@
-[AXI4](004-fpga-specs-axi4)
+[AXI4](004-fpga-specs-axi4.md)
