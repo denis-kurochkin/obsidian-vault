@@ -1,5 +1,5 @@
 ### [common](001-fpga-common.md)
-### [lessons](002-fpga-lessons)
+### [lessons](002-fpga-lessons.md)
 
 ### [literature](003-fpga-lit)
 ### [guides](004-fpga-guides)
