@@ -6,6 +6,6 @@
 ---
 ### Vivado
 
-Vivado shell into explorer
+[vivado shell into explorer](005-fpga-cads-vivado-shell-into-explorer)
 
 ---
