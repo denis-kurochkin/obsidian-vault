@@ -1,1 +1,3 @@
-### [available microchips](001-fpga-common-available-microchips.md)
+[available microchips](001-fpga-common-available-microchips.md)
+
+[fpga junior]()
