@@ -3,6 +3,7 @@
 
 ### [literature](003-fpga-lit)
 ### [guides](004-fpga-guides)
+### [guides](004-fpga-guides)
 
 
 ---
