@@ -3,9 +3,9 @@
 
 ### [literature](003-fpga-lit)
 ### [guides](004-fpga-guides)
-### [guides](004-fpga-guides)
+### [specifications](004-fpga-specs)
 
-
+[cada](004-fpga-specs)
 ---
 
 ### FPGA ALTEA DOCS
