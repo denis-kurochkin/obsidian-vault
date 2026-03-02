@@ -6,6 +6,6 @@
 ---
 ### Vivado
 
-shell into учз
+Vivado shell into explorer
 
 ---
