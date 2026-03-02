@@ -6,6 +6,6 @@
 ---
 ### Vivado
 
-shell into 
+shell into учз
 
 ---
