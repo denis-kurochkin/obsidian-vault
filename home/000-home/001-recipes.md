@@ -1,10 +1,10 @@
 # it
 
-[pasta carbonara](001-recipes-it-pasta-carbonara.md)
-[pasta rimini](001-recipes-it-pasta-rimini.md)
-panini
-chicken parmigiana
-risotto
+- [pasta carbonara](001-recipes-it-pasta-carbonara.md)
+- [pasta rimini](001-recipes-it-pasta-rimini.md)
+- panini
+- chicken parmigiana
+- risotto
 
 ---
 # es
