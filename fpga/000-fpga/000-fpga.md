@@ -1,7 +1,7 @@
 ### [common](001-fpga-common.md)
 ### [lessons](002-fpga-lessons.md)
 
-### [literature](003-fpga-lit)
+### [literature](003-fpga-lit.md)
 ### [guides](004-fpga-guides)
 ### [specifications](004-fpga-specs)
 ### [cads](005-fpga-cads.md)
