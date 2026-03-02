@@ -1,9 +1,8 @@
-### [common](001-common)
+### [common](001-fpga-common)
 ### [lessons](CA_FPGA_Lessons)
 
-### [ЛИТЕРАТУРА ПО FPGA](001-lit)
+### [literature](001-fpga-lit)
 
----
 
 ### [ЕСТЬ В ДОСТУПЕ](EA_FPGA_In_stock)
 
