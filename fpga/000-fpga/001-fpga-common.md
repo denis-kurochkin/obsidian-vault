@@ -2,4 +2,4 @@
 
 [fpga junior](001-fpga-common-junior-habr.md)
 
-[fpga expert](001-fpga-common-expe-habr.md)
+[fpga expert](001-fpga-common-expert-blog.md)
