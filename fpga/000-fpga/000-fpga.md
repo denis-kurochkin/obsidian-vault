@@ -1,12 +1,5 @@
-# СТРУКТУРА РАЗДЕЛА
-
----
-
-### [ОРГАНИЗАЦИОННАЯ ИНФОРИАЦИЯ](BA_FPGA_Organisation)
-
----
-
-### [УРОКИ ПО FPGA](CA_FPGA_Lessons)
+[common](BA_FPGA_Organisation)
+### [lessons](CA_FPGA_Lessons)
 
 ---
 
