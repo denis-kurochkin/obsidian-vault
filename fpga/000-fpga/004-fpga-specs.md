@@ -1,6 +1,6 @@
 ## IP Vivado
 
-[aurora64b/66b]
+[aurora64b/66b](004-)
 
 ---
 
