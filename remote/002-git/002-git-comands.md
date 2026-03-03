@@ -26,4 +26,9 @@ $ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe'
 $ git config --global init.defaultBranch main
 ```
 
+Проверить используемую конфигурацию.
+
+```
+$ git config --list
+```
 
