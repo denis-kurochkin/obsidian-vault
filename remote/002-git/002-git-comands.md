@@ -218,7 +218,12 @@ $ git checkout testing
 $ git log --oneline --decorate --graph --all
 ```
 
-слияние веток
+Слияние веток
+*слияние ветки hotfix с веткой master*
+```
+
+```
+
 
 
 
