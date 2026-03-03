@@ -146,3 +146,6 @@ $ git remote
 ```
 $ git fetch [remote-name]
 ```
+```
+git pull
+```
