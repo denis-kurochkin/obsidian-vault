@@ -189,14 +189,17 @@ $ git tag -a v1.2 9fceb02
 ```
 $ git push origin --tags
 ```
+
 Удаление меток
 ```
 $ git tag -d v1.4-lw
 ```
+
 Переход на метку
 ```
 $ git checkout v2.0.0
 ```
+---
 
 
 
