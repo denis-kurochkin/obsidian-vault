@@ -235,6 +235,7 @@ $ git merge hotfix
 $ git branch -d hotfix
 ```
 
+Перебазирование
 
 
 
