@@ -11,3 +11,9 @@ $ git config --list --show-origin
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
+
+Выбрать текстовый редактор, который будет использоваться.
+
+```
+$ git config --global core.editor vscode
+```
