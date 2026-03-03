@@ -208,6 +208,10 @@ $ git checkout v2.0.0
 $ git branch testing
 ```
 
+Переключение веток
+```
+$ git checkout testing
+```
 
 
 
