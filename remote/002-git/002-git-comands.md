@@ -55,5 +55,5 @@ $ git clone https://github.com/libgit2/libgit2
 
 Для того, чтобы клонировать репозиторий в директорию с именем, отличающимся от libgit2, необходимо указать желаемое имя, как параметр командной строки.
 ```
-
+$ git clone https://github.com/libgit2/libgit2 mylibgit
 ```
