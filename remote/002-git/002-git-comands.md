@@ -147,5 +147,15 @@ $ git remote
 $ git fetch [remote-name]
 ```
 ```
-git pull
+$ git pull
+```
+
+Отправка изменений в удаленный репозиторий
+```
+$ git push origin master
+```
+
+
+```
+$ git remote show origin
 ```
