@@ -129,3 +129,8 @@ $ git rm log/\*.log
 ```
 $ git log
 ```
+
+Операции отмены
+```
+$ git commit --amend
+```
