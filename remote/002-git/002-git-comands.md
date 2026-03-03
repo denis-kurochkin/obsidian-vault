@@ -221,7 +221,13 @@ $ git log --oneline --decorate --graph --all
 Слияние веток
 *слияние ветки hotfix с веткой master*
 ```
+$ git checkout master
+$ git merge hotfix
+```
 
+Удаление ветки
+```
+$ git branch -d hotfix
 ```
 
 
