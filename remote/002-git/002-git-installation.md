@@ -6,6 +6,7 @@ $ sudo apt install git
 ---
 ### Win:
 https://git-scm.com/downloads/win
+
 ---
 ### Первоначальная настройка 
 
