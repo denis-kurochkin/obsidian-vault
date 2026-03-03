@@ -20,4 +20,10 @@ $ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe'
 -multiInst -notabbar -nosession -noPlugin"
 ```
 
+Установить имя main для ветки по умолчанию.
+
+```
+$ git config --global init.defaultBranch main
+```
+
 
