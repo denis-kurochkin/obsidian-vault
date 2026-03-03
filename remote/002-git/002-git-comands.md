@@ -62,6 +62,11 @@ $ git clone https://github.com/libgit2/libgit2 mylibgit
 ```
 $ git status
 ```
+Сокращенный вывод статуса
+```
+
+```
+
 
 Отслеживание новых файлов
 ```
