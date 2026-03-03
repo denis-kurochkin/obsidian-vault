@@ -57,3 +57,10 @@ $ git clone https://github.com/libgit2/libgit2
 ```
 $ git clone https://github.com/libgit2/libgit2 mylibgit
 ```
+
+Определение состояния файлов
+```
+$ git status
+```
+
+Отслеживание новых файлов
