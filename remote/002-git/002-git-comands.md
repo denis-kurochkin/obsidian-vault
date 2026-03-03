@@ -104,4 +104,9 @@ doc/**/*.txt
 ```
 $ git commit
 ```
+Набрать свой комментарий к коммиту в командной строке вместе с командой commit указав его после параметра -m.
+```
+$ git commit -m "Story 182: Fix benchmarks for speed"
+```
+
 
