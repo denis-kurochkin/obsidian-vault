@@ -31,4 +31,7 @@ $ git config --global init.defaultBranch main
 $ git config --list
 ```
 ---
+## Основные команды git
+
+Создание Git-репозитория.
 
