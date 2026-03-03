@@ -27,8 +27,8 @@ $ git config --global init.defaultBranch main
 ```
 
 Проверить используемую конфигурацию.
-
 ```
 $ git config --list
 ```
+---
 
