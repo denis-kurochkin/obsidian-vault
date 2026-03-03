@@ -115,3 +115,8 @@ $ git commit -m "Story 182: Fix benchmarks for speed"
 $ git rm PROJECTS.md
 ```
 
+Удалить файл из индекса, оставив его при этом в рабочем каталоге.
+```
+$ git rm --cached README
+```
+
