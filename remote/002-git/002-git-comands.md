@@ -218,7 +218,7 @@ $ git checkout testing
 $ git log --oneline --decorate --graph --all
 ```
 
-
+слияние веток
 
 
 
