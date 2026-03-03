@@ -125,7 +125,7 @@ $ git rm --cached README
 $ git rm log/\*.log
 ```
 
-Перемещение файлов
+Просмотр истории коммитов
 ```
-
+$ git log
 ```
