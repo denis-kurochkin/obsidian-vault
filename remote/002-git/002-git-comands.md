@@ -215,7 +215,7 @@ $ git checkout testing
 
 Для отображения истории коммитов, текущего положения указателей веток и истории
 ```
-
+$ git log --oneline --decorate --graph --all
 ```
 
 
