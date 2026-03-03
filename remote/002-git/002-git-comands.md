@@ -141,3 +141,8 @@ $ git commit --amend
 ```
 $ git remote
 ```
+
+Получение изменений из удалённого репозитория
+```
+$ git fetch [remote-name]
+```
