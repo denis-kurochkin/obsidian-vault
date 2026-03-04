@@ -1,8 +1,8 @@
 ## Краткая памятка
 
-1. Основная ветка <font color="#ffc000">Master/Main</font> 
+1. Основная ветка <font color="#ffc000">/Master/Main</font> 
 	*исходный код в ней должен находиться в состоянии <font color="#92d050">production-ready</font> в любой произвольный момент времени.*
-2. Основная ветка 
+2. Основная ветка <font color="#ffc000">Develop</font> 
 
 ---
 ## Модель
