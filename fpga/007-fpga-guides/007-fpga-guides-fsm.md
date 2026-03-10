@@ -66,6 +66,6 @@ Safe FSM (безопасный конечный автомат) — это ар
 
 - **Синтез и верификация:** Инструменты синтеза (такие как Vivado) предоставляют свойства `FSM_SAFE_STATE`, которые автоматически добавляют логику восстановления, хотя это может влиять на качество синтеза и занимаемую площадь.
 
-- **Применение:** Безопасные FSM критически важны в авиационной, автомобильной и промышленной автоматике, где функциональная безопасность (Functional Safety Management) требует строгого соблюдения процедур и архитектурных мер. ![AMD|16](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfklEQVQ4jaWSUQ2AMAwFD4IPLEwCEpAwCVhACVKQgBRwAD9sWZpu2bqX7KftXfsxgAN4Ox50SmK2XgGAbxUM0gCsgFPqAPO/pJir0FvkBaMC57arSQXNcCowwUFghoPADANMmfqp1B5g14ZrPsydzHvRa4JDXK1Ag6XEBEfJBzw4bNYQA98vAAAAAElFTkSuQmCC)AMD +2
+- **Применение:** Безопасные FSM критически важны в авиационной, автомобильной и промышленной автоматике, где функциональная безопасность (Functional Safety Management) требует строгого соблюдения процедур и архитектурных мер.
 
 Безопасный FSM обеспечивает отказоустойчивость, гарантируя, что даже при аппаратном сбое система не перейдет в опасный режим работы.
