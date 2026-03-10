@@ -1,2 +1,2 @@
-- [FSM](007-fpga-guides-fsm)
+- [FSM](007-fpga-guides-fsm.md)
 - 
