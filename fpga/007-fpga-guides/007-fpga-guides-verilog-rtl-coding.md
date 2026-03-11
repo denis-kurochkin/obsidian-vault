@@ -76,4 +76,8 @@
 	- **Xilinx Vivado Synthesis Report**
 	- **Quartus Analysis & Synthesis messages**
 ---
+## timing-aware coding
 
+- Verilog RTL timing-aware coding (учет таймингов при написании RTL) заключается в разделении сложной комбинационной логики регистрами (pipelining) для снижения задержек и обеспечения работы на высокой частоте. Основной принцип — регистровые защелки (non-blocking `<='`) на границах блоков, что сокращает путь данных за один такт.
+
+- 
