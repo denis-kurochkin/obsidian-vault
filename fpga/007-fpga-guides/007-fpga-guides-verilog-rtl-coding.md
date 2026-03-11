@@ -72,6 +72,8 @@
 	* Вставить регистр по умолчанию
 	
 - Запустите инструменты проверки синтаксиса (Lint Tools).
-- - **Verilator**
-- **Xilinx Vivado Synthesis Report**
-- **Quartus Analysis & Synthesis messages**
+	- **Verilator**
+	- **Xilinx Vivado Synthesis Report**
+	- **Quartus Analysis & Synthesis messages**
+---
+
