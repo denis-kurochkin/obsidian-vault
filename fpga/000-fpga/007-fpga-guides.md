@@ -1,4 +1,4 @@
 - [FSM](007-fpga-guides-fsm.md)
 - [Verilog RTL coding](007-fpga-guides-verilog-rtl-coding.md)
-- [TCL](007-fpga-guides-tcl)
+- [TCL](007-fpga-guides-tcl.md)
 - 
