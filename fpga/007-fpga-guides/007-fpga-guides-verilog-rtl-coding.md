@@ -35,7 +35,7 @@
 	end
 	endmodule
 ```
-
+![[Pasted image 20260312103701.png]]
 
 - Non-Blocking (`<=`)
 ```
