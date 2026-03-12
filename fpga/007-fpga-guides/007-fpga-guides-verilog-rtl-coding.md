@@ -21,17 +21,35 @@
 	
 - Blocking (`=`)
 ```
-module block
+	module block
+	(
+	    input               clk,
+	    input       [3:0]   in,
+	    output reg  [3:0]   out
+	);
+	always @(posedge clk) begin
+	    out[0] = in[0] & in[1];
+	    out[1] = in[2] & in[3];
+	    out[2] = in[0] & out[1];
+	    out[3] = out[0] & out[1];
+	end
+	endmodule
+```
+
+
+- Non-Blocking (`<=`)
+```
+module nblock
 (
     input               clk,
     input       [3:0]   in,
     output reg  [3:0]   out
 );
 always @(posedge clk) begin
-    out[0] = in[0] & in[1];
-    out[1] = in[2] & in[3];
-    out[2] = in[0] & out[1];
-    out[3] = out[0] & out[1];
+    out[0] <= in[0] & in[1];
+    out[1] <= in[2] & in[3];
+    out[2] <= in[0] & out[1];
+    out[3] <= out[0] & out[1];
 end
 endmodule
 ```
