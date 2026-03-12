@@ -35,7 +35,7 @@
 	end
 	endmodule
 ```
-![[Pasted image 20260312103701.png|490]]
+![[Pasted image 20260312103701.png|542]]
 	
 - Non-Blocking (`<=`)
 ```
@@ -53,8 +53,8 @@ always @(posedge clk) begin
 end
 endmodule
 ```
-
-
+![[Pasted image 20260312103832.png|547]]
+	
 ---
 ## Предотвращение непреднамеренных защелок
 
