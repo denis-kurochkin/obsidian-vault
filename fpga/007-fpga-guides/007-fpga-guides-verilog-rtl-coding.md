@@ -35,8 +35,8 @@
 	end
 	endmodule
 ```
-![[Pasted image 20260312103701.png]]
-
+![[Pasted image 20260312103701.png|490]]
+	
 - Non-Blocking (`<=`)
 ```
 module nblock
