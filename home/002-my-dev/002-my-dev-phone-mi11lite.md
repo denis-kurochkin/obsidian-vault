@@ -18,13 +18,12 @@
 
 ### Приложения RU
 - [ ] Установить приложения:
-        - [x] Xiaomi Home(X/16)
-        - [ ] Gosund(B)
-        - [ ] Polaris(G)
-        - [ ] GetWarderobe(#)
-        - [ ] Калькулятор Калорий ХиКи(#)
+
+    - [x] Xiaomi Home(X/16)
+    - [ ] Gosund(B)
+    - [ ] Polaris(G)
+    - [ ] GetWarderobe(#)
     
-        - [ ] AdBlock Browser
     - [ ] GetApps/Ru
         - [x] VK(16)
         - [ ] UBER(16)
