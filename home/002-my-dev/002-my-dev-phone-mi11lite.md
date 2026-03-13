@@ -33,7 +33,7 @@
     
         - [ ] AdBlock Browser
     - [ ] GetApps/Ru
-        - [ ] VK(16)
+        - [x] VK(16)
         - [ ] UBER(16)
         - [ ] Whoosh(Y/16)
         - [ ] 2гис(G)
