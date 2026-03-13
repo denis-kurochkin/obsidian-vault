@@ -72,22 +72,22 @@
         - [ ] Мир pay(#)
         - [ ] Платосфера(#)
         ---
-        - [x] 2Books
+        - [ ] 2Books
 
 ### Приложения COM
 - [ ] Установить приложения:
     - [ ] PlayMarket
-        - [x] LinkedIn(G/16)
-        - [x] Telegram(16)
-        - [x] Whatsapp(G/16)
-        - [x] Instagram(G/12)
-        - [x] Habr
+        - [ ] LinkedIn(G/16)
+        - [ ] Telegram(16)
+        - [ ] Whatsapp(G/16)
+        - [ ] Instagram(G/12)
+        - [ ] Habr
         ---
-        - [x] Obsidian(B)
-        - [x] Xmind(B/G)
-        - [x] LearnVLSI(#)
-        - [x] ChatGPT(#)
-        - [x] Toggi Track(G)
+        - [ ] Obsidian(B)
+        - [ ] Xmind(B/G)
+        - [ ] LearnVLSI(#)
+        - [ ] ChatGPT(#)
+        - [ ] Toggi Track(G)
         - [ ] Singularityapp(G)
         - [ ] RustDesk(G)
         - [ ] hh(G/16)
@@ -96,11 +96,11 @@
         - [ ] Lichess(G)
         - [x] Mahjong Soul(G)
         ---
-        - [x] Кошелек*(G)
-        - [x] V2Box(#)
-        - [x] Zeep(G)
+        - [ ] Кошелек*(G)
+        - [ ] V2Box(#)
+        - [ ] Zeep(G)
         - [ ] Steam(G/16)
-        - [x] Bitwarden(@)
+        - [ ] Bitwarden(@)
         ---
         - [ ] Xiaomi Home(X/16)
         - [ ] Gosund(B)
@@ -150,7 +150,6 @@
         - [x] Мир pay(#)
         - [x] Платосфера(#)
         ---
-        - [x] 2Books
 
 
 ### Журнал переустановки:
