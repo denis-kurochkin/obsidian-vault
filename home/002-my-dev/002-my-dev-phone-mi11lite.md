@@ -90,15 +90,11 @@
         - [ ] Калькулятор Калорий ХиКи(#)
         ---
         ---
-        - [x] Таблицы
-        - [x] Карты
-        - [x] Диск
         - [ ] AdBlock Browser
-        - [x] YouTube 
     - [ ] GetApps/Ru
-        - [x] VK(16)
+        - [ ] VK(16)
         - [ ] UBER(16)
-        - [x] Whoosh(Y/16)
+        - [ ] Whoosh(Y/16)
         - [x] 2гис(G)
         - [ ] Cool reader*(#)
         - [ ] yota(16)
