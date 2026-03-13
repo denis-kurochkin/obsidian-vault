@@ -77,18 +77,7 @@
 ### Приложения COM
 - [ ] Установить приложения:
     - [ ] PlayMarket
-        - [ ] LinkedIn(G/16)
-        - [ ] Telegram(16)
-        - [ ] Whatsapp(G/16)
-        - [ ] Instagram(G/12)
-        - [ ] Habr
         ---
-        - [ ] Obsidian(B)
-        - [ ] Xmind(B/G)
-        - [ ] LearnVLSI(#)
-        - [ ] ChatGPT(#)
-        - [ ] Toggi Track(G)
-        - [ ] Singularityapp(G)
         - [ ] RustDesk(G)
         - [ ] hh(G/16)
         ---
