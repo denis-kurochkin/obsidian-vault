@@ -374,14 +374,10 @@ proc apply_debug_constraints {}
 	set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I*}]
 	if {[llength $ila_pins] > 0} 
 	{
-	set_false_path -to $ila_pins
-	puts "INFO: Applied false path to [llength $ila_pins] ILA pins"
+		set_false_path -to $ila_pins
+		puts "INFO: Applied false path to [llength $ila_pins] ILA pins"
 	}
-
 }
-
-  
-
 apply_debug_constraints
 ```
 
@@ -396,22 +392,15 @@ apply_debug_constraints
 Например:
 
 - порты доступны рано;
-    
 - часть иерархии может меняться после synth;
-    
 - некоторые net/pin/cell-имена удобнее искать уже после synthesis.
-    
 
 Поэтому важно понимать, **в каком контексте исполняется Tcl**:
 
 - до synth;
-    
 - после synth;
-    
 - в implementation;
-    
 - внутри project mode или non-project mode.
-    
 
 ---
 
@@ -422,9 +411,7 @@ apply_debug_constraints
 Но когда говорят **Tcl constraint injection**, обычно имеют в виду, что:
 
 - ограничения не просто лежат в статическом `.xdc`;
-    
 - они **добавляются динамически** из управляющего Tcl-скрипта.
-    
 
 То есть разница не в синтаксисе команд, а в **способе их подачи в flow**.
 
