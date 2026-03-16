@@ -689,30 +689,20 @@ file mkdir $build_dir
 
 ## Пример простого reproducible create_project.tcl
 
+```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
-
 set build_dir [file join $origin_dir build project]
-
 set part_name xc7a200tfbg484-2
-
 set top_name top
 
-  
-
-if {[file exists $build_dir]} {
-
-file delete -force $build_dir
-
+if {[file exists $build_dir]} 
+{
+	file delete -force $build_dir
 }
-
 file mkdir $build_dir
 
-  
-
 create_project my_proj $build_dir -part $part_name
-
   
-
 proc require_file {path} {
 
 if {![file exists $path]} {
@@ -764,6 +754,8 @@ update_compile_order -fileset sim_1
   
 
 puts "INFO: Project created successfully"
+```
+
 
 Это уже заметно лучше, чем ручная настройка через GUI.
 
