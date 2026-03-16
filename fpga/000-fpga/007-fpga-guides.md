@@ -1,4 +1,5 @@
 - [FSM](007-fpga-guides-fsm.md)
 - [Verilog RTL coding](007-fpga-guides-verilog-rtl-coding.md)
-- [TCL](007-fpga-guides-tcl.md)
+- TCL
+	- [TCL constraint injection](007-fpga-guides-tcl-constraint-injection.md)
 - [FPGA design flow](007-fpga-guides-design-flow) 
