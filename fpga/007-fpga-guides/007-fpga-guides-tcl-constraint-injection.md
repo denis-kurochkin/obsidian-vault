@@ -273,26 +273,26 @@ else
 
 - для необязательных объектов — мягкая проверка;
 - для обязательных объектов — явная ошибка.
-    
 
 Пример:
 
+
+```
 set clk_port [get_ports -quiet clk_in]
 
-if {[llength $clk_port] == 0} {
-
-error "Required port clk_in not found"
-
+if {[llength $clk_port] == 0} 
+{
+	error "Required port clk_in not found"
 }
 
 create_clock -period 10.000 $clk_port
+```
+
 
 То есть:
 
 - **optional object** → `-quiet` + условие;
-    
 - **required object** → если не найден, лучше остановить сборку.
-    
 
 ---
 
