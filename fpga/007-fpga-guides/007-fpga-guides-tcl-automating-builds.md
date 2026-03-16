@@ -884,7 +884,6 @@ vivado -mode batch -source tcl/build.tcl
 - нужно регулярно выпускать bitstream;
     
 - планируется CI/CD.
-    
 
 ---
 
