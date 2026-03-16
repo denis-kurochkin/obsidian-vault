@@ -702,9 +702,10 @@ Build automation особенно полезна, когда есть вариа
 
 Тогда скрипт может принимать параметры:
 
+```
 set build_type debug
-
 set board_variant revA
+```
 
 И условно:
 
@@ -735,7 +736,6 @@ vivado -mode batch -source tcl/build.tcl
 - одинаковой для всей команды;
     
 - независимой от ручного нажатия кнопок.
-    
 
 ---
 
@@ -750,7 +750,6 @@ vivado -mode batch -source tcl/build.tcl
 - GitHub Actions;
     
 - локальные build scripts.
-    
 
 Тогда pipeline может:
 
@@ -763,7 +762,6 @@ vivado -mode batch -source tcl/build.tcl
 - публиковать отчеты;
     
 - падать при timing failure или build error.
-    
 
 То есть Tcl — это естественный интерфейс между FPGA-проектом и автоматизированной системой сборки.
 
