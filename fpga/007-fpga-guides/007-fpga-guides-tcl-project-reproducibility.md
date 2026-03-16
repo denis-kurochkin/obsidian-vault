@@ -730,12 +730,9 @@ add_files -fileset constrs_1 $xdc_file
 set_property top $top_name [current_fileset]
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
-
   
-
 puts "INFO: Project created successfully"
 ```
-
 
 Это уже заметно лучше, чем ручная настройка через GUI.
 
@@ -743,25 +740,18 @@ puts "INFO: Project created successfully"
 
 ## Пример build.tcl
 
+```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
-
 source [file join $origin_dir tcl create_project.tcl]
-
   
-
 launch_runs synth_1 -jobs 8
-
 wait_on_run synth_1
-
   
-
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-
 wait_on_run impl_1
-
   
-
 puts "INFO: Build finished"
+```
 
 Такой flow уже можно запускать одинаково у всех участников команды.
 
