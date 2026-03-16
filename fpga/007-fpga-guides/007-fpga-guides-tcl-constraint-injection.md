@@ -116,15 +116,10 @@ if {[llength $regs] > 0}
 Когда проект собирается не руками в GUI, а через `build.tcl`, CI/CD или batch mode, часто удобно:
 
 - открыть проект;
-    
 - выбрать top;
-    
 - подключить исходники;
-    
 - на основе параметров подмешать нужные constraints;
-    
 - запустить synth/impl.
-    
 
 То есть constraints становятся частью **сценария сборки**, а не только частью исходников.
 
@@ -136,11 +131,13 @@ if {[llength $regs] > 0}
 
 Например:
 
+```
 set_property PACKAGE_PIN E3 [get_ports clk_in]
 
 create_clock -period 10.000 [get_ports clk_in]
 
 set_false_path -from [get_cells -hier *src_ff*] -to [get_cells -hier *dst_ff*]
+```
 
 Это самый прямой способ: Tcl-скрипт сам вызывает constraint-команды.
 
