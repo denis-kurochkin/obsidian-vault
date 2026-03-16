@@ -510,37 +510,26 @@ Vivado умеет экспортировать проект в Tcl через `w
 
 ## Практический шаблон структуры репозитория
 
+
+```
 project_root/
+	src/
+	rtl/
+	constraints/
+	ip/
+	bd/
+	tcl/
+		create_project.tcl
+		build.tcl
+		ip.tcl
+		debug_constraints.tcl
+	sim/
+	scripts/
+	build/
+	README.md
+	.gitignore
+```
 
-src/
-
-rtl/
-
-constraints/
-
-ip/
-
-bd/
-
-tcl/
-
-create_project.tcl
-
-build.tcl
-
-ip.tcl
-
-debug_constraints.tcl
-
-sim/
-
-scripts/
-
-build/
-
-README.md
-
-.gitignore
 
 Идея:
 
@@ -557,7 +546,9 @@ README.md
 
 Это один из базовых элементов переносимости.
 
+```
 set origin_dir [file normalize [file dirname [info script]]]
+```
 
 Если `build.tcl` лежит, например, в `tcl/`, можно подняться на уровень выше:
 
