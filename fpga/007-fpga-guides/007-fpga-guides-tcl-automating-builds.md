@@ -588,48 +588,29 @@ foreach f $rtl_files
 	require_file $f
 	add_files $f
 }
-
   
 set xdc_file [file join $origin_dir constraints top.xdc]
-
 require_file $xdc_file
-
 add_files -fileset constrs_1 $xdc_file
-
   
-
 set_property top $top_name [current_fileset]
-
 update_compile_order -fileset sources_1
-
   
-
 launch_runs synth_1 -jobs 8
-
 wait_on_run synth_1
-
   
-
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-
 wait_on_run impl_1
-
   
-
 open_run impl_1
-
 set bitfile [get_property BITSTREAM.FILE [current_design]]
 
-if {$bitfile eq "" || ![file exists $bitfile]} {
-
-error "Bitstream was not generated"
-
+if {$bitfile eq "" || ![file exists $bitfile]} 
+{
+	error "Bitstream was not generated"
 }
-
   
-
 puts "INFO: Build finished successfully"
-
 puts "INFO: Bitstream = $bitfile"
 ```
 
@@ -639,18 +620,16 @@ puts "INFO: Bitstream = $bitfile"
 
 ## Пример common-процедур
 
-proc require_file {path} {
-
-if {![file exists $path]} {
-
-error "Required file not found: $path"
-
+```
+proc require_file {path} 
+{
+	if {![file exists $path]} 
+	{
+		error "Required file not found: $path"
+	}
 }
-
-}
-
+```
   
-
 proc info_msg {msg} {
 
 puts "INFO: $msg"
