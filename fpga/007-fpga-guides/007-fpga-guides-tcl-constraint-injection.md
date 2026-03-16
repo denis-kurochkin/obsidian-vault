@@ -468,23 +468,15 @@ proc safe_set_false_path_to_ila {}
 	set_false_path -to $ila_pins
 	puts "INFO: Applied false path to [llength $ila_pins] ILA pins"
 }
-
-  
-
 safe_set_false_path_to_ila
 ```
-
 
 Почему это хороший шаблон:
 
 - нет лишних warning-ов;
-    
 - есть логирование;
-    
 - optional объект обрабатывается мягко;
-    
 - поведение предсказуемо.
-    
 
 ---
 
