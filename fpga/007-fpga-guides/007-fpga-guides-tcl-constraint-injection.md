@@ -72,25 +72,22 @@ if {[llength $ila_cells] > 0}
 Один и тот же RTL может собираться под несколько плат.
 
 Например:
-
 - у одной платы сигнал `clk_in` на пине `E3`;
-    
 - у другой — на `F7`.
-    
 
 Вместо нескольких почти одинаковых XDC можно сделать Tcl-логику:
 
-if {$board_variant eq "revA"} {
 
-set_property PACKAGE_PIN E3 [get_ports clk_in]
-
-} elseif {$board_variant eq "revB"} {
-
-set_property PACKAGE_PIN F7 [get_ports clk_in]
-
+```
+if {$board_variant eq "revA"} 
+{
+	set_property PACKAGE_PIN E3 [get_ports clk_in]
+} elseif {$board_variant eq "revB"} 
+{
+	set_property PACKAGE_PIN F7 [get_ports clk_in]
 }
-
 set_property IOSTANDARD LVCMOS33 [get_ports clk_in]
+```
 
 ---
 
