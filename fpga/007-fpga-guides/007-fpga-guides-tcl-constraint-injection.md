@@ -425,14 +425,11 @@ apply_debug_constraints
 ```
 read_verilog top.v
 
-read_xdc base.xdc
+read_xdc base.xdc 
 
-  
-
-if {$debug_build} {
-
+if {$debug_build} 
+{
 source debug_constraints.tcl
-
 }
 
   
