@@ -670,19 +670,15 @@ proc check_run_succeeded {run_name}
 
 Упрощенный пример:
 
+```
 set xci [file join $origin_dir ip my_ip my_ip.xci]
-
 require_file $xci
-
 add_files $xci
-
 export_ip_user_files -of_objects [get_files $xci] -no_script -sync -force -quiet
-
 create_ip_run -force [get_files $xci]
-
 launch_runs my_ip_synth_1
-
 wait_on_run my_ip_synth_1
+```
 
 Но конкретная схема зависит от того, как именно организованы IP в проекте.
 
@@ -703,7 +699,6 @@ Build automation особенно полезна, когда есть вариа
 - `board_revB`
     
 - `top=adc_top` или `top=aurora_top`
-    
 
 Тогда скрипт может принимать параметры:
 
@@ -720,7 +715,6 @@ set board_variant revA
 - выбирать top;
     
 - выбирать набор исходников.
-    
 
 Главное — чтобы эта логика была прозрачной и не скрывала обязательные вещи.
 
