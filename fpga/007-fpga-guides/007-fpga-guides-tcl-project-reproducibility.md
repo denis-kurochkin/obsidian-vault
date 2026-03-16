@@ -703,52 +703,32 @@ file mkdir $build_dir
 
 create_project my_proj $build_dir -part $part_name
   
-proc require_file {path} {
-
-if {![file exists $path]} {
-
-error "Required file not found: $path"
-
+proc require_file {path} 
+{
+	if {![file exists $path]} 
+	{
+		error "Required file not found: $path"
+	}
 }
-
-}
-
   
-
 set rtl_files [list \
-
-[file join $origin_dir src top.v] \
-
-[file join $origin_dir src core.v] \
-
-[file join $origin_dir src uart.v] \
-
-]
-
+	[file join $origin_dir src top.v] \
+	[file join $origin_dir src core.v] \
+	[file join $origin_dir src uart.v] \
+	]
   
-
-foreach f $rtl_files {
-
-require_file $f
-
-add_files $f
-
+foreach f $rtl_files 
+{
+	require_file $f
+	add_files $f
 }
-
   
-
 set xdc_file [file join $origin_dir constraints top.xdc]
-
 require_file $xdc_file
-
 add_files -fileset constrs_1 $xdc_file
-
   
-
 set_property top $top_name [current_fileset]
-
 update_compile_order -fileset sources_1
-
 update_compile_order -fileset sim_1
 
   
