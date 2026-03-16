@@ -658,39 +658,25 @@ build.tcl
 ```
 proc require_single_port {name} 
 {
-
-set p [get_ports -quiet $name]
-
-if {[llength $p] != 1} {
-
-error "Required port '$name' not found uniquely"
-
+	set p [get_ports -quiet $name]
+	if {[llength $p] != 1} 
+	{
+		error "Required port '$name' not found uniquely"
+	}
+	return $p
 }
 
-return $p
-
+proc optional_cells {pattern} 
+{
+	return [get_cells -quiet -hier $pattern]
 }
-
-  
-
-proc optional_cells {pattern} {
-
-return [get_cells -quiet -hier $pattern]
-
-}
-
-  
 
 set clk_port [require_single_port clk_in]
-
 create_clock -period 10.000 $clk_port
 
-  
-
 set ila_cells [optional_cells *ila*]
-
-if {[llength $ila_cells] > 0} {
-
+if {[llength $ila_cells] > 0} 
+{
 set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I*}]
 
 if {[llength $ila_pins] > 0} {
@@ -700,7 +686,6 @@ set_false_path -to $ila_pins
 puts "INFO: Debug false path applied"
 
 }
-
 }
 ```
 
