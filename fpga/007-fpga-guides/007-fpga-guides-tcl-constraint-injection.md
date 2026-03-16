@@ -565,7 +565,6 @@ build.tcl
     
 - `generated/` — временно сгенерированные XDC при необходимости.
     
-
 ---
 
 ## Когда лучше не использовать Tcl injection
@@ -631,7 +630,6 @@ build.tcl
 - batch/CI сборка;
     
 - условные timing exceptions.
-    
 
 ### Плюсы
 
