@@ -421,6 +421,8 @@ apply_debug_constraints
 
 Пример упрощенного flow:
 
+
+```
 read_verilog top.v
 
 read_xdc base.xdc
@@ -442,6 +444,8 @@ opt_design
 place_design
 
 route_design
+```
+
 
 Где `debug_constraints.tcl` может содержать проверку существования ILA и добавление `set_false_path` только при необходимости.
 
