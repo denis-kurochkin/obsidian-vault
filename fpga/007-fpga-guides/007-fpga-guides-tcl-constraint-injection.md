@@ -429,17 +429,13 @@ read_xdc base.xdc
 
 if {$debug_build} 
 {
-source debug_constraints.tcl
+	source debug_constraints.tcl
 }
-
-  
 
 synth_design -top top -part xczu3eg-sbva484-1-e
 
 opt_design
-
 place_design
-
 route_design
 ```
 
@@ -450,11 +446,13 @@ route_design
 
 ## Пример хорошего практического шаблона
 
-proc safe_set_false_path_to_ila {} {
 
-set ila_cells [get_cells -quiet -hier *ila*]
-
-if {[llength $ila_cells] == 0} {
+```
+proc safe_set_false_path_to_ila {} 
+{
+	set ila_cells [get_cells -quiet -hier *ila*]
+	if {[llength $ila_cells] == 0} 
+	{
 
 puts "INFO: No ILA cells found, skipping false path injection"
 
@@ -489,6 +487,8 @@ puts "INFO: Applied false path to [llength $ila_pins] ILA pins"
   
 
 safe_set_false_path_to_ila
+```
+
 
 Почему это хороший шаблон:
 
