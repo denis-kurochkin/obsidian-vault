@@ -490,7 +490,6 @@ proc require_file {path}
 
 ## 4. Логирование параметров
 
-
 ```
 puts "INFO: Origin dir = $origin_dir"
 
@@ -501,11 +500,9 @@ puts "INFO: Top = $top_name"
 puts "INFO: Part = $part_name"
 ```
 
-
 ---
 
 ## 5. Явный запуск runs
-
 
 ```
 launch_runs synth_1 -jobs 8
@@ -517,11 +514,9 @@ launch_runs impl_1 -to_step write_bitstream -jobs 8
 wait_on_run impl_1
 ```
 
-
 ---
 
 ## 6. Проверка результата
-
 
 ```
 open_run impl_1
@@ -536,20 +531,19 @@ if {$bitfile eq "" || ![file exists $bitfile]}
 puts "INFO: Bitstream = $bitfile"
 ```
 
-
 Это намного лучше, чем просто предполагать, что все прошло успешно.
 
 ---
 
 ## 7. Вынос повторяющихся действий в процедуры
 
-proc run_and_wait {run_name args} {
-
-launch_runs $run_name {*}$args
-
-wait_on_run $run_name
-
+```
+proc run_and_wait {run_name args} 
+{
+	launch_runs $run_name {*}$args
+	wait_on_run $run_name
 }
+```
 
 Или даже с проверкой статуса.
 
@@ -557,12 +551,10 @@ wait_on_run $run_name
 
 ## Пример минимального build.tcl для project mode
 
+```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
-
 set build_dir [file join $origin_dir build project]
-
 set part_name xc7a100tfgg484-2
-
 set top_name top
 
   
@@ -664,6 +656,7 @@ error "Bitstream was not generated"
 puts "INFO: Build finished successfully"
 
 puts "INFO: Bitstream = $bitfile"
+```
 
 Это уже базовый пример автоматизированной сборки.
 
