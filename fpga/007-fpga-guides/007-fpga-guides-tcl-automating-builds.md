@@ -784,7 +784,6 @@ vivado -mode batch -source tcl/build.tcl
 - synth/impl;
     
 - bitstream.
-    
 
 ### Этап 2
 
@@ -797,7 +796,6 @@ vivado -mode batch -source tcl/build.tcl
 - отчеты;
     
 - packaging.
-    
 
 ### Этап 3
 
@@ -808,7 +806,6 @@ vivado -mode batch -source tcl/build.tcl
 - regression checks;
     
 - quality gates.
-    
 
 Так проще, чем сразу писать гигантский универсальный framework.
 
@@ -829,7 +826,6 @@ vivado -mode batch -source tcl/build.tcl
 - либо incremental flow;
     
 - но не оставлять это неявным.
-    
 
 ### Ошибка 3. Скрипт не проверяет статус runs
 
@@ -870,7 +866,6 @@ vivado -mode batch -source tcl/build.tcl
 9. Не полагаться на случайное состояние `.runs`.
     
 10. Делать batch запуск основным сценарием, а не дополнительным.
-    
 
 ---
 
