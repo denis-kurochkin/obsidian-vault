@@ -393,24 +393,17 @@ synth / impl / bitstream
 - создает runs;
     
 - запускает synth/impl.
-    
 
 Пример:
 
+```
 set origin_dir [file normalize [file dirname [info script]]]
-
 set proj_dir [file join $origin_dir build project]
-
-  
 
 create_project my_proj $proj_dir -part xcau10p-ffvb676-1-i
 
-  
-
 add_files [file join $origin_dir src top.v]
-
 add_files [file join $origin_dir src core.v]
-
 add_files -fileset constrs_1 [file join $origin_dir constraints top.xdc]
 
   
@@ -418,6 +411,8 @@ add_files -fileset constrs_1 [file join $origin_dir constraints top.xdc]
 set_property top top [current_fileset]
 
 update_compile_order -fileset sources_1
+```
+
 
 Плюс этого подхода: он близок к привычному GUI-проекту.
 
