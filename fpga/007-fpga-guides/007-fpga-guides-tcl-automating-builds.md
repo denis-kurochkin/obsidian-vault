@@ -900,7 +900,6 @@ vivado -mode batch -source tcl/build.tcl
 - запускает synth и impl;
     
 - проверяет наличие bitstream.
-    
 
 Даже такой минимальный уровень уже сильно лучше полностью ручного flow.
 
