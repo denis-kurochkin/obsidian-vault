@@ -628,35 +628,27 @@ proc require_file {path}
 		error "Required file not found: $path"
 	}
 }
+ 
+proc info_msg {msg} 
+{
+	puts "INFO: $msg"
+}
+
+proc fail {msg} 
+{
+	error "ERROR: $msg"
+}
+  
+proc check_run_succeeded {run_name} 
+{
+	set status [get_property STATUS [get_runs $run_name]]
+	if {![string match "*Complete*" $status]} 
+	{
+		error "Run $run_name did not complete successfully. Status: $status"
+	}
+}
+
 ```
-  
-proc info_msg {msg} {
-
-puts "INFO: $msg"
-
-}
-
-  
-
-proc fail {msg} {
-
-error "ERROR: $msg"
-
-}
-
-  
-
-proc check_run_succeeded {run_name} {
-
-set status [get_property STATUS [get_runs $run_name]]
-
-if {![string match "*Complete*" $status]} {
-
-error "Run $run_name did not complete successfully. Status: $status"
-
-}
-
-}
 
 Такие утилиты быстро окупаются, когда flow становится больше.
 
@@ -675,7 +667,6 @@ error "Run $run_name did not complete successfully. Status: $status"
 - при необходимости создавать runs;
     
 - запускать генерацию автоматически.
-    
 
 Упрощенный пример:
 
