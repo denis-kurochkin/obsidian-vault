@@ -263,28 +263,22 @@ launch_runs impl_1 -to_step write_bitstream -jobs 8
 wait_on_run impl_1
 ```
 
-
 ---
 
 ## Non-project mode и automation
 
 В `non-project mode` автоматизация часто выглядит еще прямолинейнее:
 
+```
 read_verilog top.v
-
 read_verilog core.v
-
 read_xdc top.xdc
-
 synth_design -top top -part xc7a100tfgg484-2
-
 opt_design
-
 place_design
-
 route_design
-
 write_bitstream -force top.bit
+```
 
 Плюсы:
 
@@ -293,14 +287,12 @@ write_bitstream -force top.bit
 - flow более явный;
     
 - удобно для CI и полностью скриптовой сборки.
-    
 
 Минусы:
 
 - не всем привычно;
     
 - некоторые команды/интеграции удобнее в project mode.
-    
 
 ---
 
@@ -327,7 +319,6 @@ vivado -mode batch -source tcl/build.tcl
 - какие IP regenerate;
     
 - какой run запускать.
-    
 
 ### 4. Легче поддерживать разные конфигурации
 
@@ -340,7 +331,6 @@ vivado -mode batch -source tcl/build.tcl
 - разные платы
     
 - разные top modules
-    
 
 ### 5. Проще делать ночные и CI-сборки
 
