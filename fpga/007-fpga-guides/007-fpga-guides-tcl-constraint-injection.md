@@ -458,13 +458,13 @@ proc safe_set_false_path_to_ila {}
 	}
 	
 	set ila_pins [get_pins -quiet -of_objects $ila_cells \-filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I* || REF_PIN_NAME == TRIG_IN_I}]
-
+	
 	if {[llength $ila_pins] == 0} 
 	{
 	puts "INFO: ILA cells found, but no matching pins found"
 	return
 	}
-
+	
 	set_false_path -to $ila_pins
 	puts "INFO: Applied false path to [llength $ila_pins] ILA pins"
 }
