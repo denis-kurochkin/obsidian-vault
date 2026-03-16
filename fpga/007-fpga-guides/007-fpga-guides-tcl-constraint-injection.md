@@ -98,17 +98,16 @@ Tcl позволяет:
 - искать объекты по шаблону;
 - проверять количество найденных объектов;
 - применять constraint только если объект найден однозначно.
-    
 
 Пример:
 
+```
 set regs [get_cells -hier -quiet *cdc_fifo*/*sync_reg*]
-
-if {[llength $regs] > 0} {
-
-set_property ASYNC_REG TRUE $regs
-
+if {[llength $regs] > 0} 
+{
+	set_property ASYNC_REG TRUE $regs
 }
+```
 
 ---
 
