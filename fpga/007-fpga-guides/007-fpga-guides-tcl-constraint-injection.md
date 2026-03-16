@@ -638,27 +638,26 @@ build.tcl
 - меньше ложных warning-ов;
     
 - удобно автоматизировать.
-    
 
 ### Минусы
 
 - сложнее поддержка;
     
 - можно скрыть реальную проблему.
-    
 
 ### Золотое правило
 
 - optional → `-quiet` + `if {[llength ...] > 0}`
     
 - required → если не найден, `error`
-    
 
 ---
 
 ## Мини-шаблон для повседневного использования
 
-proc require_single_port {name} {
+```
+proc require_single_port {name} 
+{
 
 set p [get_ports -quiet $name]
 
@@ -703,9 +702,8 @@ puts "INFO: Debug false path applied"
 }
 
 }
+```
 
 Этот шаблон уже можно брать как основу и адаптировать под проект.
-
-
 
 ---
