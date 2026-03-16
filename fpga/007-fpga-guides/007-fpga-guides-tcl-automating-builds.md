@@ -988,71 +988,44 @@ vivado -mode batch -source tcl/build.tcl
 
 ```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
-
 set build_dir [file join $origin_dir build project]
-
 set part_name xc7a100tfgg484-2
-
 set top_name top
-
   
-
-proc require_file {path} {
-
-if {![file exists $path]} {
-
-error "Required file not found: $path"
-
+proc require_file {path} 
+{
+	if {![file exists $path]} 
+	{
+		error "Required file not found: $path"
+	}
 }
-
-}
-
   
-
-proc check_run_succeeded {run_name} {
-
+proc check_run_succeeded {run_name} 
+{
 set status [get_property STATUS [get_runs $run_name]]
-
-if {![string match "*Complete*" $status]} {
-
-error "Run $run_name failed. Status: $status"
-
+	if {![string match "*Complete*" $status]} 
+	{
+		error "Run $run_name failed. Status: $status"
+	}
 }
-
-}
-
   
-
-if {[file exists $build_dir]} {
-
-file delete -force $build_dir
-
+if {[file exists $build_dir]}
+{
+	file delete -force $build_dir
 }
-
 file mkdir $build_dir
-
   
-
 create_project my_proj $build_dir -part $part_name
-
   
-
 set rtl_files [list \
-
-[file join $origin_dir src top.v] \
-
-[file join $origin_dir src core.v] \
-
-]
-
+	[file join $origin_dir src top.v] \
+	[file join $origin_dir src core.v] \
+	]
   
-
-foreach f $rtl_files {
-
+foreach f $rtl_files 
+{
 require_file $f
-
 add_files $f
-
 }
 
   
