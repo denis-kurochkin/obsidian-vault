@@ -677,15 +677,12 @@ create_clock -period 10.000 $clk_port
 set ila_cells [optional_cells *ila*]
 if {[llength $ila_cells] > 0} 
 {
-set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I*}]
-
-if {[llength $ila_pins] > 0} {
-
-set_false_path -to $ila_pins
-
-puts "INFO: Debug false path applied"
-
-}
+	set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I*}]
+	if {[llength $ila_pins] > 0} 
+	{
+		set_false_path -to $ila_pins
+		puts "INFO: Debug false path applied"
+	}
 }
 ```
 
