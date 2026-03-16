@@ -1024,56 +1024,34 @@ set rtl_files [list \
   
 foreach f $rtl_files 
 {
-require_file $f
-add_files $f
+	require_file $f
+	add_files $f
 }
-
   
-
 set xdc_file [file join $origin_dir constraints top.xdc]
-
 require_file $xdc_file
-
 add_files -fileset constrs_1 $xdc_file
-
   
-
 set_property top $top_name [current_fileset]
-
 update_compile_order -fileset sources_1
-
   
-
 launch_runs synth_1 -jobs 8
-
 wait_on_run synth_1
-
 check_run_succeeded synth_1
-
   
-
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-
 wait_on_run impl_1
-
 check_run_succeeded impl_1
-
   
-
 open_run impl_1
-
 set bitfile [get_property BITSTREAM.FILE [current_design]]
 
-if {$bitfile eq "" || ![file exists $bitfile]} {
-
-error "Bitstream was not generated"
-
+if {$bitfile eq "" || ![file exists $bitfile]} 
+{
+	error "Bitstream was not generated"
 }
-
   
-
 puts "INFO: Build successful"
-
 puts "INFO: Bitstream = $bitfile"
 ```
 
