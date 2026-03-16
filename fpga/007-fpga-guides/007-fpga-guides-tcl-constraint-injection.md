@@ -333,16 +333,16 @@ if {[llength $objs] > 0}
 ```
 
 ---
-
 ## 2. Проверка, что найден ровно один объект
 
+```
 set clk_port [get_ports -quiet clk_in]
 
-if {[llength $clk_port] != 1} {
-
-error "Expected exactly one port clk_in, found [llength $clk_port]"
-
+if {[llength $clk_port] != 1} 
+{
+	error "Expected exactly one port clk_in, found [llength $clk_port]"
 }
+```
 
 Это полезно, если неоднозначность опаснее, чем отсутствие.
 
@@ -350,9 +350,11 @@ error "Expected exactly one port clk_in, found [llength $clk_port]"
 
 ## 3. Логирование действий
 
+```
 puts "INFO: Applying debug false path constraints"
 
 puts "INFO: Found [llength $ila_pins] ILA pins"
+```
 
 Очень помогает при разборе логов batch-сборки.
 
