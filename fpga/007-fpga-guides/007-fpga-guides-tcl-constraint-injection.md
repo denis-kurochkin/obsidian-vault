@@ -276,7 +276,6 @@ else
 
 Пример:
 
-
 ```
 set clk_port [get_ports -quiet clk_in]
 
@@ -287,7 +286,6 @@ if {[llength $clk_port] == 0}
 
 create_clock -period 10.000 $clk_port
 ```
-
 
 То есть:
 
@@ -303,28 +301,19 @@ create_clock -period 10.000 $clk_port
 Подходят для:
 
 - ILA/VIO;
-    
 - debug-only false paths;
-    
 - отладочных clock groups;
-    
 - ограничений для временных или опциональных IP.
-    
 
 ### Required constraints
 
 Подходят для:
 
 - основные clocks;
-    
 - pin assignment внешних интерфейсов;
-    
 - IOSTANDARD;
-    
 - обязательные timing exceptions;
-    
 - критичные CDC-свойства.
-    
 
 Для required лучше не делать молчаливый пропуск.
 
@@ -334,13 +323,14 @@ create_clock -period 10.000 $clk_port
 
 ## 1. Проверка существования объекта
 
+```
 set objs [get_cells -quiet -hier *my_block*]
 
-if {[llength $objs] > 0} {
-
+if {[llength $objs] > 0} 
+{
 # применяем constraint
-
 }
+```
 
 ---
 
