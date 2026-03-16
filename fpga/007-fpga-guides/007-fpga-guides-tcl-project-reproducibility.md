@@ -632,6 +632,7 @@ proc require_file {path}
 
 ## 8. Логировать ключевые параметры
 
+```
 puts "INFO: Origin dir = $origin_dir"
 
 puts "INFO: Build dir = $build_dir"
@@ -639,6 +640,7 @@ puts "INFO: Build dir = $build_dir"
 puts "INFO: Part = $part_name"
 
 puts "INFO: Top = $top_name"
+```
 
 Это сильно помогает в batch mode.
 
@@ -648,15 +650,14 @@ puts "INFO: Top = $top_name"
 
 Пример простой проверки:
 
+```
 set expected_version "2024.2"
-
 set current_version [version -short]
-
-if {$current_version ne $expected_version} {
-
-puts "WARNING: Expected Vivado $expected_version, got $current_version"
-
+if {$current_version ne $expected_version} 
+{
+	puts "WARNING: Expected Vivado $expected_version, got $current_version"
 }
+```
 
 Для критичных flow можно даже сделать `error`.
 
@@ -671,17 +672,16 @@ puts "WARNING: Expected Vivado $expected_version, got $current_version"
 - либо корректно пересоздавал build dir;
     
 - либо явно очищал старое состояние.
-    
 
 Например:
 
-if {[file exists $build_dir]} {
-
-file delete -force $build_dir
-
+```
+if {[file exists $build_dir]} 
+{
+	file delete -force $build_dir
 }
-
 file mkdir $build_dir
+```
 
 Но это нужно делать осознанно, чтобы не удалить важное.
 
