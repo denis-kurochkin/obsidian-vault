@@ -170,22 +170,20 @@ read_xdc generated_constraints.xdc
 
 Иногда инъекция — это не генерация отдельных команд, а выбор нужного XDC:
 
-
 ```
-if {$debug_build} {
-
-read_xdc debug_constraints.xdc
-
-} else {
+if {$debug_build} 
+{
+	read_xdc debug_constraints.xdc
+} 
+else 
+{
 	read_xdc release_constraints.xdc
 }
 ```
 
-
 Это тоже часто относят к Tcl-based constraint injection.
 
 ---
-
 ## Когда это действительно полезно
 
 Используй Tcl constraint injection, если:
@@ -193,24 +191,16 @@ read_xdc debug_constraints.xdc
 ### Подходит
 
 - проект имеет **несколько конфигураций**;
-    
 - есть **debug/release** сборки;
-    
 - блоки типа **ILA/VIO/Debug Hub** присутствуют не всегда;
-    
 - constraints зависят от **реально существующей иерархии**;
-    
 - проект собирается в **batch mode**;
-    
 - нужно уменьшить количество ложных warning-ов из-за отсутствующих объектов.
-    
 
 ### Не обязательно
 
 - маленький проект;
-    
 - один top;
-    
 - одна плата;
     
 - ограничения статичны и редко меняются.
