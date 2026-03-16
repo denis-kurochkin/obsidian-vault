@@ -918,12 +918,10 @@ vivado -mode batch -source tcl/build.tcl
 - удобный batch mode;
     
 - база для reproducibility и CI/CD.
-    
 
 Главный риск:
 
 - написать слишком хрупкий скрипт, который зависит от скрытого состояния и плохо обрабатывает ошибки.
-    
 
 Поэтому хороший build automation должен быть:
 
@@ -936,7 +934,6 @@ vivado -mode batch -source tcl/build.tcl
 - логируемым;
     
 - самодостаточным.
-    
 
 ---
 
@@ -961,7 +958,6 @@ vivado -mode batch -source tcl/build.tcl
 - bitstream
     
 - reports
-    
 
 ### Плюсы
 
@@ -972,7 +968,6 @@ vivado -mode batch -source tcl/build.tcl
 - batch mode
     
 - CI/CD
-    
 
 ### Риски
 
@@ -981,7 +976,6 @@ vivado -mode batch -source tcl/build.tcl
 - зависимость от старого project state
     
 - отсутствие проверки ошибок
-    
 
 ### Золотое правило
 
@@ -991,6 +985,8 @@ vivado -mode batch -source tcl/build.tcl
 
 ## Мини-шаблон для повседневного использования
 
+
+```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
 
 set build_dir [file join $origin_dir build project]
@@ -1106,5 +1102,7 @@ error "Bitstream was not generated"
 puts "INFO: Build successful"
 
 puts "INFO: Bitstream = $bitfile"
+```
+
 
 Это хороший стартовый шаблон, который уже можно адаптировать под реальный проект.
