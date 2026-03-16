@@ -552,7 +552,9 @@ set origin_dir [file normalize [file dirname [info script]]]
 
 Если `build.tcl` лежит, например, в `tcl/`, можно подняться на уровень выше:
 
+```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
+```
 
 ---
 
@@ -560,9 +562,10 @@ set origin_dir [file normalize [file join [file dirname [info script]] ..]]
 
 Например:
 
+```
 set build_dir [file join $origin_dir build vivado]
-
 file mkdir $build_dir
+```
 
 Тогда всегда ясно, что можно удалить без потери исходников.
 
@@ -572,7 +575,10 @@ file mkdir $build_dir
 
 Например:
 
+```
 create_project my_proj $build_dir -part xc7a100tfgg484-2
+```
+
 
 Это надежнее, чем надеяться на GUI-состояние.
 
