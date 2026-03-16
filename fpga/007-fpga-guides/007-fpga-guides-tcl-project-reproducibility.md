@@ -317,7 +317,6 @@ add_files [file join $origin_dir src top.v]
 - файлы параметров/конфигурации;
     
 - документацию по версии Vivado.
-    
 
 Иногда также хранят:
 
@@ -328,7 +327,6 @@ add_files [file join $origin_dir src top.v]
 - patch-файлы;
     
 - board-specific configs.
-    
 
 ---
 
@@ -349,7 +347,6 @@ add_files [file join $origin_dir src top.v]
 - логи и временные отчеты
     
 - автоматически созданные project artifacts, если их можно восстановить
-    
 
 Причина простая: это не исходники истины, а производные артефакты.
 
