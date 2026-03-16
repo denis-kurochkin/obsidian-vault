@@ -579,14 +579,15 @@ file mkdir $build_dir
 create_project my_proj $build_dir -part xc7a100tfgg484-2
 ```
 
-
 Это надежнее, чем надеяться на GUI-состояние.
 
 ---
 
 ## 4. Явно задавать top
 
+```
 set_property top top_module [current_fileset]
+```
 
 Иначе возможны неожиданности при изменении состава файлов.
 
@@ -594,23 +595,24 @@ set_property top top_module [current_fileset]
 
 ## 5. Обновлять compile order в скрипте
 
+```
 update_compile_order -fileset sources_1
-
 update_compile_order -fileset sim_1
+```
 
 ---
 
 ## 6. Проверять наличие обязательных файлов
 
-proc require_file {path} {
-
-if {![file exists $path]} {
-
-error "Required file not found: $path"
-
+```
+proc require_file {path} 
+{
+	if {![file exists $path]}
+	{
+		error "Required file not found: $path"
+	}
 }
-
-}
+```
 
 Это лучше, чем падать позже в неочевидном месте.
 
