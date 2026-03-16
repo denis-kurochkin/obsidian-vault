@@ -50,19 +50,18 @@ set_false_path -to [get_pins -of_objects [get_cells ila/inst/ila_core_inst] -fil
 
 Через Tcl injection можно сначала проверить наличие объекта:
 
+
+```
 set ila_cells [get_cells -quiet ila/inst/ila_core_inst]
-
-if {[llength $ila_cells] > 0} {
-
-set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I* || REF_PIN_NAME == TRIG_IN_I}]
-
-if {[llength $ila_pins] > 0} {
-
-set_false_path -to $ila_pins
-
+if {[llength $ila_cells] > 0} 
+{
+	set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I* || REF_PIN_NAME == TRIG_IN_I}]
+	if {[llength $ila_pins] > 0} 
+	{
+		set_false_path -to $ila_pins
+	}
 }
-
-}
+```
 
 Это и есть типичный пример **инъекции constraints через Tcl**.
 
