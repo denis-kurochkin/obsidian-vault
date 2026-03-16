@@ -478,20 +478,20 @@ file mkdir $build_dir
 
 ## 3. Проверка обязательных файлов
 
-proc require_file {path} {
-
-if {![file exists $path]} {
-
-error "Required file not found: $path"
-
-}
-
+proc require_file {path} 
+{
+	if {![file exists $path]} 
+	{
+		error "Required file not found: $path"
+	}
 }
 
 ---
 
 ## 4. Логирование параметров
 
+
+```
 puts "INFO: Origin dir = $origin_dir"
 
 puts "INFO: Build dir = $build_dir"
@@ -499,11 +499,15 @@ puts "INFO: Build dir = $build_dir"
 puts "INFO: Top = $top_name"
 
 puts "INFO: Part = $part_name"
+```
+
 
 ---
 
 ## 5. Явный запуск runs
 
+
+```
 launch_runs synth_1 -jobs 8
 
 wait_on_run synth_1
@@ -511,22 +515,27 @@ wait_on_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 8
 
 wait_on_run impl_1
+```
+
 
 ---
 
 ## 6. Проверка результата
 
+
+```
 open_run impl_1
 
 set bitfile [get_property BITSTREAM.FILE [current_design]]
 
-if {$bitfile eq "" || ![file exists $bitfile]} {
-
-error "Bitstream was not generated"
-
+if {$bitfile eq "" || ![file exists $bitfile]} 
+{
+	error "Bitstream was not generated"
 }
 
 puts "INFO: Bitstream = $bitfile"
+```
+
 
 Это намного лучше, чем просто предполагать, что все прошло успешно.
 
