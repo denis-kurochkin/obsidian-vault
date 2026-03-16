@@ -424,21 +424,16 @@ set src_dir A:/work/proj/src
 
 Пример структуры:
 
+```
 tcl/
-
-common.tcl
-
-create_project.tcl
-
-add_sources.tcl
-
-ip.tcl
-
-constraints.tcl
-
-build.tcl
-
-reports.tcl
+	common.tcl
+	create_project.tcl
+	add_sources.tcl
+	ip.tcl
+	constraints.tcl
+	build.tcl
+	reports.tcl
+```
 
 Роли могут быть такими:
 
@@ -455,7 +450,6 @@ reports.tcl
 - `build.tcl` — orchestration всего flow;
     
 - `reports.tcl` — генерация отчетов.
-    
 
 ---
 
@@ -463,7 +457,9 @@ reports.tcl
 
 ## 1. Определение корня проекта
 
+```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
+```
 
 Это один из самых важных элементов переносимого build automation.
 
@@ -471,9 +467,10 @@ set origin_dir [file normalize [file join [file dirname [info script]] ..]]
 
 ## 2. Выделение build directory
 
+```
 set build_dir [file join $origin_dir build vivado]
-
 file mkdir $build_dir
+```
 
 Так становится понятно, где исходники, а где сборочные артефакты.
 
