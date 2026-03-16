@@ -362,35 +362,28 @@ puts "INFO: Found [llength $ila_pins] ILA pins"
 
 ## 4. Вынос логики в процедуры
 
-proc apply_debug_constraints {} {
-
-set ila_cells [get_cells -quiet ila/inst/ila_core_inst]
-
-if {[llength $ila_cells] == 0} {
-
-puts "INFO: ILA not found, skipping debug constraints"
-
-return
-
-}
-
-  
-
-set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I*}]
-
-if {[llength $ila_pins] > 0} {
-
-set_false_path -to $ila_pins
-
-puts "INFO: Applied false path to [llength $ila_pins] ILA pins"
-
-}
+```
+proc apply_debug_constraints {} 
+{
+	set ila_cells [get_cells -quiet ila/inst/ila_core_inst]
+	if {[llength $ila_cells] == 0} 
+	{
+		puts "INFO: ILA not found, skipping debug constraints"
+		return
+	}
+	set ila_pins [get_pins -quiet -of_objects $ila_cells -filter {REF_PIN_NAME =~ DATA_I* || REF_PIN_NAME =~ TRIGGER_I*}]
+	if {[llength $ila_pins] > 0} 
+	{
+	set_false_path -to $ila_pins
+	puts "INFO: Applied false path to [llength $ila_pins] ILA pins"
+	}
 
 }
 
   
 
 apply_debug_constraints
+```
 
 Так скрипт становится читабельнее.
 
