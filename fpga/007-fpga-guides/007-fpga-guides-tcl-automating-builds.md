@@ -985,7 +985,6 @@ vivado -mode batch -source tcl/build.tcl
 
 ## Мини-шаблон для повседневного использования
 
-
 ```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
 set build_dir [file join $origin_dir build project]
@@ -1054,6 +1053,5 @@ if {$bitfile eq "" || ![file exists $bitfile]}
 puts "INFO: Build successful"
 puts "INFO: Bitstream = $bitfile"
 ```
-
 
 Это хороший стартовый шаблон, который уже можно адаптировать под реальный проект.
