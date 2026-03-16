@@ -233,7 +233,6 @@ add_files [file join $origin_dir src top.v]
 - сохранили проект;
     
 - но не обновили Tcl.
-    
 
 После этого скрипт уже не описывает реальное состояние проекта.
 
@@ -250,7 +249,6 @@ add_files [file join $origin_dir src top.v]
 - `ip_user_files`
     
 - `sim`
-    
 
 которые не пересоздаются автоматически, reproducibility страдает.
 
@@ -261,7 +259,6 @@ add_files [file join $origin_dir src top.v]
 - регенерировать нужные артефакты;
     
 - продолжить сборку без ручного вмешательства.
-    
 
 ---
 
@@ -274,7 +271,6 @@ add_files [file join $origin_dir src top.v]
 - изменилась версия toolchain;
     
 - синтаксис или поведение некоторых команд отличается.
-    
 
 Поэтому reproducibility почти всегда включает фиксацию:
 
@@ -283,7 +279,6 @@ add_files [file join $origin_dir src top.v]
 - версии IP;
     
 - иногда версии board files.
-    
 
 ---
 
@@ -296,7 +291,6 @@ add_files [file join $origin_dir src top.v]
 - `part`;
     
 - а если board используется — еще и требования к board files.
-    
 
 ---
 
