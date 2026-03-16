@@ -147,6 +147,7 @@ set_false_path -from [get_cells -hier *src_ff*] -to [get_cells -hier *dst_ff*]
 
 Скрипт формирует `.xdc` и добавляет его в проект:
 
+```
 set fp [open generated_constraints.xdc w]
 
 puts $fp "create_clock -period 10.000 [get_ports clk_in]"
@@ -156,31 +157,30 @@ puts $fp "set_property PACKAGE_PIN E3 [get_ports clk_in]"
 close $fp
 
 read_xdc generated_constraints.xdc
+```
 
 Полезно, когда нужно:
 
 - сохранить итоговые constraints в файл;
-    
 - отлаживать, что именно было сгенерировано;
-    
 - передать generated XDC дальше по flow.
-    
 
 ---
-
 ### Вариант 3. Условное подключение разных XDC
 
 Иногда инъекция — это не генерация отдельных команд, а выбор нужного XDC:
 
+
+```
 if {$debug_build} {
 
 read_xdc debug_constraints.xdc
 
 } else {
-
-read_xdc release_constraints.xdc
-
+	read_xdc release_constraints.xdc
 }
+```
+
 
 Это тоже часто относят к Tcl-based constraint injection.
 
