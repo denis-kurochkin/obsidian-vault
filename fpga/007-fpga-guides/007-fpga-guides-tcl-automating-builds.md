@@ -230,17 +230,14 @@
 
 В `project mode` автоматизация обычно строится вокруг команд:
 
+```
 create_project
-
 add_files
-
 set_property
-
 launch_runs
-
 wait_on_run
-
 open_run
+```
 
 Это удобно, если:
 
@@ -251,27 +248,21 @@ open_run
 - используются стандартные project runs;
     
 - важна совместимость с привычным flow Vivado.
-    
 
 Пример:
 
+```
 create_project my_proj $build_dir -part xc7a100tfgg484-2
-
 add_files $rtl_files
-
 add_files -fileset constrs_1 $xdc_file
-
 set_property top top [current_fileset]
-
 update_compile_order -fileset sources_1
-
 launch_runs synth_1 -jobs 8
-
 wait_on_run synth_1
-
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-
 wait_on_run impl_1
+```
+
 
 ---
 
