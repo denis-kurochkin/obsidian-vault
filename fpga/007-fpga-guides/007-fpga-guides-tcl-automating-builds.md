@@ -357,7 +357,6 @@ vivado -mode batch -source tcl/build.tcl
 - debug-параметры;
     
 - board-specific ветвления.
-    
 
 Такой скрипт быстро становится хрупким.
 
@@ -376,7 +375,6 @@ vivado -mode batch -source tcl/build.tcl
 - рассчитывает на существование `.runs`;
     
 - требует, чтобы кто-то до этого вручную нажал `Generate Output Products`.
-    
 
 Это плохая автоматизация, потому что она не самодостаточна.
 
@@ -391,7 +389,6 @@ vivado -mode batch -source tcl/build.tcl
 - существует ли bitstream;
     
 - нашлись ли входные файлы.
-    
 
 Тогда скрипт может формально дойти до конца, но не дать корректного результата.
 
@@ -416,7 +413,6 @@ set src_dir A:/work/proj/src
 - экспериментальные constraints;
     
 - release packaging.
-    
 
 В результате сложно понять, какой build считается эталонным.
 
