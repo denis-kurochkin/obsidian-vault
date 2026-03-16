@@ -992,7 +992,6 @@ GUI сам по себе не зло. Проблема не в GUI, а в том
 
 ## Мини-шаблон для повседневного использования
 
-
 ```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
 set build_dir [file join $origin_dir build project]
@@ -1022,28 +1021,18 @@ set rtl_files [list \
   
 foreach f $rtl_files 
 {
-require_file $f
-add_files $f
+	require_file $f
+	add_files $f
 }
-
   
-
 set xdc_file [file join $origin_dir constraints top.xdc]
-
 require_file $xdc_file
-
 add_files -fileset constrs_1 $xdc_file
-
   
-
 set_property top $top_name [current_fileset]
-
 update_compile_order -fileset sources_1
-
   
-
 puts "INFO: Reproducible project created"
 ```
-
 
 Это не идеальная универсальная система, но это уже правильная база для воспроизводимого Tcl flow.
