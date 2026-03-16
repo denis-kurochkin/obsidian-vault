@@ -992,58 +992,38 @@ GUI сам по себе не зло. Проблема не в GUI, а в том
 
 ## Мини-шаблон для повседневного использования
 
+
+```
 set origin_dir [file normalize [file join [file dirname [info script]] ..]]
-
 set build_dir [file join $origin_dir build project]
-
 set part_name xc7a100tfgg484-2
-
 set top_name top
-
   
-
-proc require_file {path} {
-
-if {![file exists $path]} {
-
-error "Required file not found: $path"
-
+proc require_file {path} 
+{
+	if {![file exists $path]} 
+	{
+		error "Required file not found: $path"
+	}
 }
-
-}
-
   
-
-if {[file exists $build_dir]} {
-
-file delete -force $build_dir
-
+if {[file exists $build_dir]} 
+{
+	file delete -force $build_dir
 }
-
 file mkdir $build_dir
-
   
-
 create_project my_proj $build_dir -part $part_name
-
   
-
 set rtl_files [list \
-
-[file join $origin_dir src top.v] \
-
-[file join $origin_dir src core.v] \
-
-]
-
+	[file join $origin_dir src top.v] \
+	[file join $origin_dir src core.v] \
+	]
   
-
-foreach f $rtl_files {
-
+foreach f $rtl_files 
+{
 require_file $f
-
 add_files $f
-
 }
 
   
@@ -1063,5 +1043,7 @@ update_compile_order -fileset sources_1
   
 
 puts "INFO: Reproducible project created"
+```
+
 
 Это не идеальная универсальная система, но это уже правильная база для воспроизводимого Tcl flow.
