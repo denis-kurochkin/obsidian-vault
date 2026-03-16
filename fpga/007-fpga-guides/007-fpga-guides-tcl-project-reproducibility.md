@@ -406,10 +406,7 @@ add_files [file join $origin_dir src top.v]
 add_files [file join $origin_dir src core.v]
 add_files -fileset constrs_1 [file join $origin_dir constraints top.xdc]
 
-  
-
 set_property top top [current_fileset]
-
 update_compile_order -fileset sources_1
 ```
 
@@ -424,23 +421,18 @@ update_compile_order -fileset sources_1
 
 Например:
 
+```
 read_verilog [file join $origin_dir src top.v]
-
 read_verilog [file join $origin_dir src core.v]
-
 read_xdc [file join $origin_dir constraints top.xdc]
 
-  
-
 synth_design -top top -part xcau10p-ffvb676-1-i
-
 opt_design
-
 place_design
-
 route_design
-
 write_bitstream -force [file join $origin_dir build top.bit]
+```
+
 
 Плюсы:
 
