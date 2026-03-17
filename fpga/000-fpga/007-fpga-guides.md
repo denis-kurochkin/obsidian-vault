@@ -6,7 +6,7 @@
 	- [RTL Modular Hierarchy](007-fpga-guides-rtl-modular-hierarchy.md)
 	- [RTL Reset Consistency](007-fpga-guides-rtl-reset-consistency.md)
 	- [RTL No Unintended Latches](007-fpga-guides-rtl-no-unintended-latches.md)
-	- 
+	- [RTL Deterministic Behavior](007-fpga-guides-rtl-deterministic-behavior.md)
 	
 - TCL
 	- [TCL constraint injection](007-fpga-guides-tcl-constraint-injection.md)
