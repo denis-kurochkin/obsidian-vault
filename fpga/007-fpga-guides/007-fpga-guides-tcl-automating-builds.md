@@ -478,6 +478,8 @@ file mkdir $build_dir
 
 ## 3. Проверка обязательных файлов
 
+
+```
 proc require_file {path} 
 {
 	if {![file exists $path]} 
@@ -485,6 +487,8 @@ proc require_file {path}
 		error "Required file not found: $path"
 	}
 }
+```
+
 
 ---
 
