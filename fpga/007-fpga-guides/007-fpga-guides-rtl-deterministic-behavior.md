@@ -197,7 +197,6 @@ Deterministic behavior требует, чтобы:
 - clock domain specific resets были понятны;
     
 - соседние блоки не выходили из reset хаотично.
-    
 
 ---
 
