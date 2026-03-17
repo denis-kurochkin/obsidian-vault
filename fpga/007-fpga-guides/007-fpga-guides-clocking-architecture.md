@@ -244,7 +244,6 @@ PLL/MMCM не “делают clock идеальным”.
 - reset и CDC продуманы для каждого домена;
     
 - все clocks описаны constraints.
-    
 
 ---
 
@@ -269,7 +268,6 @@ PLL/MMCM не “делают clock идеальным”.
 - Не слишком ли много derived clocks?
     
 - Все ли clocks корректно constrained?
-    
 
 ---
 
