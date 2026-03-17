@@ -1174,46 +1174,26 @@ reg [3:0] c;
 module packet_parser #(
 parameter integer DATA_WIDTH = 32,
 parameter integer TIMEOUT_CYCLES = 1024
-
 ) (
-
 input wire clk_sys,
-
 input wire rst_n,
-
 input wire [DATA_WIDTH-1:0] rx_data,
-
 input wire rx_valid,
-
 output wire packet_done,
-
 output wire crc_error
-
 );
-
   
-
 localparam IDLE = 2'd0;
-
 localparam WAIT_HEADER = 2'd1;
-
 localparam READ_PAYLOAD = 2'd2;
-
 localparam CHECK_CRC = 2'd3;
-
   
-
 reg [1:0] state;
-
 reg [1:0] state_next;
-
 reg [15:0] timeout_cnt;
-
 reg [15:0] timeout_cnt_next;
-
-reg packet_done_reg;
-
-reg packet_done_next;
+reg        packet_done_reg;
+reg        packet_done_next;
 ```
 
 Этот шаблон не единственно правильный, но он отражает хороший, читаемый и практичный стиль именования для RTL-проектов.
