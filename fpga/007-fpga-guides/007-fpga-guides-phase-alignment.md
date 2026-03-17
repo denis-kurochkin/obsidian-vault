@@ -467,7 +467,6 @@ Phase alignment помогает понять, к какой категории 
 - reset release нужно согласовать с готовностью clocking;
     
 - nominal phase relation имеет смысл только после стабилизации clock network.
-    
 
 То есть phase alignment — это не только steady-state вопрос, но и startup вопрос.
 
