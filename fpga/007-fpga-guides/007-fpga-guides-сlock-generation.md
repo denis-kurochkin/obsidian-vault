@@ -65,7 +65,6 @@ Clock generation в хорошем FPGA-проекте должна быть:
 - построенной на dedicated clocking resources;
     
 - понятной с точки зрения timing, reset и CDC.
-    
 
 Главная цель не в том, чтобы "сделать побольше разных clocks", а в том, чтобы:
 
@@ -76,7 +75,6 @@ Clock generation в хорошем FPGA-проекте должна быть:
 - не создать лишние domain boundaries;
     
 - не усложнить timing closure.
-    
 
 ---
 
@@ -97,7 +95,6 @@ Clock generation в хорошем FPGA-проекте должна быть:
 - `125 MHz`
     
 - `156.25 MHz`
-    
 
 Этот clock приходит на специальный вход FPGA и дальше может использоваться как reference.
 
@@ -114,7 +111,6 @@ Clock generation в хорошем FPGA-проекте должна быть:
 - pixel clock;
     
 - source-synchronous clock.
-    
 
 Такой clock тоже может стать доменом для части логики.
 
