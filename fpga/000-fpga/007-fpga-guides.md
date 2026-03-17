@@ -3,7 +3,7 @@
 - [Verilog RTL coding](007-fpga-guides-verilog-rtl-coding.md)
 - [RTL Coding discipline](007-fpga-guides-rtl-coding-discipline.md)
 	-  [RTL Naming Conventions](007-fpga-guides-rtl-naming-conventions.md)
-	-  [RTL Modular Hierarchy](007-fpga-guides-rtl-modular -hierarchy.md)
+	-  [RTL Modular Hierarchy](007-fpga-guides-rtl-modular-hierarchy.md)
 	
 - TCL
 	- [TCL constraint injection](007-fpga-guides-tcl-constraint-injection.md)
