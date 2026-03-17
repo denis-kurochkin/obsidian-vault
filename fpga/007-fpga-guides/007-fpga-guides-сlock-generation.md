@@ -619,7 +619,6 @@ PLL/MMCM/clock buffers, а не обычную RTL-логику.
 - нормальные generated clocks;
     
 - меньше CDC, чем в варианте с дополнительным `10 MHz` доменом.
-    
 
 ---
 
@@ -636,7 +635,6 @@ PLL/MMCM/clock buffers, а не обычную RTL-логику.
 - логическое деление такта в RTL почти всегда хуже, чем clock enable;
     
 - каждый новый clock domain увеличивает сложность проекта.
-    
 
 Золотое правило:
 
@@ -659,12 +657,10 @@ PLL/MMCM/clock buffers, а не обычную RTL-логику.
 - dedicated clock buffers/resources
     
 - clock enable вместо нового clock, где возможно
-    
 
 ### Плохой способ
 
 - деление clock обычной RTL-логикой с последующим использованием как настоящего clock
-    
 
 ### Когда нужен новый clock
 
@@ -675,7 +671,6 @@ PLL/MMCM/clock buffers, а не обычную RTL-логику.
 - отдельный timing domain
     
 - требования интерфейса/IP
-    
 
 ### Золотое правило
 
