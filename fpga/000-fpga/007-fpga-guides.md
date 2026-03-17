@@ -14,6 +14,7 @@
 	- [TCL project reproducibility](007-fpga-guides-tcl-project-reproducibility.md)
 	- [TCL automating builds](007-fpga-guides-tcl-automating-builds.md)
 	
-- [FPGA design flow](007-fpga-guides-design-flow.md) 
+- [FPGA design flow](007-fpga-guides-design-flow.md)
 	
-- хъ
+- [FPGA clocking architecture](007-fpga-guides-clocking architecture.md)
+- 
