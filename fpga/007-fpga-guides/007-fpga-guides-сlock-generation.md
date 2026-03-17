@@ -125,7 +125,6 @@ Clock generation в хорошем FPGA-проекте должна быть:
 - MMCM;
     
 - другие vendor-specific clocking resources.
-    
 
 Именно это чаще всего и называют clock generation внутри FPGA.
 
