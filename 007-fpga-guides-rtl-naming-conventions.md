@@ -942,7 +942,6 @@ end
 
 ## Пример хорошего фрагмента
 
-
 ```
 module uart_rx #(
 parameter integer CLK_FREQ_HZ = 50_000_000,
@@ -959,23 +958,16 @@ localparam IDLE = 2'd0;
 localparam START_BIT = 2'd1;
 localparam DATA_BITS = 2'd2;
 localparam STOP_BIT = 2'd3;
-
   
 reg [1:0] state;
-
 reg [1:0] state_next;
-
 reg [7:0] data_shift;
-
 reg [7:0] data_shift_next;
-
 reg [3:0] bit_cnt;
-
 reg [3:0] bit_cnt_next;
-
-reg rx_valid_reg;
-
-reg rx_valid_next;
+reg       rx_valid_reg;
+reg       rx_valid_next;
+```
 
 Почему это читаемо:
 
@@ -988,9 +980,6 @@ reg rx_valid_next;
 - FSM состояния читаемы;
     
 - registered и next-логика различимы.
-    
-```
-
 
 ---
 
