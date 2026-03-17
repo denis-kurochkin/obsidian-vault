@@ -651,7 +651,6 @@ Deterministic behavior почти всегда начинается с determini
 - понятные interface contracts;
     
 - корректный CDC.
-    
 
 Главный практический смысл:
 
@@ -662,7 +661,6 @@ Deterministic behavior почти всегда начинается с determini
 - выше переносимость между sim/synth/hardware;
     
 - выше инженерная надежность дизайна.
-    
 
 Золотое правило:
 
@@ -691,7 +689,6 @@ Deterministic behavior почти всегда начинается с determini
 - корректный CDC
     
 - отсутствие reliance on undefined behavior
-    
 
 ### Что его разрушает
 
@@ -708,7 +705,6 @@ Deterministic behavior почти всегда начинается с determini
 - simulation-order dependence
     
 - плохой CDC
-    
 
 ### Золотое правило
 
@@ -733,6 +729,5 @@ Deterministic behavior почти всегда начинается с determini
 - Что происходит в unexpected case?
     
 - Есть ли зависимость от порядка симуляции или от неявных допущений?
-    
 
 Если эти ответы ясны, deterministic behavior обычно находится на хорошем уровне.
