@@ -257,7 +257,6 @@ PLL/MMCM — основные инструменты управления фаз
 - помогать в source-synchronous timing;
     
 - формировать launch/capture clocks для интерфейсов.
-    
 
 Но важно помнить:
 
@@ -270,7 +269,6 @@ PLL/MMCM — основные инструменты управления фаз
 - есть startup/lock behavior;
     
 - phase relation имеет смысл только в контексте всего пути, включая буферы, routing и I/O delays.
-    
 
 То есть phase control — это не только настройка в wizard, а часть полной timing architecture.
 
@@ -287,7 +285,6 @@ PLL/MMCM — основные инструменты управления фаз
 - sampling margin уменьшается;
     
 - setup/hold window "съедается" uncertainty.
-    
 
 Поэтому при phase alignment нельзя смотреть только на идеальную диаграмму. Нужно помнить про:
 
@@ -300,7 +297,6 @@ PLL/MMCM — основные инструменты управления фаз
 - вариации routing;
     
 - I/O delays.
-    
 
 То есть хорошее phase alignment — это не "красивый сдвиг на бумаге", а достаточный запас в реальном timing budget.
 
