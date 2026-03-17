@@ -17,4 +17,5 @@
 - [FPGA design flow](007-fpga-guides-design-flow.md)
 	
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
-	- [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
+	- [FPGA Clock Generation](007-fpga-guides-сlock-generation.md)
+	- 
