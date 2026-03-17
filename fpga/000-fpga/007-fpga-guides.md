@@ -4,6 +4,7 @@
 - [RTL Coding discipline](007-fpga-guides-rtl-coding-discipline.md)
 	-  [RTL Naming Conventions](007-fpga-guides-rtl-naming-conventions.md)
 	-  [RTL Modular Hierarchy](007-fpga-guides-rtl-modular-hierarchy.md)
+	- [RTL Reset Consistency](007-fpga-guides-rtl-reset-consistency.md)
 	
 - TCL
 	- [TCL constraint injection](007-fpga-guides-tcl-constraint-injection.md)
