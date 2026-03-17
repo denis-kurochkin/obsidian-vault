@@ -942,7 +942,7 @@ end
 
 ## Пример хорошего фрагмента
 
-```
+```verilog
 module uart_rx #(
 parameter integer CLK_FREQ_HZ = 50_000_000,
 parameter integer BAUD_RATE = 115200
@@ -986,7 +986,7 @@ reg       rx_valid_next;
 ## Пример плохого стиля
 
 
-```
+```verilog
 module mod1(
 input clk,
 input reset,
@@ -1170,7 +1170,7 @@ reg [3:0] c;
 
 ## Мини-шаблон для повседневного использования
 
-```
+```verilog
 module packet_parser #(
 parameter integer DATA_WIDTH = 32,
 parameter integer TIMEOUT_CYCLES = 1024
