@@ -382,7 +382,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - после power-up интерфейс иногда молчит;
     
 - `out_valid` не поднимается при определенном handshake.
-    
 
 Без четкого симптома нельзя понять, сохранился ли reproduction.
 
@@ -405,7 +404,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - presence of PLL lock delay;
     
 - определенный ordering событий.
-    
 
 Это еще не финальная правда, но стартовая модель минимизации.
 
