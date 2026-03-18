@@ -38,3 +38,4 @@
 - [Debug mindset](007-fpga-guides-debug-mindset.md)
 	- [Hypothesis-Driven Debugging](007-fpga-guides-hypothesis-driven-debugging.md)
 	- [Isolation First](007-fpga-guides-isolation-first.md)
+	- [Isolation First](007-fpga-guides-isolation-first.md)
