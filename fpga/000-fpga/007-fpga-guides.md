@@ -35,4 +35,4 @@
 
 ## Programming/Automation
 
-- 
+- [Debug mindset](007-fpga-guides-debug-mindset.md)
