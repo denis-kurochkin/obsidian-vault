@@ -490,7 +490,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - число interacting modules;
     
 - количество внешних зависимостей.
-    
 
 Но только если bug still reproduces.
 
@@ -513,7 +512,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - легче ловить порядок событий;
     
 - легче обсуждать проблему.
-    
 
 Поэтому хороший practical вопрос всегда такой:
 
@@ -540,7 +538,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - hard IP behavior;
     
 - real timing / CDC manifestation.
-    
 
 Но и здесь minimal reproduction полезен.
 
@@ -555,7 +552,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - число условий старта;
     
 - точки наблюдения в ILA.
-    
 
 То есть даже hardware-only bug можно сделать более узким и воспроизводимым.
 
@@ -572,7 +568,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - регрессионного теста после исправления;
     
 - обучения и review.
-    
 
 То есть minimal reproduction часто становится еще и хорошим артефактом проекта.
 
