@@ -342,7 +342,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - одной группе registers;
     
 - одной specific clock relation.
-    
 
 Тогда вместо общего "timing не сходится" появляется минимальный воспроизводимый timing failure scenario.
 
@@ -359,7 +358,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - только один IP ready handshake;
     
 - только один first transaction.
-    
 
 Это помогает понять, какой именно этап старта является необходимым условием ошибки.
 
