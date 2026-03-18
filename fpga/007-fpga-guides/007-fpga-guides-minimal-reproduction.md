@@ -676,7 +676,6 @@ Minimal reproduction путь:
 Симптом:
 
 - pulse иногда пропадает при переходе между доменами.
-    
 
 Вместо дебага всего проекта можно собрать minimal reproduction:
 
@@ -685,7 +684,6 @@ Minimal reproduction путь:
 - CDC synchronizer block;
     
 - destination counter / detector.
-    
 
 Если баг воспроизводится уже в таком примере, то:
 
