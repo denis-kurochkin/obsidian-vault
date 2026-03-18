@@ -143,7 +143,6 @@ Hold check отвечает на вопрос:
 - capture clock приходит позже;
     
 - данные начинают двигаться слишком быстро относительно окна удержания.
-    
 
 Или наоборот, в зависимости от конкретной launch/capture модели.
 
@@ -160,7 +159,6 @@ Hold check отвечает на вопрос:
 На практике jitter обычно рассматривается как часть более широкой категории:
 
 - clock uncertainty.
-    
 
 Почему это удобно:
 
@@ -169,7 +167,6 @@ Hold check отвечает на вопрос:
 - jitter, phase noise, modeling uncertainty и некоторые другие эффекты сводятся в timing guard-band;
     
 - это позволяет более реалистично оценивать доступный timing budget.
-    
 
 То есть в practical timing thinking jitter — это один из способов, которыми ideal clock превращается в real clock with uncertainty.
 
