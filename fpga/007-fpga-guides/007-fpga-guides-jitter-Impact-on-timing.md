@@ -575,14 +575,12 @@ Timing — это целостная система.
 - external interfaces
     
 - high-speed timing closure
-    
 
 ### С чем не путать
 
 - jitter != skew
     
 - nominal frequency != clock quality
-    
 
 ### Золотое правило
 
@@ -607,6 +605,5 @@ Timing — это целостная система.
 6. Как jitter влияет на external interface window или sampling point?
     
 7. Не строим ли мы слишком оптимистичную timing-картину, игнорируя clock quality?
-    
 
 Если на эти вопросы есть ясные ответы, влияние jitter на timing обычно понимается правильно и инженерно реалистично.
