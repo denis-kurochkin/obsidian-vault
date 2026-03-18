@@ -652,7 +652,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 Симптом:
 
 - при определенном handshake `out_valid` иногда не поднимается.
-    
 
 Minimal reproduction путь:
 
@@ -667,7 +666,6 @@ Minimal reproduction путь:
 5. Убрать лишнюю datapath-ширину или дополнительные FSM-ветви.
     
 6. Если баг остался — уже есть сильно упрощенный reproducer.
-    
 
 Теперь waveform и reasoning становятся гораздо чище.
 
