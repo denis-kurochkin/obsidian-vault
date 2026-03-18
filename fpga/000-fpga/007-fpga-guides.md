@@ -12,7 +12,17 @@
 	- [RTL No Unintended Latches](007-fpga-guides-rtl-no-unintended-latches.md)
 	- [RTL Deterministic Behavior](007-fpga-guides-rtl-deterministic-behavior.md)
 
-##
+## High-Speed/Interface Knolage
+
+- [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
+	- [FPGA Clock Generation](007-fpga-guides-сlock-generation.md)
+	- [FPGA Phase Alignment](007-fpga-guides-phase-alignment.md)
+	- [FPGA Clock Routing](007-fpga-guides-clock-routing.md)
+	- [FPGA Jitter Impact on Timing](007-fpga-guides-jitter-Impact-on-timing.md)
+
+## FPGA/Prototyping
+
+- [FPGA design flow](007-fpga-guides-design-flow.md)
 
 
 
@@ -20,11 +30,3 @@
 	- [TCL constraint injection](007-fpga-guides-tcl-constraint-injection.md)
 	- [TCL project reproducibility](007-fpga-guides-tcl-project-reproducibility.md)
 	- [TCL automating builds](007-fpga-guides-tcl-automating-builds.md)
-	
-- [FPGA design flow](007-fpga-guides-design-flow.md)
-	
-- [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
-	- [FPGA Clock Generation](007-fpga-guides-сlock-generation.md)
-	- [FPGA Phase Alignment](007-fpga-guides-phase-alignment.md)
-	- [FPGA Clock Routing](007-fpga-guides-clock-routing.md)
-	- [FPGA Jitter Impact on Timing](007-fpga-guides-jitter-Impact-on-timing.md)
