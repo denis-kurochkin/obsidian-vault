@@ -426,7 +426,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - заменить сложный стимул на простой;
     
 - проверить bug.
-    
 
 Так становится понятно, что действительно необходимо для воспроизведения.
 
@@ -437,7 +436,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 Каждый шаг должен отвечать на вопрос:
 
 - баг все еще воспроизводится?
-    
 
 Если нет, значит убрана важная часть.
 
@@ -468,7 +466,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - убрал startup delay — и исчез reset sequencing bug;
     
 - заменил реальный handshake на идеальный — и исчез interface bug.
-    
 
 Такой пример уже не reproduces исходную проблему.
 
