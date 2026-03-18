@@ -19,3 +19,4 @@
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
 	- [FPGA Clock Generation](007-fpga-guides-сlock-generation.md)
 	- [FPGA Phase Alignment](007-fpga-guides-phase-alignment.md)
+	- [FPGA Phase Alignment](007-fpga-guides-phase-alignment.md)
