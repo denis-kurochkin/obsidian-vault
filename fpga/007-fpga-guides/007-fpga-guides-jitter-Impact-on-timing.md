@@ -181,7 +181,6 @@ Hold check отвечает на вопрос:
 - при `10 ns` периода потеря `100 ps` может быть заметной, но терпимой;
     
 - при `2 ns` периода те же `100 ps` — уже гораздо более чувствительная доля бюджета.
-    
 
 Поэтому high-speed designs сильнее страдают от jitter.
 
@@ -196,7 +195,6 @@ Hold check отвечает на вопрос:
 - source-synchronous I/O;
     
 - multi-GHz or sub-ns margin systems.
-    
 
 ---
 
@@ -215,7 +213,6 @@ Hold check отвечает на вопрос:
 - маленький setup/hold reserve;
     
 - сложная clocking architecture.
-    
 
 Практически это значит:
 
