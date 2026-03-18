@@ -22,14 +22,10 @@
     - [x] Xiaomi Home(X/16)
     - [ ] Gosund(B)
     - [ ] Polaris(G)
-    - [ ] GetWarderobe(#)
     
     - [ ] GetApps/Ru
         - [x] VK(16)
-        - [ ] UBER(16)
-        - [ ] Whoosh(Y/16)
         - [ ] 2гис(G)
-        - [ ] yota(16)
         - [ ] Ростелеком(16)
         - [ ] госуслуги(Y/16)
         - [ ] РЖД(G/12)
