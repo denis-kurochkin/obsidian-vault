@@ -537,7 +537,6 @@ Clock routing — это не только "есть соединение", но
 Вместо вопроса:
 
 - "можно ли этот toggling signal использовать как clock?"
-    
 
 лучше спрашивать:
 
@@ -550,7 +549,6 @@ Clock routing — это не только "есть соединение", но
 - есть ли лучший вариант через CE или PLL/MMCM output;
     
 - как это повлияет на timing и CDC.
-    
 
 Такой подход гораздо ближе к реальной FPGA-инженерии.
 
@@ -569,7 +567,6 @@ Clock routing — это не только "есть соединение", но
 - relationships between clocks;
     
 - asynchronous groups там, где нужно.
-    
 
 Но важно помнить: constraint не превращает плохой fabric-routed pseudo-clock в хороший архитектурный clock.
 
