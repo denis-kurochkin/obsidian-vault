@@ -278,7 +278,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - короткая последовательность stimulus;
     
 - одна конкретная проблемная комбинация сигналов.
-    
 
 Если баг проявляется в таком testbench, это огромный выигрыш.
 
@@ -297,7 +296,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - один interface adapter;
     
 - один CDC path.
-    
 
 И проверить, воспроизводится ли проблема уже там.
 
@@ -310,7 +308,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - reset/FSM ошибок;
     
 - handshake ambiguities.
-    
 
 ---
 
@@ -329,7 +326,6 @@ Minimal reproduction отлично сочетается с hypothesis-driven de
 - проверить только один канал вместо восьми;
     
 - временно обойти сложный upstream/downstream блок.
-    
 
 Это тоже minimal reproduction — просто на hardware/system уровне.
 
