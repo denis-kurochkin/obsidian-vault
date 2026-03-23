@@ -7,4 +7,5 @@
 * [Channel Structure](004-fpga-specs-axi4-channel-structure)
 * [Handshake Timing](004-fpga-specs-axi4-handshake-timing)
 * [Bursts](004-fpga-specs-axi4-bursts)
-* [Write/Read Channels](004-fpga-specs-axi4-W/R channels)
+* [Write/Read Channels](004-fpga-specs-axi4-W/R-Channels)
+* [Backpressure behavior](004-fpga-specs-axi4-backpressure-behavior)
