@@ -5,3 +5,5 @@
 ---
 ## [AXI4](004-fpga-specs-axi4.md)
 * [Channel Structure](004-fpga-specs-axi4-channel-structure)
+* [Handshake Timing](004-fpga-specs-axi4-handshake-timing)
+* []
