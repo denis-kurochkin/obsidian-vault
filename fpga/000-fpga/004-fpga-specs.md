@@ -4,4 +4,4 @@
 
 ---
 ## [AXI4](004-fpga-specs-axi4.md)
-* 
+* [Channel Structure](004-fpga-specs-axi4-channel-structure)
