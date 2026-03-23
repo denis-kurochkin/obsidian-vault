@@ -4,10 +4,10 @@
 
 ---
 ## [AXI4](004-fpga-specs-axi4.md)
-* [Channel Structure](004-fpga-specs-axi4-channel-structure)
-* [Handshake Timing](004-fpga-specs-axi4-handshake-timing)
-* [Bursts](004-fpga-specs-axi4-bursts)
-* [Write/Read Channels](004-fpga-specs-axi4-W-R-Channels)
-* [Backpressure Behavior](004-fpga-specs-axi4-backpressure-behavior)
-* [Slave/Master Integration](004-fpga-specs-axi4-slave/master-integration)
+* [Channel Structure](004-fpga-specs-axi4-channel-structure.md)
+* [Handshake Timing](004-fpga-specs-axi4-handshake-timing.md)
+* [Bursts](004-fpga-specs-axi4-bursts.md)
+* [Write/Read Channels](004-fpga-specs-axi4-W-R-Channels.md)
+* [Backpressure Behavior](004-fpga-specs-axi4-backpressure-behavior.md)
+* [Slave/Master Integration](004-fpga-specs-axi4-slave-master-integration.md)
 ---
