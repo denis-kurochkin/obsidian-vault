@@ -238,6 +238,7 @@ end
 
 ### Более разумный вариант
 
+```verilog
 reg [15:0] add_ab;  
 reg [15:0] mul_de;  
 reg [15:0] xor_stage;  
@@ -249,6 +250,7 @@ always @(posedge clk) begin
     xor_stage <= add_ab ^ c;  
     y         <= xor_stage + mul_de;  
 end
+```
 
 Здесь логика уже распределена:
 
@@ -269,7 +271,9 @@ end
 
 Одна строка:
 
+```verilog
 out <= (a+b+c+d+e+f+g+h) ^ mask;
+```
 
 может быть тяжелее десяти простых присваиваний.
 
