@@ -217,6 +217,7 @@ Misalignment может быть:
 
 Допустим, есть pipeline на 3 такта:
 
+```verilog
 reg [7:0] s1, s2, out_data;  
 reg       v1, v2, out_valid;  
   
@@ -230,6 +231,7 @@ always @(posedge clk) begin
     out_data <= s2;  
     out_valid<= v2;  
 end
+```
 
 Здесь latency от `in_valid` до `out_valid` равна 3 тактам.
 
