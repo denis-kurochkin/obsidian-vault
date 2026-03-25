@@ -489,6 +489,7 @@ out <= sum + mul;
 
 Было:
 
+```verilog
 always @(posedge clk) begin  
     s1_data <= in_data + 1;  
     s2_data <= s1_data ^ 8'h5A;  
@@ -496,11 +497,13 @@ always @(posedge clk) begin
   
     out_valid <= in_valid;  
 end
+```
 
 Это ошибка: `out_valid` не задержан вместе с данными.
 
 Правильно:
 
+```verilog
 reg        v1, v2, v3;  
 reg [7:0]  s1_data, s2_data, out_data;  
   
@@ -516,6 +519,7 @@ always @(posedge clk) begin
 end  
   
 assign out_valid = v3;
+```
 
 Функционально это уже выровненный pipeline.
 
