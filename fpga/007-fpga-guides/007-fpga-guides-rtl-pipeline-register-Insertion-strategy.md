@@ -343,6 +343,7 @@ Control-path insertion особенно важен в streaming-интерфей
 
 Пусть есть такая стадия:
 
+```verilog
 out <= ((a + b) ^ mask) + sel_data;
 
 Если timing плохой, есть естественная идея разделить:
@@ -356,6 +357,7 @@ always @(posedge clk) begin
     xor_stage<= sum_ab ^ mask;  
     out_r    <= xor_stage + sel_data_d;  
 end
+```
 
 Но здесь нужно сразу заметить две вещи:
 
