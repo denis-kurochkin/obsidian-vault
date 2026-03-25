@@ -11,6 +11,8 @@
 	- [RTL Reset Consistency](007-fpga-guides-rtl-reset-consistency.md)
 	- [RTL No Unintended Latches](007-fpga-guides-rtl-no-unintended-latches.md)
 	- [RTL Deterministic Behavior](007-fpga-guides-rtl-deterministic-behavior.md)
+	
+- [Pipeline design basics](007-fpga-guides-rtl-coding-discipline.md)
 
 ## High-Speed/Interface Knolage
 
