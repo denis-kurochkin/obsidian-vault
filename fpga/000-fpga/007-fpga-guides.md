@@ -14,7 +14,7 @@
 	
 - [Pipeline design basics](007-fpga-guides-rtl-pipeline-design-basics.md)
 	- [Stage balancing](007-fpga-guides-rtl-pipeline-stage-balancing.md)
-	- [Stage balancing](007-fpga-guides-rtl-pipeline-stage-balancing.md)
+	- [Latency tracking](007-fpga-guides-rtl-pipeline-latency-tracking.md)
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
