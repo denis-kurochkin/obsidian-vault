@@ -16,6 +16,7 @@
 	- [Stage balancing](007-fpga-guides-rtl-pipeline-stage-balancing.md)
 	- [Latency tracking](007-fpga-guides-rtl-pipeline-latency-tracking.md)
 	- [Throughput vs Latency Tradeoff](007-fpga-guides-rtl-pipeline-throughput-vs-latency-tradeoff.md)
+	- [Throughput vs Latency Tradeoff](007-fpga-guides-rtl-pipeline-throughput-vs-latency-tradeoff.md)
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
