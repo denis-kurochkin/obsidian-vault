@@ -140,6 +140,7 @@ Timing-path обычно выглядит так:
 
 Обычно вместе с данными идёт `valid`:
 
+```verilog
 always @(posedge clk) begin  
     if (rst) begin  
         v1 <= 1'b0;  
@@ -156,6 +157,7 @@ always @(posedge clk) begin
         v2 <= v1;  
     end  
 end
+```
 
 Здесь `v1`, `v2` идут рядом с данными и показывают, какая стадия содержит валидный результат.
 
