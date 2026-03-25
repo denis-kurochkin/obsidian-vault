@@ -323,10 +323,13 @@ out <= (a+b+c+d+e+f+g+h) ^ mask;
 
 Было:
 
+```verilog
 out <= (((a + b) - c) ^ d) + e;
+```
 
 Стало:
 
+```verilog
 reg [W-1:0] s1, s2, s3, out;  
   
 always @(posedge clk) begin  
@@ -335,6 +338,7 @@ always @(posedge clk) begin
     s3  <= s2 ^ d;  
     out <= s3 + e;  
 end
+```
 
 Цена — latency.  
 Выгода — короче критический путь.
@@ -347,12 +351,14 @@ end
 
 Например:
 
+```verilog
 sum <= a + b;  
 mul <= c * d;
 
 а потом уже:
 
 out <= sum + mul;
+```
 
 Это обычно лучше, чем тащить всё последовательно.
 
