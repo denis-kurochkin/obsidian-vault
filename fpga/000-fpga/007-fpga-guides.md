@@ -26,7 +26,7 @@
 	- [FPGA Jitter Impact on Timing](007-fpga-guides-jitter-Impact-on-timing.md)
 	
 - [SerDes](007-fpga-guides-serdes.md)
-	- 
+	- [Line rate](007-fpga-guides-serdes-line-rate.md)
 
 ## FPGA/Prototyping
 
