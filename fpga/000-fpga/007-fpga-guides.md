@@ -24,6 +24,8 @@
 	- [FPGA Phase Alignment](007-fpga-guides-phase-alignment.md)
 	- [FPGA Clock Routing](007-fpga-guides-clock-routing.md)
 	- [FPGA Jitter Impact on Timing](007-fpga-guides-jitter-Impact-on-timing.md)
+	
+- [SerDes](007-fpga-guides-clocking-architecture.md)
 
 ## FPGA/Prototyping
 
