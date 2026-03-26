@@ -29,7 +29,7 @@
 	- [Line rate](007-fpga-guides-serdes-line-rate.md)
 	- [Encoding (8b/10b)](007-fpga-guides-serdes-encoding-8b-10b.md)
 	- [Reference Clock](007-fpga-guides-serdes-reference-clock.md)
-	- [Reference Clock](007-fpga-guides-serdes-reference-clock.md)
+	- [Lane Structure](007-fpga-guides-serdes-lane-structure.md)
 
 ## FPGA/Prototyping
 
