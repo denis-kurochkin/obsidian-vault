@@ -195,6 +195,7 @@
 
 Если смотреть на multi-lane link сверху, обычно структура выглядит так:
 
+```
 logical data stream  
    -> striping/distribution across lanes  
       -> lane 0  
@@ -205,6 +206,7 @@ logical data stream
    -> per-lane recovery/alignment  
    -> deskew/reassembly  
    -> logical data stream restored
+```
 
 То есть каждый lane физически работает отдельно, но на уровне link они должны снова стать единым интерфейсом.
 
