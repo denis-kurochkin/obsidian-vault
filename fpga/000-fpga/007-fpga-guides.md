@@ -25,7 +25,8 @@
 	- [FPGA Clock Routing](007-fpga-guides-clock-routing.md)
 	- [FPGA Jitter Impact on Timing](007-fpga-guides-jitter-Impact-on-timing.md)
 	
-- [SerDes](007-fpga-guides-clocking-architecture.md)
+- [SerDes](007-fpga-guides-serdes.md)
+	- 
 
 ## FPGA/Prototyping
 
