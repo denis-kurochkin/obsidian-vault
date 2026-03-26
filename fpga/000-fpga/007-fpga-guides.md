@@ -27,6 +27,7 @@
 	
 - [SerDes](007-fpga-guides-serdes.md)
 	- [Line rate](007-fpga-guides-serdes-line-rate.md)
+	- Encoding (8b/10b)
 
 ## FPGA/Prototyping
 
