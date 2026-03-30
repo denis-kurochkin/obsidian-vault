@@ -31,7 +31,8 @@
 	- [Reference Clock](007-fpga-guides-serdes-reference-clock.md)
 	- [Lane Structure](007-fpga-guides-serdes-lane-structure.md)
 	- [Signal Integrity Basics](007-fpga-guides-serdes-signal-integrity-basics.md)
-
+	
+* [DDR controller architecture]()
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
