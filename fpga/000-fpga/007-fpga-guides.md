@@ -32,7 +32,7 @@
 	- [Lane Structure](007-fpga-guides-serdes-lane-structure.md)
 	- [Signal Integrity Basics](007-fpga-guides-serdes-signal-integrity-basics.md)
 	
-* [DDR controller architecture]()
+* [DDR controller architecture](007-fpga-guides-ddr-controller-architecture.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
