@@ -33,7 +33,7 @@
 	- [Signal Integrity Basics](007-fpga-guides-serdes-signal-integrity-basics.md)
 	
 * [DDR controller architecture](007-fpga-guides-ddr-controller-architecture.md)
-	* 
+	* [Address mapping](007-fpga-guides-ddr-address mapping.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
