@@ -50,7 +50,9 @@ A=0,1,2,3,…A = 0, 1, 2, 3, \dotsA=0,1,2,3,…
 
 Точный набор зависит от типа памяти и ширины интерфейса, но логически адрес часто можно представить так:
 
+```
 Address=[Row∣Bank Group∣Bank∣Column∣Burst/Byte Offset]\text{Address} = [\text{Row} \mid \text{Bank Group} \mid \text{Bank} \mid \text{Column} \mid \text{Burst/Byte Offset}]Address=[Row∣Bank Group∣Bank∣Column∣Burst/Byte Offset]
+```
 
 ### Смысл полей
 
