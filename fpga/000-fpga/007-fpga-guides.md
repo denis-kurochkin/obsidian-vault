@@ -34,7 +34,7 @@
 	
 * [DDR controller architecture](007-fpga-guides-ddr-controller-architecture.md)
 	* [Address mapping](007-fpga-guides-ddr-address-mapping.md)
-	* [Burst behavior]()
+	* [Burst behavior](007-fpga-guides-ddr-burst-behavior.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
