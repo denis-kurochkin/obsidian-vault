@@ -79,7 +79,9 @@
 
 Полезно мыслить о latency как о сумме нескольких этапов.
 
+```
 Total latency=controller delay+queueing+bank/row state penalty+DDR timing+data transfer start delay\text{Total latency} = \text{controller delay} + \text{queueing} + \text{bank/row state penalty} + \text{DDR timing} + \text{data transfer start delay}Total latency=controller delay+queueing+bank/row state penalty+DDR timing+data transfer start delay
+```
 
 Ниже — содержательно по этапам.
 
