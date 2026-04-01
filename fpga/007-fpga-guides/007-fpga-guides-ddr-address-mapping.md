@@ -142,7 +142,9 @@ Address mapping почти всегда решает конфликт между
 
 Примерно так:
 
+```
 [Row∣Bank∣Column][\text{Row} \mid \text{Bank} \mid \text{Column}][Row∣Bank∣Column]
+```
 
 Это означает: младшие значащие биты адреса идут в column.
 
@@ -166,7 +168,9 @@ Address mapping почти всегда решает конфликт между
 
 Примерно так:
 
+```
 [Row∣Column High∣Bank∣Column Low][\text{Row} \mid \text{Column High} \mid \text{Bank} \mid \text{Column Low}][Row∣Column High∣Bank∣Column Low]
+```
 
 или даже через XOR/хэш.
 
