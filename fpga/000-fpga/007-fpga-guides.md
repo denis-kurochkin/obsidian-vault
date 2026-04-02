@@ -13,6 +13,7 @@
 	- [RTL Deterministic Behavior](007-fpga-guides-rtl-deterministic-behavior.md)
 	
 - [RTL flow control](007-fpga-guides-rtl-flow-control.md)
+	-[Valid/ready contract](007-fpga-guides-rtl-valid-ready-contract.md)
 	
 - [Pipeline design basics](007-fpga-guides-rtl-pipeline-design-basics.md)
 	- [Stage balancing](007-fpga-guides-rtl-pipeline-stage-balancing.md)
