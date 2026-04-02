@@ -17,6 +17,8 @@
 	- [Latency tracking](007-fpga-guides-rtl-pipeline-latency-tracking.md)
 	- [Throughput vs Latency Tradeoff](007-fpga-guides-rtl-pipeline-throughput-vs-latency-tradeoff.md)
 	- [Register Insertion Strategy](007-fpga-guides-rtl-pipeline-register-Insertion-strategy.md)
+	
+- [RTL flow control](007-fpga-guides-rtl-pipeline-design-basics.md)
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
