@@ -628,7 +628,7 @@ Valid/ready сам по себе не фиксирует latency между бл
 
 ### Передача считается состоявшейся только при:
 
-valid∧readyvalid \land readyvalid∧ready
+valid & ready
 
 Именно этот контракт делает поток:
 
