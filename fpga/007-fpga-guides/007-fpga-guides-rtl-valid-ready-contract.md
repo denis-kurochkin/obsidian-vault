@@ -491,7 +491,9 @@ Source предъявляет слово, sink пока не принимает.
 
 То есть событие:
 
-fire=valid∧readyfire = valid \land readyfire=valid∧ready
+```
+fire = valid & ready
+```
 
 часто стоит использовать как единственный триггер для:
 
