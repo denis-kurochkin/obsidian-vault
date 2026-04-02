@@ -94,7 +94,7 @@ $a→b→c→a$
 
 то после соединения этих двух блоков получается петля:
 
-valid↔readyvalid \leftrightarrow readyvalid↔ready
+$valid↔ready$
 
 Даже если каждый модуль по отдельности “выглядит разумно”, вместе они могут образовать combinational loop.
 
