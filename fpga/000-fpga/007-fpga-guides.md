@@ -16,6 +16,7 @@
 	- [Valid/ready contract](007-fpga-guides-rtl-valid-ready-contract.md)
 	- [Stall propagation](007-fpga-guides-rtl-stall-propagation.md)
 	- [Skid buffers](007-fpga-guides-rtl-skid-buffers.md)
+	- [Avoiding combinational loops](007-fpga-guides-rtl-avoiding-combinational-loops.md)
 	
 - [Pipeline design basics](007-fpga-guides-rtl-pipeline-design-basics.md)
 	- [Stage balancing](007-fpga-guides-rtl-pipeline-stage-balancing.md)
