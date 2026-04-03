@@ -57,6 +57,7 @@
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
 	- [Address space layout](007-fpga-guides-system-level-address-space-layout.md)
+	- [Memory-mapped I/O](007-fpga-guides-system-level-address-Memory-mapped I/O.md)
 
 
 ## Programming/Automation
