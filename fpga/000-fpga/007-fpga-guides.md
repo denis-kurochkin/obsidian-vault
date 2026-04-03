@@ -56,6 +56,7 @@
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
+	- [Address space layout](007-fpga-guides-system-level-address-space-layout.md)
 
 
 ## Programming/Automation
