@@ -55,6 +55,7 @@
 
 ## System-Level/SoC Awareness
 
+- [Address mapping](007-fpga-guides-tcl-address-mapping.md)
 
 
 ## Programming/Automation
