@@ -12,6 +12,8 @@
     - 19:00 - Go fo home
 - Evening 
     - 20:00 - At home
+        - Dinner
+        - Relax
         - 
     - 23:30 - Go to bed 
         - Planning 
