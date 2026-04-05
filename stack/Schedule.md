@@ -14,7 +14,7 @@
     - 20:00 - At home
         - Dinner
         - Relax
-        - 
+    - 22:00 - Look at plan 
     - 23:30 - Go to bed 
         - Planning 
         - English word game
