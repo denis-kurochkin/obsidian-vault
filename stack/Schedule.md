@@ -8,5 +8,7 @@
     - 10:00 - On Work
     - 19:00 - Go fo home
 - Evening 
-    - 23
+    - 23:30 - Go to bed 
+        
+        - English word game
     - 00:00 - Sleep 
