@@ -1,6 +1,6 @@
 - Morning
-    - 09:00 - Get up 
+    - 08:30 - Get up 
 - Day
-    - 10:00
-    - 19:00
+- 
+- Evening 
 - 
