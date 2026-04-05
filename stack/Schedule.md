@@ -3,9 +3,10 @@
         - English word game
         - Physical ex
         - Breakfast 
-    - 09:30 - Go 
+    - 09:30 - Go to Work
 - Day
     - 10:00 - On Work
-    - 19:00 - Go home
+    - 19:00 - Go fo home
 - Evening 
+    - 23
     - 00:00 - Sleep 
