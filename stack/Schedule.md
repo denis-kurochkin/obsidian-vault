@@ -1,6 +1,7 @@
 - Morning
     - 08:30 - Get up 
 - Day
-    - 10:00 - 
+    - 10:00 - On Work
+    - 19:00 - Go home
 - Evening 
     - 00:00 - Sleep 
