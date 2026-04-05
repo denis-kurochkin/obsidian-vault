@@ -1,4 +1,5 @@
 - Morning
-    - 9:00 - get up 
+    - 09:00 - Get up 
 - Day
-    - 
+    - 10:00 - On Work
+     
