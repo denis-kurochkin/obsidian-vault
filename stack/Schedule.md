@@ -7,7 +7,8 @@
 - Day
     - 10:00 - On Work
          - 1 YouTube video
-         - 1 
+         - 1 To see news
+         - Look at plan list 
     - 19:00 - Go fo home
 - Evening 
     - 23:30 - Go to bed 
