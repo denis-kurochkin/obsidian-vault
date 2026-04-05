@@ -1,5 +1,8 @@
 - Morning
     - 08:30 - Get up 
+        - English word game
+        - phy
+        - 
 - Day
     - 10:00 - On Work
     - 19:00 - Go home
