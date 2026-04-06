@@ -49,7 +49,7 @@
 	- [Calibration phases](007-fpga-guides-ddr-training-calibration-phases.md)
 	- [Delay alignment](007-fpga-guides-ddr-training-delay-alignment.md)
 	- [Failure symptoms](007-fpga-guides-ddr-training-failure-symptoms.md)
-	- [Timing sensitivity]()
+	- [Timing sensitivity](007-fpga-guides-ddr-training-timing-sensitivity.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
