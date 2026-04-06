@@ -9,6 +9,7 @@
          - 1 YouTube video
          - 1 To see news
          - Look at plan list 
+         - Sort data
     - 19:00 - Go fo home
 - Evening 
     - 20:00 - At home
