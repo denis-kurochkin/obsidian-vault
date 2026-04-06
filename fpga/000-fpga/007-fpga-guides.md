@@ -47,6 +47,7 @@
 	
 - [DDR training](007-fpga-guides-ddr-training.md)
 	- [Calibration phases](007-fpga-guides-ddr-training-calibration-phases.md)
+	- 
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
