@@ -58,8 +58,8 @@
 	- [TCL constraint injection](007-fpga-guides-tcl-constraint-injection.md)
 	- [TCL project reproducibility](007-fpga-guides-tcl-project-reproducibility.md)
 	- [TCL automating builds](007-fpga-guides-tcl-automating-builds.md)
-
-- I
+	
+- [ILA Debug](007-fpga-guides-ila-debug.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
