@@ -61,6 +61,7 @@
 	
 - [ILA Debug](007-fpga-guides-ila-debug.md)
 	- [Probe selection](007-fpga-guides-ila-probe-selection.md)
+	- [Trigger strategy](007-fpga-guides-ila-trigger-strategy.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
