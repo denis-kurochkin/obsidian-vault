@@ -217,7 +217,6 @@ YYYY-MM-DD_topic_site-name.pdf
 2026-03-21_axi-handshake_zipcpu.pdf
 ```
 ---
-
 ## Projects_Artifacts
 
 Здесь лучше всего работает структура:
@@ -232,3 +231,6 @@ YYYY-MM-DD_project_artifact-description.ext
 2026-02-20_rk3568-server_render-top.png  
 2026-02-28_rk3568-server_bom-export.xlsx
 ```
+---
+
+До
