@@ -125,21 +125,19 @@ YYYY-MM-DD_document_counterparty_optional.ext
 2026-03_bank-statement_commerzbank.pdf  
 2026-Q1_tax-documents.pdf
 ```
-
 ---
-
 ## Health
 
 Формат:
-
+```
 YYYY-MM-DD_document_clinic-or-topic.ext
-
+```
 Примеры:
-
+```
 2026-03-18_blood-test_labcorp.pdf  
 2026-03-21_ultrasound_abdomen.pdf  
 2026-03-25_prescription_ursosan.pdf
-
+```
 ---
 
 ## Work
