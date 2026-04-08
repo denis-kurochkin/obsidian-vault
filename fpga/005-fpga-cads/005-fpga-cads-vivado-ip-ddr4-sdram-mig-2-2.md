@@ -18,4 +18,5 @@
 	- *ddr4_model.sv*
 	- *ddr4_controller_microblaze_mcs_0.sv*
 	- *glbl.v*
+	- *interface.sv*
 	- 
