@@ -31,3 +31,16 @@
 ---
 ### L2  -Denis
 
+```
+01_Personal
+│
+├── Identity
+├── Finance
+├── Health
+├── Work
+├── Education
+├── Books
+├── Knowledge
+├── Projects_Artifacts
+```
+
