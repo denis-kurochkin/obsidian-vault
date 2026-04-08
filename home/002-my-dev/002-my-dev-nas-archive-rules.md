@@ -121,9 +121,10 @@ YYYY-MM-DD_document_counterparty_optional.ext
 2026-01-10_rent-payment_apartment-berlin.pdf
 ```
 Если это серия однотипных файлов, можно использовать период:
-
+```
 2026-03_bank-statement_commerzbank.pdf  
 2026-Q1_tax-documents.pdf
+```
 
 ---
 
