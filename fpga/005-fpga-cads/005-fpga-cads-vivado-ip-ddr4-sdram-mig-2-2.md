@@ -17,4 +17,5 @@
 - Найти папку *.../Imports* в каталоге проекта *Example* и подключить к проекту следующие файлы:
 	- *ddr4_model.sv*
 	- *ddr4_controller_microblaze_mcs_0.sv*
-	- **
+	- *glbl.v*
+	- 
