@@ -198,36 +198,37 @@ amd_axi-reference-guide.pdf
 Здесь лучше использовать 2 шаблона.
 
 ### Для статей / PDF / материалов:
-
+```
 YYYY-MM-DD_topic_source.ext
-
+```
 Примеры:
-
+```
 2026-03-02_pcie-overview_intel.pdf  
 2026-03-10_ddr4-training_material.pdf  
 2026-03-14_timing-closure_notes.pdf
-
+```
 ### Для сохранённых веб-материалов:
-
+```
 YYYY-MM-DD_topic_site-name.pdf
-
+```
 Примеры:
-
+```
 2026-03-18_cdc-design_verilogpro.pdf  
 2026-03-21_axi-handshake_zipcpu.pdf
-
+```
 ---
 
 ## Projects_Artifacts
 
 Здесь лучше всего работает структура:
-
+```
 YYYY-MM-DD_project_artifact-description.ext
-
+```
 Примеры:
-
+```
 2026-02-10_artix-board_bringup-report.pdf  
 2026-02-14_artix-board_timing-summary.pdf  
 2026-02-16_artix-board_bitstream_v1.bit  
 2026-02-20_rk3568-server_render-top.png  
 2026-02-28_rk3568-server_bom-export.xlsx
+```
