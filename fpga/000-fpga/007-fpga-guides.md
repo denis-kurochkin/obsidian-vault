@@ -25,7 +25,7 @@
 	- [Register Insertion Strategy](007-fpga-guides-rtl-pipeline-register-Insertion-strategy.md)
 	
 - [Combinational depth control](007-fpga-guides-rtl-combinational-depth-control.md)
-	- [Сritical path reduction]()
+	- [Сritical path reduction](007-fpga-guides-rtl-сritical-path-reduction.md)
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
