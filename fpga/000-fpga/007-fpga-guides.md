@@ -27,6 +27,7 @@
 - [Combinational depth control](007-fpga-guides-rtl-combinational-depth-control.md)
 	- [Сritical path reduction](007-fpga-guides-rtl-сritical-path-reduction.md)
 	- [Logic splitting](007-fpga-guides-rtl-logic-splitting.md)
+	- []()
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
