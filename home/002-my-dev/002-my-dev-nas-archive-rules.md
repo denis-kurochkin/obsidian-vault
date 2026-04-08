@@ -235,10 +235,10 @@ YYYY-MM-DD_project_artifact-description.ext
 
 ## 1. Общий формат
 
+```
 YYYY-MM-DD_type_subject.ext
-
+```
 ---
-
 ## 2. Дата
 
 - формат: `YYYY-MM-DD`
