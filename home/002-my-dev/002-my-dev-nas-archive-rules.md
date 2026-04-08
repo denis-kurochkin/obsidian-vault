@@ -145,46 +145,44 @@ YYYY-MM-DD_document_clinic-or-topic.ext
 Так как нужно хранить **всю профессиональную историю**, здесь нужен чуть более строгий стиль.
 
 Формат:
-
+```
 YYYY-MM-DD_document_company_or_role.ext
-
+```
 Примеры:
-
+```
 2026-04-01_resume_fpga-prototyping-engineer.pdf  
 2026-03-20_cover-letter_amd.pdf  
 2025-11-12_employment-contract_startup-name.pdf  
 2026-02-14_reference-letter_company-name.pdf  
 2026-03-28_linkedin-profile-export.pdf
-
+```
 ---
-
 ## Education
 
 Формат:
-
+```
 YYYY-MM-DD_institution_subject_document.ext
-
+```
 Примеры:
-
+```
 2020-07-15_ngtu_master-diploma.pdf  
 2024-06-01_course_vivado-tcl_certificate.pdf  
 2023-12-20_university_transcript.pdf
-
+```
 ---
-
 ## Books
 
 Для книг дата обычно не нужна.  
 Лучше такой формат:
-
+```
 author_title_optional-topic.ext
-
+```
 Примеры:
-
+```
 harris_digital-design-and-computer-architecture.pdf  
 weste_cmos-vlsi-design.pdf  
 patterson_computer-organization-and-design.pdf
-
+```
 Если авторов несколько:
 
 harris-harris_digital-design-and-computer-architecture.pdf
