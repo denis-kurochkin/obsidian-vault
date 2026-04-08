@@ -2,4 +2,4 @@
 
 ### Комментарии к конфигурации IP модуля
 
-- Параметр *Memory Device Interface Speed* прямо связан с частотой 
+- Параметр *Memory Device Interface Speed* прямо связан с частотой тактирования модуля и AXI.
