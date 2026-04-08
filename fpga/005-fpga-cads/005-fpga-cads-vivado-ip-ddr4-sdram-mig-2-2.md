@@ -22,3 +22,6 @@
 	- *ddr4_sdram_model_wrapper.sv*
 	- *arch_package.sv*
 	- *proj_package.sv*
+	- *temp_mem.txt*
+	- *temp_second_mem.txt*
+- Убедиться что модель работает.
