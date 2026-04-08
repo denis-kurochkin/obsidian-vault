@@ -8,5 +8,7 @@
 
 [vivado shell into explorer](005-fpga-cads-vivado-shell-into-explorer.md)
 
--
+IP
+- Aurora64b/66b
+- 
 ---
