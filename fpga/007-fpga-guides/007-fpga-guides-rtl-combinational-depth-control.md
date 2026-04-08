@@ -1,4 +1,4 @@
-## Combinational depth control в FPGA Digital Design/RTL: небольшая заметка
+## Combinational depth control в FPGA Digital Design/RTL:
 
 **Combinational depth control** — это управление длиной и сложностью комбинаторного пути между регистрами.  
 Проще говоря: сколько логики сигнал проходит **за один такт** от выхода одного регистра до входа следующего.
