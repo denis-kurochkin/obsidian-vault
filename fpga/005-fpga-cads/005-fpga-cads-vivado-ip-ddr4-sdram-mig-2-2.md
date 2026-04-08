@@ -20,4 +20,5 @@
 	- *glbl.v*
 	- *interface.sv*
 	- *ddr4_sdram_model_wrapper.sv*
-	- 
+	- *arch_package.sv*
+	- *proj_package.sv*
