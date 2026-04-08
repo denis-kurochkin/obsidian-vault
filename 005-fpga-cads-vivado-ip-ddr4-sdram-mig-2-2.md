@@ -3,4 +3,5 @@
 ### Комментарии к конфигурации IP модуля
 
 - Параметр *Memory Device Interface Speed* прямо связан с частотой тактирования модуля и AXI.
-- Для параметра *Data Mask and DBI* ytj,[jl]
+- Для параметра *Data Mask and DBI* необходимо выбрать значение **DM DBI RD**
+- 
