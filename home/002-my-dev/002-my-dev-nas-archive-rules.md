@@ -100,28 +100,26 @@ YYYY-MM-DD_document_subject.ext
 2025-09-03_residence-permit_back.jpg  
 2026-01-12_health-insurance-policy.pdf
 ```
-
 Если документ без даты выдачи, можно без даты в начале:
-
+```
 passport-scan.pdf
-
-Но для архива я всё же предпочёл бы ставить дату сканирования или дату документа.
+```
+Но для архива лучше ставить дату сканирования или дату документа.
 
 ---
-
 ## Finance
 
 Формат:
-
+```
 YYYY-MM-DD_document_counterparty_optional.ext
-
+```
 Примеры:
-
+```
 2026-02-01_salary_company-name.pdf  
 2026-03-15_invoice_pcbway.pdf  
 2025-12-31_tax-return_germany.pdf  
 2026-01-10_rent-payment_apartment-berlin.pdf
-
+```
 Если это серия однотипных файлов, можно использовать период:
 
 2026-03_bank-statement_commerzbank.pdf  
