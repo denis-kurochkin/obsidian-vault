@@ -10,5 +10,5 @@
 
 IP
 - Aurora64b/66b
-- 
+- [DDR4 SDRAM (MIG) (2.2)](005-fpga-cads-vivado-ip-ddr4.md)
 ---
