@@ -256,11 +256,10 @@ YYYY-MM-DD_type_subject.ext
 
 - между блоками → `_`
 - внутри слов → `-`
-
+```
 2026-04-06_tax-return_germany.pdf
-
+```
 ---
-
 ## 4. Регистр и символы
 
 - только `lowercase`
@@ -268,39 +267,32 @@ YYYY-MM-DD_type_subject.ext
 - только латиница
 
 ---
-
 ## 5. Структура имени
 
 [date]_[type]_[subject]_[optional]
 
 Примеры:
-
+```
 2026-04-01_resume_fpga-engineer.pdf  
 2026-03-15_invoice_pcbway.pdf  
 2026-02-10_artix-board_timing-report.pdf
-
+```
 ---
-
 ## 6. Версии
 
 - только если нужно:
-
 _v1, _v2, _v3
 
 - финальный файл:
-
 без версии
 
 ---
-
 ## 7. Без мусорных слов
 
 ❌ запрещено:
-
 final, new, last, real-final
 
 ---
-
 ## 8. Книги и справочники
 
 без даты:
