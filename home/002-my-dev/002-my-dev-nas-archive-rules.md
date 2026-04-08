@@ -184,19 +184,17 @@ weste_cmos-vlsi-design.pdf
 patterson_computer-organization-and-design.pdf
 ```
 Если авторов несколько:
-
+```
 harris-harris_digital-design-and-computer-architecture.pdf
-
+```
 Если автора нет или это документация:
-
+```
 xilinx_ug903_using-constraints.pdf  
 amd_axi-reference-guide.pdf
-
+```
 ---
-
 ## Knowledge
 
-Это самая сложная категория.  
 Здесь лучше использовать 2 шаблона.
 
 ### Для статей / PDF / материалов:
