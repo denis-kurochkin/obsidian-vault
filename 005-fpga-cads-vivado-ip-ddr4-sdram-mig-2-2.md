@@ -2,4 +2,4 @@
 
 ### Комментарии к конфигурации IP модуля
 
-- Параметр *Memory *
+- Параметр [Memory Device Interface Speed]() 
