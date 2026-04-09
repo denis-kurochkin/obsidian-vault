@@ -87,4 +87,4 @@
 - [Basic scripting for build automation](007-fpga-guides-basic-scripting-for-build-automation.md)
 	- [Scripted runs](007-fpga-guides-scripted-runs.md)
 	- [Build reproducibility](007-fpga-guides-build-reproducibility.md)
-	- [Build reproducibility](007-fpga-guides-build-reproducibility.md)
+	- [Automation of regression](007-fpga-guides-automation-of-regression.md)
