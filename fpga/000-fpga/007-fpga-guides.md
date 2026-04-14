@@ -78,6 +78,7 @@
 	
 - [Clock domain strategy](007-fpga-guides-system-level-clock-domain-strategy.md)
 	- [Domain partitioning](007-fpga-guides-system-level-cds-domain-partitioning.md)
+	- [Crossing points planning](007-fpga-guides-system-level-cds-domain-partitioning.md)
 
 
 ## Programming/Automation
