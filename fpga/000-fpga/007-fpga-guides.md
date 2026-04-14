@@ -76,7 +76,7 @@
 	- [Memory-mapped I/O](007-fpga-guides-system-level-address-memory-mapped-I-O.md)
 	- [Alignment and decoding](007-fpga-guides-system-level-address-alignment-and-decoding.md)
 	
-- [Address mapping](007-fpga-guides-system-level-address-mapping.md)
+- [Clock domain strategy](007-fpga-guides-system-level-clock-domain-strategy.md)
 
 
 ## Programming/Automation
