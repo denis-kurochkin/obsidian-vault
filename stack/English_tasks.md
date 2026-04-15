@@ -16,3 +16,4 @@ setup time — data stable before clock edge
 therefore — поэтому
 
 ---
+26.04.16
