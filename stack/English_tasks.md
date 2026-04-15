@@ -13,4 +13,6 @@ Example
 debug — fix issues in design
 latency — delay before response
 setup time — data stable before clock edge
+therefore — поэтому
 
+---
