@@ -4,3 +4,7 @@
 4. (15) Writing
 ---
 Quizlet 
+1. Verbs (actions)
+Concepts (engineering)
+Domain (FPGA)
+Glue (связки)
