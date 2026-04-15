@@ -3,8 +3,8 @@
 3. (10) Quizlet
 4. (15) Writing
 ---
-Quizlet 
+Quizlet (40 words per vacebu)
 1. Verbs (actions)
-Concepts (engineering)
-Domain (FPGA)
-Glue (связки)
+2. Concepts (engineering)
+3. Domain (FPGA)
+4. Glue (связки)
