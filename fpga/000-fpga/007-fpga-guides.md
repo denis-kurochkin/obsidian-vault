@@ -73,7 +73,8 @@
 - [Transceiver Configuration](007-fpga-guides-transceiver-configuration.md)
 	- [Reference clock setup](007-fpga-guides-transceiver-reference-clock-setup.md)
 	- [Line rate config](007-fpga-guides-transceiver-line-rate-config.md)
-	- [Reset sequence](007-fpga-guides-transceiver-line-reset-sequence.md)
+	- [Reset sequence](007-fpga-guides-transceiver-reset-sequence.md)
+	- [Link debug](007-fpga-guides-transceiver-link-debug.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
