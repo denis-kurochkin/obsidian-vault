@@ -70,7 +70,7 @@
 	- [Hypothesis-driven debug](007-fpga-guides-ila-hypothesis-driven-debug.md)
 	- [Signal visibility limits](007-fpga-guides-ila-signal-visibility-limits.md)
 	
-- [](007-fpga-guides-ila-debug.md)
+- [](007-fpga-guides-transceiver-configuration.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
