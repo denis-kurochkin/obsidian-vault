@@ -71,7 +71,7 @@
 	- [Signal visibility limits](007-fpga-guides-ila-signal-visibility-limits.md)
 	
 - [Transceiver Configuration](007-fpga-guides-transceiver-configuration.md)
-	- [Transceiver Configuration](007-fpga-guides-transceiver-configuration.md)
+	- [Reference clock setup](007-fpga-guides-transceiver-reference-clock-setup.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
