@@ -32,6 +32,7 @@
 	
 - [Backpressure propagation](007-fpga-guides-rtl-backpressure-propagation.md)
 	- [Stall chain analysis](007-fpga-guides-rtl-stall-chain-analysis.md)
+	- [Stall chain analysis](007-fpga-guides-rtl-stall-chain-analysis.md)
 
 ## High-Speed/Interface Knolage
 
