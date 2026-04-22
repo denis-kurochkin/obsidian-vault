@@ -1,0 +1,77 @@
+## System-level propagation effects
+
+**System-level propagation effects** в контексте FPGA/Vivado и **Digital Design/RTL** — это последствия, которые возникают не в одном локальном block, а во всей системе, когда один **stall**, одно падение `ready`, одно заполнение **FIFO** или один узкий участок **datapath** начинают менять поведение соседних и удаленных частей тракта. Иными словами, это тема не про сам факт **backpressure**, а про то, как локальная остановка превращается в изменение **latency**, **throughput**, **buffer occupancy**, **arbitration behavior**, packet movement и даже риска **deadlock** на уровне всей architecture. В AXI-style handshake transfer происходит только когда `VALID` и `READY` одновременно asserted, при этом source не должен ждать `READY` перед `VALID`, а combinational paths между input и output signals на интерфейсе запрещены — уже из этих базовых правил видно, что любое распространение stall нужно мыслить системно, а не как локальный wire-level detail.
+
+### Почему это отдельная полноценная подтема
+
+Внутри блока про **Backpressure propagation** тема **system-level propagation effects** выделяется отдельно потому, что корректный local handshake еще не гарантирует хорошее global behavior. Один блок может быть protocol-correct, но в составе длинной цепочки его stall policy начинает влиять на внешний **source**, на downstream **consumer**, на crossbar arbitration и на требования к buffering в других подсистемах. AMD прямо показывает это на нескольких уровнях: в **CORDIC** backpressure от output eventually приводит к de-assertion входных `TREADY`, в **AXI Data FIFO** buffering используется для повышения throughput и tolerance к arbitration latency, а в **AXI4-Stream Interconnect** buffering stages и built-in backpressure уже прямо влияют на latency и performance degradation при ограниченной bandwidth.
+
+### Что именно здесь означает propagation
+
+В этой теме слово **propagation** полезно понимать шире, чем просто “сигнал пошел назад”. На system level распространяется не только control signal, но и его последствия: где-то растет occupancy буфера, где-то меняется burst pattern, где-то добавляются extra cycles latency, где-то block начинает хуже делить ресурс с соседями, а где-то whole pipeline переходит из режима steady flow в режим periodic stop-and-go. В **CORDIC** это видно особенно наглядно: если `m_axis_dout_tready` низкий, данные накапливаются во внутреннем output buffer, затем core останавливает дальнейшие operations, потом перестают off-load’иться input buffers, они заполняются, и их `TREADY` de-asserts. То есть локальный stall на выходе превращается в upstream effect на входах — уже не как единичный signal event, а как системная cascade через внутренние очереди core.
+
+### Первый системный эффект: изменение reach of backpressure
+
+Самый базовый **system-level effect** — это изменение глубины, на которую stall реально доходит назад. Если между blocks почти нет buffering, один slow consumer быстро тормозит весь upstream path. Если между ними стоят **register slices**, small FIFOs или deeper **packet FIFOs**, propagation становится более мягкой: ближайшие stage еще продолжают работать, пока не исчерпают local storage. В AMD **AXI4-Stream interconnect** buffering уже встроено в switching fabric: для разных направлений crossing the switch latency составляет 3–4 cycles, а buffering — 6–8 entries, то есть system сама по себе уже содержит propagation-damping points. Это означает, что эффект от одного stall определяется не только handshake logic, но и количеством buffering layers на пути.
+
+### Второй эффект: накопление latency
+
+Когда backpressure проходит через систему, почти всегда меняется не только возможность принять новые данные, но и общая **latency profile**. Каждая buffering point добавляет storage и, как следствие, potential delay до наблюдаемой реакции на stall или до восстановления full-rate transfer. AMD прямо пишет, что в AIE-ML AXI4-Stream interconnect local master ports имеют one register slice with 1-cycle latency and a 2-deep FIFO, а crossing the switch дает суммарно 3–4 cycles latency и 6–8 entries buffering depending on route. Это хороший пример того, что propagation effects нужно оценивать не только как stop/go behavior, но и как изменение end-to-end latency even before arbitration overhead.
+
+### Третий эффект: throughput degradation вместо мгновенного отказа
+
+На system level stall не всегда означает “все остановилось”. Очень часто он сначала проявляется как degradation of sustained **throughput**. AMD для **AXI Data FIFO** прямо пишет, что buffering может улучшать throughput, особенно когда rate на SI или MI отличается от rate of the AXI Crossbar из-за **data-width conversion** или **clock-rate conversion**, а также позволяет real-time devices tolerate transaction arbitration latency. С обратной стороны это означает, что без достаточного buffering тот же самый локальный stall или arbitration delay начинает раньше распространяться назад и убивает effective throughput целой подсистемы.
+
+### Четвертый эффект: burst reshaping и transaction pacing
+
+Очень важный **system-level propagation effect** — это изменение формы traffic, а не только его средней скорости. AMD в **AXI Data FIFO** описывает **Packet FIFO mode**, где write transaction по `AW` задерживается до тех пор, пока не будет принят весь write burst до `WLAST`, а read transaction по `AR` задерживается, пока в FIFO не появится достаточно vacancy для полного burst. Это сделано именно для того, чтобы avoid full/empty stalls in the middle of bursts. То есть buffering на системном уровне не только absorbing stall, но и reshaping traffic into safer packet- or burst-sized chunks. В результате propagation effects становятся менее хаотичными, но цена — дополнительная latency и более позднее начало transaction issuance.
+
+### Пятый эффект: изменение требований к upstream producer
+
+Иногда downstream block применяет backpressure не сразу, а только near buffer saturation. Это сильно меняет поведение всего пути. В **AXI4-Stream to Video Out** AMD прямо пишет, что core принимает AXI4-Stream data as soon as it is available, то есть не применяет backpressure до тех пор, пока FIFO почти full; если sustained input rate меньше video pixel clock, требуется additional buffering, чтобы output stream оставался continuous. Это отличный пример system-level propagation effect: local policy “не тормозить сразу” переносит требования по устойчивому rate и размеру буфера вверх по системе. То есть propagation выражается не только в `ready=0`, но и в том, сколько data upstream must pre-accumulate, чтобы downstream timing discipline вообще могла существовать.
+
+### Шестой эффект: влияние на arbitration и fairness
+
+Когда несколько flows делят общий switch, crossbar или memory port, локальный stall одного направления начинает менять fairness для других направлений. В packet-switched interconnect AMD прямо отмечает, что there is a potential for resource contention with other packet-switched streams, поэтому deterministic latency уже не гарантируется; если bandwidth limited, built-in backpressure causes performance degradation. Это означает, что propagation effects на system level всегда включают **resource-sharing side**: один flow может не просто замедлиться сам, а косвенно изменить service pattern других flows за счет contention, задержек arbitration и occupancy shared buffers.
+
+### Седьмой эффект: рост buffer occupancy как самостоятельная динамика
+
+Один из самых важных системных эффектов — изменение **occupancy wave** по цепочке буферов. В локальной логике кажется, что stall — это просто `ready` down. На system level это обычно значит, что сначала заполняется ближайший output buffer, потом intermediate FIFO, потом input-side buffers, и только затем upstream interface видит реальную остановку. AMD **CORDIC** буквально описывает именно такую escalation: output not off-loaded → output buffer nearly full → core stops operations → input buffers stop off-loading → input buffers fill → input `TREADY` de-asserts. Это textbook example того, что propagation надо анализировать как динамику очередей, а не только как instantaneous control condition.
+
+### Восьмой эффект: packet semantics и sideband integrity
+
+На уровне whole system stall влияет не только на payload words, но и на packet boundaries, burst semantics и sideband movement. AXI handshake rules требуют, чтобы source держал information stable until the transfer occurs; в потоковом контексте это относится не только к `TDATA`, но и к сопутствующим fields. AMD **CORDIC** отдельно пишет, что core может convey `TLAST` and `TUSER` with the same latency as `TDATA`, чтобы упростить использование внутри packetized stream system. Это хороший indicator того, что propagation effects нужно оценивать и по packet semantics: если stall reshapes traffic, metadata must stay aligned with payload across all buffering points.
+
+### Девятый эффект: timing consequences в control path
+
+Очень частый **system-level effect** — локальный stall превращается в global **timing problem**. Arm AXI spec требует, чтобы на master and slave interfaces не было combinational paths between input and output signals. AMD, со своей стороны, рекомендует **AXI Register Slice** как средство breaking critical timing paths and achieving higher clock frequency, а **AXI Data FIFO** — как средство buffering and higher throughput. Вместе эти факты дают очень практичную картину: stall/backpressure path — это не только functional control path, но и кандидат в critical path, особенно когда system растет и backward dependency начинает проходить через много stages и shared resources.
+
+### Десятый эффект: изменение архитектурных границ между local и global behavior
+
+Когда в design появляются **register slices**, **Data FIFOs** и packet FIFOs, меняется сама граница между local и system-level behavior. Локально каждый block по-прежнему видит обычный handshake. Но на system level именно эти buffering elements определяют, где propagation останавливается immediately, где задерживается на несколько cycles, а где превращается в более плавное снижение throughput. AMD для AXI Interconnect прямо говорит, что Data FIFO можно размещать before or after the Crossbar, or both, depending on topology, а Register Slice можно вставлять на selected pathways to break timing paths. Это значит, что propagation effects не просто “случаются” — architecture actively shapes them placement’ом buffering and pipelining points.
+
+### Одиннадцатый эффект: risk of performance loss and deadlock from channel sizing
+
+Если system содержит cycles, parallel tasks или rate mismatch, propagation effects начинают зависеть уже от **channel sizing**. В Vitis tutorial AMD прямо пишет, что due to the dynamic nature of dataflow optimization and different execution rates, poorly sized dataflow channels can cause loss of performance and/or deadlock. Хотя этот guidance дан для DATAFLOW context, architectural lesson полностью переносится на RTL: на system level недостаточная глубина канала — это не только “мало buffer”, а potential trigger для unwanted propagation, starvation и non-progressing states. То есть channel depth становится частью correctness model, а не только performance tuning.
+
+### Почему эта тема особенно важна в FPGA
+
+В FPGA подобные propagation effects проявляются острее, потому что physical implementation напрямую чувствительна к длинным control dependencies, fanout и placement spread. Один block с хорошим local handshake может в составе большой системы породить длинный backward control cone, который уже трудно закрывать по timing. Именно поэтому AMD docs так часто предлагают architectural means — **register slices**, FIFOs, packet FIFOs — вместо попытки просто “почистить RTL выражение”. На system level buffering и pipelining становятся не workaround, а частью intended behavior: они одновременно меняют propagation, latency, throughput и closure characteristics.
+
+### Как правильно анализировать system-level propagation effects
+
+Хороший анализ обычно начинается не с одного waveform, а с четырех карт системы. Первая — **rate map**: какие blocks producer-like, какие consumer-like, где есть conversion of width or clock. Вторая — **buffer map**: где стоят FIFOs, register slices, packet FIFOs и какая у них глубина. Третья — **dependency map**: какие `ready/stall/full` conditions реально влияют на какие upstream decisions. Четвертая — **resource map**: где есть arbitration или shared path. Такой подход хорошо соответствует тому, как AMD описывает buffering and latency inside interconnects, throughput benefit of Data FIFO under conversion/arbitration, и performance/deadlock sensitivity to channel sizing.
+
+### Что обычно оказывается хорошим architectural решением
+
+Обычно healthy system-level result выглядит так: local stage contracts остаются простыми; long propagation chains intentionally broken by **register slices** or small buffers; rate mismatch закрывается **Data FIFO** or packet-buffering policy; packet semantics проходят через stall without losing alignment; arbitration hotspots не оставляются entirely “на удачу”; а places, где deterministic latency невозможна из-за contention, явно распознаются как such. AMD docs на разных примерах показывают именно такую общую линию: buffering points задают latency and backpressure behavior, packet mode avoids mid-burst stalls, register slices break critical paths, а insufficiently sized channels уже становятся performance/deadlock problem.
+
+### Типичные ошибки
+
+Первая типичная ошибка — думать, что backpressure effect локален и закончится на ближайшем интерфейсе. **CORDIC** показывает противоположное: output-side stall eventually de-asserts input `TREADY`. Вторая ошибка — считать buffering purely performance feature; AMD прямо показывает, что он меняет throughput, arbitration tolerance и burst issuance policy. Третья — смотреть только на average bandwidth и не учитывать latency, occupancy and contention. Четвертая — считать, что once local handshake is correct, whole system automatically safe; Arm handshake rules задают только baseline, а system-level propagation дальше уже определяется buffering, placement and scheduling choices. Пятая — недооценивать channel depth: AMD прямо связывает poor sizing с performance loss and/or deadlock.
+
+### Практический итог
+
+**System-level propagation effects** — это полноценная подтема внутри блока **Backpressure propagation**, потому что она отвечает не на вопрос “есть ли stall”, а на гораздо более важный вопрос: **что именно начинает меняться во всей системе, когда stall или backpressure появляется в одном месте**. По официальным материалам Arm и AMD видно, что это влияние затрагивает handshake discipline, latency, throughput, buffering, arbitration tolerance, packet/burst behavior, timing closure и risk of deadlock under poor sizing. Поэтому зрелый RTL design должен проектировать не только local `ready/valid`, но и весь путь распространения последствий через buffers, converters, shared resources и reset-free steady-state operation.
+
+Если сказать совсем коротко: **system-level propagation effects** — это искусство видеть в одном `ready=0` не локальную остановку, а начало системной перестройки traffic behavior. И чем раньше эта перестройка становится явной в architecture, тем легче сделать design одновременно predictable, high-throughput и timing-friendly.
