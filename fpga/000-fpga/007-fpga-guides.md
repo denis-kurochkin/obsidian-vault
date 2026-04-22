@@ -29,7 +29,7 @@
 	- [Logic splitting](007-fpga-guides-rtl-logic-splitting.md)
 	- [Retiming awareness](007-fpga-guides-rtl-retiming-awareness.md)
 	- [Fanout management](007-fpga-guides-rtl-fanout-management.md)
-
+- [Backpressure propagation](007-fpga-guides-rtl-backpressure-propagation.md)
 
 ## High-Speed/Interface Knolage
 
