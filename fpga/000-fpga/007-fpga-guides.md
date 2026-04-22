@@ -33,7 +33,7 @@
 - [Backpressure propagation](007-fpga-guides-rtl-backpressure-propagation.md)
 	- [Stall chain analysis](007-fpga-guides-rtl-stall-chain-analysis.md)
 	- [Deadlock scenarios](007-fpga-guides-rtl-deadlock-scenarios.md)
-	- [System-level propagation effects](007-fpga-guides-rtl-system-level propagation effects.md)
+	- [System-level propagation effects](007-fpga-guides-rtl-system-level-propagation-effects.md)
 
 ## High-Speed/Interface Knolage
 
