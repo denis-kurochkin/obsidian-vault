@@ -31,7 +31,7 @@
 	- [Fanout management](007-fpga-guides-rtl-fanout-management.md)
 	
 - [Backpressure propagation](007-fpga-guides-rtl-backpressure-propagation.md)
-	- [Fanout management](007-fpga-guides-rtl-fanout-management.md)
+	- [Stall chain analysis](007-fpga-guides-rtl-stall-chain-analysis.md)
 
 ## High-Speed/Interface Knolage
 
