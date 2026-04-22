@@ -156,27 +156,27 @@
 
     - [ ] PlayMarket
 
-        - [x] LinkedIn(G/16)
+        - [ ] LinkedIn(G/16)
 
-        - [x] Telegram(16)
+        - [ ] Telegram(16)
 
-        - [x] Whatsapp(G/16)
+        - [ ] Whatsapp(G/16)
 
-        - [x] Instagram(G/12)
+        - [ ] Instagram(G/12)
 
-        - [x] Habr
+        - [ ] Habr
 
         ---
 
-        - [x] Obsidian(B)
+        - [ ] Obsidian(B)
 
-        - [x] Xmind(B/G)
+        - [ ] Xmind(B/G)
 
-        - [x] LearnVLSI(#)
+        - [ ] LearnVLSI(#)
 
-        - [x] ChatGPT(#)
+        - [ ] ChatGPT(#)
 
-        - [x] Toggi Track(G)
+        - [ ] Toggi Track(G)
 
         - [ ] Singularityapp(G)
 
@@ -186,23 +186,23 @@
 
         ---
 
-        - [x] Duolingo(G)
+        - [ ] Duolingo(G)
 
         - [ ] Lichess(G)
 
-        - [x] Mahjong Soul(G)
+        - [ ] Mahjong Soul(G)
 
         ---
 
-        - [x] Кошелек*(G)
+        - [ ] Кошелек*(G)
 
-        - [x] V2Box(#)
+        - [ ] V2Box(#)
 
-        - [x] Zeep(G)
+        - [ ] Zeep(G)
 
         - [ ] Steam(G/16)
 
-        - [x] Bitwarden(@)
+        - [ ] Bitwarden(@)
 
         ---
 
@@ -224,23 +224,23 @@
 
         ---
 
-        - [x] Chrome
+        - [ ] Chrome
 
-        - [x] Gmail
+        - [ ] Gmail
 
-        - [x] Google Keep
+        - [ ] Google Keep
 
-        - [x] Переводчик
+        - [ ] Переводчик
 
-        - [x] Таблицы
+        - [ ] Таблицы
 
-        - [x] Карты
+        - [ ] Карты
 
-        - [x] Диск
+        - [ ] Диск
 
         - [ ] AdBlock Browser
 
-        - [x] YouTube
+        - [ ] YouTube
 
     - [ ] GetApps/Ru
 
