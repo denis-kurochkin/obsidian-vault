@@ -29,6 +29,8 @@
 	- [Logic splitting](007-fpga-guides-rtl-logic-splitting.md)
 	- [Retiming awareness](007-fpga-guides-rtl-retiming-awareness.md)
 	- [Fanout management](007-fpga-guides-rtl-fanout-management.md)
+
+
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
