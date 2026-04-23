@@ -17,5 +17,5 @@ therefore — поэтому
 
 ---
 26.04.22
-Today I
+Today I'm work on FPGA project. I created 
 
