@@ -16,4 +16,6 @@ setup time — data stable before clock edge
 therefore — поэтому
 
 ---
-26.04.16
+26.04.22
+Today I
+
