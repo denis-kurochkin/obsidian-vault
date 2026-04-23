@@ -16,7 +16,7 @@
         - Dinner
         - Relax
     - 22:00 - Look at plan list 
-    - 23:30 - Go to bed 
+    - 23:00 - Go to bed 
         - Planning 
         - English word game
     - 00:00 - Sleep 
