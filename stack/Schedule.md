@@ -18,5 +18,6 @@
     - 22:00 - Look at plan list 
     - 23:00 - Go to bed 
         - Planning 
-        - English word game
+        - Reading
+        - Diary
     - 00:00 - Sleep 
