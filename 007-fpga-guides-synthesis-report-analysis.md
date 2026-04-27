@@ -1,0 +1,17 @@
+**Synthesis report analysis** в контексте FPGA/Vivado и **Prototyping** — это разбор результатов synthesis не как формального шага “без ошибок”, а как раннего снимка будущего проекта: что tool уже сделал с RTL, какие ресурсы получились, где намечаются проблемы по **timing**, **utilization**, **control sets**, **hierarchy**, **fanout** и общему **QoR**. Vivado после synthesis формирует набор отчетов, а анализ синтезированного design и этих reports предусмотрен как стандартная часть flow.
+
+Главная идея блока такая:  
+**synthesis report — это первый инженерный feedback loop между RTL и реальным FPGA mapping.**  
+На этом этапе уже можно увидеть, во что превратились регистры, LUT, DSP, BRAM, FSM, control logic и hierarchy, не дожидаясь place/route. Для prototyping это особенно полезно, потому что позволяет быстро понять, жизнеспособна ли архитектура, не ушел ли design в лишнюю сложность и не требуется ли ранняя коррекция RTL или synthesis settings. UG906 отдельно описывает `report_qor_assessment` как отчет, который оценивает вероятность достижения performance targets, дает flow guidance и сводку по utilization, timing и methodology checks.
+
+Внутри этого блока обычно смотрят на несколько опорных направлений.  
+Первое — **Report Utilization**: он помогает анализировать использование ресурсов по design в целом, по hierarchy, по Pblocks и по SLR. Второе — **Report Control Sets**, потому что control set — это уникальная комбинация clock, clock enable и set/reset, а их избыточное разнообразие может ухудшать packing и итоговый QoR. Третье — synthesis messages и inferred structures: UG901 отдельно отмечает FSM reporting, а UG949 и UG906 связывают многие QoR-проблемы с logic levels, congestion, high-fanout nets и control sets.
+
+Для prototyping это значит, что synthesis report analysis отвечает не на вопрос “собралось ли”, а на более важные вопросы:  
+насколько clean получилась структура после synthesis, где уже видны будущие bottlenecks, какие части hierarchy подозрительны по ресурсам, не слишком ли много control sets, нет ли high-fanout symptoms, и стоит ли менять сам RTL, constraints или synthesis strategy. AMD прямо рекомендует использовать `report_qor_suggestions` после synthesis: этот отчет анализирует design characteristics и выдает suggestions по clocking, XDC, netlist, utilization, congestion, timing и strategies.
+
+Хороший практический подход к этому блоку такой:  
+сначала смотреть **utilization и hierarchy**, потом **control sets и fanout**, затем **QoR assessment / QoR suggestions**, и только после этого принимать решение — проблема в архитектуре, в coding style, в attributes, в strategy или уже в implementation-specific effects. UG906 отдельно указывает, что если в path logic delay превышает 50% total delay, надо смотреть на logic depth и cell types, а если доминирует net delay — на physical properties и fanout. Это делает synthesis report analysis хорошим мостом между RTL review и последующим timing closure.
+
+**Итог:**  
+**Synthesis report analysis** — это обзорный блок про то, как читать synthesis results как раннюю диагностику архитектуры FPGA-проекта. В prototyping его ценность в том, что он позволяет поймать structural problems раньше implementation: по utilization, hierarchy, control sets, fanout, QoR и inferred logic.
