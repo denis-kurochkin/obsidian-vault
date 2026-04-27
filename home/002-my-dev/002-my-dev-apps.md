@@ -187,9 +187,6 @@
         ---
 
         - [ ] Duolingo(G)
-
-        - [ ] Lichess(G)
-
         - [ ] Mahjong Soul(G)
 
         - [ ] Кошелек*(G)
