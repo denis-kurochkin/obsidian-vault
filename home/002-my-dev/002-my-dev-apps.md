@@ -169,9 +169,7 @@
         ---
 
         - [ ] Obsidian(B)
-
-        - [ ] Xmind(B/G)
-        - 
+      
         - [ ] RustDesk(G)
         - [ ] hh(G/16)
 
