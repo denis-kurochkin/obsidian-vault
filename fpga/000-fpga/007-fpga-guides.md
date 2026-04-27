@@ -85,6 +85,7 @@
 - [Synthesis report analysis](007-fpga-guides-synthesis-report-analysis.md)
 	- [Resource utilization](007-fpga-guides-sta-resource-utilization.md)
 	- [Inferred latches](007-fpga-guides-sta-inferred-latches.md)
+	- [Timing summary](007-fpga-guides-sta-timing-summary.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
