@@ -171,14 +171,7 @@
         - [ ] Obsidian(B)
 
         - [ ] Xmind(B/G)
-
-        - [ ] LearnVLSI(#)
-
-        - [ ] ChatGPT(#)
-
-        - [ ] Toggi Track(G)
-
-        - [ ] Singularityapp(G)
+        - 
         - [ ] RustDesk(G)
         - [ ] hh(G/16)
 
