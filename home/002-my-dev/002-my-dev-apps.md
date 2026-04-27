@@ -166,10 +166,6 @@
 
         - [ ] Habr
 
-        ---
-
-        - [ ] Obsidian(B)
-      
         - [ ] RustDesk(G)
         - [ ] hh(G/16)
 
