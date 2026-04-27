@@ -10,12 +10,10 @@
         - [ ] V2Box(#)
         - [ ] Zeep(G)
         - [ ] Steam(G/16)
-        - [ ] Bitwarden(@)
 
         - [ ] Xiaomi Home(X/16)
         - [ ] Gosund(B)
         - [ ] Polaris(G)
-        - [ ] GetWarderobe(#)
         - [ ] Калькулятор Калорий ХиКи(#)
 
         - [ ] S7(G/16)
