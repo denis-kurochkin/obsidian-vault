@@ -179,14 +179,8 @@
         - [ ] Toggi Track(G)
 
         - [ ] Singularityapp(G)
-
         - [ ] RustDesk(G)
-
         - [ ] hh(G/16)
-
-        ---
-
-        - [ ] Mahjong Soul(G)
 
         - [ ] Кошелек*(G)
         - [ ] V2Box(#)
