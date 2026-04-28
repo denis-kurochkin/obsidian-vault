@@ -89,7 +89,7 @@
 	- [Warning triage](007-fpga-guides-sta-warning-triage.md)
 	
 - [Constraints writing (XDC/SDC)](007-fpga-guides-constraints-writing.md)
-	- [Warning triage](007-fpga-guides-sta-warning-triage.md)
+	- [create_clock](007-fpga-guides-xdc-create_clock.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
