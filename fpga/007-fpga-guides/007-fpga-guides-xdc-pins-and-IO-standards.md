@@ -51,11 +51,13 @@
 
 На базовом уровне XDC для этой темы выглядит очень просто:
 
+```XDC
 set_property PACKAGE_PIN E3 [get_ports clk_in]  
 set_property IOSTANDARD LVCMOS33 [get_ports clk_in]  
   
 set_property PACKAGE_PIN H17 [get_ports led0]  
 set_property IOSTANDARD LVCMOS18 [get_ports led0]
+```
 
 Для `IOSTANDARD` UG912 прямо дает XDC syntax вида `set_property IOSTANDARD value [get_ports port_name]`. Для `PACKAGE_PIN` UG912 отдельно определяет это свойство как assignment of a top-level port to a physical package pin.
 
