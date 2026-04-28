@@ -87,6 +87,8 @@
 	- [Inferred latches](007-fpga-guides-sta-inferred-latches.md)
 	- [Timing summary](007-fpga-guides-sta-timing-summary.md)
 	- [Warning triage](007-fpga-guides-sta-warning-triage.md)
+	
+- 
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
