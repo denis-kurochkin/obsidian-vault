@@ -89,8 +89,8 @@
 	- [Warning triage](007-fpga-guides-sta-warning-triage.md)
 	
 - [Constraints writing (XDC/SDC)](007-fpga-guides-xdc-constraints-writing.md)
-	- [create_clock](007-fpga-guides-xdc-create_clock.md)
-	- 
+	- [create_clock](007-fpga-guides-xdc-create-clock.md)
+	- [Pins and I/O standards](007-fpga-guides-xdc-create-clock.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
