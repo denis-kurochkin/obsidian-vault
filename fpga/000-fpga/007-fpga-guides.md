@@ -88,7 +88,7 @@
 	- [Timing summary](007-fpga-guides-sta-timing-summary.md)
 	- [Warning triage](007-fpga-guides-sta-warning-triage.md)
 	
-- [Constraints writing (XDC/SDC)](007-fpga-guides-constraints-writing.md)
+- [Constraints writing (XDC/SDC)](007-fpga-guides-xdc-constraints-writing.md)
 	- [create_clock](007-fpga-guides-xdc-create_clock.md)
 ## System-Level/SoC Awareness
 
