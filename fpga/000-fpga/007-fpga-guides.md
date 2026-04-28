@@ -92,7 +92,7 @@
 	- [create_clock](007-fpga-guides-xdc-create-clock.md)
 	- [Pins and I/O standards](007-fpga-guides-xdc-pins-and-IO-standards.md)
 	- [Input/output delay](007-fpga-guides-xdc-input-output-delay.md)
-	- [create_clock](007-fpga-guides-xdc-create-clock.md)
+	- [Сlock groups](007-fpga-guides-xdc-сlock-groups.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
