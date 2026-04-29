@@ -3,12 +3,9 @@
 
         - [ ] Habr
 
-        - [ ] RustDesk(G)
         - [ ] hh(G/16)
 
         - [ ] Кошелек*(G)
-        - [ ] V2Box(#)
-        - [ ] Zeep(G)
         - [ ] Steam(G/16)
 
         - [ ] Xiaomi Home(X/16)
