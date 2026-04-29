@@ -97,7 +97,7 @@
 
 - [Static Timing Analysis (STA)](007-fpga-guides-sta.md)
 	- [Setup/hold analysis](007-fpga-guides-sta-setup-hold-analysis.md)
-	- [Slack interpretation](007-fpga-guides-sta-slack interpretation)
+	- [Slack interpretation](007-fpga-guides-sta-slack-interpretation)
 	- [Timing path breakdown](007-fpga-guides-sta-timing-path-breakdown)
 ## System-Level/SoC Awareness
 
