@@ -96,7 +96,7 @@
 	- [False/multicycle paths](007-fpga-guides-xdc-false-multicycle-paths.md)
 
 - [Static Timing Analysis (STA)](007-fpga-guides-sta.md)
-	- [Setup/hold analysis](007-fpga-guides-sta-setup-hold-analysis)
+	- [Setup/hold analysis](007-fpga-guides-sta-setup-hold-analysis.md)
 ## System-Level/SoC Awareness
 
 - [Address mapping](007-fpga-guides-system-level-address-mapping.md)
