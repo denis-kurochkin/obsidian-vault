@@ -152,43 +152,51 @@ AXI-Stream clk domain
 Упрощенный интерфейс async FIFO:
 
 ```verilog
-input  wire        wr_clk,
-input  wire        wr_rst,
+input  wire         wr_clk,
+input  wire         wr_rst,
 
-input  wire        wr_en,
+input  wire         wr_en,
 input  wire [W-1:0] din,
-output wire        full,
+output wire         full,
 
-input  wire        rd_clk,
-input  wire        rd_rst,
+input  wire         rd_clk,
+input  wire         rd_rst,
 
-input  wire        rd_en,
+input  wire         rd_en,
 output wire [W-1:0] dout,
-output wire        empty
+output wire         empty
 ```
 
 Сторона записи:
 
 ```
-wr_clkdinwr_enfull
+wr_clk
+din
+wr_en
+full
 ```
 
 Сторона чтения:
 
 ```
-rd_clkdoutrd_enempty
+rd_clk
+dout
+rd_en
+empty
 ```
 
 Правило записи:
 
-```
-if (wr_en && !full)    FIFO writes din;
+```verilog
+if (wr_en && !full)
+    FIFO writes din;
 ```
 
 Правило чтения:
 
-```
-if (rd_en && !empty)    FIFO reads next word;
+```verilog
+if (rd_en && !empty)
+    FIFO reads next word;
 ```
 
 ---
