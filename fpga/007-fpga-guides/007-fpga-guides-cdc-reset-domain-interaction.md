@@ -561,7 +561,8 @@ rx_rst_n
 Опасная ситуация:
 
 ```
-clk_a domain сброшенclk_b domain продолжает работать
+clk_a domain сброшен
+clk_b domain продолжает работать
 ```
 
 Если `clk_b` ожидает valid/ready/ack от `clk_a`, он может зависнуть.
@@ -569,13 +570,18 @@ clk_a domain сброшенclk_b domain продолжает работать
 Или наоборот:
 
 ```
-clk_b domain сброшенclk_a domain продолжает писать в FIFO/handshake
+clk_b domain сброшен
+clk_a domain продолжает писать в FIFO/handshake
 ```
 
 Возможны:
 
 ```
-потерянные request;зависший busy;некорректный ack;FIFO overflow;FSM waiting forever.
+потерянные request;
+зависший busy;
+некорректный ack;
+FIFO overflow;
+FSM waiting forever.
 ```
 
 Поэтому reset interaction нужно проектировать как protocol event.
@@ -587,7 +593,8 @@ clk_b domain сброшенclk_a domain продолжает писать в FIF
 Handshake имеет состояния в двух domains:
 
 ```
-req в source domainack в destination domain
+req в source domain
+ack в destination domain
 ```
 
 Если один domain сбросился, а другой нет, protocol может оказаться в невозможном состоянии.
