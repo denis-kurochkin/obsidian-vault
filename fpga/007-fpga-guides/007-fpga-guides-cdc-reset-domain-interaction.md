@@ -96,13 +96,15 @@ rst_n = 1 -> reset deasserted
 Очень распространенное правило:
 
 ```
-asynchronous assertsynchronous deassert
+asynchronous assert
+synchronous deassert
 ```
 
 Смысл:
 
 ```
-reset можно активировать немедленно, независимо от clock;но отпускать reset нужно синхронно с clock каждого domain.
+reset можно активировать немедленно, независимо от clock;
+но отпускать reset нужно синхронно с clock каждого domain.
 ```
 
 То есть глобальный reset может прийти асинхронно, но внутри каждого clock domain должен быть свой локальный reset synchronizer.
@@ -110,7 +112,11 @@ reset можно активировать немедленно, независи
 Структура:
 
 ```
-global_async_reset_n        |        +--> reset_sync for sys_clk        +--> reset_sync for aurora_clk        +--> reset_sync for pcie_clk
+global_async_reset_n
+        |
+        +--> reset_sync for sys_clk
+        +--> reset_sync for aurora_clk
+        +--> reset_sync for pcie_clk
 ```
 
 ---
@@ -119,8 +125,28 @@ global_async_reset_n        |        +--> reset_sync for sys_clk        +--> res
 
 Типовой reset synchronizer для active-low external reset:
 
-```
-module reset_sync #(    parameter integer STAGES = 2)(    input  wire clk,    input  wire arst_n,    output wire srst_n);    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)    reg [STAGES-1:0] sync_ff = {STAGES{1'b0}};    always @(posedge clk or negedge arst_n) begin        if (!arst_n)            sync_ff <= {STAGES{1'b0}};        else            sync_ff <= {sync_ff[STAGES-2:0], 1'b1};    end    assign srst_n = sync_ff[STAGES-1];endmodule
+```verilog
+module reset_sync #(
+    parameter integer STAGES = 2
+)(
+    input  wire clk,
+    input  wire arst_n,
+    output wire srst_n
+);
+
+    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+    reg [STAGES-1:0] sync_ff = {STAGES{1'b0}};
+
+    always @(posedge clk or negedge arst_n) begin
+        if (!arst_n)
+            sync_ff <= {STAGES{1'b0}};
+        else
+            sync_ff <= {sync_ff[STAGES-2:0], 1'b1};
+    end
+
+    assign srst_n = sync_ff[STAGES-1];
+
+endmodule
 ```
 
 Поведение:
