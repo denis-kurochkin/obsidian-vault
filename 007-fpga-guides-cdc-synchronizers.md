@@ -214,7 +214,14 @@ destination clock очень быстрый;
 Примеры:
 
 ```
-status flaglink_uppll_lockedcalibration_donemode_enableerror_flagexternal button after filtering/debounceconfiguration bit
+status flag
+link_up
+pll_locked
+calibration_done
+mode_enable
+error_flag
+external button after filtering/debounce
+configuration bit
 ```
 
 Главное условие:
