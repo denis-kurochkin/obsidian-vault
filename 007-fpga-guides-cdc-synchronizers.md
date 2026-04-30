@@ -607,7 +607,11 @@ clk_src domain:
 Структура:
 
 ```
-clk_src domain                                  clk_dst domaindata_reg_src  ------------------------------->  capture registerreq_src      ---> synchronizer -------------->  req_dstack_src      <--- synchronizer <--------------  ack_dst
+clk_src domain                                  clk_dst domain
+
+data_reg_src  ------------------------------->  capture register
+req_src      ---> synchronizer -------------->  req_dst
+ack_src      <--- synchronizer <--------------  ack_dst
 ```
 
 Главное отличие от побитного synchronizer:
@@ -617,7 +621,19 @@ clk_src domain                                  clk_dst domaindata_reg_src  ----
 Упрощенный протокол:
 
 ```
-source:    если есть новое слово и CDC не занят:        data_hold <= new_data        req <= 1destination:    когда увидел req:        data_dst <= data_hold        ack <= 1source:    когда увидел ack:        req <= 0
+source:
+    если есть новое слово и CDC не занят:
+        data_hold <= new_data
+        req <= 1
+
+destination:
+    когда увидел req:
+        data_dst <= data_hold
+        ack <= 1
+
+source:
+    когда увидел ack:
+        req <= 0
 ```
 
 Это уже не просто synchronizer из двух FF, а CDC protocol. Но внутри него все равно используются обычные bit synchronizers для `req` и `ack`.
