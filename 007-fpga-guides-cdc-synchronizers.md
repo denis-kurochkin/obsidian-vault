@@ -1060,26 +1060,35 @@ cdc_pulse_toggle u_start_to_processing_clk (
 
 Например:
 
-```
-wire start_pulse_ctrl_clk;wire start_pulse_data_clk;wire pll_locked_async;wire pll_locked_user_clk;
+```verilog
+wire start_pulse_ctrl_clk;
+wire start_pulse_data_clk;
+
+wire pll_locked_async;
+wire pll_locked_user_clk;
 ```
 
 Или:
 
-```
-wire link_up_sfp_clk;wire link_up_sys_clk;
+```verilog
+wire link_up_sfp_clk;
+wire link_up_sys_clk;
 ```
 
 Плохой вариант:
 
-```
-wire link_up;wire link_up_1;wire link_up_sync;
+```verilog
+wire link_up;
+wire link_up_1;
+wire link_up_sync;
 ```
 
 Лучше, когда по имени видно:
 
 ```
-откуда сигнал пришел;в каком clock domain он сейчас находится;это async/raw signal или уже synchronized signal.
+откуда сигнал пришел;
+в каком clock domain он сейчас находится;
+это async/raw signal или уже synchronized signal.
 ```
 
 ---
