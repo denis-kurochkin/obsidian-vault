@@ -40,7 +40,7 @@
 	- [Async FIFO](007-fpga-guides-cdc-async-fifo.md) 
 	- [MTBF concept](007-fpga-guides-cdc-mtbf-concept.md)
 	- [CDC constraints](007-fpga-guides-cdc-constraints.md)
-	- [Reset-domain interaction](007-fpga-guides-cdc-reset-domain-interaction)
+	- [Reset-domain interaction](007-fpga-guides-cdc-reset-domain-interaction.md)
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
