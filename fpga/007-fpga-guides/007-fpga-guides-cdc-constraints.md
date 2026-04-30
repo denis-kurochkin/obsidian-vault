@@ -609,7 +609,10 @@ get_clocks -quiet clk_b
 И использовать строгие проверки в Tcl scripts:
 
 ```
-set c0 [get_clocks -quiet clk_a]if {[llength $c0] == 0} {    error "Clock clk_a not found"}
+set c0 [get_clocks -quiet clk_a]
+if {[llength $c0] == 0} {
+    error "Clock clk_a not found"
+}
 ```
 
 ---
@@ -619,7 +622,11 @@ set c0 [get_clocks -quiet clk_a]if {[llength $c0] == 0} {    error "Clock clk_a 
 `report_clock_interaction` полезен, чтобы увидеть отношения между clock pairs:
 
 ```
-timedignoredasynchronousno pathsunsafe / unconstrainted-looking interactions
+timed
+ignored
+asynchronous
+no paths
+unsafe / unconstrainted-looking interactions
 ```
 
 AMD рекомендует использовать Clock Interaction Report для поиска asynchronous clocks, у которых отсутствуют нужные timing exceptions.
@@ -659,7 +666,14 @@ AMD указывает, что `report_cdc` показывает CDC paths в sy
 Отчет может показать:
 
 ```
-safe synchronizermissing synchronizerunknown CDC logiccombinational logic before synchronizermulti-bit CDC problemreconvergence issueCDC bus issuereset-related CDC
+safe synchronizer
+missing synchronizer
+unknown CDC logic
+combinational logic before synchronizer
+multi-bit CDC problem
+reconvergence issue
+CDC bus issue
+reset-related CDC
 ```
 
 Идея не в том, чтобы “убрать все строки отчета”, а в том, чтобы каждая CDC-точка была понятна и либо исправлена, либо осознанно признана корректной.
