@@ -851,8 +851,9 @@ rd_en = 1 при empty = 1
 
 Минимальные защиты:
 
-```
-assign fifo_wr_en = src_valid && !fifo_full;assign fifo_rd_en = dst_ready && !fifo_empty;
+```verilog
+assign fifo_wr_en = src_valid && !fifo_full;
+assign fifo_rd_en = dst_ready && !fifo_empty;
 ```
 
 Но в сложной системе лучше явно отслеживать ошибки:
