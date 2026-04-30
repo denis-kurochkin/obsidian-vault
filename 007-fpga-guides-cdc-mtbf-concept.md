@@ -17,13 +17,16 @@
 Например:
 
 ```
-clk_a domain                      clk_b domainsignal_a  --------------------->  FF in clk_b
+clk_a domain                      clk_b domain
+
+signal_a  --------------------->  FF in clk_b
 ```
 
 Если `signal_a` меняется слишком близко к фронту `clk_b`, нарушаются условия:
 
 ```
-setup timehold time
+setup time
+hold time
 ```
 
 Триггер может попасть в **metastable state**.
