@@ -842,13 +842,17 @@ reg flag = 1'b0;
 Разница:
 
 ```
-initial value работает при конфигурации FPGA;reset может понадобиться во время работы;partial subsystem reset требует отдельной логики;после PLL relock/init values сами по себе не применятся.
+initial value работает при конфигурации FPGA;
+reset может понадобиться во время работы;
+partial subsystem reset требует отдельной логики;
+после PLL relock/init values сами по себе не применятся.
 ```
 
 Практически:
 
 ```
-для power-up можно использовать init values;для runtime reset нужен reset controller.
+для power-up можно использовать init values;
+для runtime reset нужен reset controller.
 ```
 
 ---
@@ -859,8 +863,13 @@ initial value работает при конфигурации FPGA;reset мож
 
 Например:
 
-```
-(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)reg [1:0] sync_ff = 2'b00;always @(posedge clk_dst) begin    sync_ff <= {sync_ff[0], async_in};end
+```verilog
+(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+reg [1:0] sync_ff = 2'b00;
+
+always @(posedge clk_dst) begin
+    sync_ff <= {sync_ff[0], async_in};
+end
 ```
 
 Это может быть нормальным для некоторых status signals.
