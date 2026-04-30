@@ -1266,7 +1266,7 @@ cdc_sync_bus_independent u_data_sync (...);
 
 ## Ошибка 2. Синхронизировать data bus побитно
 
-```
+```verilog
 data_dst[0] <= data_src[0];
 data_dst[1] <= data_src[1];
 ...
@@ -1278,7 +1278,7 @@ data_dst[1] <= data_src[1];
 
 ## Ошибка 3. Использовать первый stage
 
-```
+```verilog
 assign signal_dst = sync_ff1;
 ```
 
@@ -1289,7 +1289,8 @@ assign signal_dst = sync_ff1;
 ## Ошибка 4. Два synchronizer для одного сигнала
 
 ```
-async_flag -> sync A -> logic Aasync_flag -> sync B -> logic B
+async_flag -> sync A -> logic A
+async_flag -> sync B -> logic B
 ```
 
 Разные части логики могут увидеть изменение в разные такты.
@@ -1298,7 +1299,7 @@ async_flag -> sync A -> logic Aasync_flag -> sync B -> logic B
 
 ## Ошибка 5. Логика между stages
 
-```
+```verilog
 sync_ff2 <= sync_ff1 & enable;
 ```
 
@@ -1308,7 +1309,7 @@ sync_ff2 <= sync_ff1 & enable;
 
 ## Ошибка 6. Combinational async input
 
-```
+```verilog
 assign async_to_dst = src_a & src_b;
 ```
 
