@@ -1352,7 +1352,23 @@ assign async_to_dst = src_a & src_b;
 Для практического проекта полезно иметь хотя бы такие модули:
 
 ```
-cdc_sync_bit    single-bit level crossingcdc_sync_pulse    event/pulse crossing через togglecdc_sync_bus_independent    массив независимых flagscdc_sync_edge    sync level + edge detect in dst domaincdc_handshake_word    передача одного data word через req/ackcdc_reset_sync    отдельный reset synchronizer
+cdc_sync_bit
+    single-bit level crossing
+
+cdc_sync_pulse
+    event/pulse crossing через toggle
+
+cdc_sync_bus_independent
+    массив независимых flags
+
+cdc_sync_edge
+    sync level + edge detect in dst domain
+
+cdc_handshake_word
+    передача одного data word через req/ack
+
+cdc_reset_sync
+    отдельный reset synchronizer
 ```
 
 При этом `cdc_reset_sync` лучше рассматривать отдельно от обычных data/control synchronizers.
