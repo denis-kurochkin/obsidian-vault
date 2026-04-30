@@ -252,13 +252,16 @@ AMD указывает, что `set_false_path` отключает timing тол
 Эквивалентно `set_clock_groups -asynchronous` для двух clocks можно написать:
 
 ```
-set_false_path -from [get_clocks clk_a] -to [get_clocks clk_b]set_false_path -from [get_clocks clk_b] -to [get_clocks clk_a]
+set_false_path -from [get_clocks clk_a] -to [get_clocks clk_b]
+set_false_path -from [get_clocks clk_b] -to [get_clocks clk_a]
 ```
 
 Но обычно для полностью асинхронных доменов удобнее:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks clk_a] \    -group [get_clocks clk_b]
+set_clock_groups -asynchronous \
+    -group [get_clocks clk_a] \
+    -group [get_clocks clk_b]
 ```
 
 `set_false_path` полезен, когда нужно отключить не все paths между clocks, а только конкретное направление или конкретные точки.
@@ -270,7 +273,11 @@ set_clock_groups -asynchronous \    -group [get_clocks clk_a] \    -group [get_c
 Обычно `set_clock_groups -asynchronous` удобно использовать, когда:
 
 ```
-два clock domains полностью asynchronous;между ними нет обычных synchronous timing paths;все crossing сделаны через CDC-структуры;нужно отключить timing в обе стороны;нет необходимости задавать частные ограничения на отдельные CDC paths.
+два clock domains полностью asynchronous;
+между ними нет обычных synchronous timing paths;
+все crossing сделаны через CDC-структуры;
+нужно отключить timing в обе стороны;
+нет необходимости задавать частные ограничения на отдельные CDC paths.
 ```
 
 Пример:
