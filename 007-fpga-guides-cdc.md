@@ -282,13 +282,21 @@ assign pulse_b = sync2 ^ sync2_d;
 Идея:
 
 ```
-source domain выставляет data и requestdestination domain принимает data и отвечает acknowledgesource domain держит data стабильными до acknowledge
+source domain выставляет data и request
+destination domain принимает data и отвечает acknowledge
+source domain держит data стабильными до acknowledge
 ```
 
 Упрощенно:
 
 ```
-clk_a domain:    data_a stable    req_a = 1clk_b domain:    видит req    захватывает data    ack_b = 1clk_a domain:    видит ack    снимает req
+clk_a domain:    
+data_a stable    
+req_a = 1clk_b 
+domain:    
+видит req    
+захватывает data    
+ack_b = 1clk_a domain:    видит ack    снимает req
 ```
 
 Такой подход подходит, когда данные передаются не каждый такт, а отдельными словами или командами.
