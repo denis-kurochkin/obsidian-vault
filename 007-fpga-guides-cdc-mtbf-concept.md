@@ -582,7 +582,9 @@ MTBF тут не решает основную проблему.
 Для data bus нужны:
 
 ```
-handshakeGray codeasync FIFO
+handshake
+Gray code
+async FIFO
 ```
 
 ---
@@ -592,13 +594,15 @@ handshakeGray codeasync FIFO
 Допустим, есть два связанных сигнала:
 
 ```
-a_srcb_src
+a_src
+b_src
 ```
 
 Они синхронизируются отдельно:
 
 ```
-a_src -> sync -> a_dstb_src -> sync -> b_dst
+a_src -> sync -> a_dst
+b_src -> sync -> b_dst
 ```
 
 Даже если у каждого synchronizer хороший MTBF, destination может увидеть изменения в разные такты.
