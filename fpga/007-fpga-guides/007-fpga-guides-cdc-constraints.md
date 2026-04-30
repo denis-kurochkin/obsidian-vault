@@ -760,7 +760,7 @@ set_clock_groups -asynchronous \
 
 А в RTL:
 
-```
+```verilog
 (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
 reg [1:0] sync_ff;
 ```
@@ -768,7 +768,8 @@ reg [1:0] sync_ff;
 Vivado видит:
 
 ```
-path ignored by clock groupsstructure recognized as synchronizer
+path ignored by clock groups
+structure recognized as synchronizer
 ```
 
 Но если используется XPM_CDC, нужно учитывать его собственные constraints и не перекрывать их слишком широким `set_clock_groups`.
@@ -780,7 +781,10 @@ path ignored by clock groupsstructure recognized as synchronizer
 Для async FIFO обычно:
 
 ```
-write clock и read clock описаны как clocks;отношение между ними описано как asynchronous, если они unrelated;FIFO реализован через XPM/IP или проверенный RTL;report_cdc не должен показывать опасные crossing внутри FIFO.
+write clock и read clock описаны как clocks;
+отношение между ними описано как asynchronous, если они unrelated;
+FIFO реализован через XPM/IP или проверенный RTL;
+report_cdc не должен показывать опасные crossing внутри FIFO.
 ```
 
 Если FIFO — XPM/IP, не надо вручную лезть во внутренние paths без необходимости.
@@ -788,7 +792,11 @@ write clock и read clock описаны как clocks;отношение меж
 Если FIFO самодельный, нужно быть намного внимательнее:
 
 ```
-Gray-code pointer pathssynchronizer attributesmax delay / bus skew considerationsfull/empty logicreset logic
+Gray-code pointer paths
+synchronizer attributes
+max delay / bus skew considerations
+full/empty logic
+reset logic
 ```
 
 ---
@@ -808,7 +816,8 @@ Gray code помогает тем, что за один increment меняетс
 Идея:
 
 ```
-все bits Gray bus должны доходить до destination synchronizers достаточно согласованно,чтобы protocol assumption оставался верным.
+все bits Gray bus должны доходить до destination synchronizers достаточно согласованно,
+чтобы protocol assumption оставался верным.
 ```
 
 В Vivado для таких задач часто применяют `set_max_delay -datapath_only` на соответствующие CDC paths, но точные значения зависят от архитектуры и частот.
