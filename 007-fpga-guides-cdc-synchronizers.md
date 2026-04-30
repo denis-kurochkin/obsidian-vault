@@ -1253,8 +1253,9 @@ event_src rate << clk_dst rate
 
 ## Ошибка 1. Считать synchronizer универсальным решением
 
-```
-cdc_sync_bit u_valid_sync (...);cdc_sync_bus_independent u_data_sync (...);
+```verilog
+cdc_sync_bit u_valid_sync (...);
+cdc_sync_bus_independent u_data_sync (...);
 ```
 
 Если это `valid + data`, такой подход часто ошибочен.
@@ -1266,7 +1267,9 @@ cdc_sync_bit u_valid_sync (...);cdc_sync_bus_independent u_data_sync (...);
 ## Ошибка 2. Синхронизировать data bus побитно
 
 ```
-data_dst[0] <= data_src[0];data_dst[1] <= data_src[1];...
+data_dst[0] <= data_src[0];
+data_dst[1] <= data_src[1];
+...
 ```
 
 Это не гарантирует atomic transfer.
