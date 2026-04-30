@@ -531,13 +531,23 @@ software reset request
 Полезно разделять:
 
 ```
-reset request — команда “нужно сбросить блок”reset signal  — локальный сигнал сброса регистров
+reset request — команда “нужно сбросить блок”
+reset signal  — локальный сигнал сброса регистров
 ```
 
 Пример:
 
 ```
-AXI register bit reset_rx_req        |        vCDC pulse/level into rx_clk domain        |        vrx reset controller        |        vrx_rst_n
+AXI register bit reset_rx_req
+        |
+        v
+CDC pulse/level into rx_clk domain
+        |
+        v
+rx reset controller
+        |
+        v
+rx_rst_n
 ```
 
 Так reset формируется уже в target clock domain.
