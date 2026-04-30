@@ -197,13 +197,23 @@ external_rst_n -> reset_sync(pcie_clk)   -> rst_n_pcie
 Лучше делать так:
 
 ```
-raw reset source    |    vreset controller / conditioning    |    +--> local reset for clk_a    +--> local reset for clk_b    +--> local reset for clk_c
+raw reset source
+    |
+    v
+reset controller / conditioning
+    |
+    +--> local reset for clk_a
+    +--> local reset for clk_b
+    +--> local reset for clk_c
 ```
 
 Например:
 
 ```
-board_reset_npll_lockedconfiguration_donepower_good
+board_reset_n
+pll_locked
+configuration_done
+power_good
 ```
 
 объединяются в reset controller, а затем синхронизируются отдельно в каждый domain.
@@ -215,7 +225,15 @@ board_reset_npll_lockedconfiguration_donepower_good
 Источники reset:
 
 ```
-кнопка resetpower-on resetFPGA startup resetPLL/MMCM lockedexternal supervisorsoftware reset bitwatchdog resetIP error resetlink down reset
+кнопка reset
+power-on reset
+FPGA startup reset
+PLL/MMCM locked
+external supervisor
+software reset bit
+watchdog reset
+IP error reset
+link down reset
 ```
 
 Некоторые из них асинхронны к вашей логике.
