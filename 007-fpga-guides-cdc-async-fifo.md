@@ -819,13 +819,13 @@ data_count
 
 Пример:
 
-```
+```verilog
 assign source_ready = !fifo_almost_full;
 ```
 
 А не:
 
-```
+```verilog
 assign source_ready = !fifo_full;
 ```
 
