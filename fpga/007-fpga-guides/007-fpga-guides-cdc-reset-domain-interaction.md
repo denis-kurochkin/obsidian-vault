@@ -920,7 +920,13 @@ reset должен быть корректным для destination clock domain
 Например:
 
 ```
-1. clocks stable2. MMCM/PLL locked3. low-level PHY reset released4. IP core reset released5. FIFO reset released6. user logic reset released7. software-visible ready flag set
+1. clocks stable
+2. MMCM/PLL locked
+3. low-level PHY reset released
+4. IP core reset released
+5. FIFO reset released
+6. user logic reset released
+7. software-visible ready flag set
 ```
 
 Если отпустить user logic раньше IP core, логика может начать читать невалидные статусы.
@@ -938,13 +944,31 @@ reset должен быть корректным для destination clock domain
 Он делает:
 
 ```
-собирает reset sources;учитывает pll_locked;ждет стабилизацию clocks;создает local resets;управляет sequencing;выдает ready/status;обрабатывает software reset requests;не дает блокам стартовать до готовности зависимостей.
+собирает reset sources;
+учитывает pll_locked;
+ждет стабилизацию clocks;
+создает local resets;
+управляет sequencing;
+выдает ready/status;
+обрабатывает software reset requests;
+не дает блокам стартовать до готовности зависимостей.
 ```
 
 Пример структуры:
 
 ```
-reset_controller    inputs:        board_rst_n        pll_locked        sw_reset_req        ip_error    outputs:        sys_rst_n        sfp_rst_n        fifo_rst        user_logic_enable        system_ready
+reset_controller
+    inputs:
+        board_rst_n
+        pll_locked
+        sw_reset_req
+        ip_error
+    outputs:
+        sys_rst_n
+        sfp_rst_n
+        fifo_rst
+        user_logic_enable
+        system_ready
 ```
 
 ---
@@ -956,7 +980,8 @@ reset_controller    inputs:        board_rst_n        pll_locked        sw_reset
 Если clock не работает:
 
 ```
-reset synchronizer не сдвигаетсяlocal reset остается asserted
+reset synchronizer не сдвигается
+local reset остается asserted
 ```
 
 Это обычно хорошо.
