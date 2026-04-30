@@ -341,8 +341,36 @@ assign pulse_b = toggle_b_sync[1] ^ toggle_b_d;
 
 ## 9.3 Полный модуль toggle synchronizer
 
-```
-module cdc_pulse_toggle (    input  wire clk_src,    input  wire pulse_src,    input  wire clk_dst,    output wire pulse_dst);    reg toggle_src = 1'b0;    always @(posedge clk_src) begin        if (pulse_src) begin            toggle_src <= ~toggle_src;        end    end    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)    reg [1:0] toggle_dst_sync = 2'b00;    reg toggle_dst_d = 1'b0;    always @(posedge clk_dst) begin        toggle_dst_sync <= {toggle_dst_sync[0], toggle_src};        toggle_dst_d    <= toggle_dst_sync[1];    end    assign pulse_dst = toggle_dst_sync[1] ^ toggle_dst_d;endmodule
+```verilog
+module cdc_pulse_toggle (
+    input  wire clk_src,
+    input  wire pulse_src,
+
+    input  wire clk_dst,
+    output wire pulse_dst
+);
+
+    reg toggle_src = 1'b0;
+
+    always @(posedge clk_src) begin
+        if (pulse_src) begin
+            toggle_src <= ~toggle_src;
+        end
+    end
+
+    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+    reg [1:0] toggle_dst_sync = 2'b00;
+
+    reg toggle_dst_d = 1'b0;
+
+    always @(posedge clk_dst) begin
+        toggle_dst_sync <= {toggle_dst_sync[0], toggle_src};
+        toggle_dst_d    <= toggle_dst_sync[1];
+    end
+
+    assign pulse_dst = toggle_dst_sync[1] ^ toggle_dst_d;
+
+endmodule
 ```
 
 Использование:
