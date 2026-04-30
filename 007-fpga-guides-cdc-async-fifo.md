@@ -122,13 +122,25 @@ destination module
 Например:
 
 ```
-Aurora RX user_clk domain        |        vasync FIFO        |        vsystem processing clk domain
+Aurora RX user_clk domain
+        |
+        v
+async FIFO
+        |
+        v
+system processing clk domain
 ```
 
 Или:
 
 ```
-sensor_clk domain        |        vasync FIFO        |        vAXI-Stream clk domain
+sensor_clk domain
+        |
+        v
+async FIFO
+        |
+        v
+AXI-Stream clk domain
 ```
 
 Важно: async FIFO является **границей clock domains**. После FIFO данные уже находятся в домене чтения.
@@ -139,8 +151,20 @@ sensor_clk domain        |        vasync FIFO        |        vAXI-Stream clk do
 
 Упрощенный интерфейс async FIFO:
 
-```
-input  wire        wr_clk,input  wire        wr_rst,input  wire        wr_en,input  wire [W-1:0] din,output wire        full,input  wire        rd_clk,input  wire        rd_rst,input  wire        rd_en,output wire [W-1:0] dout,output wire        empty
+```verilog
+input  wire        wr_clk,
+input  wire        wr_rst,
+
+input  wire        wr_en,
+input  wire [W-1:0] din,
+output wire        full,
+
+input  wire        rd_clk,
+input  wire        rd_rst,
+
+input  wire        rd_en,
+output wire [W-1:0] dout,
+output wire        empty
 ```
 
 Сторона записи:
