@@ -1353,8 +1353,12 @@ empty принадлежит read domain
 
 Плохо:
 
-```
-always @(posedge wr_clk) begin    if (!fifo_empty) begin        ...    endend
+```verilog
+always @(posedge wr_clk) begin
+    if (!fifo_empty) begin
+        ...
+    end
+end
 ```
 
 Write side должен ориентироваться на:
