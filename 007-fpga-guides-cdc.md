@@ -252,10 +252,23 @@ begin
 reg sync1;
 reg sync2;
 reg sync2_d;
+
 always @(posedge clk_b or negedge rst_b_n) 
 begin    
-if (!rst_b_n) 
-begin        sync1   <= 1'b0;        sync2   <= 1'b0;        sync2_d <= 1'b0;    end else begin        sync1   <= toggle_a;        sync2   <= sync1;        sync2_d <= sync2;    endendassign pulse_b = sync2 ^ sync2_d;
+	if (!rst_b_n) 
+	begin        
+		sync1   <= 1'b0;        
+		sync2   <= 1'b0;        
+		sync2_d <= 1'b0;    
+	end 
+	else 
+	begin        
+		sync1   <= toggle_a;        
+		sync2   <= sync1;        
+		sync2_d <= sync2;    
+	end
+end
+assign pulse_b = sync2 ^ sync2_d;
 ```
 
 Так принимающий домен ловит не сам короткий импульс, а факт изменения состояния.
