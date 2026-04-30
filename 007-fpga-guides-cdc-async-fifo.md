@@ -907,7 +907,10 @@ rd_data_count использовать только в read domain
 FIFO может быть реализован на разных ресурсах FPGA:
 
 ```
-distributed RAM / LUTRAMBlock RAM / BRAMUltraRAM / URAMregisters
+distributed RAM / LUTRAM
+Block RAM / BRAM
+UltraRAM / URAM
+registers
 ```
 
 Примерный выбор:
@@ -929,7 +932,10 @@ FIFO_MEMORY_TYPE
 Например:
 
 ```
-"auto""block""distributed""ultra"
+"auto"
+"block"
+"distributed"
+"ultra"
 ```
 
 Обычно для начала удобно использовать `"auto"`, а потом смотреть utilization и timing.
@@ -944,8 +950,84 @@ FIFO_MEMORY_TYPE
 
 Упрощенный пример wrapper:
 
-```
-module cdc_async_fifo #(    parameter integer DATA_WIDTH = 32,    parameter integer FIFO_DEPTH = 1024)(    input  wire                  wr_clk,    input  wire                  wr_rst,    input  wire                  wr_en,    input  wire [DATA_WIDTH-1:0] din,    output wire                  full,    output wire                  almost_full,    input  wire                  rd_clk,    input  wire                  rd_rst,    input  wire                  rd_en,    output wire [DATA_WIDTH-1:0] dout,    output wire                  empty,    output wire                  almost_empty);    xpm_fifo_async #(        .FIFO_MEMORY_TYPE    ("auto"),        .FIFO_WRITE_DEPTH    (FIFO_DEPTH),        .WRITE_DATA_WIDTH    (DATA_WIDTH),        .READ_DATA_WIDTH     (DATA_WIDTH),        .READ_MODE           ("fwft"),        .FIFO_READ_LATENCY   (0),        .CDC_SYNC_STAGES     (2),        .RELATED_CLOCKS      (0),        .USE_ADV_FEATURES    ("0707"),        .WR_DATA_COUNT_WIDTH (1),        .RD_DATA_COUNT_WIDTH (1),        .DOUT_RESET_VALUE    ("0"),        .ECC_MODE            ("no_ecc"),        .FULL_RESET_VALUE    (0),        .PROG_FULL_THRESH    (10),        .PROG_EMPTY_THRESH   (10),        .WAKEUP_TIME         (0)    ) u_xpm_fifo_async (        .wr_clk        (wr_clk),        .rst           (wr_rst),        .wr_en         (wr_en),        .din           (din),        .full          (full),        .almost_full   (almost_full),        .rd_clk        (rd_clk),        .rd_en         (rd_en),        .dout          (dout),        .empty         (empty),        .almost_empty  (almost_empty),        .sleep         (1'b0),        .injectsbiterr (1'b0),        .injectdbiterr (1'b0),        .overflow      (),        .underflow     (),        .wr_ack        (),        .valid         (),        .data_valid    (),        .prog_full     (),        .prog_empty    (),        .wr_data_count (),        .rd_data_count (),        .sbiterr       (),        .dbiterr       ()    );endmodule
+```verilog
+module cdc_async_fifo #(
+    parameter integer DATA_WIDTH = 32,
+    parameter integer FIFO_DEPTH = 1024
+)(
+    input  wire                  wr_clk,
+    input  wire                  wr_rst,
+    input  wire                  wr_en,
+    input  wire [DATA_WIDTH-1:0] din,
+    output wire                  full,
+    output wire                  almost_full,
+
+    input  wire                  rd_clk,
+    input  wire                  rd_rst,
+    input  wire                  rd_en,
+    output wire [DATA_WIDTH-1:0] dout,
+    output wire                  empty,
+    output wire                  almost_empty
+);
+
+    xpm_fifo_async #(
+        .FIFO_MEMORY_TYPE    ("auto"),
+        .FIFO_WRITE_DEPTH    (FIFO_DEPTH),
+        .WRITE_DATA_WIDTH    (DATA_WIDTH),
+        .READ_DATA_WIDTH     (DATA_WIDTH),
+
+        .READ_MODE           ("fwft"),
+        .FIFO_READ_LATENCY   (0),
+
+        .CDC_SYNC_STAGES     (2),
+        .RELATED_CLOCKS      (0),
+
+        .USE_ADV_FEATURES    ("0707"),
+
+        .WR_DATA_COUNT_WIDTH (1),
+        .RD_DATA_COUNT_WIDTH (1),
+
+        .DOUT_RESET_VALUE    ("0"),
+        .ECC_MODE            ("no_ecc"),
+        .FULL_RESET_VALUE    (0),
+        .PROG_FULL_THRESH    (10),
+        .PROG_EMPTY_THRESH   (10),
+        .WAKEUP_TIME         (0)
+    ) u_xpm_fifo_async (
+        .wr_clk        (wr_clk),
+        .rst           (wr_rst),
+        .wr_en         (wr_en),
+        .din           (din),
+        .full          (full),
+        .almost_full   (almost_full),
+
+        .rd_clk        (rd_clk),
+        .rd_en         (rd_en),
+        .dout          (dout),
+        .empty         (empty),
+        .almost_empty  (almost_empty),
+
+        .sleep         (1'b0),
+        .injectsbiterr (1'b0),
+        .injectdbiterr (1'b0),
+
+        .overflow      (),
+        .underflow     (),
+        .wr_ack        (),
+        .valid         (),
+        .data_valid    (),
+
+        .prog_full     (),
+        .prog_empty    (),
+
+        .wr_data_count (),
+        .rd_data_count (),
+
+        .sbiterr       (),
+        .dbiterr       ()
+    );
+
+endmodule
 ```
 
 Это не единственно возможная конфигурация. В реальном проекте параметры нужно подбирать под режим чтения, глубину, использование flags и требования к latency.
