@@ -654,13 +654,19 @@ write side resetread side reset
 В vendor FIFO обычно есть конкретные требования:
 
 ```
-как долго держать reset;какие clocks должны тикать;когда valid flags становятся корректными;есть ли wr_rst_busy / rd_rst_busy;можно ли писать/читать во время reset busy.
+как долго держать reset;
+какие clocks должны тикать;
+когда valid flags становятся корректными;
+есть ли wr_rst_busy / rd_rst_busy;
+можно ли писать/читать во время reset busy.
 ```
 
 Практическое правило:
 
 ```
-после reset async FIFO не писать, пока write side busy;не читать, пока read side busy;не считать flags валидными раньше, чем FIFO вышел из reset.
+после reset async FIFO не писать, пока write side busy;
+не читать, пока read side busy;
+не считать flags валидными раньше, чем FIFO вышел из reset.
 ```
 
 ---
@@ -670,15 +676,17 @@ write side resetread side reset
 У Xilinx XPM FIFO часто есть сигналы типа:
 
 ```
-wr_rst_busyrd_rst_busy
+wr_rst_busy
+rd_rst_busy
 ```
 
 Их нужно учитывать.
 
 Например:
 
-```
-assign fifo_wr_en_safe = src_valid && src_ready && !wr_rst_busy;assign fifo_rd_en_safe = dst_ready && dst_valid && !rd_rst_busy;
+```verilog
+assign fifo_wr_en_safe = src_valid && src_ready && !wr_rst_busy;
+assign fifo_rd_en_safe = dst_ready && dst_valid && !rd_rst_busy;
 ```
 
 Или через ready/valid:
