@@ -78,17 +78,27 @@ clk
 Async FIFO:
 
 ```
-один clock для записидругой clock для чтения
+один clock для записи
+другой clock для чтения
 ```
 
 ```
-wr_clk domain               rd_clk domainwrite pointer               read pointerwrite enable                read enablefull flag                   empty flag
+wr_clk domain               rd_clk domain
+
+write pointer               read pointer
+write enable                read enable
+full flag                   empty flag
 ```
 
 То есть async FIFO — это не просто “массив памяти с двумя портами”. Это CDC-структура, внутри которой есть:
 
 ```
-dual-port memorywrite pointerread pointerGray-code pointer crossingfull/empty generationsynchronizer chains
+dual-port memory
+write pointer
+read pointer
+Gray-code pointer crossing
+full/empty generation
+synchronizer chains
 ```
 
 ---
@@ -98,7 +108,15 @@ dual-port memorywrite pointerread pointerGray-code pointer crossingfull/empty ge
 Типичная структура проекта:
 
 ```
-source module    |    | data + valid / wr_en    vasync FIFO    |    | data + valid / empty    vdestination module
+source module
+    |
+    | data + valid / wr_en
+    v
+async FIFO
+    |
+    | data + valid / empty
+    v
+destination module
 ```
 
 Например:
