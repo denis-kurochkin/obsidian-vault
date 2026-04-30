@@ -152,7 +152,11 @@ endmodule
 Поведение:
 
 ```
-arst_n упал в 0:    srst_n быстро становится 0 асинхронноarst_n поднялся в 1:    srst_n станет 1 только через STAGES тактов clk
+arst_n упал в 0:
+    srst_n быстро становится 0 асинхронно
+
+arst_n поднялся в 1:
+    srst_n станет 1 только через STAGES тактов clk
 ```
 
 Так reset отпускается синхронно с `clk`.
@@ -164,7 +168,8 @@ arst_n упал в 0:    srst_n быстро становится 0 асинхр
 Плохо:
 
 ```
-external_rst_n -> reset_sync on sys_clk -> rst_n_sysrst_n_sys используется также в aurora_clk domain
+external_rst_n -> reset_sync on sys_clk -> rst_n_sys
+rst_n_sys используется также в aurora_clk domain
 ```
 
 Это ошибка.
@@ -174,7 +179,9 @@ external_rst_n -> reset_sync on sys_clk -> rst_n_sysrst_n_sys используе
 Правильно:
 
 ```
-external_rst_n -> reset_sync(sys_clk)    -> rst_n_sysexternal_rst_n -> reset_sync(aurora_clk) -> rst_n_auroraexternal_rst_n -> reset_sync(pcie_clk)   -> rst_n_pcie
+external_rst_n -> reset_sync(sys_clk)    -> rst_n_sys
+external_rst_n -> reset_sync(aurora_clk) -> rst_n_aurora
+external_rst_n -> reset_sync(pcie_clk)   -> rst_n_pcie
 ```
 
 Правило:
