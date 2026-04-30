@@ -519,7 +519,9 @@ axi_clk domain reset command -> sfp_clk domain reset action
 Лучше:
 
 ```
-software reset request    -> CDC synchronizer/handshake    -> local reset controller in target domain
+software reset request
+    -> CDC synchronizer/handshake
+    -> local reset controller in target domain
 ```
 
 ---
