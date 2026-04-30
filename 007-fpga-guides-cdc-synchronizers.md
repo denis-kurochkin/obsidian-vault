@@ -239,7 +239,9 @@ configuration bit
 Допустим, в домене `clk_a` есть импульс:
 
 ```
-clk_a domain:pulse_a: ___|‾|___
+clk_a domain:
+
+pulse_a: ___|‾|___
 ```
 
 Он длится один такт `clk_a`.
@@ -248,14 +250,21 @@ clk_a domain:pulse_a: ___|‾|___
 
 Плохой вариант:
 
-```
-cdc_sync_bit u_pulse_sync (    .clk_dst  (clk_b),    .async_in (pulse_a),    .sync_out (pulse_b_level));
+```verilog
+cdc_sync_bit u_pulse_sync (
+    .clk_dst  (clk_b),
+    .async_in (pulse_a),
+    .sync_out (pulse_b_level)
+);
 ```
 
 После такого synchronizer может быть:
 
 ```
-pulse пойманpulse задержанpulse растянутpulse полностью потерян
+pulse пойман
+pulse задержан
+pulse растянут
+pulse полностью потерян
 ```
 
 То есть результат зависит от соотношения clock и фаз.
