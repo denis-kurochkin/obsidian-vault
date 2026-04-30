@@ -21,20 +21,23 @@ always @(posedge clk_b)
 
 Например:
 
-```
-always @(posedge clk_100m)    reg_a <= signal_a;
+```verilog
+always @(posedge clk_100m)    
+	reg_a <= signal_a;
 ```
 
 и
 
-```
-always @(posedge clk_156m)    reg_b <= signal_b;
+```verilog
+always @(posedge clk_156m)    
+	reg_b <= signal_b;
 ```
 
 Это два разных clock domains:
 
 ```
-clk_100m domainclk_156m domain
+clk_100m domain
+clk_156m domain
 ```
 
 Даже если оба clock генерируются внутри одного FPGA, например через MMCM/PLL, они могут считаться разными доменами, если между ними нет гарантированной фазовой связи или если Vivado не может безопасно проанализировать timing между ними.
