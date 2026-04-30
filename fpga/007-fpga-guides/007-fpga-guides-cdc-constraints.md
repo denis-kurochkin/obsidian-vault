@@ -283,7 +283,9 @@ set_clock_groups -asynchronous \
 Пример:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks sys_clk] \    -group [get_clocks aurora_user_clk]
+set_clock_groups -asynchronous \
+    -group [get_clocks sys_clk] \
+    -group [get_clocks aurora_user_clk]
 ```
 
 ---
@@ -293,13 +295,19 @@ set_clock_groups -asynchronous \    -group [get_clocks sys_clk] \    -group [get
 `set_false_path` может быть лучше, когда:
 
 ```
-нужно отключить только одно направление;нужно ограничить конкретные registers/pins;часть paths между clocks должна оставаться timed;нужно точечно исключить known false path;clocks в целом related, но конкретный путь функционально false.
+нужно отключить только одно направление;
+нужно ограничить конкретные registers/pins;
+часть paths между clocks должна оставаться timed;
+нужно точечно исключить known false path;
+clocks в целом related, но конкретный путь функционально false.
 ```
 
 Пример:
 
 ```
-set_false_path \    -from [get_pins u_src_reg/Q] \    -to   [get_pins u_sync/sync_ff_reg[0]/D]
+set_false_path \
+    -from [get_pins u_src_reg/Q] \
+    -to   [get_pins u_sync/sync_ff_reg[0]/D]
 ```
 
 Но такие точечные exceptions требуют аккуратности. Их сложнее сопровождать, особенно если RTL меняется.
