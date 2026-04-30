@@ -2111,13 +2111,39 @@ tool-specific RAM inference.
 Не как готовый код, а как архитектурная схема:
 
 ```
-write domain:    wr_ptr_bin    wr_ptr_gray    synchronized rd_ptr_gray    full logicread domain:    rd_ptr_bin    rd_ptr_gray    synchronized wr_ptr_gray    empty logicmemory:    dual-port RAM    write port on wr_clk    read port on rd_clk
+write domain:
+    wr_ptr_bin
+    wr_ptr_gray
+    synchronized rd_ptr_gray
+    full logic
+
+read domain:
+    rd_ptr_bin
+    rd_ptr_gray
+    synchronized wr_ptr_gray
+    empty logic
+
+memory:
+    dual-port RAM
+    write port on wr_clk
+    read port on rd_clk
 ```
 
 Схема:
 
 ```
-                    +-------------------+wr_clk domain       |                   |       rd_clk domain                    |   dual-port RAM   |din ---- write ---->|                   |---- read ----> dout                    |                   |                    +-------------------+wr_ptr_bin  -------------------------- controls write addressrd_ptr_bin  -------------------------- controls read addresswr_ptr_gray ---- sync ----> rd domain ---- empty logicrd_ptr_gray ---- sync ----> wr domain ---- full logic
+                    +-------------------+
+wr_clk domain       |                   |       rd_clk domain
+                    |   dual-port RAM   |
+din ---- write ---->|                   |---- read ----> dout
+                    |                   |
+                    +-------------------+
+
+wr_ptr_bin  -------------------------- controls write address
+rd_ptr_bin  -------------------------- controls read address
+
+wr_ptr_gray ---- sync ----> rd domain ---- empty logic
+rd_ptr_gray ---- sync ----> wr domain ---- full logic
 ```
 
 ---
