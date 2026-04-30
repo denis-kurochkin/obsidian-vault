@@ -74,7 +74,12 @@ Synchronizer **не является универсальным CDC-решени
 Он не гарантирует:
 
 ```
-1. что короткий pulse будет пойман;2. что multi-bit bus будет принят целостно;3. что несколько связанных сигналов сохранят взаимную синхронность;4. что событие не потеряется, если события идут слишком часто;5. что data/valid-протокол будет корректным сам по себе;6. что reset будет безопасно снят во всех доменах.
+1. что короткий pulse будет пойман;
+2. что multi-bit bus будет принят целостно;
+3. что несколько связанных сигналов сохранят взаимную синхронность;
+4. что событие не потеряется, если события идут слишком часто;
+5. что data/valid-протокол будет корректным сам по себе;
+6. что reset будет безопасно снят во всех доменах.
 ```
 
 Synchronizer решает только одну базовую задачу:
@@ -89,8 +94,26 @@ Synchronizer решает только одну базовую задачу:
 
 Это классический synchronizer для одного 1-bit level signal.
 
-```
-module cdc_sync_bit #(    parameter integer STAGES = 2,    parameter INIT_VALUE = 1'b0)(    input  wire clk_dst,    input  wire async_in,    output wire sync_out);    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)    reg [STAGES-1:0] sync_ff = {STAGES{INIT_VALUE}};    always @(posedge clk_dst) begin        sync_ff <= {sync_ff[STAGES-2:0], async_in};    end    assign sync_out = sync_ff[STAGES-1];endmodule
+```verilog
+module cdc_sync_bit #(
+    parameter integer STAGES = 2,
+    parameter INIT_VALUE = 1'b0
+)(
+    input  wire clk_dst,
+    input  wire async_in,
+    output wire sync_out
+);
+
+    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+    reg [STAGES-1:0] sync_ff = {STAGES{INIT_VALUE}};
+
+    always @(posedge clk_dst) begin
+        sync_ff <= {sync_ff[STAGES-2:0], async_in};
+    end
+
+    assign sync_out = sync_ff[STAGES-1];
+
+endmodule
 ```
 
 Использование:
