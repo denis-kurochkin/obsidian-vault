@@ -27,7 +27,12 @@ reset = 1 -> всё сброситьreset = 0 -> всё работает
 Reset часто нарушает это правило, потому что один reset signal подключают сразу во многие domains:
 
 ```
-external_reset_n        |        +--> sys_clk domain        +--> aurora_clk domain        +--> pcie_clk domain        +--> axi_clk domain
+external_reset_n
+        |
+        +--> sys_clk domain
+        +--> aurora_clk domain
+        +--> pcie_clk domain
+        +--> axi_clk domain
 ```
 
 Если reset асинхронный, то его снятие может произойти в любой момент относительно каждого clock.
