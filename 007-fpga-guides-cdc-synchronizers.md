@@ -834,7 +834,11 @@ a_dst = 1b_dst = 1
 Если связь важна, нужны:
 
 ```
-один encoded signal;Gray code;handshake;FIFO;специально спроектированный protocol.
+один encoded signal;
+Gray code;
+handshake;
+FIFO;
+специально спроектированный protocol.
 ```
 
 ---
@@ -847,8 +851,14 @@ a_dst = 1b_dst = 1
 
 Сначала его синхронизируем:
 
-```
-wire enable_dst_level;cdc_sync_bit u_enable_sync (    .clk_dst  (clk_dst),    .async_in (enable_src),    .sync_out (enable_dst_level));
+```verilog
+wire enable_dst_level;
+
+cdc_sync_bit u_enable_sync (
+    .clk_dst  (clk_dst),
+    .async_in (enable_src),
+    .sync_out (enable_dst_level)
+);
 ```
 
 Потом уже в destination domain делаем edge detection:
