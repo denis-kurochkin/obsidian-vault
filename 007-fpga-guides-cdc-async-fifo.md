@@ -317,7 +317,8 @@ Read domain должен знать write pointer:
 Но pointers находятся в разных clock domains.
 
 ```
-wr_ptr живет в wr_clk domainrd_ptr живет в rd_clk domain
+wr_ptr живет в wr_clk domain
+rd_ptr живет в rd_clk domain
 ```
 
 Нельзя просто передать binary pointer из одного домена в другой побитно.
@@ -333,7 +334,10 @@ binary pointer: 0111 -> 1000
 При побитной синхронизации принимающий домен может временно увидеть мусорное значение:
 
 ```
-0000111110100011
+0000
+1111
+1010
+0011
 ```
 
 Это может привести к неправильному `full` или `empty`.
