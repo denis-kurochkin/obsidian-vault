@@ -1364,13 +1364,17 @@ end
 Write side должен ориентироваться на:
 
 ```
-fullalmost_fullwr_data_count
+full
+almost_full
+wr_data_count
 ```
 
 Read side должен ориентироваться на:
 
 ```
-emptyalmost_emptyrd_data_count
+empty
+almost_empty
+rd_data_count
 ```
 
 ---
@@ -1379,7 +1383,7 @@ emptyalmost_emptyrd_data_count
 
 Плохой вариант:
 
-```
+```verilog
 assign fifo_wr_en = src_valid;
 ```
 
@@ -1387,14 +1391,19 @@ assign fifo_wr_en = src_valid;
 
 Правильно:
 
-```
-assign src_ready  = !fifo_full;assign fifo_wr_en = src_valid && src_ready;
+```verilog
+assign src_ready  = !fifo_full;
+assign fifo_wr_en = src_valid && src_ready;
 ```
 
 Если source не умеет останавливаться, нужен либо FIFO достаточной глубины, либо отдельная политика потери данных, например:
 
 ```
-drop new datadrop old dataset overflow flagpacket discardbackpressure upstream
+drop new data
+drop old data
+set overflow flag
+packet discard
+backpressure upstream
 ```
 
 Это должно быть архитектурным решением, а не случайным поведением.
