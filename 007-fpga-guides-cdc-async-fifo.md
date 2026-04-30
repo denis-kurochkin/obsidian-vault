@@ -702,7 +702,10 @@ FIFO width = DATA_WIDTH + KEEP_WIDTH + 1 + USER_WIDTH
 Для AXI-Stream в Vivado удобнее использовать готовые IP:
 
 ```
-AXI4-Stream Data FIFOAXIS Clock ConverterFIFO Generatorxpm_fifo_async
+AXI4-Stream Data FIFO
+AXIS Clock Converter
+FIFO Generator
+xpm_fifo_async
 ```
 
 Если задача простая и без полного AXIS-интерфейса, `xpm_fifo_async` часто достаточно.
