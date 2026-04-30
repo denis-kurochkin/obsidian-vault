@@ -36,6 +36,7 @@
 	- [System-level propagation effects](007-fpga-guides-rtl-system-level-propagation-effects.md)
 
 - [Clock Domain Crossing (CDC)](007-fpga-guides-cdc.md)
+	- [Synchronizers](007-fpga-guides-cdc.md) 
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
