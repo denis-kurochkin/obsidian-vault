@@ -579,7 +579,8 @@ Latency зависит от:
 У FIFO часто есть два режима чтения:
 
 ```
-standard read modeFirst Word Fall Through / FWFT
+standard read mode
+First Word Fall Through / FWFT
 ```
 
 ## Standard mode
@@ -589,7 +590,9 @@ standard read modeFirst Word Fall Through / FWFT
 Типовая логика:
 
 ```
-если !empty:    подать rd_en    на следующем такте получить dout
+если !empty:
+    подать rd_en
+    на следующем такте получить dout
 ```
 
 Условно:
