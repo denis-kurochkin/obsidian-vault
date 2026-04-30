@@ -34,7 +34,7 @@
 	- [Stall chain analysis](007-fpga-guides-rtl-stall-chain-analysis.md)
 	- [Deadlock scenarios](007-fpga-guides-rtl-deadlock-scenarios.md)
 	- [System-level propagation effects](007-fpga-guides-rtl-system-level-propagation-effects.md)
-
+	
 - [Clock Domain Crossing (CDC)](007-fpga-guides-cdc.md)
 	- [Synchronizers](007-fpga-guides-cdc-synchronizers.md) 
 	- [Async FIFO](007-fpga-guides-cdc-async-fifo.md) 
@@ -67,6 +67,8 @@
 	- [Delay alignment](007-fpga-guides-ddr-training-delay-alignment.md)
 	- [Failure symptoms](007-fpga-guides-ddr-training-failure-symptoms.md)
 	- [Timing sensitivity](007-fpga-guides-ddr-training-timing-sensitivity.md)
+	
+- [DDR training](007-fpga-guides-ddr-training.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
