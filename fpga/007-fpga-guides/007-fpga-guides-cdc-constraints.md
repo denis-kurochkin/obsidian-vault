@@ -157,7 +157,9 @@ sfp_clk = 156.25 MHz oscillator / GT-related domain
 то можно описать:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks sys_clk] \    -group [get_clocks sfp_clk]
+set_clock_groups -asynchronous \
+    -group [get_clocks sys_clk] \
+    -group [get_clocks sfp_clk]
 ```
 
 После этого обычный STA не будет пытаться закрывать timing между этими двумя domains.
@@ -171,7 +173,10 @@ set_clock_groups -asynchronous \    -group [get_clocks sys_clk] \    -group [get
 Если clocks больше двух:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks {sys_clk clk_100m}] \    -group [get_clocks {sfp_clk aurora_user_clk}] \    -group [get_clocks {pcie_user_clk}]
+set_clock_groups -asynchronous \
+    -group [get_clocks {sys_clk clk_100m}] \
+    -group [get_clocks {sfp_clk aurora_user_clk}] \
+    -group [get_clocks {pcie_user_clk}]
 ```
 
 Смысл:
