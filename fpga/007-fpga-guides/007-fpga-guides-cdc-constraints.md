@@ -838,13 +838,16 @@ ack: clk_dst -> clk_src
 Например:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks clk_src] \    -group [get_clocks clk_dst]
+set_clock_groups -asynchronous \
+    -group [get_clocks clk_src] \
+    -group [get_clocks clk_dst]
 ```
 
 И RTL должен содержать synchronizers:
 
 ```
-req synchronizer в clk_dstack synchronizer в clk_src
+req synchronizer в clk_dst
+ack synchronizer в clk_src
 ```
 
 Constraint не проверит, что source держит data stable до ack. Это уже protocol-level property.
