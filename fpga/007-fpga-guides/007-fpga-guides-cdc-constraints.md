@@ -912,13 +912,17 @@ set_multicycle_path 10 -from [get_clocks clk_a] -to [get_clocks clk_b]
 Пример:
 
 ```
-button inputexternal interruptasync GPIO
+button input
+external interrupt
+async GPIO
 ```
 
 Для них важнее:
 
 ```
-synchronizerdebounce/filteredge detection after sync
+synchronizer
+debounce/filter
+edge detection after sync
 ```
 
 ---
