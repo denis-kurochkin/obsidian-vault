@@ -381,15 +381,25 @@ end
 Часто используют правило:
 
 ```
-asynchronous assertsynchronous deassert
+asynchronous assert
+synchronous deassert
 ```
 
 То есть reset можно активировать асинхронно, но отпускать его нужно через синхронизатор в каждом clock domain.
 
 Пример:
 
-```
-reg [1:0] rst_sync;always @(posedge clk or negedge arst_n) begin    if (!arst_n)        rst_sync <= 2'b00;    else        rst_sync <= {rst_sync[0], 1'b1};endassign rst_n = rst_sync[1];
+```verilog
+reg [1:0] rst_sync;
+
+always @(posedge clk or negedge arst_n) 
+begin    
+	if (!arst_n)        
+		rst_sync <= 2'b00;    
+	else        
+		rst_sync <= {rst_sync[0], 1'b1};
+end
+assign rst_n = rst_sync[1];
 ```
 
 ---
