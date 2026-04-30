@@ -7,7 +7,13 @@
 Главная идея:
 
 ```
-async / foreign clock domain signal        |        v  synchronizer in destination clock domain        |        vsafe signal for dst logic
+async / foreign clock domain signal
+        |
+        v  
+	synchronizer in destination clock domain
+        |
+        v
+safe signal for dst logic
 ```
 
 Важно: **synchronizer всегда принадлежит принимающему clock domain**. То есть если сигнал идет из `clk_a` в `clk_b`, то synchronizer работает на `clk_b`.
