@@ -206,7 +206,8 @@ if (rd_en && !empty)
 В async FIFO обычно есть две стороны:
 
 ```
-producer — пишет данные в FIFOconsumer — читает данные из FIFO
+producer — пишет данные в FIFO
+consumer — читает данные из FIFO
 ```
 
 Producer работает в `wr_clk`.
@@ -219,7 +220,7 @@ Consumer должен уважать `empty`.
 
 Плохой вариант:
 
-```
+```verilog
 assign wr_en = data_valid;
 ```
 
@@ -227,13 +228,13 @@ assign wr_en = data_valid;
 
 Правильнее:
 
-```
+```verilog
 assign wr_en = data_valid && !fifo_full;
 ```
 
 Плохой вариант на стороне чтения:
 
-```
+```verilog
 assign rd_en = 1'b1;
 ```
 
