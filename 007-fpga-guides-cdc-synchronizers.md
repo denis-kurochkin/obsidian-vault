@@ -764,7 +764,13 @@ FF -> FF -> FF
 Плохая практика:
 
 ```
-async_signal    |    +--> synchronizer A    |    +--> synchronizer B    |    +--> synchronizer C
+async_signal
+    |
+    +--> synchronizer A
+    |
+    +--> synchronizer B
+    |
+    +--> synchronizer C
 ```
 
 Если один и тот же async signal независимо синхронизируется в нескольких местах одного и того же destination domain, возможны ситуации, когда разные части логики увидят изменение в разные такты.
@@ -772,7 +778,17 @@ async_signal    |    +--> synchronizer A    |    +--> synchronizer B    |    +--
 Лучше:
 
 ```
-async_signal    |    vsingle synchronizer    |    vsynced_signal    |    +--> logic A    +--> logic B    +--> logic C
+async_signal
+    |
+    v
+single synchronizer
+    |
+    v
+synced_signal
+    |
+    +--> logic A
+    +--> logic B
+    +--> logic C
 ```
 
 Правило:
@@ -788,7 +804,13 @@ Reconvergence — это когда несколько сигналов пере
 Пример:
 
 ```
-clk_src domain:a_src -----> sync -----> a_dst ----+                                   |                                   +--> combinational decision                                   |b_src -----> sync -----> b_dst ----+
+clk_src domain:
+
+a_src -----> sync -----> a_dst ----+
+                                   |
+                                   +--> combinational decision
+                                   |
+b_src -----> sync -----> b_dst ----+
 ```
 
 Если `a_src` и `b_src` менялись согласованно в source domain, после независимой синхронизации эта связь может нарушиться.
