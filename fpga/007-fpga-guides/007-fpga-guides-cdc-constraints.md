@@ -120,13 +120,16 @@ report_timing_summary
 Самая частая команда для полностью асинхронных clock domains:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks clk_a] \    -group [get_clocks clk_b]
+set_clock_groups -asynchronous \
+    -group [get_clocks clk_a] \
+    -group [get_clocks clk_b]
 ```
 
 Смысл:
 
 ```
-пути из clk_a в clk_b не анализируются обычным timing;пути из clk_b в clk_a тоже не анализируются обычным timing.
+пути из clk_a в clk_b не анализируются обычным timing;
+пути из clk_b в clk_a тоже не анализируются обычным timing.
 ```
 
 То есть это двунаправленное исключение между группами.
