@@ -210,28 +210,33 @@ dual-clock FIFO
 Например:
 
 ```
-clk_a:  pulse длится 1 такт clk_aclk_b:  медленнее или не совпадает по фазе
+clk_a:  pulse длится 1 такт clk_a
+clk_b:  медленнее или не совпадает по фазе
 ```
 
 Если фронт `clk_b` не попадет внутрь pulse, принимающий домен вообще его не увидит.
 
 Плохой вариант:
 
-```
-always @(posedge clk_b)    pulse_b <= pulse_a;
+```verilog
+always @(posedge clk_b)    
+	pulse_b <= pulse_a;
 ```
 
 Правильные варианты:
 
 ```
-pulse stretchingtoggle synchronizerrequest/acknowledge handshakeasync FIFO
+pulse stretching
+toggle synchronizer
+request/acknowledge handshake
+async FIFO
 ```
 
 Один из популярных способов — **toggle synchronizer**.
 
 В исходном домене при событии меняется состояние toggle-бита:
 
-```
+```verilog
 always @(posedge clk_a or negedge rst_a_n) begin    if (!rst_a_n)        toggle_a <= 1'b0;    else if (event_a)        toggle_a <= ~toggle_a;end
 ```
 
