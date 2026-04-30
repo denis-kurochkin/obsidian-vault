@@ -829,7 +829,8 @@ Gray code помогает тем, что за один increment меняетс
 Handshake обычно имеет два направления:
 
 ```
-req: clk_src -> clk_dstack: clk_dst -> clk_src
+req: clk_src -> clk_dst
+ack: clk_dst -> clk_src
 ```
 
 Если clocks asynchronous, оба направления должны быть покрыты constraints.
