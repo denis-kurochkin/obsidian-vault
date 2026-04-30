@@ -29,7 +29,8 @@ Vivado по умолчанию пытается анализировать timin
 Пример:
 
 ```
-clk_100m от board oscillatorclk_156m от GT reference/user clock
+clk_100m от board oscillator
+clk_156m от GT reference/user clock
 ```
 
 Если между ними есть обычный timing path:
