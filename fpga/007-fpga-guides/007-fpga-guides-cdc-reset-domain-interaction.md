@@ -396,7 +396,8 @@ external/global reset — async assert
 Для асинхронного reset у триггера есть ограничения:
 
 ```
-recovery timeremoval time
+recovery time
+removal time
 ```
 
 Это похоже по смыслу на setup/hold, но относится к reset.
