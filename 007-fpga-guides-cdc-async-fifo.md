@@ -1535,7 +1535,8 @@ s_axis_tready = !fifo_full
 Например:
 
 ```
-source average = 200 MB/sdestination average = 150 MB/s
+source average = 200 MB/s
+destination average = 150 MB/s
 ```
 
 Разница:
@@ -1549,7 +1550,12 @@ FIFO будет заполняться со скоростью 50 MB/s.
 Значит, нужно:
 
 ```
-снизить input rate;увеличить output rate;добавить backpressure;дропать данные;сжимать/фильтровать данные;изменить архитектуру.
+снизить input rate;  
+увеличить output rate;  
+добавить backpressure;  
+дропать данные;  
+сжимать/фильтровать данные;  
+изменить архитектуру.
 ```
 
 ---
@@ -1561,7 +1567,12 @@ Async FIFO не стоит использовать везде подряд.
 Он может быть избыточен для:
 
 ```
-одного status flag;редкого start pulse;одного configuration bit;простого request/acknowledge;медленно меняющегося mode signal;reset crossing.
+одного status flag;
+редкого start pulse;
+одного configuration bit;
+простого request/acknowledge;
+медленно меняющегося mode signal;
+reset crossing.
 ```
 
 В этих случаях лучше использовать:
