@@ -1757,20 +1757,21 @@ Scoreboard:
 
 Успешная запись:
 
-```
+```verilog
 wr_fire = wr_en && !full;
 ```
 
 Успешное чтение:
 
-```
+```verilog
 rd_fire = rd_en && !empty;
 ```
 
 Для AXI-style:
 
-```
-s_fire = s_valid && s_ready;m_fire = m_valid && m_ready;
+```verilog
+s_fire = s_valid && s_ready;
+m_fire = m_valid && m_ready;
 ```
 
 ---
