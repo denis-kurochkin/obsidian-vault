@@ -1578,7 +1578,10 @@ reset crossing.
 В этих случаях лучше использовать:
 
 ```
-bit synchronizerpulse synchronizerhandshakereset synchronizer
+bit synchronizer
+pulse synchronizer
+handshake
+reset synchronizer
 ```
 
 Async FIFO нужен именно для **очереди данных**.
