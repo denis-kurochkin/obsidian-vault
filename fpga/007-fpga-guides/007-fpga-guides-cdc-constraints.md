@@ -1155,11 +1155,22 @@ CDC constraints — это способ описать Vivado, как анали
 Главные правила:
 
 ```
-1. Сначала RTL CDC architecture, потом constraints.2. set_clock_groups отключает timing между clock groups.3. set_false_path точечно отключает paths, часто в одном направлении.4. set_max_delay -datapath_only может ограничивать physical datapath delay без обычного skew analysis.5. Related clocks нельзя автоматически объявлять asynchronous.6. Asynchronous clocks требуют CDC-структур и timing exceptions.7. Timing clean не означает CDC clean.8. report_cdc обязателен для multi-clock проекта.9. Широкие constraints могут скрыть ошибки.10. XPM/IP CDC structures лучше не перекрывать необдуманными global exceptions.
+1. Сначала RTL CDC architecture, потом constraints.
+2. set_clock_groups отключает timing между clock groups.
+3. set_false_path точечно отключает paths, часто в одном направлении.
+4. set_max_delay -datapath_only может ограничивать physical datapath delay без обычного skew analysis.
+5. Related clocks нельзя автоматически объявлять asynchronous.
+6. Asynchronous clocks требуют CDC-структур и timing exceptions.
+7. Timing clean не означает CDC clean.
+8. report_cdc обязателен для multi-clock проекта.
+9. Широкие constraints могут скрыть ошибки.
+10. XPM/IP CDC structures лучше не перекрывать необдуманными global exceptions.
 ```
 
 Короткая формула:
 
 ```
-RTL делает CDC безопасным.XDC говорит Vivado, как не анализировать CDC как обычный synchronous timing.report_cdc проверяет, похожа ли структура на безопасный CDC.
+RTL делает CDC безопасным.
+XDC говорит Vivado, как не анализировать CDC как обычный synchronous timing.
+report_cdc проверяет, похожа ли структура на безопасный CDC.
 ```
