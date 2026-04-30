@@ -1593,7 +1593,14 @@ Async FIFO нужен именно для **очереди данных**.
 Async FIFO почти всегда уместен для:
 
 ```
-потоковых данных;burst traffic;AXI-Stream CDC;передачи sample data;перехода между user_clk и processing_clk;передачи пакетов;сглаживания неравномерной готовности consumer;clock domain boundary между IP-блоками.
+потоковых данных;
+burst traffic;
+AXI-Stream CDC;
+передачи sample data;
+перехода между user_clk и processing_clk;
+передачи пакетов;
+сглаживания неравномерной готовности consumer;
+clock domain boundary между IP-блоками.
 ```
 
 Признак:
