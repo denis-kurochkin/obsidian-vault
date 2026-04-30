@@ -366,19 +366,27 @@ end
 Плюсы:
 
 ```
-может сбросить регистр без clock;удобен для power-on/global reset;часто используется в IP;быстро приводит схему в безопасное состояние.
+может сбросить регистр без clock;
+удобен для power-on/global reset;
+часто используется в IP;
+быстро приводит схему в безопасное состояние.
 ```
 
 Минусы:
 
 ```
-опасное асинхронное снятие reset;нужны recovery/removal timing checks;сложнее анализ RDC;может создавать reset tree с большими fanout;может ухудшать timing/placement.
+опасное асинхронное снятие reset;
+нужны recovery/removal timing checks;
+сложнее анализ RDC;
+может создавать reset tree с большими fanout;
+может ухудшать timing/placement.
 ```
 
 Практический компромисс:
 
 ```
-external/global reset — async assertвнутренний local reset — sync deassert
+external/global reset — async assert
+внутренний local reset — sync deassert
 ```
 
 ---
