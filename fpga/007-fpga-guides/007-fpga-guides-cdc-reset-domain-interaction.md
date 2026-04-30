@@ -54,7 +54,11 @@ CDC — это crossing обычных data/control signals между clock dom
 RDC — это проблемы, связанные с reset-сигналами:
 
 ```
-асинхронное снятие resetразные reset domains внутри одного clock domainreset одного блока влияет на другой блок без согласованияодна часть логики вышла из reset раньше другойreset пересекает clock domain как обычный control signal
+асинхронное снятие reset
+разные reset domains внутри одного clock domain
+reset одного блока влияет на другой блок без согласования
+одна часть логики вышла из reset раньше другой
+reset пересекает clock domain как обычный control signal
 ```
 
 RDC может проявляться очень редко, например только при включении питания, при перезапуске IP, при потере PLL lock или при частичном reset одного subsystem.
@@ -66,13 +70,15 @@ RDC может проявляться очень редко, например т
 Для reset важно разделять два действия:
 
 ```
-assert reset    — активировать сбросdeassert reset  — отпустить сброс
+assert reset    — активировать сброс
+deassert reset  — отпустить сброс
 ```
 
 Например для active-low reset:
 
 ```
-rst_n = 0 -> reset assertedrst_n = 1 -> reset deasserted
+rst_n = 0 -> reset asserted
+rst_n = 1 -> reset deasserted
 ```
 
 Обычно опасен именно **deassertion**.
