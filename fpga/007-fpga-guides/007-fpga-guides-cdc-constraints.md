@@ -932,7 +932,9 @@ edge detection after sync
 Плохая практика:
 
 ```
-есть failing timing path между clk_a и clk_bдобавили set_false_pathtiming стал clean
+есть failing timing path между clk_a и clk_b
+добавили set_false_path
+timing стал clean
 ```
 
 Если путь действительно CDC и в RTL есть правильный synchronizer — нормально.
@@ -942,7 +944,11 @@ edge detection after sync
 Правильный порядок:
 
 ```
-1. определить, что это за path;2. понять clock relationship;3. исправить RTL CDC architecture;4. только потом добавить constraints;5. проверить report_cdc.
+1. определить, что это за path;
+2. понять clock relationship;
+3. исправить RTL CDC architecture;
+4. только потом добавить constraints;
+5. проверить report_cdc.
 ```
 
 ---
@@ -956,7 +962,10 @@ edge detection after sync
 Хороший waiver должен иметь объяснение:
 
 ```
-почему это безопасно;какой protocol это гарантирует;где это проверяется;почему warning не требует RTL-исправления.
+почему это безопасно;
+какой protocol это гарантирует;
+где это проверяется;
+почему warning не требует RTL-исправления.
 ```
 
 Плохой waiver:
@@ -974,7 +983,17 @@ CDC waivers без инженерного объяснения опасны.
 Хороший порядок работы:
 
 ```
-1. Выписать все clocks проекта.2. Разделить clocks на related/asynchronous/exclusive.3. Нарисовать CDC crossings.4. Для каждого crossing определить method: sync/FIFO/handshake/etc.5. В RTL явно использовать CDC modules или XPM.6. В XDC описать clock groups/exceptions.7. Проверить get_clocks/report_clocks.8. Запустить report_clock_interaction.9. Запустить report_cdc.10. Исправить Critical/Unknown crossings.11. Проверить, что timing clean не получен за счет сокрытия ошибок.
+1. Выписать все clocks проекта.
+2. Разделить clocks на related/asynchronous/exclusive.
+3. Нарисовать CDC crossings.
+4. Для каждого crossing определить method: sync/FIFO/handshake/etc.
+5. В RTL явно использовать CDC modules или XPM.
+6. В XDC описать clock groups/exceptions.
+7. Проверить get_clocks/report_clocks.
+8. Запустить report_clock_interaction.
+9. Запустить report_cdc.
+10. Исправить Critical/Unknown crossings.
+11. Проверить, что timing clean не получен за счет сокрытия ошибок.
 ```
 
 ---
@@ -984,13 +1003,16 @@ CDC waivers без инженерного объяснения опасны.
 Допустим:
 
 ```
-sys_clk = 200 MHzsfp_user_clk = 156.25 MHz
+sys_clk = 200 MHz
+sfp_user_clk = 156.25 MHz
 ```
 
 RTL:
 
 ```
-status flags -> cdc_sync_bitevents       -> cdc_pulse_togglestreams      -> async FIFO
+status flags -> cdc_sync_bit
+events       -> cdc_pulse_toggle
+streams      -> async FIFO
 ```
 
 XDC:
