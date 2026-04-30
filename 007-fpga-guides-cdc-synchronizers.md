@@ -646,20 +646,38 @@ source:
 
 Хорошо:
 
-```
-always @(posedge clk_src) begin    status_src_r <= status_next;endcdc_sync_bit u_status_sync (    .clk_dst  (clk_dst),    .async_in (status_src_r),    .sync_out (status_dst));
+```verilog
+always @(posedge clk_src) begin
+    status_src_r <= status_next;
+end
+
+cdc_sync_bit u_status_sync (
+    .clk_dst  (clk_dst),
+    .async_in (status_src_r),
+    .sync_out (status_dst)
+);
 ```
 
 Плохо:
 
-```
-assign status_comb = a & b | c;cdc_sync_bit u_status_sync (    .clk_dst  (clk_dst),    .async_in (status_comb),    .sync_out (status_dst));
+```verilog
+assign status_comb = a & b | c;
+
+cdc_sync_bit u_status_sync (
+    .clk_dst  (clk_dst),
+    .async_in (status_comb),
+    .sync_out (status_dst)
+);
 ```
 
 Почему combinational signal перед synchronizer хуже:
 
 ```
-1. возможны glitches;2. фактическая частота переключений выше, чем кажется;3. destination domain может поймать короткий glitch;4. CDC-анализ становится менее чистым;5. сложнее понять реальную semantics сигнала.
+1. возможны glitches;
+2. фактическая частота переключений выше, чем кажется;
+3. destination domain может поймать короткий glitch;
+4. CDC-анализ становится менее чистым;
+5. сложнее понять реальную semantics сигнала.
 ```
 
 Правило:
