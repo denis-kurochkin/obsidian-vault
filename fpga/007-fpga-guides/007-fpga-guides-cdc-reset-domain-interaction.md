@@ -1055,7 +1055,8 @@ AXI-интерфейсы обычно имеют reset, связанный с с
 Например:
 
 ```
-S_AXI_ACLKS_AXI_ARESETN
+S_AXI_ACLK
+S_AXI_ARESETN
 ```
 
 `ARESETN` должен быть синхронно отпущен относительно `ACLK`.
@@ -1075,7 +1076,12 @@ AXI register write -> reset request -> target clock domain reset controller
 У Vivado IP часто есть свои reset inputs:
 
 ```
-aresetnresets_axi_aresetnm_axis_aresetngt_resetuser_reset
+aresetn
+reset
+s_axi_aresetn
+m_axis_aresetn
+gt_reset
+user_reset
 ```
 
 Важно читать semantics конкретного IP:
