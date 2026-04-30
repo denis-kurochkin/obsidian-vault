@@ -58,7 +58,7 @@ atomic transfer для data bus
 
 Плохая логика:
 
-```veri
+```verilog
 always @(posedge clk_b) begin
     data_b <= data_a;
 end
