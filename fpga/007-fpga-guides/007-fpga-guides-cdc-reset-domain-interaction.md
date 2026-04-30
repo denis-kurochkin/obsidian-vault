@@ -412,8 +412,13 @@ Reset synchronizer решает именно эту проблему для deas
 
 Представим FSM:
 
-```
-always @(posedge clk or negedge rst_n) begin    if (!rst_n)        state <= IDLE;    else        state <= next_state;end
+```verilog
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n)
+        state <= IDLE;
+    else
+        state <= next_state;
+end
 ```
 
 Если разные регистры FSM выйдут из reset не в один и тот же такт, FSM может попасть в невозможное состояние.
@@ -421,7 +426,10 @@ always @(posedge clk or negedge rst_n) begin    if (!rst_n)        state <= IDLE
 Например one-hot FSM:
 
 ```
-RESET: 0001после некорректного release:       0000или   0011
+RESET: 0001
+после некорректного release:
+       0000
+или   0011
 ```
 
 Это может привести к зависанию.
