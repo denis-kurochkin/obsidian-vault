@@ -58,8 +58,10 @@ atomic transfer для data bus
 
 Плохая логика:
 
-```
-always @(posedge clk_b) begin    data_b <= data_a;end
+```veri
+always @(posedge clk_b) begin
+    data_b <= data_a;
+end
 ```
 
 не становится безопасной после:
