@@ -326,7 +326,9 @@ read data    = data_b
 В Vivado для этого можно использовать:
 
 ```
-FIFO Generator IPXPM_FIFO_ASYNCсобственный async FIFO
+FIFO Generator IP
+XPM_FIFO_ASYNC
+собственный async FIFO
 ```
 
 Для большинства практических FPGA-проектов удобно использовать **Xilinx XPM**:
@@ -338,13 +340,19 @@ xpm_fifo_async
 Плюсы:
 
 ```
-готовый проверенный CDC-механизмкорректная обработка full/emptyподдержка разных ширинпонятная интеграция в Vivado
+готовый проверенный CDC-механизм
+корректная обработка full/empty
+поддержка разных ширин
+понятная интеграция в Vivado
 ```
 
 Async FIFO обычно нужен для:
 
 ```
-AXI-Stream между clock domainsпередачи ADC/DAC данныхSFP/PCIe/user logic crossingпередачи пакетовбуферизации между разными частотами
+AXI-Stream между clock domains
+передачи ADC/DAC данных
+SFP/PCIe/user logic crossing
+передачи пакетовбуферизации между разными частотами
 ```
 
 ---
