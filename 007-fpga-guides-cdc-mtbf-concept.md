@@ -1002,7 +1002,14 @@ CDC constraints не делают crossing безопасным
 Для точного расчета нужны данные:
 
 ```
-параметры FPGA-технологииτ и Cчастоты clockчастота переключения signalrouting delayssetup timesчисло synchronizersтребуемый system-level MTBF
+параметры FPGA-технологии
+τ и C
+частоты clock
+частота переключения signal
+routing delays
+setup times
+число synchronizers
+требуемый system-level MTBF
 ```
 
 ---
