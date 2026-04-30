@@ -248,14 +248,18 @@ link down reset
 
 Частый pattern:
 
-```
+```verilog
 assign global_arst_n = board_rst_n & pll_locked;
 ```
 
 Затем:
 
 ```
-reset_sync u_rst_sys (    .clk    (sys_clk),    .arst_n (global_arst_n),    .srst_n (sys_rst_n));
+reset_sync u_rst_sys (
+    .clk    (sys_clk),
+    .arst_n (global_arst_n),
+    .srst_n (sys_rst_n)
+);
 ```
 
 Это нормально как идея, но важно:
