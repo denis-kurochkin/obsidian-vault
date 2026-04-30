@@ -742,13 +742,17 @@ end
 
 Потом:
 
-```
-cdc_sync_bit u_sync (    .clk_dst  (clk_dst),    .async_in (flag_src),    .sync_out (flag_dst));
+```verilog
+cdc_sync_bit u_sync (
+    .clk_dst  (clk_dst),
+    .async_in (flag_src),
+    .sync_out (flag_dst)
+);
 ```
 
 Плохо:
 
-```
+```verilog
 assign flag_comb = a & b | c;
 ```
 
