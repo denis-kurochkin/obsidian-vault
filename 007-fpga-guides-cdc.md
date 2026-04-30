@@ -120,8 +120,24 @@ reset crossing
 
 Пример:
 
-```
-reg sync_ff1;reg sync_ff2;always @(posedge clk_dst or negedge rst_dst_n) begin    if (!rst_dst_n) begin        sync_ff1 <= 1'b0;        sync_ff2 <= 1'b0;    end else begin        sync_ff1 <= async_signal;        sync_ff2 <= sync_ff1;    endendassign synced_signal = sync_ff2;
+```verilog
+reg sync_ff1;
+reg sync_ff2;
+
+always @(posedge clk_dst or negedge rst_dst_n) 
+begin    
+	if (!rst_dst_n) 
+	begin        
+	sync_ff1 <= 1'b0;        
+	sync_ff2 <= 1'b0;    
+	end 
+	else 
+	begin        
+	sync_ff1 <= async_signal;        
+	sync_ff2 <= sync_ff1;    
+	end
+end
+assign synced_signal = sync_ff2;
 ```
 
 Смысл:
