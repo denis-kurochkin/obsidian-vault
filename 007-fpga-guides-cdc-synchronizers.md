@@ -572,7 +572,10 @@ one-hot state без специальной защиты.
 Для multi-bit значений нужны другие CDC-паттерны:
 
 ```
-handshake synchronizermux-based data synchronizerGray-code synchronizerasync FIFO
+handshake synchronizer
+mux-based data synchronizer
+Gray-code synchronizer
+async FIFO
 ```
 
 Async FIFO лучше рассматривать отдельно, потому что это уже полноценная CDC-структура с write/read pointers, full/empty и memory.
@@ -586,7 +589,19 @@ Async FIFO лучше рассматривать отдельно, потому 
 Идея:
 
 ```
-clk_src domain:    1. зафиксировать data_src в регистре;    2. держать data stable;    3. отправить request;clk_dst domain:    4. синхронизировать request;    5. захватить data;    6. отправить acknowledge;clk_src domain:    7. получить acknowledge;    8. разрешить следующую передачу.
+clk_src domain:
+    1. зафиксировать data_src в регистре;
+    2. держать data stable;
+    3. отправить request;
+
+clk_dst domain:
+    4. синхронизировать request;
+    5. захватить data;
+    6. отправить acknowledge;
+
+clk_src domain:
+    7. получить acknowledge;
+    8. разрешить следующую передачу.
 ```
 
 Структура:
