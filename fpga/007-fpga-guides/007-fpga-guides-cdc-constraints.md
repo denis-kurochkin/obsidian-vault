@@ -81,7 +81,14 @@ Constraint только говорит Vivado не анализировать о
 Полезно разделять так:
 
 ```
-RTL:    как данные реально пересекают clock domainXDC:    как Vivado должен анализировать или игнорировать timing pathsreport_cdc:    совпадает ли RTL-структура с ожидаемой CDC-методологией
+RTL:
+    как данные реально пересекают clock domain
+
+XDC:
+    как Vivado должен анализировать или игнорировать timing paths
+
+report_cdc:
+    совпадает ли RTL-структура с ожидаемой CDC-методологией
 ```
 
 AMD описывает `report_cdc` как structural analysis CDC-переходов; этот отчет нужен для поиска потенциально небезопасных CDC, включая проблемы metastability и data coherency. При этом `report_cdc` фокусируется на структуре crossing и связанных constraints, а не на timing slack.
