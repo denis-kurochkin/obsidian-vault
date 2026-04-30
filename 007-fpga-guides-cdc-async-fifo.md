@@ -652,8 +652,10 @@ m_data
 
 Для FWFT FIFO:
 
-```
-assign m_valid = !fifo_empty;assign m_data  = fifo_dout;assign fifo_rd_en = m_valid && m_ready;
+```verilog
+assign m_valid = !fifo_empty;
+assign m_data  = fifo_dout;
+assign fifo_rd_en = m_valid && m_ready;
 ```
 
 Это превращает async FIFO в CDC-мост для streaming data.
@@ -665,7 +667,12 @@ assign m_valid = !fifo_empty;assign m_data  = fifo_dout;assign fifo_rd_en = m_va
 Для AXI-Stream CDC обычно используют async FIFO с сигналами:
 
 ```
-tdatatvalidtreadytlasttkeeptuser
+tdata
+tvalid
+tready
+tlast
+tkeep
+tuser
 ```
 
 Запись в FIFO:
