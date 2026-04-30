@@ -834,8 +834,13 @@ end
 
 Правильно:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= async_in;    sync_ff2 <= sync_ff1;endassign synced_masked = sync_ff2 & mask;
+```verilog
+always @(posedge clk_dst) begin
+    sync_ff1 <= async_in;
+    sync_ff2 <= sync_ff1;
+end
+
+assign synced_masked = sync_ff2 & mask;
 ```
 
 Почему:
