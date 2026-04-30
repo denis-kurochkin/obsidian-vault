@@ -252,8 +252,9 @@ routing delay больше, `Tresolve` меньше, MTBF хуже.
 
 В Vivado synchronizer-регистры обычно помечают так:
 
-```
-(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)reg [1:0] sync_ff;
+```verilog
+(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+reg [1:0] sync_ff;
 ```
 
 `ASYNC_REG` сообщает инструменту:
@@ -265,7 +266,11 @@ routing delay больше, `Tresolve` меньше, MTBF хуже.
 Практический эффект:
 
 ```
-Vivado лучше распознает CDC structureVivado старается размещать FF stages близкоуменьшается routing delayувеличивается Tresolveулучшается MTBF
+Vivado лучше распознает CDC structure
+Vivado старается размещать FF stages близко
+уменьшается routing delay
+увеличивается Tresolve
+улучшается MTBF
 ```
 
 ---
