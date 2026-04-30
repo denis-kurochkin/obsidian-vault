@@ -1225,7 +1225,9 @@ GUI-настройка;
 Минусы:
 
 ```
-нужно аккуратно задать параметры;template выглядит громоздко;для новичка меньше визуальной подсказки, чем в IP GUI.
+нужно аккуратно задать параметры;
+template выглядит громоздко;
+для новичка меньше визуальной подсказки, чем в IP GUI.
 ```
 
 ## AXIS Clock Converter / AXI-Stream Data FIFO
@@ -1233,13 +1235,17 @@ GUI-настройка;
 Плюсы:
 
 ```
-готовый AXI-Stream интерфейс;обрабатывает tvalid/tready/tlast/tkeep;удобно в Block Design.
+готовый AXI-Stream интерфейс;
+обрабатывает tvalid/tready/tlast/tkeep;
+удобно в Block Design.
 ```
 
 Минусы:
 
 ```
-более тяжелая интеграция;не всегда удобно в чистом RTL;иногда избыточно для простой задачи.
+более тяжелая интеграция;
+не всегда удобно в чистом RTL;
+иногда избыточно для простой задачи.
 ```
 
 ---
@@ -1249,7 +1255,18 @@ GUI-настройка;
 Для обычного RTL-проекта:
 
 ```
-single data stream без AXIS:    xpm_fifo_async через свой wrapperAXI-Stream между clock domains:    AXIS Clock Converter или AXI4-Stream Data FIFO    либо свой wrapper на xpm_fifo_async с tdata/tlast/tkeep/tuserмаленький control/event crossing:    не FIFO, а synchronizer/handshakeбольшой burst/data buffer:    xpm_fifo_async или FIFO Generator на BRAM/URAM
+single data stream без AXIS:
+    xpm_fifo_async через свой wrapper
+
+AXI-Stream между clock domains:
+    AXIS Clock Converter или AXI4-Stream Data FIFO
+    либо свой wrapper на xpm_fifo_async с tdata/tlast/tkeep/tuser
+
+маленький control/event crossing:
+    не FIFO, а synchronizer/handshake
+
+большой burst/data buffer:
+    xpm_fifo_async или FIFO Generator на BRAM/URAM
 ```
 
 ---
