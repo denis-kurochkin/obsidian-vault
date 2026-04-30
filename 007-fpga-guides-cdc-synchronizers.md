@@ -530,7 +530,10 @@ end
 На destination side можно временно получить некорректное промежуточное значение:
 
 ```
-8'h008'h1F8'h088'h17
+8'h00
+8'h1F
+8'h08
+8'h17
 ```
 
 Любую комбинацию старых и новых битов.
@@ -546,13 +549,24 @@ end
 Можно:
 
 ```
-несвязанные status flags;независимые enable bits;редко меняющиеся configuration bits, если нет требования atomic update;debug/status information, где временно смешанное значение не опасно.
+несвязанные status flags;
+независимые enable bits;
+редко меняющиеся configuration bits, если нет требования atomic update;
+debug/status information, где временно смешанное значение не опасно.
 ```
 
 Нельзя:
 
 ```
-data bus;address bus;counter value;state encoding;packet length;command word;AXI data;valid + data как независимые signals;one-hot state без специальной защиты.
+data bus;
+address bus;
+counter value;
+state encoding;
+packet length;
+command word;
+AXI data;
+valid + data как независимые signals;
+one-hot state без специальной защиты.
 ```
 
 Для multi-bit значений нужны другие CDC-паттерны:
