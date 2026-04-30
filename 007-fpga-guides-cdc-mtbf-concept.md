@@ -775,7 +775,7 @@ combinational glitches увеличивают effective Fdata
 
 Например:
 
-```
+```verilog
 assign event_async = cond_a & cond_b;
 ```
 
@@ -799,7 +799,7 @@ assign event_async = cond_a & cond_b;
 
 Плохо:
 
-```
+```verilog
 assign logic_a = sync_ff1 & enable;
 ```
 
