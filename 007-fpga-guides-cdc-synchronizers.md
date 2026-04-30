@@ -725,24 +725,30 @@ FF2/FF3 output используется обычной логикой.
 ```verilog
 always @(posedge clk_dst) begin
     sync_ff1 <= async_in;
-    sync_ff2 <= sync_ff1;
+    sync_ff2 <= ~sync_ff1;
 end
-
-assign synced_masked = sync_ff2 & mask;
 ```
 
 Или:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= async_in;    sync_ff2 <= sync_ff1 & mask;end
+```verilog
+always @(posedge clk_dst) begin
+    sync_ff1 <= async_in;
+    sync_ff2 <= sync_ff1 & mask;
+end
 ```
 
 Между synchronizer stages не должно быть логики.
 
 Правильно:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= async_in;    sync_ff2 <= sync_ff1;endassign synced_masked = sync_ff2 & mask;
+```verilog
+always @(posedge clk_dst) begin
+    sync_ff1 <= async_in;
+    sync_ff2 <= sync_ff1;
+end
+
+assign synced_masked = sync_ff2 & mask;
 ```
 
 Synchronizer chain должен быть максимально простым:
