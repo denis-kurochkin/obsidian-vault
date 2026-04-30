@@ -1087,7 +1087,13 @@ user_reset
 Важно читать semantics конкретного IP:
 
 ```
-active high или active low;sync или async reset;к какому clock относится;минимальная длительность reset;есть ли reset done/busy;нужно ли ждать locked/link_up/calib_done;можно ли reset только часть IP.
+active high или active low;
+sync или async reset;
+к какому clock относится;
+минимальная длительность reset;
+есть ли reset done/busy;
+нужно ли ждать locked/link_up/calib_done;
+можно ли reset только часть IP.
 ```
 
 Ошибка в reset polarity или clock association может выглядеть как “рандомный CDC bug”.
@@ -1099,19 +1105,27 @@ active high или active low;sync или async reset;к какому clock от
 В больших проектах легко перепутать:
 
 ```
-rstrst_naresetnresetreset_n
+rst
+rst_n
+aresetn
+reset
+reset_n
 ```
 
 Хорошая практика:
 
 ```
-суффикс _n только для active-low;локальные reset naming по domain;не смешивать active-high и active-low без явных инверсий;инверсии делать в одном месте, а не по всему проекту.
+суффикс _n только для active-low;
+локальные reset naming по domain;
+не смешивать active-high и active-low без явных инверсий;
+инверсии делать в одном месте, а не по всему проекту.
 ```
 
 Пример:
 
-```
-wire sys_rst;     // active-highwire sys_rst_n;   // active-low
+```verilog
+wire sys_rst;     // active-high
+wire sys_rst_n;   // active-low
 ```
 
 Лучше не иметь оба без необходимости.
