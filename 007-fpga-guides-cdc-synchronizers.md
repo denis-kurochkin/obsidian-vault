@@ -1448,14 +1448,26 @@ wire start_pulse_src;
 
 CDC:
 
-```
-wire start_pulse_dst;cdc_pulse_toggle u_start_pulse_cdc (    .clk_src   (clk_src),    .pulse_src (start_pulse_src),    .clk_dst   (clk_dst),    .pulse_dst (start_pulse_dst));
+```verilog
+wire start_pulse_dst;
+
+cdc_pulse_toggle u_start_pulse_cdc (
+    .clk_src   (clk_src),
+    .pulse_src (start_pulse_src),
+
+    .clk_dst   (clk_dst),
+    .pulse_dst (start_pulse_dst)
+);
 ```
 
 Destination domain:
 
-```
-always @(posedge clk_dst) begin    if (start_pulse_dst) begin        state_dst <= ST_START;    endend
+```verilog
+always @(posedge clk_dst) begin
+    if (start_pulse_dst) begin
+        state_dst <= ST_START;
+    end
+end
 ```
 
 Это лучше, чем пытаться напрямую синхронизировать `start_pulse_src`.
@@ -1466,14 +1478,27 @@ always @(posedge clk_dst) begin    if (start_pulse_dst) begin        state_dst <
 
 Плохо:
 
-```
-cdc_sync_bit u_valid_sync (    .clk_dst  (clk_dst),    .async_in (valid_src),    .sync_out (valid_dst));cdc_sync_bus_independent #(    .WIDTH(32)) u_data_sync (    .clk_dst  (clk_dst),    .async_in (data_src),    .sync_out (data_dst));
+```verilog
+cdc_sync_bit u_valid_sync (
+    .clk_dst  (clk_dst),
+    .async_in (valid_src),
+    .sync_out (valid_dst)
+);
+
+cdc_sync_bus_independent #(
+    .WIDTH(32)
+) u_data_sync (
+    .clk_dst  (clk_dst),
+    .async_in (data_src),
+    .sync_out (data_dst)
+);
 ```
 
 Проблема:
 
 ```
-valid_dst может соответствовать одному слову,а data_dst может быть смесью старого и нового data_src.
+valid_dst может соответствовать одному слову,
+а data_dst может быть смесью старого и нового data_src.
 ```
 
 Лучше:
