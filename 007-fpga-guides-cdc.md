@@ -540,19 +540,27 @@ cdc_sync_pulse
 cdc_toggle
 cdc_handshake
 cdc_bus_handshake
-cdc_reset_synccdc_async_fifo wrapper
+cdc_reset_sync
+cdc_async_fifo wrapper
 ```
 
 Например:
 
 ```
-rtl/common/cdc/    cdc_sync_bit.v    cdc_pulse.v    cdc_handshake.v    cdc_reset_sync.v    cdc_fifo_async.v
+rtl/common/cdc/    
+	cdc_sync_bit.v    
+	cdc_pulse.v    
+	cdc_handshake.v    
+	cdc_reset_sync.v    
+	cdc_fifo_async.v
 ```
 
 Тогда на верхнем уровне проекта CDC становится явно видимым:
 
-```
-cdc_sync_bit u_link_up_sync (...);cdc_pulse    u_start_pulse_sync (...);cdc_fifo_async u_axis_cdc_fifo (...);
+```verilog
+cdc_sync_bit u_link_up_sync (...);
+cdc_pulse u_start_pulse_sync (...);
+cdc_fifo_async u_axis_cdc_fifo (...);
 ```
 
 Это сильно упрощает сопровождение проекта.
