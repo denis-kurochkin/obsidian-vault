@@ -1204,13 +1204,21 @@ end
 Что можно проверять в simulation:
 
 ```
-protocol behavior;что pulse не теряется при допустимых интервалах;что source не отправляет новое событие, пока CDC busy;что data stable во время handshake;что destination получает ровно один pulse на одно событие;что reset/init behavior корректен.
+protocol behavior;
+что pulse не теряется при допустимых интервалах;
+что source не отправляет новое событие, пока CDC busy;
+что data stable во время handshake;
+что destination получает ровно один pulse на одно событие;
+что reset/init behavior корректен.
 ```
 
 Что simulation обычно не проверяет:
 
 ```
-реальную metastability;MTBF;физическое placement;реальные setup/hold нарушения между unrelated clocks.
+реальную metastability;
+MTBF;
+физическое placement;
+реальные setup/hold нарушения между unrelated clocks.
 ```
 
 ---
@@ -1220,7 +1228,9 @@ protocol behavior;что pulse не теряется при допустимых
 Для toggle synchronizer важно архитектурно гарантировать:
 
 ```
-source events не приходят слишком часто;между двумя событиями destination успевает увидеть изменение;нет ситуации, где два toggle происходят до sampling в destination domain.
+source events не приходят слишком часто;
+между двумя событиями destination успевает увидеть изменение;
+нет ситуации, где два toggle происходят до sampling в destination domain.
 ```
 
 В простом виде это можно описать как правило проекта:
