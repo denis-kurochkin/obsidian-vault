@@ -386,31 +386,45 @@ binary   gray
 Внутри каждого домена обычно есть два представления pointer:
 
 ```
-binary pointer — удобно увеличивать на 1gray pointer   — удобно передавать через CDC
+binary pointer — удобно увеличивать на 1
+gray pointer   — удобно передавать через CDC
 ```
 
 Write domain:
 
 ```
-wr_ptr_binwr_ptr_gray
+wr_ptr_bin
+wr_ptr_gray
 ```
 
 Read domain:
 
 ```
-rd_ptr_binrd_ptr_gray
+rd_ptr_bin
+rd_ptr_gray
 ```
 
 Передача между доменами:
 
 ```
-wr_ptr_gray -> synchronizer -> rd_clk domainrd_ptr_gray -> synchronizer -> wr_clk domain
+wr_ptr_gray -> synchronizer -> rd_clk domain
+rd_ptr_gray -> synchronizer -> wr_clk domain
 ```
 
 Структура:
 
 ```
-wr_clk domain                                  rd_clk domainwr_ptr_bin    |    vwr_ptr_gray  ---- CDC sync ---->  wr_ptr_gray_sync_rdrd_ptr_gray_sync_wr  <---- CDC sync ----  rd_ptr_gray                                            ^                                            |                                      rd_ptr_bin
+wr_clk domain                                  rd_clk domain
+
+wr_ptr_bin
+    |
+    v
+wr_ptr_gray  ---- CDC sync ---->  wr_ptr_gray_sync_rd
+
+rd_ptr_gray_sync_wr  <---- CDC sync ----  rd_ptr_gray
+                                            ^
+                                            |
+                                      rd_ptr_bin
 ```
 
 ---
@@ -422,7 +436,8 @@ wr_clk domain                                  rd_clk domainwr_ptr_bin    |    v
 Read side сравнивает:
 
 ```
-текущий read pointerсинхронизированный write pointer
+текущий read pointer
+синхронизированный write pointer
 ```
 
 Если read pointer догнал write pointer, значит читать нечего.
