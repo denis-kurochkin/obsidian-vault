@@ -305,8 +305,14 @@ toggle_a  ----------------------->  sync FF1 -> sync FF2 -> edge detect
 
 ## 9.1 Source side
 
-```
-reg toggle_a = 1'b0;always @(posedge clk_a) begin    if (event_a) begin        toggle_a <= ~toggle_a;    endend
+```verilog
+reg toggle_a = 1'b0;
+
+always @(posedge clk_a) begin
+    if (event_a) begin
+        toggle_a <= ~toggle_a;
+    end
+end
 ```
 
 Каждое событие меняет `toggle_a`.
@@ -315,8 +321,18 @@ reg toggle_a = 1'b0;always @(posedge clk_a) begin    if (event_a) begin        t
 
 ## 9.2 Destination side
 
-```
-(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)reg [1:0] toggle_b_sync = 2'b00;reg toggle_b_d = 1'b0;always @(posedge clk_b) begin    toggle_b_sync <= {toggle_b_sync[0], toggle_a};    toggle_b_d    <= toggle_b_sync[1];endassign pulse_b = toggle_b_sync[1] ^ toggle_b_d;
+```verilog
+(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+reg [1:0] toggle_b_sync = 2'b00;
+
+reg toggle_b_d = 1'b0;
+
+always @(posedge clk_b) begin
+    toggle_b_sync <= {toggle_b_sync[0], toggle_a};
+    toggle_b_d    <= toggle_b_sync[1];
+end
+
+assign pulse_b = toggle_b_sync[1] ^ toggle_b_d;
 ```
 
 `pulse_b` будет длиться один такт `clk_b`.
