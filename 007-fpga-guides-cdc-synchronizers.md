@@ -375,8 +375,16 @@ endmodule
 
 Использование:
 
-```
-wire start_pulse_clk_b;cdc_pulse_toggle u_start_pulse_cdc (    .clk_src   (clk_a),    .pulse_src (start_pulse_clk_a),    .clk_dst   (clk_b),    .pulse_dst (start_pulse_clk_b));
+```verilog
+wire start_pulse_clk_b;
+
+cdc_pulse_toggle u_start_pulse_cdc (
+    .clk_src   (clk_a),
+    .pulse_src (start_pulse_clk_a),
+
+    .clk_dst   (clk_b),
+    .pulse_dst (start_pulse_clk_b)
+);
 ```
 
 ---
