@@ -451,7 +451,9 @@ clock приходит извне и не связан с локальным clo
 Нужно:
 
 ```
-1. сделать правильный CDC в RTL;2. описать clock relationship в XDC;3. проверить report_cdc.
+1. сделать правильный CDC в RTL;
+2. описать clock relationship в XDC;
+3. проверить report_cdc.
 ```
 
 ---
@@ -469,7 +471,9 @@ clock mux выбирает один из нескольких clocks
 Упрощенный пример:
 
 ```
-set_clock_groups -logically_exclusive \    -group [get_clocks clk_mode0] \    -group [get_clocks clk_mode1]
+set_clock_groups -logically_exclusive \
+    -group [get_clocks clk_mode0] \
+    -group [get_clocks clk_mode1]
 ```
 
 Но здесь надо быть осторожным: если clocks реально могут одновременно существовать в разных частях FPGA, это не physically exclusive.
