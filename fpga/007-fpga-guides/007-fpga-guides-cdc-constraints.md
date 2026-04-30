@@ -67,7 +67,9 @@ end
 не становится безопасной после:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks clk_a] \    -group [get_clocks clk_b]
+set_clock_groups -asynchronous \
+    -group [get_clocks clk_a] \
+    -group [get_clocks clk_b]
 ```
 
 Constraint только говорит Vivado не анализировать обычный timing между этими clock groups.
