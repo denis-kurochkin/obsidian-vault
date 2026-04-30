@@ -139,18 +139,22 @@ cdc_sync_bit #(
 
 Плохой вариант:
 
-```
+```verilog
 always @(posedge clk_dst) 
 begin    
-signal_dst <= signal_async;end
+	signal_dst <= signal_async;
+end
 ```
 
 Проблема в том, что `signal_dst` может стать metastable, а дальше этот сигнал сразу используется пользовательской логикой.
 
 Лучше:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= signal_async;    sync_ff2 <= sync_ff1;end
+```verilog
+always @(posedge clk_dst) begin  
+	sync_ff1 <= signal_async;  
+	sync_ff2 <= sync_ff1;  
+end
 ```
 
 Теперь metastability первого триггера имеет время на разрешение до следующего фронта `clk_dst`.
@@ -158,7 +162,8 @@ always @(posedge clk_dst) begin    sync_ff1 <= signal_async;    sync_ff2 <= sync
 Смысл:
 
 ```
-FF1 принимает риск metastabilityFF2 защищает остальную логику
+FF1 принимает риск metastability
+FF2 защищает остальную логику
 ```
 
 ---
@@ -168,7 +173,9 @@ FF1 принимает риск metastabilityFF2 защищает остальн
 Обычно используют:
 
 ```
-2 stages — стандартный вариант;3 stages — если нужна повышенная надежность;4+ stages — редко, обычно для особых случаев.
+2 stages — стандартный вариант;
+3 stages — если нужна повышенная надежность;
+4+ stages — редко, обычно для особых случаев.
 ```
 
 Пример трехступенчатого synchronizer:
