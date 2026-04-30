@@ -1402,20 +1402,36 @@ cdc_reset_sync
 
 Source domain:
 
-```
-reg error_seen_src = 1'b0;always @(posedge clk_src) begin    if (error_condition_src) begin        error_seen_src <= 1'b1;    endend
+```verilog
+reg error_seen_src = 1'b0;
+
+always @(posedge clk_src) begin
+    if (error_condition_src) begin
+        error_seen_src <= 1'b1;
+    end
+end
 ```
 
 CDC:
 
-```
-wire error_seen_dst;cdc_sync_bit u_error_seen_cdc (    .clk_dst  (clk_dst),    .async_in (error_seen_src),    .sync_out (error_seen_dst));
+```verilog
+wire error_seen_dst;
+
+cdc_sync_bit u_error_seen_cdc (
+    .clk_dst  (clk_dst),
+    .async_in (error_seen_src),
+    .sync_out (error_seen_dst)
+);
 ```
 
 Destination domain:
 
-```
-always @(posedge clk_dst) begin    if (error_seen_dst) begin        alarm_dst <= 1'b1;    endend
+```verilog
+always @(posedge clk_dst) begin
+    if (error_seen_dst) begin
+        alarm_dst <= 1'b1;
+    end
+end
 ```
 
 Это хороший случай для обычного synchronizer, потому что `error_seen_src` — это level flag, который после установки остается в `1`.
@@ -1426,7 +1442,7 @@ always @(posedge clk_dst) begin    if (error_seen_dst) begin        alarm_dst <=
 
 Source domain:
 
-```
+```verilog
 wire start_pulse_src;
 ```
 
