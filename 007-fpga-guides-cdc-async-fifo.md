@@ -1140,7 +1140,13 @@ write 64 bitread  8 bit
 В XPM этот параметр включает или отключает дополнительные порты:
 
 ```
-almost_fullalmost_emptydata_countoverflowunderflowvalidwr_ack
+almost_full
+almost_empty
+data_count
+overflow
+underflow
+valid
+wr_ack
 ```
 
 Конкретное значение зависит от того, какие сигналы нужны. Его удобно настраивать через template в Vivado.
@@ -1152,19 +1158,28 @@ almost_fullalmost_emptydata_countoverflowunderflowvalidwr_ack
 В Vivado удобно открыть:
 
 ```
-Language Templates    -> Verilog        -> Xilinx Parameterized Macros            -> FIFO                -> xpm_fifo_async
+Language Templates
+    -> Verilog
+        -> Xilinx Parameterized Macros
+            -> FIFO
+                -> xpm_fifo_async
 ```
 
 Или использовать IP Catalog:
 
 ```
-FIFO GeneratorAXI4-Stream Data FIFOAXIS Clock Converter
+FIFO Generator
+AXI4-Stream Data FIFO
+AXIS Clock Converter
 ```
 
 Практический подход:
 
 ```
-1. Взять XPM template из Vivado.2. Настроить параметры.3. Обернуть в свой wrapper.4. В проекте использовать только wrapper, а не раскидывать XPM-инстансы по всему RTL.
+1. Взять XPM template из Vivado.
+2. Настроить параметры.
+3. Обернуть в свой wrapper.
+4. В проекте использовать только wrapper, а не раскидывать XPM-инстансы по всему RTL.
 ```
 
 Wrapper дает единый стиль и упрощает замену реализации.
