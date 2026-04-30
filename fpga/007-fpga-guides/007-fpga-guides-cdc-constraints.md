@@ -518,7 +518,9 @@ Vivado может знать их phase/frequency relationship.
 В этом случае варианты:
 
 ```
-если crossing обычный synchronous — закрывать timing;если crossing через CDC — использовать CDC-структуру и соответствующие exceptions;если transfer не каждый такт — возможно multicycle, но только при строгой логике enable.
+если crossing обычный synchronous — закрывать timing;
+если crossing через CDC — использовать CDC-структуру и соответствующие exceptions;
+если transfer не каждый такт — возможно multicycle, но только при строгой логике enable.
 ```
 
 Нельзя просто выбирать constraint по названию clock. Нужно смотреть архитектуру передачи.
