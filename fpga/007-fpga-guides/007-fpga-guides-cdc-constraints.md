@@ -10,7 +10,12 @@
 Безопасность CDC создается RTL-архитектурой:
 
 ```
-synchronizertoggle synchronizerhandshakeasync FIFOGray-code crossingreset synchronizer
+synchronizer
+toggle synchronizer
+handshake
+async FIFO
+Gray-code crossing
+reset synchronizer
 ```
 
 А XDC только описывает это для Vivado.
