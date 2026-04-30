@@ -1471,19 +1471,26 @@ assign {
 Например:
 
 ```
-write side:  8 bitread side:  32 bit
+write side:  8 bit
+read side:  32 bit
 ```
 
 Или:
 
 ```
-write side:  64 bitread side:  16 bit
+write side:  64 bit
+read side:  16 bit
 ```
 
 Это полезно для согласования интерфейсов, но добавляет нюансы:
 
 ```
-1. порядок байтов;2. когда появляется valid output;3. как обрабатывается последний неполный word;4. как передавать keep/last;5. как считать глубину;6. как интерпретировать data_count.
+1. порядок байтов;
+2. когда появляется valid output;
+3. как обрабатывается последний неполный word;
+4. как передавать keep/last;
+5. как считать глубину;
+6. как интерпретировать data_count.
 ```
 
 Для packet-based stream width conversion лучше делать осознанно, особенно если есть `tkeep` и `tlast`.
