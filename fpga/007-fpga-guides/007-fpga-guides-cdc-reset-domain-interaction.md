@@ -989,7 +989,9 @@ local reset остается asserted
 Но важно понимать:
 
 ```
-если домен без clock, он не выйдет из reset;если другой домен ждет от него ack, может зависнуть;reset sequencing должен учитывать clock availability.
+если домен без clock, он не выйдет из reset;
+если другой домен ждет от него ack, может зависнуть;
+reset sequencing должен учитывать clock availability.
 ```
 
 ---
@@ -1001,7 +1003,8 @@ local reset остается asserted
 Например:
 
 ```
-clk_b остановленclk_a продолжает посылать данные
+clk_b остановлен
+clk_a продолжает посылать данные
 ```
 
 Если reset `clk_b` не может корректно отработать без clock, read side FIFO может не выйти из reset.
@@ -1009,7 +1012,11 @@ clk_b остановленclk_a продолжает посылать данны
 Архитектура должна определить:
 
 ```
-можно ли останавливать clock;кто останавливает upstream;какие ready/valid становятся 0;как происходит restart;нужно ли сбрасывать оба домена.
+можно ли останавливать clock;
+кто останавливает upstream;
+какие ready/valid становятся 0;
+как происходит restart;
+нужно ли сбрасывать оба домена.
 ```
 
 ---
@@ -1019,13 +1026,22 @@ clk_b остановленclk_a продолжает посылать данны
 Некоторые внешние интерфейсы имеют свои требования reset sequencing:
 
 ```
-DDRPCIeGT/AuroraEthernet PHYADC/DACSPI/I2C devices
+DDR
+PCIe
+GT/Aurora
+Ethernet PHY
+ADC/DAC
+SPI/I2C devices
 ```
 
 Для них важно:
 
 ```
-когда clock stable;когда released reset;когда calibration done;когда link up;когда user logic может начать передачу.
+когда clock stable;
+когда released reset;
+когда calibration done;
+когда link up;
+когда user logic может начать передачу.
 ```
 
 В таких случаях reset — часть протокола инициализации, а не просто один провод.
