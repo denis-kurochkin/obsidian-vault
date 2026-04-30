@@ -805,7 +805,7 @@ assign logic_a = sync_ff1 & enable;
 
 Правильно:
 
-```
+```verilog
 assign logic_a = sync_ff2 & enable;
 ```
 
@@ -823,8 +823,11 @@ sync_ff1 -> только sync_ff2
 
 Плохо:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= async_in;    sync_ff2 <= sync_ff1 & mask;end
+```verilog
+always @(posedge clk_dst) begin
+    sync_ff1 <= async_in;
+    sync_ff2 <= sync_ff1 & mask;
+end
 ```
 
 Между stages synchronizer не должно быть logic.
