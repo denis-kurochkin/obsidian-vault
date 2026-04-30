@@ -975,13 +975,29 @@ FF1 close to FF2
 Полезные CDC primitives:
 
 ```
-xpm_cdc_single       — single-bit level synchronizerxpm_cdc_array_single — array of independent single-bit synchronizersxpm_cdc_pulse        — pulse transferxpm_cdc_handshake    — handshake-based data transferxpm_cdc_gray         — Gray-code crossingxpm_fifo_async       — asynchronous FIFO
+xpm_cdc_single       — single-bit level synchronizer
+xpm_cdc_array_single — array of independent single-bit synchronizers
+xpm_cdc_pulse        — pulse transfer
+xpm_cdc_handshake    — handshake-based data transfer
+xpm_cdc_gray         — Gray-code crossing
+xpm_fifo_async       — asynchronous FIFO
 ```
 
 Для обычного single-bit signal:
 
 ```
-xpm_cdc_single #(    .DEST_SYNC_FF   (2),    .INIT_SYNC_FF   (0),    .SIM_ASSERT_CHK (0),    .SRC_INPUT_REG  (1)) u_xpm_cdc_single (    .src_clk  (clk_src),    .src_in   (signal_src),    .dest_clk (clk_dst),    .dest_out (signal_dst));
+xpm_cdc_single #(
+    .DEST_SYNC_FF   (2),
+    .INIT_SYNC_FF   (0),
+    .SIM_ASSERT_CHK (0),
+    .SRC_INPUT_REG  (1)
+) u_xpm_cdc_single (
+    .src_clk  (clk_src),
+    .src_in   (signal_src),
+
+    .dest_clk (clk_dst),
+    .dest_out (signal_dst)
+);
 ```
 
 Преимущества XPM:
