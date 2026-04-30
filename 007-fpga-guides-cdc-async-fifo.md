@@ -1414,14 +1414,15 @@ backpressure upstream
 
 Плохой вариант:
 
-```
+```verilog
 assign fifo_rd_en = dst_ready;
 ```
 
 Правильно:
 
-```
-assign dst_valid  = !fifo_empty;assign fifo_rd_en = dst_ready && dst_valid;
+```verilog
+assign dst_valid  = !fifo_empty;
+assign fifo_rd_en = dst_ready && dst_valid;
 ```
 
 Для standard FIFO mode `dst_valid` может быть не просто `!empty`, потому что есть read latency. Для FWFT это проще.
@@ -1435,13 +1436,28 @@ FIFO хранит слова. Он не всегда знает, где начи
 Для packet stream нужно передавать sideband:
 
 ```
-datalastkeepusererrorchannel id
+data
+last
+keep
+user
+error
+channel id
 ```
 
 Например:
 
-```
-assign fifo_din = {    s_axis_tlast,    s_axis_tkeep,    s_axis_tdata};assign {    m_axis_tlast,    m_axis_tkeep,    m_axis_tdata} = fifo_dout;
+```verilog
+assign fifo_din = {
+    s_axis_tlast,
+    s_axis_tkeep,
+    s_axis_tdata
+};
+
+assign {
+    m_axis_tlast,
+    m_axis_tkeep,
+    m_axis_tdata
+} = fifo_dout;
 ```
 
 Если потерять `tlast`, destination side не сможет восстановить границы пакета.
