@@ -317,7 +317,10 @@ clk_a domain:
 Например:
 
 ```
-write clock  = clk_aread clock   = clk_bwrite data   = data_aread data    = data_b
+write clock  = clk_a
+read clock   = clk_b
+write data   = data_a
+read data    = data_b
 ```
 
 В Vivado для этого можно использовать:
