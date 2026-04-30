@@ -254,7 +254,7 @@ assign global_arst_n = board_rst_n & pll_locked;
 
 Затем:
 
-```
+```verilog
 reset_sync u_rst_sys (
     .clk    (sys_clk),
     .arst_n (global_arst_n),
@@ -265,7 +265,10 @@ reset_sync u_rst_sys (
 Это нормально как идея, но важно:
 
 ```
-pll_locked может дрожать при старте;clock может быть нестабилен до locked;reset synchronizer работает корректно только когда clock уже тикает;после locked часто нужен дополнительный delay перед release.
+pll_locked может дрожать при старте;
+clock может быть нестабилен до locked;
+reset synchronizer работает корректно только когда clock уже тикает;
+после locked часто нужен дополнительный delay перед release.
 ```
 
 Иногда делают reset controller, который ждет несколько тактов после `locked`.
@@ -277,7 +280,9 @@ pll_locked может дрожать при старте;clock может быт
 Пример:
 
 ```
-PLL locked стал 1подождать 16/32/64 такта sys_clkтолько потом отпустить reset
+PLL locked стал 1
+подождать 16/32/64 такта sys_clk
+только потом отпустить reset
 ```
 
 Зачем:
