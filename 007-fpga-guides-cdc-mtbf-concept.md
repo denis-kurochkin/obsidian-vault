@@ -761,7 +761,10 @@ assign flag_comb = a & b | c;
 Почему хуже:
 
 ```
-combinational glitches увеличивают effective Fdataбольше переключений — хуже MTBFсложнее CDC analysisсложнее понять semantics crossing
+combinational glitches увеличивают effective Fdata
+больше переключений — хуже MTBF
+сложнее CDC analysis
+сложнее понять semantics crossing
 ```
 
 ---
