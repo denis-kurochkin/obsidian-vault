@@ -904,13 +904,22 @@ async_signal -> one synchronizer -> fanout synced_signal
 В Xilinx/Vivado есть XPM CDC primitives:
 
 ```
-xpm_cdc_singlexpm_cdc_array_singlexpm_cdc_pulsexpm_cdc_handshakexpm_cdc_grayxpm_fifo_async
+xpm_cdc_single
+xpm_cdc_array_single
+xpm_cdc_pulse
+xpm_cdc_handshake
+xpm_cdc_gray
+xpm_fifo_async
 ```
 
 Они полезны потому что:
 
 ```
-имеют правильные attributesлучше распознаются Vivadoуменьшают риск RTL-ошибкидают параметр DEST_SYNC_FF / CDC_SYNC_STAGESулучшают читаемость CDC intent
+имеют правильные attributes
+лучше распознаются Vivado
+уменьшают риск RTL-ошибки
+дают параметр DEST_SYNC_FF / CDC_SYNC_STAGES
+улучшают читаемость CDC intent
 ```
 
 Но они не отменяют архитектурного выбора.
@@ -932,7 +941,13 @@ MTBF напрямую simulation не проверяет.
 Проверять стоит:
 
 ```
-события не теряютсянет лишних событийdata сохраняет порядокvalid/ready работает корректнонет overflow/underflowsource держит data stable во время handshakedestination корректно реагирует на latency
+события не теряются
+нет лишних событий
+data сохраняет порядок
+valid/ready работает корректно
+нет overflow/underflow
+source держит data stable во время handshake
+destination корректно реагирует на latency
 ```
 
 То есть simulation проверяет digital protocol, а не analog metastability.
