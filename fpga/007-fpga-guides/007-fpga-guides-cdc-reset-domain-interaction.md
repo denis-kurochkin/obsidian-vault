@@ -728,7 +728,10 @@ destination еще в reset или FIFO busy
 Решение:
 
 ```
-valid сбрасывать;data считать значимым только при valid;ready блокировать до окончания local reset;при CDC FIFO учитывать reset busy.
+valid сбрасывать;
+data считать значимым только при valid;
+ready блокировать до окончания local reset;
+при CDC FIFO учитывать reset busy.
 ```
 
 ---
@@ -740,19 +743,25 @@ Reset может нарушить coherency между data и control.
 Пример:
 
 ```
-data path не сброшенcontrol path сброшен
+data path не сброшен
+control path сброшен
 ```
 
 или наоборот:
 
 ```
-control FSM стартовалаdata pipeline еще содержит старые данные
+control FSM стартовала
+data pipeline еще содержит старые данные
 ```
 
 Поэтому при reset нужно понимать:
 
 ```
-какие регистры действительно должны сбрасываться;какие pipeline registers могут оставаться без reset;как сбросить valid-биты;как очистить FIFO/buffers;как downstream узнает, что старые данные недействительны.
+какие регистры действительно должны сбрасываться;
+какие pipeline registers могут оставаться без reset;
+как сбросить valid-биты;
+как очистить FIFO/buffers;
+как downstream узнает, что старые данные недействительны.
 ```
 
 Часто достаточно сбрасывать `valid`, а не весь `data`.
