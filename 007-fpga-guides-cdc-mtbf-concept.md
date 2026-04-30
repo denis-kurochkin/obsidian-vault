@@ -959,7 +959,12 @@ destination корректно реагирует на latency
 В Vivado полезно смотреть:
 
 ```
-report_cdcreport_timingатрибуты ASYNC_REGplacement synchronizer stagesотсутствие logic между stagesclock domain definitions
+report_cdc
+report_timing
+атрибуты ASYNC_REG
+placement synchronizer stages
+отсутствие logic между stages
+clock domain definitions
 ```
 
 Но важно помнить:
@@ -985,7 +990,13 @@ CDC constraints не делают crossing безопасным
 Но расчет может понадобиться, если:
 
 ```
-устройство работает годами без обслуживаниямного одинаковых CDC crossingsочень быстрые clocksочень высокая частота переключенийесть safety/reliability requirementнужно обосновать 2 FF против 3 FFзаказчик требует reliability analysis
+устройство работает годами без обслуживания
+много одинаковых CDC crossings
+очень быстрые clocks
+очень высокая частота переключений
+есть safety/reliability requirement
+нужно обосновать 2 FF против 3 FF
+заказчик требует reliability analysis
 ```
 
 Для точного расчета нужны данные:
