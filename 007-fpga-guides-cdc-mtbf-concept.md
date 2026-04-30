@@ -379,7 +379,13 @@ signal -> 2 FF synchronizer
 Риск зависит от:
 
 ```
-частоты dst clockчастоты изменения input signalкачества placementколичества synchronizer stagesтехнологии FPGAважности сигналачисла таких crossings в системе
+частоты dst clock
+частоты изменения input signal
+качества placement
+количества synchronizer stages
+технологии FPGA
+важности сигнала
+числа таких crossings в системе
 ```
 
 Поэтому CDC-review должен учитывать не только структуру, но и смысл сигнала.
