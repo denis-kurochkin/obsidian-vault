@@ -1081,7 +1081,8 @@ write 64 bitread  8 bit
 Часто варианты:
 
 ```
-"std""fwft"
+"std"
+"fwft"
 ```
 
 `"fwft"` удобен для valid/ready.
