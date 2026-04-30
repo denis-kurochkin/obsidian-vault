@@ -1221,7 +1221,14 @@ FIFO показывает empty/full неправильно;
 Для ILA полезно смотреть:
 
 ```
-локальный reset конкретного domain;reset request;reset busy/done;pll_locked;ip_ready/link_up;FSM state;FIFO full/empty/rst_busy;valid/ready around reset.
+локальный reset конкретного domain;
+reset request;
+reset busy/done;
+pll_locked;
+ip_ready/link_up;
+FSM state;
+FIFO full/empty/rst_busy;
+valid/ready around reset.
 ```
 
 Лучше иметь ILA в том же clock domain, где анализируются сигналы.
@@ -1237,7 +1244,11 @@ FIFO показывает empty/full неправильно;
 Поэтому reset нужно проверять не только отчетами, но и review:
 
 ```
-откуда пришел reset;к какому clock он синхронен;где он используется;что будет, если один domain reset, а другой нет;что будет при повторном reset во время работы.
+откуда пришел reset;
+к какому clock он синхронен;
+где он используется;
+что будет, если один domain reset, а другой нет;
+что будет при повторном reset во время работы.
 ```
 
 ---
@@ -1247,7 +1258,18 @@ FIFO показывает empty/full неправильно;
 Хороший порядок:
 
 ```
-1. Выписать все clock domains.2. Выписать все reset sources.3. Определить, какие reset sources асинхронны.4. Сделать reset controller.5. Для каждого clock domain сделать local reset synchronizer.6. Не использовать reset одного domain в другом domain.7. Для software reset делать reset request CDC.8. Для FIFO/IP учитывать reset busy/done.9. Определить reset release order.10. Проверить runtime reset scenarios в simulation.11. Проверить report_cdc/report_methodology.12. Проверить reset/status в ILA на железе.
+1. Выписать все clock domains.
+2. Выписать все reset sources.
+3. Определить, какие reset sources асинхронны.
+4. Сделать reset controller.
+5. Для каждого clock domain сделать local reset synchronizer.
+6. Не использовать reset одного domain в другом domain.
+7. Для software reset делать reset request CDC.
+8. Для FIFO/IP учитывать reset busy/done.
+9. Определить reset release order.
+10. Проверить runtime reset scenarios в simulation.
+11. Проверить report_cdc/report_methodology.
+12. Проверить reset/status в ILA на железе.
 ```
 
 ---
