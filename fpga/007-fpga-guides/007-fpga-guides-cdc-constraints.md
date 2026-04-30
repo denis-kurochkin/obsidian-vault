@@ -143,13 +143,15 @@ AMD описывает `set_clock_groups` как команду, похожую 
 Допустим:
 
 ```
-create_clock -name sys_clk  -period 5.000 [get_ports sys_clk_p]create_clock -name sfp_clk  -period 6.400 [get_ports sfp_clk_p]
+create_clock -name sys_clk  -period 5.000 [get_ports sys_clk_p]
+create_clock -name sfp_clk  -period 6.400 [get_ports sfp_clk_p]
 ```
 
 Если это реально независимые источники:
 
 ```
-sys_clk = 200 MHz oscillatorsfp_clk = 156.25 MHz oscillator / GT-related domain
+sys_clk = 200 MHz oscillator
+sfp_clk = 156.25 MHz oscillator / GT-related domain
 ```
 
 то можно описать:
