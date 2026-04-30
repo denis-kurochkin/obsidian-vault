@@ -777,7 +777,8 @@ required depth >= max_written_during_stall - read_during_stall + margin
 Например:
 
 ```
-source пишет 1 слово каждый такт 100 MHzdestination может остановиться на 2 us
+source пишет 1 слово каждый такт 100 MHz
+destination может остановиться на 2 us
 ```
 
 За 2 us source запишет:
@@ -803,7 +804,11 @@ source пишет 1 слово каждый такт 100 MHzdestination може
 Во многих FIFO есть дополнительные flags:
 
 ```
-almost_fullalmost_emptyprog_fullprog_emptydata_count
+almost_full
+almost_empty
+prog_full
+prog_empty
+data_count
 ```
 
 Они нужны, чтобы реагировать заранее.
