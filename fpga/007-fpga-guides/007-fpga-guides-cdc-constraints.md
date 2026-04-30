@@ -493,7 +493,9 @@ set_clock_groups -logically_exclusive \
 Пример:
 
 ```
-set_clock_groups -physically_exclusive \    -group [get_clocks clk_ext_a] \    -group [get_clocks clk_ext_b]
+set_clock_groups -physically_exclusive \
+    -group [get_clocks clk_ext_a] \
+    -group [get_clocks clk_ext_b]
 ```
 
 Эта тема близка к clock muxing и mode constraints. Для CDC она важна потому, что exclusive clocks — это не то же самое, что asynchronous clocks.
@@ -505,7 +507,8 @@ set_clock_groups -physically_exclusive \    -group [get_clocks clk_ext_a] \    -
 Если у тебя есть:
 
 ```
-sys_clk -> MMCM -> clk_asys_clk -> MMCM -> clk_b
+sys_clk -> MMCM -> clk_a
+sys_clk -> MMCM -> clk_b
 ```
 
 то `clk_a` и `clk_b` могут быть разными clock domains, но не обязательно asynchronous.
