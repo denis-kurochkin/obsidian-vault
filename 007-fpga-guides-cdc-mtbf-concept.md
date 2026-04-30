@@ -1081,7 +1081,18 @@ CDC решается RTL-архитектурой. Constraints только по
 Для каждого single-bit CDC crossing можно спросить:
 
 ```
-1. Это действительно single-bit level signal?2. Как часто он переключается?3. Какой destination clock frequency?4. Достаточно ли 2 FF?5. Нужны ли 3 FF?6. Есть ли ASYNC_REG?7. Запрещен ли SRL extraction?8. Нет ли logic между stages?9. Используется ли только final stage?10. Source signal зарегистрирован?11. Нет ли duplicated synchronizers?12. Не является ли это частью multi-bit protocol?
+1. Это действительно single-bit level signal?
+2. Как часто он переключается?
+3. Какой destination clock frequency?
+4. Достаточно ли 2 FF?
+5. Нужны ли 3 FF?
+6. Есть ли ASYNC_REG?
+7. Запрещен ли SRL extraction?
+8. Нет ли logic между stages?
+9. Используется ли только final stage?
+10. Source signal зарегистрирован?
+11. Нет ли duplicated synchronizers?
+12. Не является ли это частью multi-bit protocol?
 ```
 
 Если хотя бы один ответ вызывает сомнение, crossing нужно пересмотреть.
@@ -1090,14 +1101,38 @@ CDC решается RTL-архитектурой. Constraints только по
 
 # 43. Короткий практический пример
 
-```
-module cdc_sync_bit #(    parameter integer STAGES = 2,    parameter INIT_VALUE = 1'b0)(    input  wire clk_dst,    input  wire async_in,    output wire sync_out);    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)    reg [STAGES-1:0] sync_ff = {STAGES{INIT_VALUE}};    always @(posedge clk_dst) begin        sync_ff <= {sync_ff[STAGES-2:0], async_in};    end    assign sync_out = sync_ff[STAGES-1];endmodule
+```verilog
+module cdc_sync_bit #(
+    parameter integer STAGES = 2,
+    parameter INIT_VALUE = 1'b0
+)(
+    input  wire clk_dst,
+    input  wire async_in,
+    output wire sync_out
+);
+
+    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+    reg [STAGES-1:0] sync_ff = {STAGES{INIT_VALUE}};
+
+    always @(posedge clk_dst) begin
+        sync_ff <= {sync_ff[STAGES-2:0], async_in};
+    end
+
+    assign sync_out = sync_ff[STAGES-1];
+
+endmodule
 ```
 
 Для обычного status flag:
 
-```
-cdc_sync_bit #(    .STAGES(2)) u_link_up_sync (    .clk_dst  (sys_clk),    .async_in (link_up_async),    .sync_out (link_up_sys_clk));
+```verilog
+cdc_sync_bit #(
+    .STAGES(2)
+) u_link_up_sync (
+    .clk_dst  (sys_clk),
+    .async_in (link_up_async),
+    .sync_out (link_up_sys_clk)
+);
 ```
 
 Для более критичного crossing:
