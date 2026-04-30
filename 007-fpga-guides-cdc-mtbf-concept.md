@@ -328,7 +328,8 @@ FF -> FF
 Например:
 
 ```
-clk_src = 100 MHzsignal_src меняется 1 раз в секунду
+clk_src = 100 MHz
+signal_src меняется 1 раз в секунду
 ```
 
 Тогда `Fdata` примерно 1 Hz, а не 100 MHz.
@@ -336,7 +337,8 @@ clk_src = 100 MHzsignal_src меняется 1 раз в секунду
 Но если сигнал toggles почти каждый такт:
 
 ```
-clk_src = 100 MHzsignal_src меняется ~50 MHz
+clk_src = 100 MHz
+signal_src меняется ~50 MHz
 ```
 
 риск metastability events намного выше.
@@ -350,7 +352,8 @@ clk_src = 100 MHzsignal_src меняется ~50 MHz
 Сравним два crossing:
 
 ```
-pll_locked    меняется редкоdata_toggle   меняется часто
+pll_locked    меняется редко
+data_toggle   меняется часто
 ```
 
 Оба могут идти через two-flop synchronizer.
