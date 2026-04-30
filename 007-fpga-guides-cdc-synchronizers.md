@@ -1003,7 +1003,11 @@ xpm_cdc_single #(
 Преимущества XPM:
 
 ```
-проверенный vendor primitive;Vivado лучше распознает CDC structure;параметры явно описывают intent;удобно для report_cdc;меньше риска написать subtle RTL bug.
+проверенный vendor primitive;
+Vivado лучше распознает CDC structure;
+параметры явно описывают intent;
+удобно для report_cdc;
+меньше риска написать subtle RTL bug.
 ```
 
 Но важно понимать, что XPM не отменяет архитектурного выбора. Например, `xpm_cdc_array_single` не превращает data bus в безопасный atomic bus. Это все равно массив независимых bit synchronizers.
@@ -1017,13 +1021,31 @@ xpm_cdc_single #(
 Например:
 
 ```
-rtl/common/cdc/    cdc_sync_bit.v    cdc_sync_level.v    cdc_sync_pulse.v    cdc_sync_toggle.v    cdc_sync_bus_independent.v    cdc_handshake_word.v
+rtl/common/cdc/
+    cdc_sync_bit.v
+    cdc_sync_level.v
+    cdc_sync_pulse.v
+    cdc_sync_toggle.v
+    cdc_sync_bus_independent.v
+    cdc_handshake_word.v
 ```
 
 На верхнем уровне проекта это выглядит понятно:
 
 ```
-cdc_sync_bit u_pll_locked_to_user_clk (    .clk_dst  (user_clk),    .async_in (pll_locked),    .sync_out (pll_locked_user_clk));cdc_pulse_toggle u_start_to_processing_clk (    .clk_src   (ctrl_clk),    .pulse_src (start_pulse_ctrl),    .clk_dst   (processing_clk),    .pulse_dst (start_pulse_processing));
+cdc_sync_bit u_pll_locked_to_user_clk (
+    .clk_dst  (user_clk),
+    .async_in (pll_locked),
+    .sync_out (pll_locked_user_clk)
+);
+
+cdc_pulse_toggle u_start_to_processing_clk (
+    .clk_src   (ctrl_clk),
+    .pulse_src (start_pulse_ctrl),
+
+    .clk_dst   (processing_clk),
+    .pulse_dst (start_pulse_processing)
+);
 ```
 
 Так CDC-переходы становятся явно видимыми в RTL.
