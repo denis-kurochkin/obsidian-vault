@@ -412,14 +412,17 @@ CDC тесно связан с constraints.
 
 Для этого используют:
 
-```
-set_clock_groups -asynchronous \    -group [get_clocks clk_a] \    -group [get_clocks clk_b]
+```tcl
+set_clock_groups -asynchronous \    
+	-group [get_clocks clk_a] \    
+	-group [get_clocks clk_b]
 ```
 
 Или иногда:
 
-```
-set_false_path -from [get_clocks clk_a] -to [get_clocks clk_b]set_false_path -from [get_clocks clk_b] -to [get_clocks clk_a]
+```tcl
+set_false_path -from [get_clocks clk_a] -to [get_clocks clk_b]
+set_false_path -from [get_clocks clk_b] -to [get_clocks clk_a]
 ```
 
 Но важно понимать:
