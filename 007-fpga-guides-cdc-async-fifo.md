@@ -1971,7 +1971,8 @@ FIFO гарантирует доставку в очередь, но не обя
 Пример:
 
 ```
-command FIFO: clk_a -> clk_bresponse FIFO/handshake: clk_b -> clk_a
+command FIFO: clk_a -> clk_b
+response FIFO/handshake: clk_b -> clk_a
 ```
 
 ---
@@ -1983,7 +1984,8 @@ command FIFO: clk_a -> clk_bresponse FIFO/handshake: clk_b -> clk_a
 Например:
 
 ```
-wr_clk работаетrd_clk остановлен
+wr_clk работает
+rd_clk остановлен
 ```
 
 Тогда FIFO будет заполняться, пока не станет full.
@@ -1995,7 +1997,8 @@ wr_clk работаетrd_clk остановлен
 Обратная ситуация:
 
 ```
-rd_clk работаетwr_clk остановлен
+rd_clk работает  
+wr_clk остановлен
 ```
 
 FIFO опустеет, затем `empty` станет активным.
