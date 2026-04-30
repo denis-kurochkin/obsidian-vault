@@ -1783,13 +1783,23 @@ m_fire = m_valid && m_ready;
 Write side:
 
 ```
-wr_clkwr_enfullalmost_fulloverflow flagwr_data_count
+wr_clk
+wr_en
+full
+almost_full
+overflow flag
+wr_data_count
 ```
 
 Read side:
 
 ```
-rd_clkrd_enemptyalmost_emptyunderflow flagrd_data_count
+rd_clk
+rd_en
+empty
+almost_empty
+underflow flag
+rd_data_count
 ```
 
 Но нужно помнить:
@@ -1801,7 +1811,9 @@ rd_clkrd_enemptyalmost_emptyunderflow flagrd_data_count
 Практически лучше:
 
 ```
-одна ILA на wr_clk domain;другая ILA на rd_clk domain;или аккуратно синхронизированные debug flags.
+одна ILA на wr_clk domain;
+другая ILA на rd_clk domain;
+или аккуратно синхронизированные debug flags.
 ```
 
 ---
@@ -1811,7 +1823,63 @@ rd_clkrd_enemptyalmost_emptyunderflow flagrd_data_count
 Упрощенный пример для `tdata` + `tlast`.
 
 ```
-module axis_async_fifo_simple #(    parameter integer DATA_WIDTH = 32,    parameter integer FIFO_DEPTH = 1024)(    input  wire                  s_axis_aclk,    input  wire                  s_axis_rst,    input  wire                  s_axis_tvalid,    output wire                  s_axis_tready,    input  wire [DATA_WIDTH-1:0] s_axis_tdata,    input  wire                  s_axis_tlast,    input  wire                  m_axis_aclk,    input  wire                  m_axis_rst,    output wire                  m_axis_tvalid,    input  wire                  m_axis_tready,    output wire [DATA_WIDTH-1:0] m_axis_tdata,    output wire                  m_axis_tlast);    localparam integer FIFO_WIDTH = DATA_WIDTH + 1;    wire                  fifo_full;    wire                  fifo_empty;    wire                  fifo_wr_en;    wire                  fifo_rd_en;    wire [FIFO_WIDTH-1:0] fifo_din;    wire [FIFO_WIDTH-1:0] fifo_dout;    assign s_axis_tready = !fifo_full;    assign fifo_wr_en    = s_axis_tvalid && s_axis_tready;    assign fifo_din      = {s_axis_tlast, s_axis_tdata};    assign m_axis_tvalid = !fifo_empty;    assign fifo_rd_en    = m_axis_tvalid && m_axis_tready;    assign {m_axis_tlast, m_axis_tdata} = fifo_dout;    cdc_async_fifo #(        .DATA_WIDTH (FIFO_WIDTH),        .FIFO_DEPTH (FIFO_DEPTH)    ) u_fifo (        .wr_clk       (s_axis_aclk),        .wr_rst       (s_axis_rst),        .wr_en        (fifo_wr_en),        .din          (fifo_din),        .full         (fifo_full),        .almost_full  (),        .rd_clk       (m_axis_aclk),        .rd_rst       (m_axis_rst),        .rd_en        (fifo_rd_en),        .dout         (fifo_dout),        .empty        (fifo_empty),        .almost_empty ()    );endmodule
+module axis_async_fifo_simple #(
+    parameter integer DATA_WIDTH = 32,
+    parameter integer FIFO_DEPTH = 1024
+)(
+    input  wire                  s_axis_aclk,
+    input  wire                  s_axis_rst,
+    input  wire                  s_axis_tvalid,
+    output wire                  s_axis_tready,
+    input  wire [DATA_WIDTH-1:0] s_axis_tdata,
+    input  wire                  s_axis_tlast,
+
+    input  wire                  m_axis_aclk,
+    input  wire                  m_axis_rst,
+    output wire                  m_axis_tvalid,
+    input  wire                  m_axis_tready,
+    output wire [DATA_WIDTH-1:0] m_axis_tdata,
+    output wire                  m_axis_tlast
+);
+
+    localparam integer FIFO_WIDTH = DATA_WIDTH + 1;
+
+    wire                  fifo_full;
+    wire                  fifo_empty;
+    wire                  fifo_wr_en;
+    wire                  fifo_rd_en;
+    wire [FIFO_WIDTH-1:0] fifo_din;
+    wire [FIFO_WIDTH-1:0] fifo_dout;
+
+    assign s_axis_tready = !fifo_full;
+    assign fifo_wr_en    = s_axis_tvalid && s_axis_tready;
+    assign fifo_din      = {s_axis_tlast, s_axis_tdata};
+
+    assign m_axis_tvalid = !fifo_empty;
+    assign fifo_rd_en    = m_axis_tvalid && m_axis_tready;
+
+    assign {m_axis_tlast, m_axis_tdata} = fifo_dout;
+
+    cdc_async_fifo #(
+        .DATA_WIDTH (FIFO_WIDTH),
+        .FIFO_DEPTH (FIFO_DEPTH)
+    ) u_fifo (
+        .wr_clk       (s_axis_aclk),
+        .wr_rst       (s_axis_rst),
+        .wr_en        (fifo_wr_en),
+        .din          (fifo_din),
+        .full         (fifo_full),
+        .almost_full  (),
+
+        .rd_clk       (m_axis_aclk),
+        .rd_rst       (m_axis_rst),
+        .rd_en        (fifo_rd_en),
+        .dout         (fifo_dout),
+        .empty        (fifo_empty),
+        .almost_empty ()
+    );
+
+endmodule
 ```
 
 Это концептуальный пример. В реальном проекте нужно проверить режим чтения FIFO. Такой простой mapping `m_axis_tvalid = !empty` особенно естественен для FWFT FIFO.
