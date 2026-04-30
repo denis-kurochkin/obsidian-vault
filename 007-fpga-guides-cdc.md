@@ -432,7 +432,11 @@ set_false_path -from [get_clocks clk_b] -to [get_clocks clk_a]
 Constraint только говорит Vivado, как анализировать или не анализировать timing. А безопасность CDC обеспечивается RTL-архитектурой:
 
 ```
-synchronizerhandshakeasync FIFOGray codereset synchronizer
+synchronizer
+handshake
+async FIFO
+Gray code
+reset synchronizer
 ```
 
 ---
@@ -452,7 +456,10 @@ report_cdc
 Типичные проблемы, которые может показать CDC report:
 
 ```
-одиночный async signal без синхронизатораmulti-bit crossing без handshake/FIFOнеправильный reset crossingCDC через combinational logicодин и тот же async signal используется в нескольких местах
+одиночный async signal без синхронизатора
+multi-bit crossing без handshake/FIFO
+неправильный reset crossing
+CDC через combinational logicодин и тот же async signal используется в нескольких местах
 ```
 
 Но `report_cdc` не заменяет понимание архитектуры. Он помогает найти подозрительные места, но разработчик должен понимать, какой CDC-механизм применен и почему он корректен.
