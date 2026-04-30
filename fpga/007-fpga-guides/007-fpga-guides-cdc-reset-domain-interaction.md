@@ -602,13 +602,18 @@ ack в destination domain
 Например:
 
 ```
-source держит req = 1destination reset cleared ack/statesource ждет ack, которого уже не будет
+source держит req = 1
+destination reset cleared ack/state
+source ждет ack, которого уже не будет
 ```
 
 Решение:
 
 ```
-оба направления handshake должны иметь reset-aware behavior;после reset protocol возвращается в idle;source должен уметь обнаружить reset/busy clear;или reset должен распространяться sequenced образом.
+оба направления handshake должны иметь reset-aware behavior;
+после reset protocol возвращается в idle;
+source должен уметь обнаружить reset/busy clear;
+или reset должен распространяться sequenced образом.
 ```
 
 ---
@@ -620,7 +625,8 @@ Toggle synchronizer хранит состояние toggle-bit в source и dest
 Если один domain сбросить, а другой нет:
 
 ```
-source toggle = 1destination sync state = 0
+source toggle = 1
+destination sync state = 0
 ```
 
 после reset может появиться ложный pulse или потеряться следующий event.
@@ -628,7 +634,11 @@ source toggle = 1destination sync state = 0
 Поэтому для toggle CDC нужно определить:
 
 ```
-что происходит при reset source;что происходит при reset destination;разрешены ли события во время reset;нужно ли сбрасывать оба домена вместе;нужно ли после reset делать resync/idle period.
+что происходит при reset source;
+что происходит при reset destination;
+разрешены ли события во время reset;
+нужно ли сбрасывать оба домена вместе;
+нужно ли после reset делать resync/idle period.
 ```
 
 ---
