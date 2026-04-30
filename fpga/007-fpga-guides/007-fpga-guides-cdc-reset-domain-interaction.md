@@ -877,13 +877,17 @@ end
 Плюсы:
 
 ```
-меньше reset fanout;нет reset deassertion issue внутри synchronizer;простая CDC-структура.
+меньше reset fanout;
+нет reset deassertion issue внутри synchronizer;
+простая CDC-структура.
 ```
 
 Минусы:
 
 ```
-нет runtime reset этого synchronizer;нужно понимать power-up/init behavior;не подходит, если system reset должен принудительно очистить output.
+нет runtime reset этого synchronizer;
+нужно понимать power-up/init behavior;
+не подходит, если system reset должен принудительно очистить output.
 ```
 
 ---
@@ -903,7 +907,8 @@ end
 Практическое правило:
 
 ```
-если сбрасываешь CDC synchronizer,reset должен быть корректным для destination clock domain.
+если сбрасываешь CDC synchronizer,
+reset должен быть корректным для destination clock domain.
 ```
 
 ---
