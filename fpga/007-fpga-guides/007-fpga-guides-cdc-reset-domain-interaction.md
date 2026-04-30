@@ -453,7 +453,11 @@ rst_n -> тысячи регистров
 могут появиться проблемы:
 
 ```
-fanout слишком большой;маршрутизация reset тяжелая;разное время прихода reset;ухудшение timing;сложный debug при старте.
+fanout слишком большой;
+маршрутизация reset тяжелая;
+разное время прихода reset;
+ухудшение timing;
+сложный debug при старте.
 ```
 
 ---
@@ -471,13 +475,23 @@ fanout слишком большой;маршрутизация reset тяжел
 Лучше:
 
 ```
-reset controller    |    +--> rst_n_sys_ctrl    +--> rst_n_sys_datapath    +--> rst_n_sfp    +--> rst_n_pcie    +--> rst_n_ddr
+reset controller
+    |
+    +--> rst_n_sys_ctrl
+    +--> rst_n_sys_datapath
+    +--> rst_n_sfp
+    +--> rst_n_pcie
+    +--> rst_n_ddr
 ```
 
 Плюсы:
 
 ```
-меньше fanout на один net;проще sequencing;проще debug;можно сбрасывать subsystem отдельно;меньше случайных RDC-связей.
+меньше fanout на один net;
+проще sequencing;
+проще debug;
+можно сбрасывать subsystem отдельно;
+меньше случайных RDC-связей.
 ```
 
 ---
