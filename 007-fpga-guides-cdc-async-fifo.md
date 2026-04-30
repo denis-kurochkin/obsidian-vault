@@ -7,13 +7,21 @@
 Типичный случай:
 
 ```
-clk_wr domain                          clk_rd domaindata_wr -----> async FIFO -----> data_rdwr_en  ----->              -----> rd_enfull   <-----              -----> empty
+clk_wr domain                          clk_rd domain
+
+data_wr -----> async FIFO -----> data_rd
+wr_en  ----->              -----> rd_en
+full   <-----              -----> empty
 ```
 
 Например:
 
 ```
-ADC clock domain       -> system clock domainSFP/Aurora domain      -> user logic domainPCIe user clock        -> internal processing clockAXI-Stream clk A       -> AXI-Stream clk BUART RX clock enable   -> system clock
+ADC clock domain       -> system clock domain
+SFP/Aurora domain      -> user logic domain
+PCIe user clock        -> internal processing clock
+AXI-Stream clk A       -> AXI-Stream clk B
+UART RX clock enable   -> system clock
 ```
 
 Главная идея async FIFO:
