@@ -2082,7 +2082,18 @@ constraints конфликтуют;
 Нужно правильно реализовать:
 
 ```
-dual-port memory;binary pointers;Gray-code pointers;pointer synchronization;full detection;empty detection;reset behavior;read latency;overflow/underflow behavior;formal/simulation checks;attributes for synchronizers;tool-specific RAM inference.
+dual-port memory;
+binary pointers;
+Gray-code pointers;
+pointer synchronization;
+full detection;
+empty detection;
+reset behavior;
+read latency;
+overflow/underflow behavior;
+formal/simulation checks;
+attributes for synchronizers;
+tool-specific RAM inference.
 ```
 
 Ошибки в async FIFO часто проявляются редко и трудно воспроизводятся.
