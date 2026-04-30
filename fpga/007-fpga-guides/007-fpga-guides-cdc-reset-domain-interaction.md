@@ -691,8 +691,9 @@ assign fifo_rd_en_safe = dst_ready && dst_valid && !rd_rst_busy;
 
 Или через ready/valid:
 
-```
-assign s_axis_tready = !fifo_full && !wr_rst_busy;assign m_axis_tvalid = !fifo_empty && !rd_rst_busy;
+```verilog
+assign s_axis_tready = !fifo_full && !wr_rst_busy;
+assign m_axis_tvalid = !fifo_empty && !rd_rst_busy;
 ```
 
 Идея:
@@ -710,13 +711,18 @@ assign s_axis_tready = !fifo_full && !wr_rst_busy;assign m_axis_tvalid = !fifo_e
 Обычно:
 
 ```
-source после reset:    valid = 0destination после reset:    ready может быть 0 или 1, но должно быть определено
+source после reset:
+    valid = 0
+
+destination после reset:
+    ready может быть 0 или 1, но должно быть определено
 ```
 
 Плохой случай:
 
 ```
-source выходит из reset и сразу valid=1 со старым datadestination еще в reset или FIFO busy
+source выходит из reset и сразу valid=1 со старым data
+destination еще в reset или FIFO busy
 ```
 
 Решение:
