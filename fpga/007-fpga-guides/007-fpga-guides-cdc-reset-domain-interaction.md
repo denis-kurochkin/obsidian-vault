@@ -1193,7 +1193,12 @@ reset при backpressure.
 Например:
 
 ```
-не писать в FIFO во время reset busy;не читать из FIFO во время reset busy;valid должен быть 0 во время reset;после reset FSM должна быть в IDLE;request не должен висеть бесконечно после reset;system_ready не должен стать 1 до ready всех подсистем.
+не писать в FIFO во время reset busy;
+не читать из FIFO во время reset busy;
+valid должен быть 0 во время reset;
+после reset FSM должна быть в IDLE;
+request не должен висеть бесконечно после reset;
+system_ready не должен стать 1 до ready всех подсистем.
 ```
 
 На SystemVerilog это можно оформить как SVA, но даже обычные testbench checks полезны.
@@ -1205,7 +1210,12 @@ reset при backpressure.
 В железе reset-problems часто выглядят как:
 
 ```
-иногда не стартует после power-up;после soft reset блок зависает;после перезапуска link данные не идут;FIFO показывает empty/full неправильно;один раз из десяти система не выходит из IDLE;после потери lock recovery не работает.
+иногда не стартует после power-up;
+после soft reset блок зависает;
+после перезапуска link данные не идут;
+FIFO показывает empty/full неправильно;
+один раз из десяти система не выходит из IDLE;
+после потери lock recovery не работает.
 ```
 
 Для ILA полезно смотреть:
