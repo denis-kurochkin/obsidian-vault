@@ -196,7 +196,8 @@ clocks внутри одной group не разделяются этой ком
 Плохой стиль:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks *]
+set_clock_groups -asynchronous \
+    -group [get_clocks *]
 ```
 
 Или слишком грубые wildcard-ограничения.
