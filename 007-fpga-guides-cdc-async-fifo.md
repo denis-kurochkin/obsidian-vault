@@ -533,7 +533,10 @@ wr_ptr_gray прошел CDC в rd_clk domain
 То же самое для `full`:
 
 ```
-read side прочитала данныеrd_ptr изменилсяrd_ptr_gray прошел CDC в wr_clk domainтолько потом write side увидит, что место освободилось
+read side прочитала данные
+rd_ptr изменился
+rd_ptr_gray прошел CDC в wr_clk domain
+только потом write side увидит, что место освободилось
 ```
 
 Поэтому `full` может оставаться активным еще несколько тактов после чтения.
@@ -549,13 +552,20 @@ Async FIFO добавляет задержку.
 Latency зависит от:
 
 ```
-режима чтения;глубины internal pipeline;частот wr_clk и rd_clk;состояния empty/full;настроек FIFO IP;используется ли First Word Fall Through;есть ли output register.
+режима чтения;
+глубины internal pipeline;
+частот wr_clk и rd_clk;
+состояния empty/full;
+настроек FIFO IP;
+используется ли First Word Fall Through;
+есть ли output register.
 ```
 
 Обычная ситуация:
 
 ```
-данные записали в wr_clk domainчерез несколько тактов rd_clk они стали доступны на чтение
+данные записали в wr_clk domain
+через несколько тактов rd_clk они стали доступны на чтение
 ```
 
 Это не проблема, если архитектура рассчитана на потоковую передачу.
