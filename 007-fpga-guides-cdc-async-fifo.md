@@ -242,7 +242,7 @@ assign rd_en = 1'b1;
 
 Правильнее:
 
-```
+```verilog
 assign rd_en = consumer_ready && !fifo_empty;
 ```
 
@@ -265,7 +265,8 @@ wr_en && !full
 FIFO делает:
 
 ```
-memory[wr_ptr] <= dinwr_ptr <= wr_ptr + 1
+memory[wr_ptr] <= din
+wr_ptr <= wr_ptr + 1
 ```
 
 Это происходит только в `wr_clk` domain.
@@ -289,7 +290,8 @@ rd_en && !empty
 FIFO делает:
 
 ```
-dout <= memory[rd_ptr]rd_ptr <= rd_ptr + 1
+dout <= memory[rd_ptr]
+rd_ptr <= rd_ptr + 1
 ```
 
 Это происходит только в `rd_clk` domain.
