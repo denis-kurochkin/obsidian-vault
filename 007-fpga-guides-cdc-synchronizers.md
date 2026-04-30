@@ -118,8 +118,17 @@ endmodule
 
 Использование:
 
-```
-wire link_up_clk_b;cdc_sync_bit #(    .STAGES(2),    .INIT_VALUE(1'b0)) u_link_up_sync (    .clk_dst  (clk_b),    .async_in (link_up_clk_a),    .sync_out (link_up_clk_b));
+```verilog
+wire link_up_clk_b;
+
+cdc_sync_bit #(
+    .STAGES(2),
+    .INIT_VALUE(1'b0)
+) u_link_up_sync (
+    .clk_dst  (clk_b),
+    .async_in (link_up_clk_a),
+    .sync_out (link_up_clk_b)
+);
 ```
 
 ---
@@ -131,7 +140,9 @@ wire link_up_clk_b;cdc_sync_bit #(    .STAGES(2),    .INIT_VALUE(1'b0)) u_link_u
 Плохой вариант:
 
 ```
-always @(posedge clk_dst) begin    signal_dst <= signal_async;end
+always @(posedge clk_dst) 
+begin    
+signal_dst <= signal_async;end
 ```
 
 Проблема в том, что `signal_dst` может стать metastable, а дальше этот сигнал сразу используется пользовательской логикой.
