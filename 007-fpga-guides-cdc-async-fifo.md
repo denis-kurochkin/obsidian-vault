@@ -451,7 +451,8 @@ empty = (rd_ptr_gray_next == wr_ptr_gray_sync_rd)
 Смысл:
 
 ```
-если следующий read pointer равен известному write pointer,FIFO пустой или станет пустым после чтения
+если следующий read pointer равен известному write pointer,
+FIFO пустой или станет пустым после чтения
 ```
 
 `empty` должен использоваться только в `rd_clk` domain.
@@ -465,7 +466,8 @@ empty = (rd_ptr_gray_next == wr_ptr_gray_sync_rd)
 Write side сравнивает:
 
 ```
-следующий write pointerсинхронизированный read pointer
+следующий write pointer
+синхронизированный read pointer
 ```
 
 Для circular buffer нужно отличать состояние:
