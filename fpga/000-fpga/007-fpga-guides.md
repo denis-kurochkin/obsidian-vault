@@ -35,6 +35,7 @@
 	- [Deadlock scenarios](007-fpga-guides-rtl-deadlock-scenarios.md)
 	- [System-level propagation effects](007-fpga-guides-rtl-system-level-propagation-effects.md)
 
+- [Clock Domain Crossing (CDC)](007-fpga-guides-rtl-system-level-propagation-effects.md)
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
