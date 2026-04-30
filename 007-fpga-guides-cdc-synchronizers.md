@@ -450,7 +450,9 @@ pulse_src на 1 такт -> stretched_pulse_src на N тактов
 Pulse stretching можно использовать для простых случаев, но как универсальный CDC pattern лучше предпочитать:
 
 ```
-toggle synchronizerrequest/acknowledge handshakeasync FIFO
+toggle synchronizer
+request/acknowledge handshake
+async FIFO
 ```
 
 ---
@@ -462,7 +464,9 @@ toggle synchronizerrequest/acknowledge handshakeasync FIFO
 Например:
 
 ```
-status[0] = link_upstatus[1] = error_seenstatus[2] = pll_locked
+status[0] = link_up
+status[1] = error_seen
+status[2] = pll_locked
 ```
 
 Если эти биты не образуют одно целостное значение, их можно синхронизировать массивом bit synchronizers.
