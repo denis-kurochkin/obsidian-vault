@@ -159,9 +159,11 @@ async_signal -> FF1 -> FF2 -> safe signal
 ```verilog
 reg [7:0] sync1;
 reg [7:0] sync2;
+
 always @(posedge clk_b) 
-begin    sync1 <= data_from_clk_a;    
-sync2 <= sync1;
+begin    
+	sync1 <= data_from_clk_a;    
+	sync2 <= sync1;
 end
 ```
 
@@ -182,7 +184,9 @@ end
 На принимающей стороне можно временно получить мусорное значение, например:
 
 ```
-8'h008'h7F8'h30
+8'h00
+8'h7F
+8'h30
 ```
 
 или другое неконсистентное состояние.
