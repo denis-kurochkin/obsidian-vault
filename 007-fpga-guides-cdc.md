@@ -6,16 +6,15 @@
 
 ```verilog
 always @(posedge clk_a)    
-data_a <= new_value;
+	data_a <= new_value;
 
 always @(posedge clk_b)    
-data_b <= data_a;
+	data_b <= data_a;
 ```
 
 Если `clk_a` и `clk_b` не синхронны друг другу, такой код потенциально опасен. Сигнал `data_a` может измениться слишком близко к фронту `clk_b`, и триггер в домене `clk_b` может попасть в **metastability**.
 
 ---
-
 # 1. Что такое clock domain
 
 **Clock domain** — это область логики, которая работает от одного clock signal.
