@@ -351,7 +351,9 @@ CDC structures, где важна ограниченная задержка до
 Для Gray-code pointer crossing в async FIFO идея такая:
 
 ```
-Gray code гарантирует изменение одного бита за increment,но physical routing не должен растягивать биты настолько,чтобы destination увидел некорректную temporal картину.
+Gray code гарантирует изменение одного бита за increment,
+но physical routing не должен растягивать биты настолько,
+чтобы destination увидел некорректную temporal картину.
 ```
 
 На практике для XPM/IP это часто уже учтено внутри vendor-методологии, но при самодельных CDC-структурах вопрос становится важным.
