@@ -555,9 +555,9 @@ report_timing_summary
 # 24. Пример структуры XDC для CDC
 
 ```
-# ============================================================
+# ==========================================================
 # Primary clocks
-# ============================================================
+# ==========================================================
 
 create_clock -name sys_clk \
     -period 5.000 \
@@ -567,9 +567,9 @@ create_clock -name sfp_ref_clk \
     -period 6.400 \
     [get_ports sfp_clk_p]
 
-# ============================================================
+# ==========================================================
 # Clock groups
-# ============================================================
+# ==========================================================
 
 set_clock_groups -asynchronous \
     -group [get_clocks sys_clk] \
@@ -579,7 +579,8 @@ set_clock_groups -asynchronous \
 Но для generated clocks от IP/MMCM names могут отличаться. Поэтому после synthesis полезно проверить:
 
 ```
-get_clocksreport_clocks
+get_clocks
+report_clocks
 ```
 
 ---
@@ -589,7 +590,9 @@ get_clocksreport_clocks
 Частая ошибка:
 
 ```
-set_clock_groups -asynchronous \    -group [get_clocks clk_a] \    -group [get_clocks clk_b]
+set_clock_groups -asynchronous \
+    -group [get_clocks clk_a] \
+    -group [get_clocks clk_b]
 ```
 
 Но `get_clocks clk_b` ничего не нашел.
@@ -599,7 +602,8 @@ set_clock_groups -asynchronous \    -group [get_clocks clk_a] \    -group [get_c
 Лучше проверять:
 
 ```
-get_clocksget_clocks -quiet clk_b
+get_clocks
+get_clocks -quiet clk_b
 ```
 
 И использовать строгие проверки в Tcl scripts:
