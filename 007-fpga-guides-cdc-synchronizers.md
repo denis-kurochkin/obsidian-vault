@@ -705,14 +705,15 @@ assign some_logic = sync_ff1 & enable_dst;  // плохо
 
 Правильно:
 
-```
+```verilog
 assign some_logic = sync_ff2 & enable_dst;
 ```
 
 Правило:
 
 ```
-FF1 output используется только FF2 input.FF2/FF3 output используется обычной логикой.
+FF1 output используется только FF2 input.
+FF2/FF3 output используется обычной логикой.
 ```
 
 ---
@@ -721,8 +722,13 @@ FF1 output используется только FF2 input.FF2/FF3 output исп
 
 Плохой вариант:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= async_in;    sync_ff2 <= ~sync_ff1;end
+```verilog
+always @(posedge clk_dst) begin
+    sync_ff1 <= async_in;
+    sync_ff2 <= sync_ff1;
+end
+
+assign synced_masked = sync_ff2 & mask;
 ```
 
 Или:
