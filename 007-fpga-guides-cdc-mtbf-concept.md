@@ -540,7 +540,8 @@ MTBF связан с metastability.
 Например:
 
 ```
-pulse_src длится 1 такт clk_srcclk_dst медленнее
+pulse_src длится 1 такт clk_src
+clk_dst медленнее
 ```
 
 Destination может вообще не увидеть pulse.
@@ -550,7 +551,10 @@ Destination может вообще не увидеть pulse.
 Для pulse нужны:
 
 ```
-toggle synchronizerpulse stretchinghandshakeFIFO
+toggle synchronizer
+pulse stretching
+handshake
+FIFO
 ```
 
 ---
