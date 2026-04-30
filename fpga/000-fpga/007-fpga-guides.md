@@ -68,7 +68,8 @@
 	- [Failure symptoms](007-fpga-guides-ddr-training-failure-symptoms.md)
 	- [Timing sensitivity](007-fpga-guides-ddr-training-timing-sensitivity.md)
 	
-- [DDR training](007-fpga-guides-ddr-training.md)
+- [PCIe architecture (layers + LTSSM + link bring-up)](007-fpga-guides-pcie-architecture.md)
+	- 
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
