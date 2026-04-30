@@ -48,7 +48,12 @@ Vivado может пытаться закрыть setup/hold между unrelate
 CDC constraints не создают:
 
 ```
-two-flop synchronizerasync FIFOhandshakeGray-code protectionatomic transfer для data busзащиту от потери pulse
+two-flop synchronizer
+async FIFO
+handshake
+Gray-code protection
+atomic transfer для data bus
+защиту от потери pulse
 ```
 
 Плохая логика:
