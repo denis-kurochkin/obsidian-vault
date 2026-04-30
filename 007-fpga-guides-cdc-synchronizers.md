@@ -1516,11 +1516,24 @@ valid_dst может соответствовать одному слову,
 Главные правила:
 
 ```
-1. Synchronizer ставится в destination clock domain.2. Для 1-bit level signal обычно используют 2 FF.3. Первый FF нельзя использовать в логике.4. Между stages не должно быть combinational logic.5. Source signal желательно регистрировать.6. Один async signal лучше синхронизировать один раз.7. Multi-bit bus нельзя синхронизировать побитно, если нужна целостность.8. Pulse нужно передавать через toggle, stretching с осторожностью, handshake или FIFO.9. В Vivado registers нужно помечать ASYNC_REG.10. XPM CDC primitives часто лучше ручных самописных решений.
+1. Synchronizer ставится в destination clock domain.
+2. Для 1-bit level signal обычно используют 2 FF.
+3. Первый FF нельзя использовать в логике.
+4. Между stages не должно быть combinational logic.
+5. Source signal желательно регистрировать.
+6. Один async signal лучше синхронизировать один раз.
+7. Multi-bit bus нельзя синхронизировать побитно, если нужна целостность.
+8. Pulse нужно передавать через toggle, stretching с осторожностью, handshake или FIFO.
+9. В Vivado registers нужно помечать ASYNC_REG.
+10. XPM CDC primitives часто лучше ручных самописных решений.
 ```
 
 Короткая формула:
 
 ```
-level  -> bit synchronizerpulse  -> toggle/pulse synchronizerword   -> handshakestream -> async FIFOreset  -> reset synchronizer
+level  -> bit synchronizer
+pulse  -> toggle/pulse synchronizer
+word   -> handshake
+stream -> async FIFO
+reset  -> reset synchronizer
 ```
