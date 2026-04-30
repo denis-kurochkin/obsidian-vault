@@ -37,7 +37,11 @@ Async FIFO нужен тогда, когда между clock domains перед
 Например:
 
 ```
-clk_a = 156.25 MHzclk_b = 100 MHzsource каждый несколько тактов выдает data worddestination забирает data word в своем темпе
+clk_a = 156.25 MHz
+clk_b = 100 MHz
+
+source каждый несколько тактов выдает data word
+destination забирает data word в своем темпе
 ```
 
 Без FIFO пришлось бы строить сложный handshake на каждое слово. Это возможно, но неудобно и плохо масштабируется для потоков.
@@ -45,7 +49,12 @@ clk_a = 156.25 MHzclk_b = 100 MHzsource каждый несколько такт
 Async FIFO решает сразу несколько задач:
 
 ```
-1. безопасный CDC;2. временная буферизация данных;3. decoupling между producer и consumer;4. компенсация burst-передач;5. согласование разных частот чтения и записи;6. поддержка flow control через full/empty.
+1. безопасный CDC;
+2. временная буферизация данных;
+3. decoupling между producer и consumer;
+4. компенсация burst-передач;
+5. согласование разных частот чтения и записи;
+6. поддержка flow control через full/empty.
 ```
 
 ---
@@ -59,7 +68,11 @@ Async FIFO решает сразу несколько задач:
 ```
 
 ```
-clk | +--> write logic | +--> read logic
+clk
+ |
+ +--> write logic
+ |
+ +--> read logic
 ```
 
 Async FIFO:
