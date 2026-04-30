@@ -288,13 +288,30 @@ PLL locked стал 1
 Зачем:
 
 ```
-дать clocking resources стабилизироваться;дать IP-блокам корректно стартовать;избежать мгновенного release на первом же фронте после locked;сделать поведение при старте более устойчивым.
+дать clocking resources стабилизироваться;
+дать IP-блокам корректно стартовать;
+избежать мгновенного release на первом же фронте после locked;
+сделать поведение при старте более устойчивым.
 ```
 
 Пример логики:
 
-```
-reg [5:0] rst_cnt = 6'd0;reg       rst_ready = 1'b0;always @(posedge clk or negedge arst_n) begin    if (!arst_n) begin        rst_cnt   <= 6'd0;        rst_ready <= 1'b0;    end else if (!rst_ready) begin        rst_cnt <= rst_cnt + 1'b1;        if (&rst_cnt)            rst_ready <= 1'b1;    endendassign local_rst_n = rst_ready;
+```verilog
+reg [5:0] rst_cnt = 6'd0;
+reg       rst_ready = 1'b0;
+
+always @(posedge clk or negedge arst_n) begin
+    if (!arst_n) begin
+        rst_cnt   <= 6'd0;
+        rst_ready <= 1'b0;
+    end else if (!rst_ready) begin
+        rst_cnt <= rst_cnt + 1'b1;
+        if (&rst_cnt)
+            rst_ready <= 1'b1;
+    end
+end
+
+assign local_rst_n = rst_ready;
 ```
 
 На практике этот delay часто объединяют с reset synchronizer.
@@ -305,8 +322,13 @@ reg [5:0] rst_cnt = 6'd0;reg       rst_ready = 1'b0;always @(posedge clk or nege
 
 Synchronous reset используется только внутри clocked block:
 
-```
-always @(posedge clk) begin    if (rst)        q <= 1'b0;    else        q <= d;end
+```verilog
+always @(posedge clk) begin
+    if (rst)
+        q <= 1'b0;
+    else
+        q <= d;
+end
 ```
 
 Плюсы:
