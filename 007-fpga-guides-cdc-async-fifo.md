@@ -2026,7 +2026,11 @@ Async FIFO может работать с независимыми clocks, но 
 У XPM FIFO есть порты вроде:
 
 ```
-validdata_validwr_ackoverflowunderflow
+valid
+data_valid
+wr_ack
+overflow
+underflow
 ```
 
 Их смысл зависит от режима FIFO.
@@ -2036,7 +2040,8 @@ validdata_validwr_ackoverflowunderflow
 Для простого FWFT-style wrapper часто достаточно:
 
 ```
-m_valid = !emptyrd_en = m_valid && m_ready
+m_valid = !empty
+rd_en = m_valid && m_ready
 ```
 
 Но если выбран standard mode, может быть полезен именно `valid` от FIFO.
@@ -2044,7 +2049,9 @@ m_valid = !emptyrd_en = m_valid && m_ready
 Практическое правило:
 
 ```
-выбрать один режим чтения;понять timing diagram;после этого писать wrapper.
+выбрать один режим чтения;
+понять timing diagram;
+после этого писать wrapper.
 ```
 
 ---
@@ -2056,7 +2063,12 @@ m_valid = !emptyrd_en = m_valid && m_ready
 Но CDC report может показывать paths, связанные с FIFO, если:
 
 ```
-FIFO написан вручную;атрибуты не расставлены;pointers синхронизируются нестандартно;clocks не описаны;constraints конфликтуют;используется самодельная RAM/pointer logic.
+FIFO написан вручную;
+атрибуты не расставлены;
+pointers синхронизируются нестандартно;
+clocks не описаны;
+constraints конфликтуют;
+используется самодельная RAM/pointer logic.
 ```
 
 Для production-проекта это еще один аргумент в пользу XPM или проверенного FIFO-модуля.
