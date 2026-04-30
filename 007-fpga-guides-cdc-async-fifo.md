@@ -1683,13 +1683,24 @@ Simulation async FIFO проверяет не metastability, а protocol.
 Что стоит проверять:
 
 ```
-1. данные не теряются;2. порядок данных сохраняется;3. нет записи при full;4. нет чтения при empty;5. корректно работает backpressure;6. correct behavior на burst;7. correct behavior при разных частотах wr_clk/rd_clk;8. correct behavior при случайных паузах чтения и записи;9. correct behavior после reset;10. sideband-сигналы идут вместе с data.
+1. данные не теряются;
+2. порядок данных сохраняется;
+3. нет записи при full;
+4. нет чтения при empty;
+5. корректно работает backpressure;
+6. correct behavior на burst;
+7. correct behavior при разных частотах wr_clk/rd_clk;
+8. correct behavior при случайных паузах чтения и записи;
+9. correct behavior после reset;
+10. sideband-сигналы идут вместе с data.
 ```
 
 Полезный testbench-подход:
 
 ```
-source генерирует счетчик или sequence number;FIFO передает данные;destination проверяет, что sequence number идет строго по порядку.
+source генерирует счетчик или sequence number;
+FIFO передает данные;
+destination проверяет, что sequence number идет строго по порядку.
 ```
 
 Например:
@@ -1729,13 +1740,19 @@ write: 0, 1, 2, 3, 4, ...read:  0, 1, 2, 3, 4, ...
 Для async FIFO полезна randomized simulation:
 
 ```
-wr_clk и rd_clk с разными периодами;случайный src_valid;случайный dst_ready;случайные burst;случайные паузы;проверка scoreboard.
+wr_clk и rd_clk с разными периодами;
+случайный src_valid;
+случайный dst_ready;
+случайные burst;
+случайные паузы;
+проверка scoreboard.
 ```
 
 Scoreboard:
 
 ```
-при успешной записи добавляем слово в reference queue;при успешном чтении сравниваем dout с первым словом reference queue.
+при успешной записи добавляем слово в reference queue;
+при успешном чтении сравниваем dout с первым словом reference queue.
 ```
 
 Успешная запись:
