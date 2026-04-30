@@ -1822,7 +1822,8 @@ rd_data_count
 
 Упрощенный пример для `tdata` + `tlast`.
 
-```
+```verilog
+
 module axis_async_fifo_simple #(
     parameter integer DATA_WIDTH = 32,
     parameter integer FIFO_DEPTH = 1024
@@ -1890,8 +1891,10 @@ endmodule
 
 Для standard FIFO mode ошибка часто выглядит так:
 
-```
-assign m_axis_tvalid = !fifo_empty;assign m_axis_tdata  = fifo_dout;assign fifo_rd_en    = m_axis_tvalid && m_axis_tready;
+```verilog
+assign m_axis_tvalid = !fifo_empty;
+assign m_axis_tdata  = fifo_dout;
+assign fifo_rd_en    = m_axis_tvalid && m_axis_tready;
 ```
 
 Это корректно только если `fifo_dout` уже содержит валидное текущее слово, то есть FIFO работает в FWFT-like режиме.
