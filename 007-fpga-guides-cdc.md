@@ -606,7 +606,8 @@ metastability
 целостность multi-bit data
 reset crossing
 правильные constraints
-Vivado CDC reportsархитектурную читаемость проекта
+Vivado CDC reports
+архитектурную читаемость проекта
 ```
 
 Главная мысль:
