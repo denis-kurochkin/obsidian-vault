@@ -532,13 +532,22 @@ Vivado может знать их phase/frequency relationship.
 Типовой порядок мышления:
 
 ```
-1. Создать primary clocks.2. Создать generated clocks.3. Проверить, что Vivado видит все clocks.4. Определить relationship между clocks.5. Для asynchronous groups добавить CDC exceptions.6. Для specific CDC structures добавить/проверить max_delay datapath_only, если нужно.7. Запустить reports.
+1. Создать primary clocks.
+2. Создать generated clocks.
+3. Проверить, что Vivado видит все clocks.
+4. Определить relationship между clocks.
+5. Для asynchronous groups добавить CDC exceptions.
+6. Для specific CDC structures добавить/проверить max_delay datapath_only, если нужно.
+7. Запустить reports.
 ```
 
 Команды:
 
 ```
-report_clocksreport_clock_interactionreport_cdcreport_timing_summary
+report_clocks
+report_clock_interaction
+report_cdc
+report_timing_summary
 ```
 
 ---
@@ -546,7 +555,25 @@ report_clocksreport_clock_interactionreport_cdcreport_timing_summary
 # 24. Пример структуры XDC для CDC
 
 ```
-# ============================================================# Primary clocks# ============================================================create_clock -name sys_clk \    -period 5.000 \    [get_ports sys_clk_p]create_clock -name sfp_ref_clk \    -period 6.400 \    [get_ports sfp_clk_p]# ============================================================# Clock groups# ============================================================set_clock_groups -asynchronous \    -group [get_clocks sys_clk] \    -group [get_clocks sfp_ref_clk]
+# ============================================================
+# Primary clocks
+# ============================================================
+
+create_clock -name sys_clk \
+    -period 5.000 \
+    [get_ports sys_clk_p]
+
+create_clock -name sfp_ref_clk \
+    -period 6.400 \
+    [get_ports sfp_clk_p]
+
+# ============================================================
+# Clock groups
+# ============================================================
+
+set_clock_groups -asynchronous \
+    -group [get_clocks sys_clk] \
+    -group [get_clocks sfp_ref_clk]
 ```
 
 Но для generated clocks от IP/MMCM names могут отличаться. Поэтому после synthesis полезно проверить:
