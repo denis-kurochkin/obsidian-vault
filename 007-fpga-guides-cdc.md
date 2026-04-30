@@ -291,12 +291,15 @@ source domain держит data стабильными до acknowledge
 
 ```
 clk_a domain:    
-data_a stable    
-req_a = 1clk_b 
-domain:    
-видит req    
-захватывает data    
-ack_b = 1clk_a domain:    видит ack    снимает req
+	data_a stable    
+	req_a = 1
+clk_b domain:    
+	видит req    
+	захватывает data    
+	ack_b = 1
+clk_a domain:    
+	видит ack    
+	снимает req
 ```
 
 Такой подход подходит, когда данные передаются не каждый такт, а отдельными словами или командами.
