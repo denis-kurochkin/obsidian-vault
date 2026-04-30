@@ -493,7 +493,8 @@ FIFO full
 Например, если FIFO depth = 16:
 
 ```
-адрес памяти: 4 битаpointer:      5 бит
+адрес памяти: 4 бита
+pointer:      5 бит
 ```
 
 Дополнительный старший бит помогает отличить полный буфер от пустого.
@@ -519,7 +520,10 @@ full = next write position would collide with read position
 Например:
 
 ```
-write side записала данныеwr_ptr изменилсяwr_ptr_gray прошел CDC в rd_clk domainтолько потом read side увидит, что FIFO уже не empty
+write side записала данные
+wr_ptr изменился
+wr_ptr_gray прошел CDC в rd_clk domain
+только потом read side увидит, что FIFO уже не empty
 ```
 
 То есть после записи read side может увидеть `empty = 1` еще несколько тактов `rd_clk`.
