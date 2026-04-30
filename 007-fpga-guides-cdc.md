@@ -572,13 +572,24 @@ cdc_fifo_async u_axis_cdc_fifo (...);
 В Vivado-проекте CDC нужно контролировать на нескольких уровнях:
 
 ```
-RTL architectureconstraintssimulationimplementation reportshardware debug
+RTL architecture
+constraints
+simulation
+implementation reports
+hardware debug
 ```
 
 Практический flow может быть таким:
 
 ```
-1. На уровне архитектуры определить clock domains.2. Нарисовать связи между доменами.3. Для каждой связи выбрать CDC method.4. В RTL использовать явные CDC-модули.5. В XDC правильно описать clocks и clock groups.6. После synthesis/implementation запускать report_cdc.7. Проверять, что CDC warnings либо исправлены, либо осознанно объяснены.8. В hardware debug проверять уже функциональные проблемы, а не искать CDC вслепую.
+1. На уровне архитектуры определить clock domains.
+2. Нарисовать связи между доменами.
+3. Для каждой связи выбрать CDC method.
+4. В RTL использовать явные CDC-модули.
+5. В XDC правильно описать clocks и clock groups.
+6. После synthesis/implementation запускать report_cdc.
+7. Проверять, что CDC warnings либо исправлены, либо осознанно объяснены.
+8. В hardware debug проверять уже функциональные проблемы, а не искать CDC вслепую.
 ```
 
 ---
