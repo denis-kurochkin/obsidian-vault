@@ -397,7 +397,8 @@ signal -> 2 FF synchronizer
 Обычные варианты:
 
 ```
-2 FF — базовый synchronizer3 FF — повышенная надежность
+2 FF — базовый synchronizer
+3 FF — повышенная надежность
 ```
 
 Two-flop:
@@ -427,13 +428,23 @@ async -> FF1 -> FF2 -> FF3 -> logic
 Два FF часто используют для:
 
 ```
-медленных status flagsconfiguration bitslink_uplockeddonereadyerror_seenmanual control signals
+медленных status flags
+configuration bits
+link_up
+locked
+done
+ready
+error_seen
+manual control signals
 ```
 
 Условия:
 
 ```
-сигнал меняется редкоlatency 2 такта допустимаfailure не приводит к catastrophic behaviorclock frequency не экстремально высокая
+сигнал меняется редко
+latency 2 такта допустима
+failure не приводит к catastrophic behavior
+clock frequency не экстремально высокая
 ```
 
 ---
