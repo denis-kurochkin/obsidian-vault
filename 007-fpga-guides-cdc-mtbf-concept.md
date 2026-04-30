@@ -1137,8 +1137,14 @@ cdc_sync_bit #(
 
 Для более критичного crossing:
 
-```
-cdc_sync_bit #(    .STAGES(3)) u_critical_flag_sync (    .clk_dst  (fast_clk),    .async_in (critical_flag_async),    .sync_out (critical_flag_fast_clk));
+```verilog
+cdc_sync_bit #(
+    .STAGES(3)
+) u_critical_flag_sync (
+    .clk_dst  (fast_clk),
+    .async_in (critical_flag_async),
+    .sync_out (critical_flag_fast_clk)
+);
 ```
 
 ---
@@ -1150,13 +1156,23 @@ cdc_sync_bit #(    .STAGES(3)) u_critical_flag_sync (    .clk_dst  (fast_clk),  
 Главные идеи:
 
 ```
-1. Metastability нельзя полностью исключить.2. Synchronizer снижает вероятность ее распространения.3. MTBF экспоненциально зависит от времени стабилизации.4. Больше Tresolve — лучше MTBF.5. Быстрый destination clock уменьшает Tresolve.6. Частые переключения async-сигнала увеличивают риск.7. 2 FF — базовый вариант.8. 3 FF — для быстрых, частых или критичных crossings.9. ASYNC_REG и placement реально влияют на MTBF.10. MTBF не решает pulse loss, data bus atomicity и protocol mistakes.
+1. Metastability нельзя полностью исключить.
+2. Synchronizer снижает вероятность ее распространения.
+3. MTBF экспоненциально зависит от времени стабилизации.
+4. Больше Tresolve — лучше MTBF.
+5. Быстрый destination clock уменьшает Tresolve.
+6. Частые переключения async-сигнала увеличивают риск.
+7. 2 FF — базовый вариант.
+8. 3 FF — для быстрых, частых или критичных crossings.
+9. ASYNC_REG и placement реально влияют на MTBF.
+10. MTBF не решает pulse loss, data bus atomicity и protocol mistakes.
 ```
 
 Коротко:
 
 ```
-MTBF — это не “CDC работает или не работает”.MTBF — это “насколько редко правильно сделанный synchronizer может дать физически обусловленный отказ”.
+MTBF — это не “CDC работает или не работает”.
+MTBF — это “насколько редко правильно сделанный synchronizer может дать физически обусловленный отказ”.
 ```
 
 Практическая формула выбора:
