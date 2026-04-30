@@ -890,7 +890,12 @@ CDC — это не только пересечение между двумя в
 Примеры:
 
 ```
-buttonexternal interruptGPIO inputstatus pin от внешнего чипаUART RX относительно system clockнесинхронный data ready
+button
+external interrupt
+GPIO input
+status pin от внешнего чипа
+UART RX относительно system clock
+несинхронный data ready
 ```
 
 Для простого external status input:
@@ -913,7 +918,7 @@ button pin -> synchronizer -> debounce/filter -> edge detect
 
 В Vivado желательно помечать synchronizer registers атрибутом:
 
-```
+```verilog
 (* ASYNC_REG = "TRUE" *)
 ```
 
