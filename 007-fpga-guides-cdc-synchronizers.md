@@ -690,8 +690,13 @@ cdc_sync_bit u_status_sync (
 
 Плохой вариант:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= async_in;    sync_ff2 <= sync_ff1;endassign some_logic = sync_ff1 & enable_dst;  // плохо
+```verilog
+always @(posedge clk_dst) begin
+    sync_ff1 <= async_in;
+    sync_ff2 <= sync_ff1;
+end
+
+assign some_logic = sync_ff1 & enable_dst;  // плохо
 ```
 
 `sync_ff1` — это потенциально metastable stage.
