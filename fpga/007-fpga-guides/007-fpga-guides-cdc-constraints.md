@@ -883,7 +883,8 @@ Multicycle подходит, когда clocks related и известно, чт
 Пример:
 
 ```
-clk_a и clk_b синхронно связаныenable разрешает transfer раз в N cycles
+clk_a и clk_b синхронно связаны
+enable разрешает transfer раз в N cycles
 ```
 
 Но для unrelated asynchronous clocks multicycle обычно не решает CDC.
