@@ -216,7 +216,10 @@ Tresolve ≈ Tclk_dst - routing_delay - setup_time_FF2 - clock_uncertainty
 Из периода вычитаются:
 
 ```
-задержка маршрута FF1 -> FF2setup time второго FFclock skew / uncertaintyвнутренние задержки
+задержка маршрута FF1 -> FF2
+setup time второго FF
+clock skew / uncertainty
+внутренние задержки
 ```
 
 Поэтому физическая реализация synchronizer важна.
