@@ -38,7 +38,7 @@
 - [Clock Domain Crossing (CDC)](007-fpga-guides-cdc.md)
 	- [Synchronizers](007-fpga-guides-cdc-synchronizers.md) 
 	- [Async FIFO](007-fpga-guides-cdc-async-fifo.md) 
-	- []
+	- [MTBF concept](007-fpga-guides-cdc-mtbf-concept.md)
 ## High-Speed/Interface Knolage
 
 - [FPGA clocking architecture](007-fpga-guides-clocking-architecture.md)
