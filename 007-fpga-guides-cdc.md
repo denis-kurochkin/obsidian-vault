@@ -352,7 +352,8 @@ Async FIFO обычно нужен для:
 AXI-Stream между clock domains
 передачи ADC/DAC данных
 SFP/PCIe/user logic crossing
-передачи пакетовбуферизации между разными частотами
+передачи пакетов
+буферизации между разными частотами
 ```
 
 ---
@@ -365,8 +366,14 @@ Reset тоже может быть CDC-проблемой.
 
 Например:
 
-```
-always @(posedge clk or negedge rst_n) begin    if (!rst_n)        reg_a <= 1'b0;    else        reg_a <= next_value;end
+```verilog
+always @(posedge clk or negedge rst_n) 
+begin    
+	if (!rst_n)        
+		reg_a <= 1'b0;    
+	else        
+		reg_a <= next_value;
+end
 ```
 
 Асинхронный reset может быть нормально применен, но его снятие должно быть безопасным относительно clock.
