@@ -709,13 +709,15 @@ timing reportsCDC reports
 Например:
 
 ```
-toggle synchronizer корректен структурно,но source генерирует события слишком часто
+toggle synchronizer корректен структурно,
+но source генерирует события слишком часто
 ```
 
 Или:
 
 ```
-FIFO корректен,но packet sideband не передан
+FIFO корректен,
+но packet sideband не передан
 ```
 
 Vivado может не знать protocol-level intention.
