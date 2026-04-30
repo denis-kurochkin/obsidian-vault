@@ -1174,7 +1174,12 @@ reg [1:0] sync_ff = 2'b00;
 Краткое практическое правило:
 
 ```
-если synchronizer output должен иметь безопасное значение после конфигурации,задайте INIT_VALUE;если используете reset, он должен быть корректен относительно destination clock domain;не смешивайте reset crossing и data/control crossing без явной архитектуры.
+если synchronizer output должен иметь безопасное значение после конфигурации,
+задайте INIT_VALUE;
+
+если используете reset, он должен быть корректен относительно destination clock domain;
+
+не смешивайте reset crossing и data/control crossing без явной архитектуры.
 ```
 
 Подробно это лучше рассматривать в отдельной заметке **reset-domain interaction**, потому что там есть свои CDC-опасности.
@@ -1187,8 +1192,11 @@ RTL simulation обычно не моделирует настоящую metasta
 
 Такой код в simulation может работать идеально:
 
-```
-always @(posedge clk_dst) begin    sync_ff1 <= async_in;    sync_ff2 <= sync_ff1;end
+```verilog
+always @(posedge clk_dst) begin
+    sync_ff1 <= async_in;
+    sync_ff2 <= sync_ff1;
+end
 ```
 
 Но simulation не доказывает, что crossing корректен в железе.
