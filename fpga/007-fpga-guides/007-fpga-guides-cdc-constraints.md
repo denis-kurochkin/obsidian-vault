@@ -369,7 +369,9 @@ AMD указывает, что `set_clock_groups` имеет более высо
 Практический вывод:
 
 ```
-если сделать широкое set_clock_groups,то более точные set_max_delay -datapath_only constraintsмогут потерять смысл.
+если сделать широкое set_clock_groups,
+то более точные set_max_delay -datapath_only constraints
+могут потерять смысл.
 ```
 
 Особенно это важно при использовании XPM CDC.
