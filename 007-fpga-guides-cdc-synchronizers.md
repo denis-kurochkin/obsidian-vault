@@ -1097,14 +1097,35 @@ wire link_up_sync;
 
 Хорошо:
 
-```
-// Source domainalways @(posedge clk_src) begin    error_flag_src <= error_condition;end// CDC boundarycdc_sync_bit u_error_flag_cdc (    .clk_dst  (clk_dst),    .async_in (error_flag_src),    .sync_out (error_flag_dst));// Destination domainalways @(posedge clk_dst) begin    if (error_flag_dst) begin        state_dst <= ST_ERROR;    endend
+```verilog
+// Source domain
+always @(posedge clk_src) begin
+    error_flag_src <= error_condition;
+end
+
+// CDC boundary
+cdc_sync_bit u_error_flag_cdc (
+    .clk_dst  (clk_dst),
+    .async_in (error_flag_src),
+    .sync_out (error_flag_dst)
+);
+
+// Destination domain
+always @(posedge clk_dst) begin
+    if (error_flag_dst) begin
+        state_dst <= ST_ERROR;
+    end
+end
 ```
 
 Плохо:
 
-```
-always @(posedge clk_dst) begin    if (error_condition_from_other_domain) begin        state_dst <= ST_ERROR;    endend
+```verilog
+always @(posedge clk_dst) begin
+    if (error_condition_from_other_domain) begin
+        state_dst <= ST_ERROR;
+    end
+end
 ```
 
 В хорошем варианте CDC boundary явно виден.
