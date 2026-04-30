@@ -808,8 +808,8 @@ clk_src domain:
 
 a_src -----> sync -----> a_dst ----+
                                    |
-                                   +--> combinational decision
-                                   |
+                                   +--> combinational 
+                                   |    decision
 b_src -----> sync -----> b_dst ----+
 ```
 
