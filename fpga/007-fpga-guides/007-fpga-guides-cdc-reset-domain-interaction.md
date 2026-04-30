@@ -774,14 +774,21 @@ data pipeline еще содержит старые данные
 
 Например pipeline:
 
-```
-always @(posedge clk) begin    data_pipe <= next_data;end
+```verilog
+always @(posedge clk) begin
+    data_pipe <= next_data;
+end
 ```
 
 можно не сбрасывать, если рядом есть `valid_pipe`, который сбрасывается:
 
-```
-always @(posedge clk) begin    if (rst)        valid_pipe <= 1'b0;    else        valid_pipe <= next_valid;end
+```verilog
+always @(posedge clk) begin
+    if (rst)
+        valid_pipe <= 1'b0;
+    else
+        valid_pipe <= next_valid;
+end
 ```
 
 После reset data может быть мусором, но `valid = 0`, значит он не используется.
@@ -789,7 +796,11 @@ always @(posedge clk) begin    if (rst)        valid_pipe <= 1'b0;    else      
 Плюсы:
 
 ```
-меньше reset fanout;лучше timing;меньше routing congestion;проще synthesis/retiming;меньше reset-related проблем.
+меньше reset fanout;
+лучше timing;
+меньше routing congestion;
+проще synthesis/retiming;
+меньше reset-related проблем.
 ```
 
 ---
