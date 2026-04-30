@@ -194,7 +194,11 @@ end
 Для multi-bit data нужно использовать другие методы:
 
 ```
-handshaketoggle synchronizerGray codeasync FIFOdual-clock FIFO
+handshake
+toggle synchronizer
+Gray code
+async FIFO
+dual-clock FIFO
 ```
 
 ---
