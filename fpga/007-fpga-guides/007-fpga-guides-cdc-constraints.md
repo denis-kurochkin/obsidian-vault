@@ -438,7 +438,12 @@ clk_200m
 Clocks обычно asynchronous, если:
 
 ```
-разные независимые oscillators;нет общего primary clock;clock может останавливаться независимо;частота/фаза не имеют фиксированной связи;GT/user clock не имеет deterministic relation с system clock;clock приходит извне и не связан с локальным clock.
+разные независимые oscillators;
+нет общего primary clock;
+clock может останавливаться независимо;
+частота/фаза не имеют фиксированной связи;
+GT/user clock не имеет deterministic relation с system clock;
+clock приходит извне и не связан с локальным clock.
 ```
 
 Для таких clocks обычный STA между domains обычно бессмысленен.
