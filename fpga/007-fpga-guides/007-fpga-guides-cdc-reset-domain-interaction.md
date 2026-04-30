@@ -812,13 +812,17 @@ end
 Например:
 
 ```
-retiming сложнее;SRL/BRAM inference может ухудшиться;DSP pipeline mapping может стать хуже;fanout reset-net может ухудшить timing.
+retiming сложнее;
+SRL/BRAM inference может ухудшиться;
+DSP pipeline mapping может стать хуже;
+fanout reset-net может ухудшить timing.
 ```
 
 Поэтому хороший стиль:
 
 ```
-сбрасывать control/valid/state;не сбрасывать большие data pipelines без необходимости.
+сбрасывать control/valid/state;
+не сбрасывать большие data pipelines без необходимости.
 ```
 
 ---
@@ -827,7 +831,7 @@ retiming сложнее;SRL/BRAM inference может ухудшиться;DSP p
 
 В Xilinx FPGA регистры могут иметь initial value после конфигурации:
 
-```
+```verilog
 reg flag = 1'b0;
 ```
 
