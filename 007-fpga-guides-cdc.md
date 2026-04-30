@@ -128,13 +128,13 @@ always @(posedge clk_dst or negedge rst_dst_n)
 begin    
 	if (!rst_dst_n) 
 	begin        
-	sync_ff1 <= 1'b0;        
-	sync_ff2 <= 1'b0;    
+		sync_ff1 <= 1'b0;        
+		sync_ff2 <= 1'b0;    
 	end 
 	else 
 	begin        
-	sync_ff1 <= async_signal;        
-	sync_ff2 <= sync_ff1;    
+		sync_ff1 <= async_signal;        
+		sync_ff2 <= sync_ff1;    
 	end
 end
 assign synced_signal = sync_ff2;
@@ -156,8 +156,13 @@ async_signal -> FF1 -> FF2 -> safe signal
 
 Плохой пример:
 
-```
-reg [7:0] sync1;reg [7:0] sync2;always @(posedge clk_b) begin    sync1 <= data_from_clk_a;    sync2 <= sync1;end
+```verilog
+reg [7:0] sync1;
+reg [7:0] sync2;
+always @(posedge clk_b) 
+begin    sync1 <= data_from_clk_a;    
+sync2 <= sync1;
+end
 ```
 
 На первый взгляд кажется, что это обычный two-flop synchronizer, только для 8 бит. Но это опасно.
