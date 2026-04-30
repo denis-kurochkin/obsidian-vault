@@ -485,8 +485,9 @@ end
 
 ## Ошибка 2: передавать короткий pulse напрямую
 
-```
-always @(posedge clk_b)    pulse_b <= pulse_a;
+```verilog
+always @(posedge clk_b)    
+	pulse_b <= pulse_a;
 ```
 
 Pulse может быть потерян.
