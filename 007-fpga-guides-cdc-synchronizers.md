@@ -924,20 +924,28 @@ button pin -> synchronizer -> debounce/filter -> edge detect
 
 Часто также добавляют:
 
-```
+```verilog
 (* SHREG_EXTRACT = "NO" *)
 ```
 
 Пример:
 
-```
-(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)reg [1:0] sync_ff = 2'b00;
+```verilog
+(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *)
+reg [1:0] sync_ff = 2'b00;
 ```
 
 Зачем это нужно:
 
 ```
-ASYNC_REG:    сообщает Vivado, что эти регистры являются synchronizer chain;    помогает CDC analysis распознавать структуру;    помогает placement держать registers близко;    снижает вероятность нежелательной оптимизации.SHREG_EXTRACT = "NO":    запрещает превращать цепочку регистров в shift register LUT/SRL.
+ASYNC_REG:
+    сообщает Vivado, что эти регистры являются synchronizer chain;
+    помогает CDC analysis распознавать структуру;
+    помогает placement держать registers близко;
+    снижает вероятность нежелательной оптимизации.
+
+SHREG_EXTRACT = "NO":
+    запрещает превращать цепочку регистров в shift register LUT/SRL.
 ```
 
 Для synchronizer важно, чтобы это были именно flip-flops, а не SRL.
