@@ -1303,7 +1303,8 @@ axis_async_fifo u_rx_cdc_fifo (
 По коду сразу видно:
 
 ```
-до FIFO — clk_a domainпосле FIFO — clk_b domain
+до FIFO — clk_a domain
+после FIFO — clk_b domain
 ```
 
 Это сильно упрощает debug и review.
@@ -1316,20 +1317,26 @@ axis_async_fifo u_rx_cdc_fifo (
 
 Плохо:
 
-```
-always @(posedge rd_clk) begin    if (fifo_full) begin        ...    endend
+```verilog
+always @(posedge rd_clk) begin
+    if (fifo_full) begin
+        ...
+    end
+end
 ```
 
 Почему плохо:
 
 ```
-fifo_full сформирован в wr_clk domainrd_clk logic не должна напрямую использовать этот сигнал
+fifo_full сформирован в wr_clk domain
+rd_clk logic не должна напрямую использовать этот сигнал
 ```
 
 Правильно:
 
 ```
-full используется только на стороне записиempty используется только на стороне чтения
+full используется только на стороне записи
+empty используется только на стороне чтения
 ```
 
 Если read side нужно знать “FIFO почти полный”, это уже отдельный status crossing или нужно использовать правильный флаг в нужном домене, если IP его предоставляет.
