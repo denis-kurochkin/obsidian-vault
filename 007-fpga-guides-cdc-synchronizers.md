@@ -25,7 +25,16 @@ safe signal for dst logic
 Представим два clock domains:
 
 ```
-clk_a domain                         clk_b domain+-------------+                      +----------------+| source RTL  | ---- signal_a -----> | synchronizer   |+-------------+                      +----------------+                                             |                                             v                                      +--------------+                                      | dst RTL      |                                      +--------------+
+clk_a domain                         clk_b domain
+
++-------------+                      +----------------+
+| source RTL  | ---- signal_a -----> | synchronizer   |
++-------------+                      +----------------+
+                                             |
+                                             v
+                                      +--------------+
+                                      | dst RTL      |
+                                      +--------------+
 ```
 
 Сигнал `signal_a` был сформирован в домене `clk_a`.
