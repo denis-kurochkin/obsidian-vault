@@ -863,8 +863,16 @@ cdc_sync_bit u_enable_sync (
 
 Потом уже в destination domain делаем edge detection:
 
-```
-reg enable_dst_d = 1'b0;always @(posedge clk_dst) begin    enable_dst_d <= enable_dst_level;endassign enable_rise_dst =  enable_dst_level & ~enable_dst_d;assign enable_fall_dst = ~enable_dst_level &  enable_dst_d;assign enable_edge_dst =  enable_dst_level ^  enable_dst_d;
+```verilog
+reg enable_dst_d = 1'b0;
+
+always @(posedge clk_dst) begin
+    enable_dst_d <= enable_dst_level;
+end
+
+assign enable_rise_dst =  enable_dst_level & ~enable_dst_d;
+assign enable_fall_dst = ~enable_dst_level &  enable_dst_d;
+assign enable_edge_dst =  enable_dst_level ^  enable_dst_d;
 ```
 
 Важно:
