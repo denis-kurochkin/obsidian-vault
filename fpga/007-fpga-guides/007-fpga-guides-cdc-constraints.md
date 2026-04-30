@@ -725,7 +725,9 @@ Vivado может не знать protocol-level intention.
 Поэтому CDC проверяется тремя слоями:
 
 ```
-RTL reviewVivado report_cdcsimulation/formal/protocol checks
+RTL review
+Vivado report_cdc
+simulation/formal/protocol checks
 ```
 
 ---
