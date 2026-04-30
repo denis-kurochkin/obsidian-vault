@@ -1380,7 +1380,18 @@ cdc_reset_sync
 Когда видите crossing между clock domains, задавайте вопросы:
 
 ```
-1. Что это за сигнал: level, pulse, data bus, counter, stream?2. В каком clock domain он формируется?3. В каком clock domain используется?4. Есть ли source register?5. Есть ли ровно один synchronizer на crossing?6. Есть ли logic между synchronizer stages?7. Используется ли первый stage где-то кроме второго stage?8. Сохраняется ли semantics сигнала после CDC?9. Может ли pulse потеряться?10. Может ли data bus стать неконсистентным?11. Помечены ли registers как ASYNC_REG?12. Распознает ли Vivado этот crossing как корректный CDC pattern?
+1. Что это за сигнал: level, pulse, data bus, counter, stream?
+2. В каком clock domain он формируется?
+3. В каком clock domain используется?
+4. Есть ли source register?
+5. Есть ли ровно один synchronizer на crossing?
+6. Есть ли logic между synchronizer stages?
+7. Используется ли первый stage где-то кроме второго stage?
+8. Сохраняется ли semantics сигнала после CDC?
+9. Может ли pulse потеряться?
+10. Может ли data bus стать неконсистентным?
+11. Помечены ли registers как ASYNC_REG?
+12. Распознает ли Vivado этот crossing как корректный CDC pattern?
 ```
 
 Если на вопрос “что это за CDC method?” нет четкого ответа, значит crossing нужно пересмотреть.
