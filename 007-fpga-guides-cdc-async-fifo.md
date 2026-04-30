@@ -858,8 +858,16 @@ assign fifo_rd_en = dst_ready && !fifo_empty;
 
 Но в сложной системе лучше явно отслеживать ошибки:
 
-```
-always @(posedge wr_clk) begin    if (wr_en && full)        fifo_overflow <= 1'b1;endalways @(posedge rd_clk) begin    if (rd_en && empty)        fifo_underflow <= 1'b1;end
+```verilog
+always @(posedge wr_clk) begin
+    if (wr_en && full)
+        fifo_overflow <= 1'b1;
+end
+
+always @(posedge rd_clk) begin
+    if (rd_en && empty)
+        fifo_underflow <= 1'b1;
+end
 ```
 
 Эти флаги полезны при debug в железе.
@@ -871,7 +879,8 @@ always @(posedge wr_clk) begin    if (wr_en && full)        fifo_overflow <= 1'b
 Некоторые FIFO дают счетчики:
 
 ```
-wr_data_countrd_data_count
+wr_data_count
+rd_data_count
 ```
 
 Но в async FIFO к ним нужно относиться аккуратно.
@@ -885,7 +894,8 @@ wr_data_countrd_data_count
 Правило:
 
 ```
-wr_data_count использовать только в write domainrd_data_count использовать только в read domain
+wr_data_count использовать только в write domain
+rd_data_count использовать только в read domain
 ```
 
 Для точного междоменного управления лучше использовать flags или отдельный protocol.
