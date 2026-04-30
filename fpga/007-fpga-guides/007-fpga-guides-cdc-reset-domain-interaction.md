@@ -1137,19 +1137,29 @@ wire sys_rst_n;   // active-low
 Полезные имена:
 
 ```
-sys_rst_naxi_rst_nsfp_user_rst_npcie_user_rst_nrx_datapath_rst_ntx_datapath_rst_n
+sys_rst_n
+axi_rst_n
+sfp_user_rst_n
+pcie_user_rst_n
+rx_datapath_rst_n
+tx_datapath_rst_n
 ```
 
 Плохие имена:
 
 ```
-resetrstrst1reset_sync
+reset
+rst
+rst1
+reset_sync
 ```
 
 По имени должно быть понятно:
 
 ```
-какая polarity;какой clock domain;для какого subsystem.
+какая polarity;
+какой clock domain;
+для какого subsystem.
 ```
 
 ---
@@ -1161,7 +1171,15 @@ resetrstrst1reset_sync
 Полезные сценарии:
 
 ```
-reset при старте;reset одного domain во время работы;reset обоих domains одновременно;reset source быстрее destination;reset destination быстрее source;PLL lock drop/relock;FIFO reset во время active stream;software reset во время pending handshake;reset при backpressure.
+reset при старте;
+reset одного domain во время работы;
+reset обоих domains одновременно;
+reset source быстрее destination;
+reset destination быстрее source;
+PLL lock drop/relock;
+FIFO reset во время active stream;
+software reset во время pending handshake;
+reset при backpressure.
 ```
 
 Многие reset-domain bugs проявляются только при runtime reset, а не при обычном старте.
