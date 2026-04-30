@@ -1018,13 +1018,25 @@ streams      -> async FIFO
 XDC:
 
 ```
-create_clock -name sys_clk \    -period 5.000 \    [get_ports sys_clk_p]# sfp_user_clk может быть создан IP/generated clock,# поэтому имя нужно проверить через get_clocks/report_clocks.set_clock_groups -asynchronous \    -group [get_clocks sys_clk] \    -group [get_clocks sfp_user_clk]
+create_clock -name sys_clk \
+    -period 5.000 \
+    [get_ports sys_clk_p]
+
+# sfp_user_clk может быть создан IP/generated clock,
+# поэтому имя нужно проверить через get_clocks/report_clocks.
+
+set_clock_groups -asynchronous \
+    -group [get_clocks sys_clk] \
+    -group [get_clocks sfp_user_clk]
 ```
 
 Проверка:
 
 ```
-report_clocksreport_clock_interactionreport_cdc -file cdc_report.rptreport_timing_summary
+report_clocks
+report_clock_interaction
+report_cdc -file cdc_report.rpt
+report_timing_summary
 ```
 
 ---
@@ -1034,7 +1046,22 @@ report_clocksreport_clock_interactionreport_cdc -file cdc_report.rptreport_timin
 Для каждой пары clocks:
 
 ```
-1. Они related или unrelated?2. Есть ли common source?3. Видит ли Vivado generated clocks?4. Есть ли paths между ними?5. Если paths есть, это synchronous transfer или CDC?6. Если CDC, какой RTL method используется?7. Нужен ли set_clock_groups?8. Или лучше set_false_path?9. Или нужен set_max_delay -datapath_only?10. Не перекрывает ли set_clock_groups более точные constraints?11. Что показывает report_clock_interaction?12. Что показывает report_cdc?13. Есть ли Unknown/Critical CDC?14. Нет ли multi-bit crossing без protocol?15. Нет ли combinational logic перед synchronizer?16. Нет ли waivers без объяснения?
+1. Они related или unrelated?
+2. Есть ли common source?
+3. Видит ли Vivado generated clocks?
+4. Есть ли paths между ними?
+5. Если paths есть, это synchronous transfer или CDC?
+6. Если CDC, какой RTL method используется?
+7. Нужен ли set_clock_groups?
+8. Или лучше set_false_path?
+9. Или нужен set_max_delay -datapath_only?
+10. Не перекрывает ли set_clock_groups более точные constraints?
+11. Что показывает report_clock_interaction?
+12. Что показывает report_cdc?
+13. Есть ли Unknown/Critical CDC?
+14. Нет ли multi-bit crossing без protocol?
+15. Нет ли combinational logic перед synchronizer?
+16. Нет ли waivers без объяснения?
 ```
 
 ---
