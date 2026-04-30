@@ -507,8 +507,14 @@ endmodule
 
 Плохой вариант:
 
-```
-reg [7:0] sync1;reg [7:0] sync2;always @(posedge clk_dst) begin    sync1 <= data_src;    sync2 <= sync1;end
+```verilog
+reg [7:0] sync1;
+reg [7:0] sync2;
+
+always @(posedge clk_dst) begin
+    sync1 <= data_src;
+    sync2 <= sync1;
+end
 ```
 
 Такой код выглядит как обычный synchronizer, но для data bus он опасен.
