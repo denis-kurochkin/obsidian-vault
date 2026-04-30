@@ -1624,7 +1624,8 @@ First In, First Out
 То есть порядок сохраняется:
 
 ```
-write: A, B, C, Dread:  A, B, C, D
+write: A, B, C, D
+read:  A, B, C, D
 ```
 
 Async FIFO не сортирует данные, не объединяет и не интерпретирует их. Он только сохраняет порядок записи при чтении.
@@ -1632,7 +1633,13 @@ Async FIFO не сортирует данные, не объединяет и н
 Если видите нарушение порядка, обычно причина не в “асинхронности”, а в:
 
 ```
-ошибке wr_en;ошибке rd_en;overflow/underflow;неправильном reset;неверной упаковке sideband;ошибке в packet layer;неверном использовании standard/FWFT mode.
+ошибке wr_en;
+ошибке rd_en;
+overflow/underflow;
+неправильном reset;
+неверной упаковке sideband;
+ошибке в packet layer;
+неверном использовании standard/FWFT mode.
 ```
 
 ---
@@ -1644,7 +1651,10 @@ Async FIFO не сортирует данные, не объединяет и н
 Кратко:
 
 ```
-reset должен корректно сбросить обе стороны FIFO;после reset нельзя сразу считать flags валидными без учета busy/reset completion;у XPM FIFO есть специальные reset behavior и иногда reset busy signals;reset crossing не стоит делать “на глаз”.
+reset должен корректно сбросить обе стороны FIFO;
+после reset нельзя сразу считать flags валидными без учета busy/reset completion;
+у XPM FIFO есть специальные reset behavior и иногда reset busy signals;
+reset crossing не стоит делать “на глаз”.
 ```
 
 Здесь подробно не разворачиваю, потому что у тебя отдельно запланирована заметка **reset-domain interaction**. Но в практическом дизайне reset async FIFO — одно из мест, где часто появляются ошибки.
