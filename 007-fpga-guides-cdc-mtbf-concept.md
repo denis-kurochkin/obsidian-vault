@@ -1178,5 +1178,9 @@ MTBF — это “насколько редко правильно сделан
 Практическая формула выбора:
 
 ```
-медленный level flag  -> 2 FFкритичный/быстрый flag -> 3 FFpulse/event           -> toggle/handshakedata word             -> handshakestream                -> async FIFO
+медленный level flag   -> 2 FF
+критичный/быстрый flag -> 3 FF
+pulse/event            -> toggle/handshake
+data word              -> handshake
+stream                 -> async FIFO
 ```
