@@ -1275,8 +1275,29 @@ AXI-Stream между clock domains:
 
 Хороший стиль — явно показывать FIFO как границу доменов.
 
-```
-// clk_a domain signalswire        rx_valid_a;wire [31:0] rx_data_a;wire        rx_ready_a;// clk_b domain signalswire        rx_valid_b;wire [31:0] rx_data_b;wire        rx_ready_b;// CDC boundaryaxis_async_fifo u_rx_cdc_fifo (    .s_axis_aclk   (clk_a),    .s_axis_tvalid (rx_valid_a),    .s_axis_tready (rx_ready_a),    .s_axis_tdata  (rx_data_a),    .m_axis_aclk   (clk_b),    .m_axis_tvalid (rx_valid_b),    .m_axis_tready (rx_ready_b),    .m_axis_tdata  (rx_data_b));
+```verilog
+// clk_a domain signals
+wire        rx_valid_a;
+wire [31:0] rx_data_a;
+wire        rx_ready_a;
+
+// clk_b domain signals
+wire        rx_valid_b;
+wire [31:0] rx_data_b;
+wire        rx_ready_b;
+
+// CDC boundary
+axis_async_fifo u_rx_cdc_fifo (
+    .s_axis_aclk   (clk_a),
+    .s_axis_tvalid (rx_valid_a),
+    .s_axis_tready (rx_ready_a),
+    .s_axis_tdata  (rx_data_a),
+
+    .m_axis_aclk   (clk_b),
+    .m_axis_tvalid (rx_valid_b),
+    .m_axis_tready (rx_ready_b),
+    .m_axis_tdata  (rx_data_b)
+);
 ```
 
 По коду сразу видно:
