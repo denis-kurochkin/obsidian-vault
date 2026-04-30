@@ -205,7 +205,10 @@ set_clock_groups -asynchronous \
 Почему опасно:
 
 ```
-можно случайно отключить timing там, где clocks на самом деле related;можно скрыть реальные timing violations;можно сделать report_timing слишком “чистым” искусственно;можно затруднить CDC/debug.
+можно случайно отключить timing там, где clocks на самом деле related;
+можно скрыть реальные timing violations;
+можно сделать report_timing слишком “чистым” искусственно;
+можно затруднить CDC/debug.
 ```
 
 CDC constraints должны быть осознанными и точными.
@@ -219,7 +222,9 @@ CDC constraints должны быть осознанными и точными.
 Пример:
 
 ```
-set_false_path \    -from [get_clocks clk_a] \    -to   [get_clocks clk_b]
+set_false_path \
+    -from [get_clocks clk_a] \
+    -to   [get_clocks clk_b]
 ```
 
 Это направление:
