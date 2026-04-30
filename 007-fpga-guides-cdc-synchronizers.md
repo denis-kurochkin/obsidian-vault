@@ -471,8 +471,32 @@ status[2] = pll_locked
 
 Если эти биты не образуют одно целостное значение, их можно синхронизировать массивом bit synchronizers.
 
-```
-module cdc_sync_bus_independent #(    parameter integer WIDTH  = 8,    parameter integer STAGES = 2)(    input  wire             clk_dst,    input  wire [WIDTH-1:0] async_in,    output wire [WIDTH-1:0] sync_out);    genvar i;    generate        for (i = 0; i < WIDTH; i = i + 1) begin : g_sync_bit            cdc_sync_bit #(                .STAGES(STAGES),                .INIT_VALUE(1'b0)            ) u_sync_bit (                .clk_dst  (clk_dst),                .async_in (async_in[i]),                .sync_out (sync_out[i])            );        end    endgenerateendmodule
+```verilog
+module cdc_sync_bus_independent #(
+    parameter integer WIDTH  = 8,
+    parameter integer STAGES = 2
+)(
+    input  wire             clk_dst,
+    input  wire [WIDTH-1:0] async_in,
+    output wire [WIDTH-1:0] sync_out
+);
+
+    genvar i;
+
+    generate
+        for (i = 0; i < WIDTH; i = i + 1) begin : g_sync_bit
+            cdc_sync_bit #(
+                .STAGES(STAGES),
+                .INIT_VALUE(1'b0)
+            ) u_sync_bit (
+                .clk_dst  (clk_dst),
+                .async_in (async_in[i]),
+                .sync_out (sync_out[i])
+            );
+        end
+    endgenerate
+
+endmodule
 ```
 
 Но это **не способ передавать data bus**.
