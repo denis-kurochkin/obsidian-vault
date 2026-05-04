@@ -7,7 +7,15 @@
 Упрощенная последовательность:
 
 ```
-Reset / Electrical Idle        |Detect        |Polling        |Configuration        |L0
+Reset / Electrical Idle
+        |
+Detect
+        |
+Polling
+        |
+Configuration
+        |
+L0
 ```
 
 Для более высоких скоростей:
