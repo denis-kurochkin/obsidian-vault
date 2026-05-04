@@ -667,7 +667,15 @@ AMD configuration status interface, например, описывает credit-
 Он отвечает за физическую передачу bits/symbols через lanes:
 
 ```
-TX/RX differential pairsGT transceiversserialization/deserializationclock recoveryencoding/scramblinglane alignmentequalizationpolaritylink training
+TX/RX differential pairs
+GT transceivers
+serialization/deserialization
+clock recovery
+encoding/scrambling
+lane alignment
+equalization
+polarity
+link training
 ```
 
 В FPGA это связано с MGT/GTY/GTH/GTYP transceivers, REFCLK, GT placement, lane pins и board-level signal integrity.
