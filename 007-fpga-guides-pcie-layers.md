@@ -898,13 +898,19 @@ AMD configuration status interface прямо связывает link-down statu
 Например, на transmit side:
 
 ```
-s_axis_* или RQ/CC stream        |        vPCIe core transmits TLP
+s_axis_* или RQ/CC stream
+        |
+        v
+PCIe core transmits TLP
 ```
 
 На receive side:
 
 ```
-PCIe core receives TLP        |        vm_axis_* или CQ/RC stream
+PCIe core receives TLP
+        |
+        v
+m_axis_* или CQ/RC stream
 ```
 
 AMD PG054 описывает TLP format on AXI4-Stream interface, включая byte order и размещение bytes/DWORD на datapath.
