@@ -530,13 +530,20 @@ DLLP — Data Link Layer Packet
 TLP несет transaction:
 
 ```
-Memory ReadMemory WriteCompletionConfigurationMessage
+Memory Read
+Memory Write
+Completion
+Configuration
+Message
 ```
 
 DLLP несет служебную link-level информацию:
 
 ```
-ACK / NAKflow control updatespower management informationother link-level control
+ACK / NAK
+flow control updates
+power management information
+other link-level control
 ```
 
 AMD документация указывает, что DLLP передают информацию между Data Link Layers двух напрямую соединенных компонентов; DLLP convey power management, flow control и TLP acknowledgments.
@@ -548,7 +555,13 @@ AMD документация указывает, что DLLP передают и
 Упрощенный путь отправки TLP:
 
 ```
-Transaction Layer создал TLP        |        vData Link Layer добавил sequence/LCRC/replay context        |        vPhysical Layer отправил по lanes
+Transaction Layer создал TLP
+        |
+        v
+Data Link Layer добавил sequence/LCRC/replay context
+        |
+        v
+Physical Layer отправил по lanes
 ```
 
 На приемной стороне:
