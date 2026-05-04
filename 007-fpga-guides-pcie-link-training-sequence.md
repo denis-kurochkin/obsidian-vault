@@ -908,7 +908,8 @@ Detect -> Polling -> Configuration -> Detect
 Вероятно:
 
 ```
-configuration не завершилась;lane width/deskew/lane mapping issue.
+configuration не завершилась;
+lane width/deskew/lane mapping issue.
 ```
 
 ## Pattern 4
@@ -922,7 +923,10 @@ L0 -> Recovery -> L0
 Если часто повторяется:
 
 ```
-link instability;SI/equalization issue;clocking issue;partner compatibility.
+link instability;
+SI/equalization issue;
+clocking issue;
+partner compatibility.
 ```
 
 ---
@@ -932,7 +936,17 @@ link instability;SI/equalization issue;clocking issue;partner compatibility.
 Полезная карта:
 
 ```
-Detect:    cfg_phy_link_status = no receivers detected / trainingPolling / Configuration:    link training in progressL0 with DL init:    link up, DL initialization in progressL0 after DL init:    link up, DL initialization completed
+Detect:
+    cfg_phy_link_status = no receivers detected / training
+
+Polling / Configuration:
+    link training in progress
+
+L0 with DL init:
+    link up, DL initialization in progress
+
+L0 after DL init:
+    link up, DL initialization completed
 ```
 
 AMD configuration status interface прямо определяет `cfg_phy_link_status` как 2-bit status: no receivers detected, link training in progress, link up with DL initialization in progress, and link up with DL initialization completed.
