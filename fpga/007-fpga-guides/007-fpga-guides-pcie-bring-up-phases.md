@@ -552,7 +552,12 @@ host отправил read request и ждет Completion.
 Проверять:
 
 ```
-приходит ли read request;формируется ли completion;правильный ли tag;правильный ли byte count;правильный ли lower address;нет ли backpressure на completion stream.
+приходит ли read request;
+формируется ли completion;
+правильный ли tag;
+правильный ли byte count;
+правильный ли lower address;
+нет ли backpressure на completion stream.
 ```
 
 ---
