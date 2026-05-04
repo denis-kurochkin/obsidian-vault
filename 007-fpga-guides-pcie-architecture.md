@@ -514,7 +514,17 @@ AMD checklist тоже предлагает сначала проверить `l
 Дальше проверяются:
 
 ```
-BAR mappingMemory Space EnableBus Master EnableAXI/AXIS handshakeDMA descriptor setupcompletion handlinginterruptscache coherency / address translationIOMMUCDC внутри FPGAreset user logic
+BAR mapping
+Memory Space Enable
+Bus Master Enable
+AXI/AXIS handshake
+DMA descriptor setup
+completion handling
+interrupts
+cache coherency / address translation
+IOMMU
+CDC внутри FPGA
+reset user logic
 ```
 
 Для Endpoint с DMA особенно важно, включен ли **Bus Master Enable**, иначе Endpoint может быть виден, но не сможет инициировать DMA в host memory. AMD debug checklist отдельно указывает проверять Memory Space Enable и Bus Master Enable при failing memory read/write.
