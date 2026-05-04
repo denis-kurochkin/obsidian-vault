@@ -1151,13 +1151,20 @@ MSI-X
 Это значит:
 
 ```
-Physical Layer: скорее всего достаточно работает, раз устройство перечисленоData Link Layer: базовая доставка работаетTransaction Layer / user logic: вероятный источник проблемы
+Physical Layer: скорее всего достаточно работает, раз устройство перечислено
+Data Link Layer: базовая доставка работает
+Transaction Layer / user logic: вероятный источник проблемы
 ```
 
 Проверять:
 
 ```
-приходит ли Memory Read request в CQ/RX streamформируется ли Completionправильный ли Completion length/status/tagне заблокирован ли CC/TX streamвключен ли Memory Space Enableне сброшена ли user logic
+приходит ли Memory Read request в CQ/RX stream
+формируется ли Completion
+правильный ли Completion length/status/tag
+не заблокирован ли CC/TX stream
+включен ли Memory Space Enable
+не сброшена ли user logic
 ```
 
 ---
