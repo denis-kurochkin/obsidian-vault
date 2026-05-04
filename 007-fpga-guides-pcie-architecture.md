@@ -555,7 +555,12 @@ example design
 Лучше порядок такой:
 
 ```
-1. Сгенерировать PCIe IP.2. Запустить example design.3. Проверить link training.4. Проверить lspci.5. Проверить basic BAR access.6. Потом добавлять свою user logic.
+1. Сгенерировать PCIe IP.
+2. Запустить example design.
+3. Проверить link training.
+4. Проверить lspci.
+5. Проверить basic BAR access.
+6. Потом добавлять свою user logic.
 ```
 
 AMD debug materials также рекомендуют проверять проблему на example design и сравнивать LTSSM transition в simulation/example design с Vivado ILA на железе.
