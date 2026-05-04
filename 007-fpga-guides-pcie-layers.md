@@ -396,7 +396,17 @@ AXI/logic register write
 Если host читает register FPGA:
 
 ```
-CPU load from mapped BAR address        |Root Complex creates Memory Read TLP        |FPGA receives request        |user logic provides data        |FPGA sends Completion with Data        |CPU receives read result
+CPU load from mapped BAR address
+        |
+Root Complex creates Memory Read TLP
+        |
+FPGA receives request
+        |
+user logic provides data
+        |
+FPGA sends Completion with Data
+        |
+CPU receives read result
 ```
 
 Это Transaction Layer behavior.
