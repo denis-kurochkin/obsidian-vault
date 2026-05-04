@@ -515,7 +515,14 @@ clear/set control bit.
 Возможные причины:
 
 ```
-Memory Space Enable не включен;Memory Read TLP дошел, но FPGA не отправила Completion;Completion malformed;AXI/AXIS interface заблокирован;user logic в reset;BAR decode неправильный;read path не возвращает valid;clock domain crossing внутри BAR path ошибочный.
+Memory Space Enable не включен;
+Memory Read TLP дошел, но FPGA не отправила Completion;
+Completion malformed;
+AXI/AXIS interface заблокирован;
+user logic в reset;
+BAR decode неправильный;
+read path не возвращает valid;
+clock domain crossing внутри BAR path ошибочный.
 ```
 
 Если используется raw TLP interface, нужно проверить CQ/CC path.
