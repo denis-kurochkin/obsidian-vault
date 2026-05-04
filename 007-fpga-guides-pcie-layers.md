@@ -300,14 +300,15 @@ Completer — тот, кто отвечает на request
 Host читает BAR FPGA:
 
 ```
-FPGA = Requester
-Host/Root Complex = Completer
+FPGA = Completer
+Host/Root Complex = Requester
 ```
 
 FPGA DMA читает host memory:
 
 ```
-FPGA = RequesterHost/Root Complex = Completer
+FPGA = Requester
+Host/Root Complex = Completer
 ```
 
 Один и тот же Endpoint может быть и Completer, и Requester.
