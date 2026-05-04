@@ -321,7 +321,9 @@ application protocol
 В PCIe есть роли:
 
 ```
-Root Complex / Root Port — обычно CPU/SoC/host sideEndpoint — устройство, например FPGA cardSwitch — PCIe коммутатор между ними
+Root Complex / Root Port — обычно CPU/SoC/host side
+Endpoint — устройство, например FPGA card
+Switch — PCIe коммутатор между ними
 ```
 
 В типичном FPGA add-in-card сценарии FPGA — это **Endpoint**.
