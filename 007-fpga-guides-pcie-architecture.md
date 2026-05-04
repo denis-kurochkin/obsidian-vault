@@ -47,7 +47,12 @@ GT Transceivers / PCB / Connector / Host
 Примеры TLP:
 
 ```
-Memory ReadMemory WriteCompletionConfiguration ReadConfiguration WriteMessage
+Memory Read
+Memory Write
+Completion
+Configuration Read
+Configuration Write
+Message
 ```
 
 AMD в документации описывает Transaction Layer как верхний слой PCIe architecture, который принимает, буферизует и распространяет TLP; TLP используются для memory, I/O, configuration и message transactions, а сам слой управляет ordering rules и credit-based flow control.
@@ -57,7 +62,13 @@ AMD в документации описывает Transaction Layer как ве
 Например, если ты работаешь с PCIe Endpoint, то host может обращаться к твоему FPGA через BAR:
 
 ```
-Host CPU / Root Complex        |PCIe Memory Write TLP        |FPGA PCIe IP        |BAR decode / AXI / user logic
+Host CPU / Root Complex
+        |
+PCIe Memory Write TLP
+        |
+FPGA PCIe IP
+        |
+BAR decode / AXI / user logic
 ```
 
 Или наоборот, FPGA может делать DMA-запись в память host:
