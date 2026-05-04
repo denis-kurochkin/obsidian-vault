@@ -881,7 +881,9 @@ Detect only
 Вероятно:
 
 ```
-receiver не найден;нет partner;reset/refclk/lane/pinout problem.
+receiver не найден;
+нет partner;
+reset/refclk/lane/pinout problem.
 ```
 
 ## Pattern 2
@@ -893,7 +895,8 @@ Detect -> Polling -> Detect
 Вероятно:
 
 ```
-receiver найден, но reliable training не проходит;SI/polarity/lane/refclk issue.
+receiver найден, но reliable training не проходит;
+SI/polarity/lane/refclk issue.
 ```
 
 ## Pattern 3
