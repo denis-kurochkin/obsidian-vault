@@ -170,7 +170,10 @@ TI notes указывает, что PERST# должен удерживаться
 В FPGA Endpoint это критично:
 
 ```
-если FPGA долго конфигурируется,если PCIe IP не готов к моменту release,если PERST# неправильно синхронизирован,host может не увидеть устройство.
+если FPGA долго конфигурируется,
+если PCIe IP не готов к моменту release,
+если PERST# неправильно синхронизирован,
+host может не увидеть устройство.
 ```
 
 Но детали system bring-up лучше оставить для будущей заметки **bring-up phases**.
@@ -186,13 +189,18 @@ TI notes указывает, что PERST# должен удерживаться
 Упрощенно:
 
 ```
-нет TLPнет DLLPнет user trafficPHY готовится определить, есть ли link partner
+нет TLP
+нет DLLP
+нет user traffic
+PHY готовится определить, есть ли link partner
 ```
 
 Для FPGA-разработчика важно:
 
 ```
-если link stuck до Polling,это почти всегда lower-level physical/reset/refclk/lane issue,а не BAR/DMA/TLP issue.
+если link stuck до Polling,
+это почти всегда lower-level physical/reset/refclk/lane issue,
+а не BAR/DMA/TLP issue.
 ```
 
 ---
