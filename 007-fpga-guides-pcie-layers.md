@@ -1033,7 +1033,10 @@ link нестабилен под нагрузкой
 Если проблема:
 
 ```
-BAR read не возвращает данныеDMA read completions не сходятсяhost видит Unsupported Requestmalformed TLP
+BAR read не возвращает данные
+DMA read completions не сходятся
+host видит Unsupported Request
+malformed TLP
 ```
 
 Думать про Transaction Layer / user logic / DMA / driver.
@@ -1051,7 +1054,9 @@ Data Link Layer — это link-level reliability/control layer.
 То есть:
 
 ```
-TLP payload          -> Transaction LayerACK/NAK/replay/LCRC  -> Data Link LayerSerDes/lane/equalize -> Physical Layer
+TLP payload          -> Transaction Layer
+ACK/NAK/replay/LCRC  -> Data Link Layer
+SerDes/lane/equalize -> Physical Layer
 ```
 
 ---
