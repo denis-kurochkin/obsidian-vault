@@ -146,13 +146,28 @@ Message
 Для FPGA Endpoint типовые transaction scenarios:
 
 ```
-Host -> FPGA:    Configuration Read/Write    Memory Write to BAR    Memory Read from BARFPGA -> Host:    Completion for host read    DMA Memory Write    DMA Memory Read Request    Interrupt Message
+Host -> FPGA:
+    Configuration Read/Write
+    Memory Write to BAR
+    Memory Read from BAR
+
+FPGA -> Host:
+    Completion for host read
+    DMA Memory Write
+    DMA Memory Read Request
+    Interrupt Message
 ```
 
 Вид с точки зрения FPGA:
 
 ```
-PCIe IP получает TLP        |        vuser-side interface        |        vBAR logic / DMA / application logic
+PCIe IP получает TLP
+        |
+        v
+user-side interface
+        |
+        v
+BAR logic / DMA / application logic
 ```
 
 В raw TLP-интерфейсе пользовательская логика должна понимать format packets. AMD документация по 7-series PCIe AXI4-Stream interface прямо говорит, что packets, отправляемые в core, должны соответствовать TLP formatting rules PCIe Base Specification, а user application отвечает за корректность packets; core не проверяет, что packet корректно сформирован, и malformed TLP может быть передан.
