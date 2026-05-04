@@ -358,7 +358,8 @@ FPGA работает как **Requester**.
 В AMD-style интерфейсах это часто:
 
 ```
-RQ — Requester RequestRC — Requester Completion
+RQ — Requester Request
+RC — Requester Completion
 ```
 
 Идея:
