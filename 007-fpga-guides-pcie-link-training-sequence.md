@@ -770,7 +770,13 @@ Enumeration происходит позже через Configuration TLP.
 Упрощенно:
 
 ```
-LTSSM reaches L0        |Data Link ready        |Root Complex reads config space        |Device appears in OS
+LTSSM reaches L0
+        |
+Data Link ready
+        |
+Root Complex reads config space
+        |
+Device appears in OS
 ```
 
 Если link не L0, enumeration невозможна.
@@ -784,7 +790,8 @@ LTSSM reaches L0        |Data Link ready        |Root Complex reads config space
 Обе стороны участвуют в link training:
 
 ```
-Root Port / Downstream PortEndpoint / Upstream Port
+Root Port / Downstream Port
+Endpoint / Upstream Port
 ```
 
 Они обмениваются ordered sets и сходятся к согласованной конфигурации link.
