@@ -505,7 +505,13 @@ Transaction Layer также связан с ordering rules.
 Его задачи:
 
 ```
-принимать TLP от Transaction Layerдобавлять link-level служебную информациюпередавать через Physical Layerполучать подтвержденияобнаруживать ошибкизапускать replay при необходимостиобрабатывать DLLP
+принимать TLP от Transaction Layer
+добавлять link-level служебную информацию
+передавать через Physical Layer
+получать подтверждения
+обнаруживать ошибки
+запускать replay при необходимости
+обрабатывать DLLP
 ```
 
 AMD формулирует Data Link Layer как слой, который обеспечивает reliable mechanism for exchange между двумя компонентами на link, включая data exchange TLPs, error detection/recovery, initialization services и generation/consumption DLLP.
