@@ -1058,7 +1058,15 @@ cache/IOMMU
 # 46. Минимальный sequence для запоминания
 
 ```
-1. Reset released, REFCLK stable.2. Detect: найти receiver.3. Polling: получить bit/symbol lock через training sequences.4. Configuration: согласовать lanes, width, numbering, deskew.5. L0: link operational at initial negotiated state.6. Recovery/Equalization: перейти на higher speed, если поддерживается.7. L0 again: normal operation at final speed/width.8. Data Link initialization complete.9. Configuration transactions / enumeration can proceed.
+1. Reset released, REFCLK stable.
+2. Detect: найти receiver.
+3. Polling: получить bit/symbol lock через training sequences.
+4. Configuration: согласовать lanes, width, numbering, deskew.
+5. L0: link operational at initial negotiated state.
+6. Recovery/Equalization: перейти на higher speed, если поддерживается.
+7. L0 again: normal operation at final speed/width.
+8. Data Link initialization complete.
+9. Configuration transactions / enumeration can proceed.
 ```
 
 ---
