@@ -420,7 +420,13 @@ CPU receives read result
 Он читает configuration space:
 
 ```
-Vendor IDDevice IDClass CodeBAR sizesCapabilitiesMSI/MSI-X capabilityPCIe capability
+Vendor ID
+Device ID
+Class Code
+BAR sizes
+Capabilities
+MSI/MSI-X capability
+PCIe capability
 ```
 
 Configuration Read/Write TLP — это тоже Transaction Layer.
