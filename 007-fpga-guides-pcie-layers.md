@@ -1132,7 +1132,8 @@ PCIe interrupts — это тоже protocol-level events.
 В modern PCIe обычно используют:
 
 ```
-MSIMSI-X
+MSI
+MSI-X
 ```
 
 Они передаются как PCIe messages / memory-write-like mechanisms, в зависимости от типа.
