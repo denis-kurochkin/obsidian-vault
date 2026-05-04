@@ -598,5 +598,7 @@ L0
 Короткая формула:
 
 ```
-LTSSM = link живойEnumeration = host увидел устройствоBAR/DMA = protocol и user logic реально работают
+LTSSM = link живой
+Enumeration = host увидел устройство
+BAR/DMA = protocol и user logic реально работают
 ```
