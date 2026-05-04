@@ -463,7 +463,9 @@ AMD configuration status interface выводит Max_Payload_Size и Max_Read_R
 Упрощенно:
 
 ```
-FPGA отправила Memory Read Request с tag = 5позже пришел Completion с tag = 5FPGA понимает, к какому запросу относится ответ
+FPGA отправила Memory Read Request с tag = 5
+позже пришел Completion с tag = 5
+FPGA понимает, к какому запросу относится ответ
 ```
 
 Если DMA делает много outstanding read requests, ему нужно хранить context по tags.
