@@ -366,7 +366,15 @@ BAR — это окно адресного пространства, через 
 Например:
 
 ```
-Host writes address 0xA000_1000        |Root Complex формирует PCIe Memory Write TLP        |FPGA Endpoint получает TLP        |BAR hit        |user register write
+Host writes address 0xA000_1000
+        |
+Root Complex формирует PCIe Memory Write TLP
+        |
+FPGA Endpoint получает TLP
+        |
+BAR hit
+        |
+user register write
 ```
 
 Если link в L0, но устройство не видно в OS, проблема может быть в reset timing, FPGA configuration time, PERST#, LTSSM, configuration space или host enumeration.
