@@ -697,19 +697,26 @@ link может успешно работать на Gen1,
 Полезно различать:
 
 ```
-L0 at lower speedL0 after speed change/equalization
+L0 at lower speed
+L0 after speed change/equalization
 ```
 
 Например:
 
 ```
-ожидали Gen3 x4link сначала поднялся Gen1 x4потом через Recovery попытался Gen3после equalization вернулся L0 Gen3 x4
+ожидали Gen3 x4  
+link сначала поднялся Gen1 x4  
+потом через Recovery попытался Gen3  
+после equalization вернулся L0 Gen3 x4
 ```
 
 Или неудачный вариант:
 
 ```
-Gen1 x4 OKRecovery to Gen3failurefallback to Gen1
+Gen1 x4 OK
+Recovery to Gen3
+failure
+fallback to Gen1
 ```
 
 В ILA/Vivado Link Debug это может выглядеть как серия переходов через Recovery.
