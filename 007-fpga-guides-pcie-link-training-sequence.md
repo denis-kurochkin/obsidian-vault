@@ -161,7 +161,8 @@ link падает в Recovery
 Практический смысл:
 
 ```
-PERST# low  -> устройство удерживается в resetPERST# high -> устройство может начинать link initialization
+PERST# low  -> устройство удерживается в reset
+PERST# high -> устройство может начинать link initialization
 ```
 
 TI notes указывает, что PERST# должен удерживаться low, пока power rails и reference clock не стабильны; переход PERST# из low в high обычно означает начало link initialization.
