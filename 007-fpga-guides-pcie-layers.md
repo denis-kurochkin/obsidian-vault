@@ -275,7 +275,13 @@ Completion with Data
 Пример:
 
 ```
-Host reads FPGA BAR register        |        vFPGA receives Memory Read Request        |        vFPGA must return Completion with Data
+Host reads FPGA BAR register
+        |
+        v
+FPGA receives Memory Read Request
+        |
+        v
+FPGA must return Completion with Data
 ```
 
 Для Memory Write такого обязательного Completion нет.
@@ -287,13 +293,15 @@ Host reads FPGA BAR register        |        vFPGA receives Memory Read Request 
 В PCIe есть роли на уровне transaction:
 
 ```
-Requester — тот, кто инициирует requestCompleter — тот, кто отвечает на request
+Requester — тот, кто инициирует request
+Completer — тот, кто отвечает на request
 ```
 
 Host читает BAR FPGA:
 
 ```
-Host = RequesterFPGA = Completer
+FPGA = Requester
+Host/Root Complex = Completer
 ```
 
 FPGA DMA читает host memory:
