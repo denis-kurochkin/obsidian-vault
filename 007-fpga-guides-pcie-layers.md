@@ -1066,7 +1066,14 @@ SerDes/lane/equalize -> Physical Layer
 Physical Layer включает GT/pins/lanes, но для FPGA bring-up на нижнем уровне также важны:
 
 ```
-REFCLKPERST#power railsGT reference clockingconstraints / pin planningboard routingconnectorhost slot behavior
+REFCLK
+PERST#
+power rails
+GT reference clocking
+constraints / pin planning
+board routing
+connector
+host slot behavior
 ```
 
 Часть этого находится вне PCIe protocol layer model, но влияет именно на Physical Layer symptoms.
