@@ -729,7 +729,12 @@ error recovery.
 Многие PCIe-баги проявляются только при:
 
 ```
-cold boot;долгой работе;максимальной скорости;runtime reset;переинициализации link;нагрузке на host.
+cold boot;
+долгой работе;
+максимальной скорости;
+runtime reset;
+переинициализации link;
+нагрузке на host.
 ```
 
 ---
@@ -739,7 +744,41 @@ cold boot;долгой работе;максимальной скорости;ru
 Очень полезный flow:
 
 ```
-1. Есть ли REFCLK/PERST#/power?   Нет -> board/reset/clock debug.2. LTSSM дошел до L0?   Нет -> physical/link training debug.3. Data Link initialization completed?   Нет -> lower-layer link debug.4. Видно ли устройство в lspci?   Нет -> enumeration/configuration timing debug.5. BAR назначен?   Нет -> configuration space/BAR setup debug.6. Memory Space Enable включен?   Нет -> OS/driver/command register debug.7. BAR scratch работает?   Нет -> Transaction/user logic/AXI debug.8. Bus Master Enable включен?   Нет -> DMA не заработает.9. DMA write работает?   Нет -> DMA TX/path/descriptor debug.10. DMA read работает?    Нет -> tags/completions/MRRS/RC path debug.11. Interrupt работает?    Нет -> MSI/MSI-X/driver/status debug.12. Throughput нормальный?    Нет -> credits/MPS/MRRS/outstanding/buffering/performance debug.
+1. Есть ли REFCLK/PERST#/power?
+   Нет -> board/reset/clock debug.
+
+2. LTSSM дошел до L0?
+   Нет -> physical/link training debug.
+
+3. Data Link initialization completed?
+   Нет -> lower-layer link debug.
+
+4. Видно ли устройство в lspci?
+   Нет -> enumeration/configuration timing debug.
+
+5. BAR назначен?
+   Нет -> configuration space/BAR setup debug.
+
+6. Memory Space Enable включен?
+   Нет -> OS/driver/command register debug.
+
+7. BAR scratch работает?
+   Нет -> Transaction/user logic/AXI debug.
+
+8. Bus Master Enable включен?
+   Нет -> DMA не заработает.
+
+9. DMA write работает?
+   Нет -> DMA TX/path/descriptor debug.
+
+10. DMA read работает?
+    Нет -> tags/completions/MRRS/RC path debug.
+
+11. Interrupt работает?
+    Нет -> MSI/MSI-X/driver/status debug.
+
+12. Throughput нормальный?
+    Нет -> credits/MPS/MRRS/outstanding/buffering/performance debug.
 ```
 
 ---
