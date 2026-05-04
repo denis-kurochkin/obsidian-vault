@@ -780,7 +780,9 @@ Data Link Layer отвечает за надежность packet exchange
 Полезно различать:
 
 ```
-Physical link trainingData Link initializationTransaction traffic
+Physical link training
+Data Link initialization
+Transaction traffic
 ```
 
 AMD configuration status interface показывает `phy_link_status` с состояниями вроде no receivers detected, link training in progress, link up with DL initialization in progress, and link up with DL initialization completed.
