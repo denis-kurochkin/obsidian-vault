@@ -690,7 +690,15 @@ driver очищает interrupt.
 Если interrupt не приходит, проверять:
 
 ```
-MSI/MSI-X capability enabled;driver enabled interrupt;vector programmed;FPGA interrupt pulse/level correct;status bit set;clear-on-write работает;interrupt masked или нет;Bus Master/Memory settings;IOMMU/OS settings.
+MSI/MSI-X capability enabled;
+driver enabled interrupt;
+vector programmed;
+FPGA interrupt pulse/level correct;
+status bit set;
+clear-on-write работает;
+interrupt masked или нет;
+Bus Master/Memory settings;
+IOMMU/OS settings.
 ```
 
 ---
