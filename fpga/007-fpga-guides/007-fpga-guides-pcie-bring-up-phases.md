@@ -939,7 +939,12 @@ PCIe link может остаться в L0, но user logic быть в reset.
 Поэтому reset sequencing должен учитывать:
 
 ```
-link ready;DL init complete;user reset released;BAR logic ready;DMA ready;driver initialized.
+link ready;
+DL init complete;
+user reset released;
+BAR logic ready;
+DMA ready;
+driver initialized.
 ```
 
 ---
