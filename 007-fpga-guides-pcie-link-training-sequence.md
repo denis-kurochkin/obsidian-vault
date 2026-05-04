@@ -799,7 +799,8 @@ Endpoint / Upstream Port
 Важно:
 
 ```
-FPGA Endpoint не “поднимает link сама”.Она тренируется вместе с link partner.
+FPGA Endpoint не “поднимает link сама”.
+Она тренируется вместе с link partner.
 ```
 
 Если host/root port не готов, отключен или держит reset, FPGA LTSSM будет ждать/повторять training.
