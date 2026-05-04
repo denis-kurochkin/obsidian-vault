@@ -64,7 +64,9 @@ Root Complex -> Switch -> Endpoint
 Transaction Layer думает в терминах конечной операции:
 
 ```
-host читает BAR FPGAFPGA делает DMA write в host memoryhost пишет configuration register
+host читает BAR FPGA
+FPGA делает DMA write в host memory
+host пишет configuration register
 ```
 
 Data Link Layer работает только между двумя соседними PCIe компонентами:
