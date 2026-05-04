@@ -343,7 +343,9 @@ AMD configuration status interface показывает информацию о 
 В практическом debug полезно различать:
 
 ```
-physical link up;DL initialization in progress;DL initialization completed.
+physical link up;
+DL initialization in progress;
+DL initialization completed.
 ```
 
 Если Data Link initialization не завершилась, enumeration и TLP traffic могут не работать корректно.
