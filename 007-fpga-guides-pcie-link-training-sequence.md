@@ -302,7 +302,11 @@ TI app note указывает, что после успешного receiver de
 Задачи Polling:
 
 ```
-получить bit lock;получить symbol lock;убедиться, что принимаемая последовательность декодируется;начать обмен training information;подготовиться к configuration.
+получить bit lock;
+получить symbol lock;
+убедиться, что принимаемая последовательность декодируется;
+начать обмен training information;
+подготовиться к configuration.
 ```
 
 TI описывает Polling как стадию, где устройства передают ordered sets, называемые training sequences, на Gen1 speed, чтобы установить bit и symbol lock.
