@@ -179,13 +179,22 @@ BAR logic / DMA / application logic
 Упрощенно TLP состоит из:
 
 ```
-HeaderOptional data payloadOptional digest / ECRC
+Header
+Optional data payload
+Optional digest / ECRC
 ```
 
 Header содержит смысл операции:
 
 ```
-тип TLPадресlengthrequester/completer informationtagbyte enablesattributestraffic class
+тип TLP
+адрес
+length
+requester/completer information
+tag
+byte enables
+attributes
+traffic class
 ```
 
 Для Memory Write TLP обычно есть payload.
