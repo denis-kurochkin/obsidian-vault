@@ -135,13 +135,21 @@ PCIe REFCLK — один из обязательных элементов physic
 Для FPGA это связано с:
 
 ```
-MGTREFCLK pinsGT quad placementclocking constraintsboard clock sourcejittercommon clock / separate refclk architecture
+MGTREFCLK pins
+GT quad placement
+clocking constraints
+board clock source
+jitter
+common clock / separate refclk architecture
 ```
 
 На уровне link training плохой REFCLK часто выглядит как:
 
 ```
-LTSSM не проходит Detect/Pollinglink нестабиленlink падает в Recoveryне удается поднять higher speed
+LTSSM не проходит Detect/Polling
+link нестабилен
+link падает в Recovery
+не удается поднять higher speed
 ```
 
 ---
