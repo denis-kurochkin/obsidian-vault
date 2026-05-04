@@ -496,7 +496,11 @@ device disabled в BIOS/UEFI
 Практически часто помогают:
 
 ```
-warm reboot hostPCIe rescan в Linuxпроверка LTSSM = L0проверка negotiated speed/widthпроверка configuration/status signals в ILA
+warm reboot host
+PCIe rescan в Linux
+проверка LTSSM = L0
+проверка negotiated speed/width
+проверка configuration/status signals в ILA
 ```
 
 AMD checklist тоже предлагает сначала проверить `lspci`, затем warm reboot/re-run `lspci`, а если IP всё еще не обнаружен — проверить LTSSM на `L0`.
