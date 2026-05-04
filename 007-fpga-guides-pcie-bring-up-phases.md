@@ -102,7 +102,12 @@ FPGA/SoC сама должна обнаружить downstream Endpoint-устр
 Низкоуровневый bring-up начинается не с TLP, а с аппаратных условий:
 
 ```
-power rails stable;PCIe REFCLK stable;PERST# корректно удерживается и отпускается;FPGA успела сконфигурироваться;PCIe IP готов к link training;GT reset sequence выполнена.
+power rails stable;
+PCIe REFCLK stable;
+PERST# корректно удерживается и отпускается;
+FPGA успела сконфигурироваться;
+PCIe IP готов к link training;
+GT reset sequence выполнена.
 ```
 
 AMD PCIe documentation указывает важное требование старта: `PERST#` должен быть отпущен после power-good, а PCIe port должен быть готов к link training в установленном окне после отпускания `PERST#`; в документации это обсуждается в контексте PCIe boot-time requirement и Tandem Configuration.
