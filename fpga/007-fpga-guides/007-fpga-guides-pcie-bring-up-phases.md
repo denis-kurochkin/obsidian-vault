@@ -710,7 +710,20 @@ IOMMU/OS settings.
 Тесты:
 
 ```
-cold boot;warm reboot;PCIe rescan;FPGA reconfiguration;driver reload;runtime reset;link retrain;DMA long run;small transfers;large transfers;backpressure;max throughput;interrupt storm;error recovery.
+cold boot;
+warm reboot;
+PCIe rescan;
+FPGA reconfiguration;
+driver reload;
+runtime reset;
+link retrain;
+DMA long run;
+small transfers;
+large transfers;
+backpressure;
+max throughput;
+interrupt storm;
+error recovery.
 ```
 
 Многие PCIe-баги проявляются только при:
