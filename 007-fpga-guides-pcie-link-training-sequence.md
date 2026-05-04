@@ -1088,7 +1088,18 @@ cache/IOMMU
 Для PCIe Endpoint в FPGA при link training нужно всегда иметь под рукой:
 
 ```
-LTSSM stateLTSSM state tracecfg_phy_link_downcfg_phy_link_statuscfg_current_speedcfg_negotiated_widthuser_lnk_up / link_upGT reset done/statusPERST#REFCLK presencePCIe IP configured max speed/widthactual lane connections
+LTSSM state
+LTSSM state trace
+cfg_phy_link_down
+cfg_phy_link_status
+cfg_current_speed
+cfg_negotiated_width
+user_lnk_up / link_up
+GT reset done/status
+PERST#
+REFCLK presence
+PCIe IP configured max speed/width
+actual lane connections
 ```
 
 Vivado PCIe Link Debug особенно полезен, потому что показывает не только текущий state, но и transition history. AMD UG908 указывает, что при включенном link debug core stores LTSSM state transitions, доступные в Vivado Hardware Manager.
