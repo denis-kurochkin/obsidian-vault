@@ -335,7 +335,8 @@ CC — Completer Completion
 Идея:
 
 ```
-CQ: host request пришел в FPGACC: FPGA отправляет completion назад
+CQ: host request пришел в FPGA
+CC: FPGA отправляет completion назад
 ```
 
 В QDMA документации AMD CQ/CC описываются как modules, которые receive and process TLP requests from remote PCIe agent, а BAR information используется, чтобы определить, куда направить request.
