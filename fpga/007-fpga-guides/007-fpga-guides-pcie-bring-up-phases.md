@@ -1008,7 +1008,9 @@ assign dma_start_allowed =
 Практический подход:
 
 ```
-BAR ID/VERSION/STATUS registers доступны сразу после PCIe ready;сложная логика показывает not-ready flags;DMA start запрещен до full system ready.
+BAR ID/VERSION/STATUS registers доступны сразу после PCIe ready;
+сложная логика показывает not-ready flags;
+DMA start запрещен до full system ready.
 ```
 
 Так driver может прочитать status и понять, что FPGA еще инициализируется.
@@ -1026,7 +1028,14 @@ PCIE_STATUS
 Поля:
 
 ```
-bit 0: link_up_seenbit 1: dl_init_done_seenbit 2: user_reset_donebit 3: bus_master_enable_seenbit 4: memory_space_enable_seenbit 5: dma_readybit 6: interrupt_enabledbit 7: error_seen
+bit 0: link_up_seen
+bit 1: dl_init_done_seen
+bit 2: user_reset_done
+bit 3: bus_master_enable_seen
+bit 4: memory_space_enable_seen
+bit 5: dma_ready
+bit 6: interrupt_enabled
+bit 7: error_seen
 ```
 
 Так debug через software становится намного проще.
