@@ -831,7 +831,22 @@ Memory Write — posted transaction, поэтому Completion TLP обычно 
 # 31. Пример: Host читает FPGA BAR
 
 ```
-Host CPU load from BAR    |    vRoot Complex создает Memory Read Request TLP    |    vPhysical/Data Link доставляют TLP до FPGA    |    vFPGA Transaction Layer получает request    |    vUser BAR logic готовит read data    |    vFPGA sends Completion with Data TLP
+Host CPU load from BAR
+    |
+    v
+Root Complex создает Memory Read Request TLP
+    |
+    v
+Physical/Data Link доставляют TLP до FPGA
+    |
+    v
+FPGA Transaction Layer получает request
+    |
+    v
+User BAR logic готовит read data
+    |
+    v
+FPGA sends Completion with Data TLP
 ```
 
 Здесь участвуют все уровни, но ошибка может быть на разных местах:
