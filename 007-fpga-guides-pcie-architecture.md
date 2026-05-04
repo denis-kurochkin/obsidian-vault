@@ -94,7 +94,14 @@ Host memory
 Упрощенно:
 
 ```
-Transaction Layer:    "вот TLP, его надо отправить"Data Link Layer:    "я обеспечу надежную передачу этого TLP через link"Physical Layer:    "я превращу это в symbols/bits на serial lanes"
+Transaction Layer:
+    "вот TLP, его надо отправить"
+
+Data Link Layer:
+    "я обеспечу надежную передачу этого TLP через link"
+
+Physical Layer:
+    "я превращу это в symbols/bits на serial lanes"
 ```
 
 AMD описывает Data Link Layer как промежуточный слой между Transaction и Physical Layer, отвечающий за надежный механизм обмена TLP между двумя компонентами на link; он также занимается error detection/recovery, initialization services и DLLP, которые несут power management, flow control и TLP acknowledgments.
