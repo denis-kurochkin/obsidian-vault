@@ -242,7 +242,9 @@ Non-Posted transaction требует Completion.
 Типичный пример:
 
 ```
-Memory ReadConfiguration ReadConfiguration Write
+Memory Read
+Configuration Read
+Configuration Write
 ```
 
 Host сделал Memory Read из BAR FPGA — FPGA должна вернуть Completion.
@@ -254,7 +256,10 @@ Completion — ответ на Non-Posted request.
 Например:
 
 ```
-Memory Read Request        |        vCompletion with Data
+Memory Read Request
+        |
+        v
+Completion with Data
 ```
 
 ---
