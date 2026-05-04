@@ -220,7 +220,9 @@ PHY готовится определить, есть ли link partner
 Упрощенно:
 
 ```
-PCIe transmitter проверяет наличие receiver terminationесли receiver найден -> можно переходить дальшеесли receiver не найден -> оставаться в Detect / retry
+PCIe transmitter проверяет наличие receiver termination
+если receiver найден -> можно переходить дальше
+если receiver не найден -> оставаться в Detect / retry
 ```
 
 TI описывает Rx Detect как первый шаг link training: после питания и reference clock устройства запускают receiver-detect circuit на lanes, чтобы определить наличие link partner.
