@@ -86,7 +86,13 @@ Root Port <-> SwitchSwitch    <-> Endpoint
 Обычно PCIe IP делает:
 
 ```
-Physical LayerData Link Layerчасть или почти весь Transaction Layerconfiguration handlingLTSSMflow control machineryerror handling
+Physical Layer
+Data Link Layer
+часть или почти весь Transaction Layer
+configuration handling
+LTSSM
+flow control machinery
+error handling
 ```
 
 А твоя логика делает:
