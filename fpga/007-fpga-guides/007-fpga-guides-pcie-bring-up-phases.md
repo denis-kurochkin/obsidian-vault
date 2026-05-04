@@ -569,7 +569,14 @@ host отправил read request и ждет Completion.
 Driver обычно делает:
 
 ```
-находит Vendor ID / Device ID;мапит BAR;настраивает registers;выделяет buffers;настраивает DMA descriptors;включает interrupts;проверяет capabilities;включает Bus Mastering, если нужно.
+находит Vendor ID / Device ID;
+мапит BAR;
+настраивает registers;
+выделяет buffers;
+настраивает DMA descriptors;
+включает interrupts;
+проверяет capabilities;
+включает Bus Mastering, если нужно.
 ```
 
 Если устройство видно в `lspci`, но application не работает, проблема может быть уже в driver или user-space flow.
