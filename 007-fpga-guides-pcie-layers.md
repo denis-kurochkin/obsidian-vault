@@ -629,7 +629,11 @@ receiver проверяет, что packet не поврежден
 Ты видишь:
 
 ```
-TLP streamsconfiguration/status signalsflow-control related statuslink statuserrors
+TLP streams
+configuration/status signals
+flow-control related status
+link status
+errors
 ```
 
 Но не строишь DLLP сам.
@@ -647,7 +651,9 @@ PCIe использует credit-based flow control.
 Но важно понимать место:
 
 ```
-Transaction Layer хочет отправлять TLPData Link / protocol machinery следит, есть ли credits/buffer spaceесли credits нет — отправка ограничивается
+Transaction Layer хочет отправлять TLP
+Data Link / protocol machinery следит, есть ли credits/buffer space
+если credits нет — отправка ограничивается
 ```
 
 AMD configuration status interface, например, описывает credit-based control для delivery Non-Posted requests across interface: core временно останавливает доставку Non-Posted requests в user logic, когда internal credit count равен нулю, но продолжает доставлять Posted TLPs.
