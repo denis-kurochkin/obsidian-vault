@@ -271,7 +271,10 @@ AMD debug checklist прямо предлагает: если IP не виден
 В Vivado/AMD flow полезно отличать:
 
 ```
-link training problemenumeration problemdriver problemDMA/user logic problem
+link training problem
+enumeration problem
+driver problem
+DMA/user logic problem
 ```
 
 Они выглядят похоже “PCIe не работает”, но debug у них разный.
