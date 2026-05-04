@@ -1116,7 +1116,11 @@ FPGA PCIe IP определяет BAR hit и передает request в user lo
 То есть BAR — это мост между:
 
 ```
-host address map        |PCIe Transaction Layer        |FPGA register/memory map
+host address map
+        |
+PCIe Transaction Layer
+        |
+FPGA register/memory map
 ```
 
 ---
