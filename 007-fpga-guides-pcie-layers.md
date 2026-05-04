@@ -98,7 +98,14 @@ error handling
 А твоя логика делает:
 
 ```
-BAR register mapDMA/control logicAXI/AXIS integrationinterrupt generationbufferingCDC к остальным clock domainsreset sequencingapplication protocol
+BAR register map
+DMA/control logic
+AXI/AXIS integration
+interrupt generation
+buffering
+CDC к остальным clock domains
+reset sequencing
+application protocol
 ```
 
 Если используешь XDMA/QDMA, то еще больше Transaction Layer details скрыто готовым subsystem.
