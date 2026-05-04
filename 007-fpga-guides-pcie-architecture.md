@@ -333,7 +333,11 @@ Switch — PCIe коммутатор между ними
 Для твоего контекста с SoC и FPGA важно сразу разделять:
 
 ```
-FPGA как Endpoint:    host/SoC перечисляет FPGAFPGA как Root Port:    FPGA/SoC перечисляет внешние PCIe устройства
+FPGA как Endpoint:
+    host/SoC перечисляет FPGA
+
+FPGA как Root Port:
+    FPGA/SoC перечисляет внешние PCIe устройства
 ```
 
 Архитектура logic, reset, software и debug в этих случаях отличаются.
@@ -347,7 +351,14 @@ FPGA как Endpoint:    host/SoC перечисляет FPGAFPGA как Root Po
 Он читает configuration space Endpoint-устройства:
 
 ```
-Vendor IDDevice IDClass CodeCapabilitiesBAR sizeMSI/MSI-X capabilityPCIe capabilitylink capability/status
+Vendor ID
+Device ID
+Class Code
+Capabilities
+BAR size
+MSI/MSI-X capability
+PCIe capability
+link capability/status
 ```
 
 BAR — это окно адресного пространства, через которое host обращается к устройству.
