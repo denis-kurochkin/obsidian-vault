@@ -967,7 +967,11 @@ Malformed TLP — это packet, который нарушает expected TLP fo
 Например:
 
 ```
-неверный headerнедопустимое lengthнеправильное сочетание fieldspayload не соответствует declared lengthunsupported request format
+неверный header
+недопустимое length
+неправильное сочетание fields
+payload не соответствует declared length
+unsupported request format
 ```
 
 Если пользовательская логика сама формирует TLP, это становится ее ответственностью.
