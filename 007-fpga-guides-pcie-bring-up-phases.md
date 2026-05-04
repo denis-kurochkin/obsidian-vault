@@ -26,7 +26,17 @@
 Полезно думать фазами:
 
 ```
-Phase 0: Design/IP preparationPhase 1: Power, clocks, reset, FPGA configurationPhase 2: PCIe PHY / GT initializationPhase 3: LTSSM link trainingPhase 4: Data Link initializationPhase 5: Enumeration by Root ComplexPhase 6: BAR assignment and command enablePhase 7: Basic register accessPhase 8: Driver / software initializationPhase 9: DMA / interrupts / high-level functionPhase 10: Stability and performance validation
+Phase 0: Design/IP preparation
+Phase 1: Power, clocks, reset, FPGA configuration
+Phase 2: PCIe PHY / GT initialization
+Phase 3: LTSSM link training
+Phase 4: Data Link initialization
+Phase 5: Enumeration by Root Complex
+Phase 6: BAR assignment and command enable
+Phase 7: Basic register access
+Phase 8: Driver / software initialization
+Phase 9: DMA / interrupts / high-level function
+Phase 10: Stability and performance validation
 ```
 
 Каждая фаза имеет свои симптомы. Если фаза 3 не прошла, нет смысла начинать debug с DMA descriptor. Если фаза 6 не прошла, не надо искать проблему в GT equalization.
