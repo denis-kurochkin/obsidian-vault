@@ -755,13 +755,20 @@ LTSSM — это часть Physical Layer logical sub-block.
 Он отвечает за:
 
 ```
-DetectPollingConfigurationL0Recoverypower/link states
+Detect
+Polling
+Configuration
+L0
+Recovery
+power/link states
 ```
 
 Подробно LTSSM ты планируешь разобрать отдельно, поэтому здесь только граница:
 
 ```
-LTSSM отвечает за состояние linkTransaction Layer отвечает за TLP операцииData Link Layer отвечает за надежность packet exchange
+LTSSM отвечает за состояние link
+Transaction Layer отвечает за TLP операции
+Data Link Layer отвечает за надежность packet exchange
 ```
 
 Если LTSSM не дошел до L0, Transaction Layer traffic нормально работать не будет.
