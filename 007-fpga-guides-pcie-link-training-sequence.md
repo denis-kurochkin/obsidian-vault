@@ -21,7 +21,12 @@ L0
 Для более высоких скоростей:
 
 ```
-Detect  -> Polling  -> Configuration  -> L0 at initial speed  -> Recovery / Equalization  -> L0 at negotiated higher speed
+Detect
+  -> Polling
+  -> Configuration
+  -> L0 at initial speed
+  -> Recovery / Equalization
+  -> L0 at negotiated higher speed
 ```
 
 ---
@@ -31,7 +36,14 @@ Detect  -> Polling  -> Configuration  -> L0 at initial speed  -> Recovery / Equa
 Link training нужен, чтобы PCIe-порты согласовали базовые параметры физического соединения:
 
 ```
-есть ли link partner;какие lanes реально подключены;какая ширина link возможна;какая скорость поддерживается;как пронумеровать lanes;есть ли lane reversal / polarity inversion;можно ли перейти к L0;нужна ли speed change / equalization.
+есть ли link partner;
+какие lanes реально подключены;
+какая ширина link возможна;
+какая скорость поддерживается;
+как пронумеровать lanes;
+есть ли lane reversal / polarity inversion;
+можно ли перейти к L0;
+нужна ли speed change / equalization.
 ```
 
 AMD описывает LTSSM как часть Physical Layer logical sub-block; этот блок отвечает за link initialization, training и maintenance. Там же Physical Layer делится на logical и electrical части, а обмен идет через GT transceivers.
