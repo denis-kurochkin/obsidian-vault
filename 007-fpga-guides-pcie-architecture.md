@@ -141,7 +141,16 @@ AMD описывает Physical Layer как слой, который связы
 Для FPGA это очень важная часть, потому что здесь уже появляются аппаратные вопросы:
 
 ```
-REFCLKGT quad placementlane mappingAC couplingpolarity inversionreset sequencingsignal integrityequalizationboard lossesconnector quality
+REFCLK
+GT quad placement
+lane mapping
+AC coupling
+polarity inversion
+reset sequencing
+signal integrity
+equalization
+board losses
+connector quality
 ```
 
 Если link не поднимается, проблема часто находится именно здесь или на границе reset/clocking/GT.
