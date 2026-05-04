@@ -390,7 +390,10 @@ user register write
 Для этого у Xilinx/AMD есть темы вроде:
 
 ```
-Tandem PCIefast configurationconfiguration time budgetingPERST# timing
+Tandem PCIe
+fast configuration
+configuration time budgeting
+PERST# timing
 ```
 
 Это отдельная большая тема, но при bring-up ее нельзя игнорировать.
@@ -402,13 +405,16 @@ Tandem PCIefast configurationconfiguration time budgetingPERST# timing
 PCIe link характеризуется:
 
 ```
-width: x1, x2, x4, x8, x16speed: Gen1, Gen2, Gen3, Gen4, Gen5...
+width: x1, x2, x4, x8, x16
+speed: Gen1, Gen2, Gen3, Gen4, Gen5...
 ```
 
 Например:
 
 ```
-Gen2 x4Gen3 x8Gen4 x4
+Gen2 x4
+Gen3 x8
+Gen4 x4
 ```
 
 В Vivado IP ты задаешь максимальные capabilities, но фактический link может подняться ниже:
