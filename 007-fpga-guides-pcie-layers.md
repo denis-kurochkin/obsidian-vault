@@ -3,13 +3,22 @@
 Внутри блока **PCIe architecture** удобно начинать именно с уровней, потому что почти любая PCIe-проблема в FPGA сводится к вопросу:
 
 ```
-это проблема TLP / Transaction Layer?это проблема надежной доставки / Data Link Layer?это проблема физического линка / Physical Layer?это проблема user logic вокруг PCIe IP?
+это проблема TLP / Transaction Layer?
+это проблема надежной доставки / Data Link Layer?
+это проблема физического линка / Physical Layer?
+это проблема user logic вокруг PCIe IP?
 ```
 
 PCIe — это не просто высокоскоростная serial line. Это стек протоколов:
 
 ```
-Transaction Layer        |Data Link Layer        |Physical Layer        |GT / PCB / Connector / Link Partner
+Transaction Layer
+        |
+Data Link Layer
+        |
+Physical Layer
+        |
+GT / PCB / Connector / Link Partner
 ```
 
 В Vivado большая часть этого стека реализована внутри PCIe Integrated Block / PCIe IP. Пользовательская логика обычно видит не “сырые линии”, а интерфейс уровня TLP: например AXI4-Stream Request/Completion streams, AXI bridge, XDMA/QDMA или другой wrapper. В современных AMD/Xilinx PCIe blocks AXI4-Stream interface к customer logic может иметь разные ширины datapath, а в Versal PL PCIe4 описаны отдельные Initiator/Target Request/Completion streams.
