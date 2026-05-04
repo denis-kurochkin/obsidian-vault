@@ -1047,7 +1047,16 @@ bit 7: error_seen
 Полезные counters:
 
 ```
-BAR read count;BAR write count;DMA write request count;DMA read request count;DMA completion count;unexpected completion count;timeout count;interrupt count;reset count;link_down_seen count;
+BAR read count;
+BAR write count;
+DMA write request count;
+DMA read request count;
+DMA completion count;
+unexpected completion count;
+timeout count;
+interrupt count;
+reset count;
+link_down_seen count;
 ```
 
 Если есть link down / recovery status от PCIe IP, полезно latch-ить такие события.
