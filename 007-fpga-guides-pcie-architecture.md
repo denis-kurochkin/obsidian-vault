@@ -164,7 +164,15 @@ connector quality
 Это state machine внутри Physical Layer, которая отвечает за:
 
 ```
-link initializationreceiver detectlane trainingspeed negotiationwidth negotiationequalizationtransition to L0recoverylink maintenance
+link initialization
+receiver detect
+lane training
+speed negotiation
+width negotiation
+equalization
+transition to L0
+recovery
+link maintenance
 ```
 
 AMD прямо указывает, что LTSSM реализован в logical sub-block Physical Layer и handles link initialization, training и maintenance.
