@@ -972,7 +972,10 @@ AMD docs указывают, что negotiated width valid when `cfg_phy_link_st
 После link training полезно сравнить:
 
 ```
-IP configured maximum speedboard/slot supported speedroot port supported speedactual current speed
+IP configured maximum speed
+board/slot supported speed
+root port supported speed
+actual current speed
 ```
 
 Если actual speed ниже, это не обязательно ошибка.
@@ -980,7 +983,13 @@ IP configured maximum speedboard/slot supported speedroot port supported speedac
 Возможные причины:
 
 ```
-link partner не поддерживает выше;BIOS ограничил speed;signal integrity не позволяет higher speed;equalization failed;retimer limits;Vivado IP configured ниже;PCIe slot электрически ограничен.
+link partner не поддерживает выше;
+BIOS ограничил speed;
+signal integrity не позволяет higher speed;
+equalization failed;
+retimer limits;
+Vivado IP configured ниже;
+PCIe slot электрически ограничен.
 ```
 
 ---
