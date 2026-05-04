@@ -215,7 +215,12 @@ GT quad выбран правильно.
 Для debug полезно вывести в ILA:
 
 ```
-gt_reset_done;phy ready/status;user_reset;user_clk;cfg_phy_link_down;ltssm_state.
+gt_reset_done;
+phy ready/status;
+user_reset;
+user_clk;
+cfg_phy_link_down;
+ltssm_state.
 ```
 
 ---
@@ -231,7 +236,12 @@ Detect -> Polling -> Configuration -> L0
 Ее цель:
 
 ```
-найти receiver;получить lock;согласовать lanes;согласовать width;согласовать speed;перейти в L0.
+найти receiver;
+получить lock;
+согласовать lanes;
+согласовать width;
+согласовать speed;
+перейти в L0.
 ```
 
 AMD Vivado Link Debug может сохранять LTSSM transitions, доступные в Hardware Manager; `report_hw_pcie` также дает информацию о PCIe core, LTSSM state visitation и trace data.
