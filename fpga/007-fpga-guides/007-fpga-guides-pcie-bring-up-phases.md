@@ -968,7 +968,10 @@ READY
 И только после `READY` разрешать:
 
 ```
-DMA start;interrupt generation;stream source enable;external data path enable.
+DMA start;
+interrupt generation;
+stream source enable;
+external data path enable.
 ```
 
 ---
@@ -977,14 +980,19 @@ DMA start;interrupt generation;stream source enable;external data path enable.
 
 Плохо:
 
-```
+```verilog
 assign dma_start_allowed = sw_start;
 ```
 
 Лучше:
 
-```
-assign dma_start_allowed =    sw_start &&    pcie_link_ready &&    cfg_bus_master_enable &&    dma_engine_ready &&    !user_reset;
+```verilog
+assign dma_start_allowed =
+    sw_start &&
+    pcie_link_ready &&
+    cfg_bus_master_enable &&
+    dma_engine_ready &&
+    !user_reset;
 ```
 
 Иначе software может записать start bit, когда PCIe link еще не готов или Bus Master Enable не включен.
