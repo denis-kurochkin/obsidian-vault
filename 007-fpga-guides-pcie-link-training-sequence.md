@@ -236,7 +236,16 @@ TI описывает Rx Detect как первый шаг link training: пос
 Проверять:
 
 ```
-есть ли физический link partner;вставлена ли карта / активен ли slot;правильные ли lanes;не перепутаны ли TX/RX;есть ли AC coupling;правильный ли connector/pinout;корректен ли PERST#;есть ли REFCLK;правильный ли GT quad;не отключен ли port в BIOS/host.
+есть ли физический link partner;
+вставлена ли карта / активен ли slot;
+правильные ли lanes;
+не перепутаны ли TX/RX;
+есть ли AC coupling;
+правильный ли connector/pinout;
+корректен ли PERST#;
+есть ли REFCLK;
+правильный ли GT quad;
+не отключен ли port в BIOS/host.
 ```
 
 Если receiver не обнаружен, Transaction Layer вообще еще не участвует.
