@@ -865,7 +865,24 @@ completion malformed — Transaction/user logic
 В Vivado PCIe IP layers напрямую не выглядят как три отдельных RTL-модуля, но их следы есть:
 
 ```
-Physical Layer:    ltssm_state    phy_link_up/down    negotiated speed/width    GT status    refclk/reset signalsData Link Layer:    link active / DL initialization    replay/error/status signals    flow control related statusTransaction Layer:    AXI4-Stream TLP interfaces    CQ/CC/RQ/RC    BAR hit    cfg/status    max payload/read request
+Physical Layer:
+    ltssm_state
+    phy_link_up/down
+    negotiated speed/width
+    GT status
+    refclk/reset signals
+
+Data Link Layer:
+    link active / DL initialization
+    replay/error/status signals
+    flow control related status
+
+Transaction Layer:
+    AXI4-Stream TLP interfaces
+    CQ/CC/RQ/RC
+    BAR hit
+    cfg/status
+    max payload/read request
 ```
 
 AMD configuration status interface прямо связывает link-down status с Physical Layer LTSSM и отдельно показывает link status including DL initialization completed.
