@@ -862,7 +862,14 @@ Bring-up на custom board лучше начинать с example design.
 Порядок:
 
 ```
-1. Сгенерировать PCIe IP.2. Собрать example design.3. Проверить constraints/pins.4. Запрограммировать FPGA.5. Проверить LTSSM/L0.6. Проверить lspci.7. Проверить BAR access/example tests.8. Только потом интегрировать свою логику.
+1. Сгенерировать PCIe IP.
+2. Собрать example design.
+3. Проверить constraints/pins.
+4. Запрограммировать FPGA.
+5. Проверить LTSSM/L0.
+6. Проверить lspci.
+7. Проверить BAR access/example tests.
+8. Только потом интегрировать свою логику.
 ```
 
 Если example design не поднимается, проблема почти точно не в твоей application logic.
@@ -870,7 +877,14 @@ Bring-up на custom board лучше начинать с example design.
 Если example design работает, а твой проект нет — искать различия:
 
 ```
-reset;clocking;constraints;IP parameters;BAR setup;AXI/AXIS handshake;CDC;driver.
+reset;
+clocking;
+constraints;
+IP parameters;
+BAR setup;
+AXI/AXIS handshake;
+CDC;
+driver.
 ```
 
 ---
