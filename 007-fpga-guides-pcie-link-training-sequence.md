@@ -1016,13 +1016,19 @@ PCIe slot электрически ограничен.
 Если LTSSM дошел до L0, это не значит:
 
 ```
-BAR decode работает;Completion формируются правильно;DMA descriptors корректны;driver loaded;interrupts работают;CDC внутри FPGA безопасен.
+BAR decode работает;
+Completion формируются правильно;
+DMA descriptors корректны;
+driver loaded;
+interrupts работают;
+CDC внутри FPGA безопасен.
 ```
 
 Это значит только:
 
 ```
-нижний physical/link training прошел достаточно,чтобы link стал operational.
+нижний physical/link training прошел достаточно,
+чтобы link стал operational.
 ```
 
 ---
@@ -1034,7 +1040,15 @@ BAR decode работает;Completion формируются правильно
 Дальше влияют:
 
 ```
-MPS/MRRScreditsoutstanding requestsDMA architecturehost/root complexdriverAXI/stream backpressurebufferingcache/IOMMU
+MPS/MRRS
+credits
+outstanding requests
+DMA architecture
+host/root complex
+driver
+AXI/stream backpressure
+buffering
+cache/IOMMU
 ```
 
 Это отдельная будущая тема про **PCIe flow control / credits / throughput limits**.
