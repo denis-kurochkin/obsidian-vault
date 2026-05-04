@@ -788,7 +788,18 @@ runtime reset;
 Для первых фаз:
 
 ```
-PERST# synchronized/local;PCIe user reset;PCIe user clock alive;ltssm_state;cfg_phy_link_down;cfg_phy_link_status;cfg_current_speed;cfg_negotiated_width;user_lnk_up;GT reset done;PLL lock;link debug trace.
+PERST# synchronized/local;
+PCIe user reset;
+PCIe user clock alive;
+ltssm_state;
+cfg_phy_link_down;
+cfg_phy_link_status;
+cfg_current_speed;
+cfg_negotiated_width;
+user_lnk_up;
+GT reset done;
+PLL lock;
+link debug trace.
 ```
 
 Vivado Hardware Manager PCIe Link Debug показывает core properties, LTSSM State Trace и LTSSM State Diagram with transitions.
