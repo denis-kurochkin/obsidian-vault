@@ -1108,7 +1108,12 @@ error handling.
 Performance debug имеет смысл только после:
 
 ```
-link stable;expected speed/width negotiated;BAR access работает;DMA работает корректно;нет protocol errors;нет reset instability.
+link stable;
+expected speed/width negotiated;
+BAR access работает;
+DMA работает корректно;
+нет protocol errors;
+нет reset instability.
 ```
 
 Иначе throughput debug будет смешан с функциональными ошибками.
@@ -1116,7 +1121,17 @@ link stable;expected speed/width negotiated;BAR access работает;DMA ра
 Performance зависит от:
 
 ```
-Gen/speed;width;MPS;MRRS;credits;DMA burst size;outstanding requests;host memory behavior;IOMMU;AXI backpressure;buffering.
+Gen/speed;
+width;
+MPS;
+MRRS;
+credits;
+DMA burst size;
+outstanding requests;
+host memory behavior;
+IOMMU;
+AXI backpressure;
+buffering.
 ```
 
 Это лучше разбирать в заметке про PCIe flow control/performance.
@@ -1128,7 +1143,19 @@ Gen/speed;width;MPS;MRRS;credits;DMA burst size;outstanding requests;host memory
 Для воспроизводимого debug сохранять:
 
 ```
-FPGA bitstream version;Vivado version;PCIe IP version/config;board revision;host platform;BIOS settings;cold/warm boot;lspci -vv output;LTSSM trace;negotiated speed/width;BAR map;driver version;DMA test result.
+FPGA bitstream version;
+Vivado version;
+PCIe IP version/config;
+board revision;
+host platform;
+BIOS settings;
+cold/warm boot;
+lspci -vv output;
+LTSSM trace;
+negotiated speed/width;
+BAR map;
+driver version;
+DMA test result.
 ```
 
 Иначе легко потерять различия между “работало вчера” и “не работает сегодня”.
