@@ -530,13 +530,19 @@ AMD docs указывают, что Physical Layer поддерживает lane
 Configuration выполняет deskew:
 
 ```
-выравнивает lanes между собой,чтобы данные можно было собрать обратно в правильном порядке.
+выравнивает lanes между собой,
+чтобы данные можно было собрать обратно в правильном порядке.
 ```
 
 Это особенно важно для:
 
 ```
-x4x8x16длинных трассretimer topologiesсложных backplane/connector paths
+x4
+x8
+x16
+длинных трасс
+retimer topologies
+сложных backplane/connector paths
 ```
 
 TI application note прямо указывает lane-to-lane deskew как часть Configuration stage.
