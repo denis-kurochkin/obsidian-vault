@@ -1001,7 +1001,8 @@ PCIe slot электрически ограничен.
 Важный порядок:
 
 ```
-не стартовать user transaction logic,пока PCIe core не сообщил, что link/user interface готов.
+не стартовать user transaction logic,
+пока PCIe core не сообщил, что link/user interface готов.
 ```
 
 Иначе твой RTL может начать отправлять запросы раньше, чем link и Data Link Layer готовы.
