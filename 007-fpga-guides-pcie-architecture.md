@@ -286,13 +286,28 @@ DMA/user logic problem
 Обычно PCIe IP берет на себя:
 
 ```
-Physical LayerData Link Layerбольшую часть Transaction LayerLTSSMconfiguration space mechanicsflow controlTLP framing/parsingerror handling на уровне IP
+Physical Layer
+Data Link Layer
+большую часть Transaction Layer
+LTSSM
+configuration space mechanics
+flow control
+TLP framing/parsing
+error handling на уровне IP
 ```
 
 Твоя логика обычно отвечает за:
 
 ```
-BAR behaviorregister mapAXI/AXIS integrationDMA engine или подключение XDMA/QDMAinterrupt generationbufferingCDC между PCIe user clock и остальной логикойreset sequencingapplication protocol
+BAR behavior
+register map
+AXI/AXIS integration
+DMA engine или подключение XDMA/QDMA
+interrupt generation
+buffering
+CDC между PCIe user clock и остальной логикой
+reset sequencing
+application protocol
 ```
 
 Если используешь **XDMA/QDMA**, то часть DMA-протокола уже делает готовый subsystem.
