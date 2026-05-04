@@ -192,13 +192,27 @@ AMD прямо указывает, что LTSSM реализован в logical 
 Типовой путь link training можно представить так:
 
 ```
-Detect  |Polling  |Configuration  |L0
+Detect
+  |
+Polling
+  |
+Configuration
+  |
+L0
 ```
 
 Более полный набор состояний может включать:
 
 ```
-DetectPollingConfigurationL0RecoveryDisabledHot ResetLoopbackL0s / L1 power states
+Detect
+Polling
+Configuration
+L0
+Recovery
+Disabled
+Hot Reset
+Loopback
+L0s / L1 power states
 ```
 
 Для первого bring-up важнее всего понимать:
