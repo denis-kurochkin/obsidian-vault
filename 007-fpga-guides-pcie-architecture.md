@@ -27,7 +27,11 @@ GT Transceivers / PCB / Connector / Host
 В FPGA-разработке нас обычно интересуют две стороны:
 
 ```
-1. PCIe protocol side:   LTSSM, link training, TLP, DLLP, flow control, configuration space2. FPGA user side:   AXI4-Stream, AXI-MM bridge, DMA, BAR logic, interrupts, CDC, reset
+1. PCIe protocol side:
+   LTSSM, link training, TLP, DLLP, flow control, configuration space
+
+2. FPGA user side:
+   AXI4-Stream, AXI-MM bridge, DMA, BAR logic, interrupts, CDC, reset
 ```
 
 То есть PCIe — это не просто “быстрые differential lanes”. Это protocol stack, где physical link, надежность передачи, transaction semantics и software enumeration должны сойтись вместе.
