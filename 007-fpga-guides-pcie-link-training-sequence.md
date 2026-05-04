@@ -816,7 +816,8 @@ TI notes указывает, что при retimer link может быть ра
 Практически:
 
 ```
-Root Port <-> RetimerRetimer <-> Endpoint
+Root Port <-> Retimer
+Retimer <-> Endpoint
 ```
 
 Проблема training может быть на одном сегменте, а не обязательно прямо между host и FPGA.
@@ -830,7 +831,13 @@ AMD Vivado PCIe Link Debug может показывать LTSSM State Trace и 
 Практически полезно смотреть:
 
 ```
-последнее LTSSM state;какие states посещались;есть ли циклы Detect <-> Polling;есть ли переходы в Recovery;какая current speed;какая negotiated width;какие GTs используются.
+последнее LTSSM state;
+какие states посещались;
+есть ли циклы Detect <-> Polling;
+есть ли переходы в Recovery;
+какая current speed;
+какая negotiated width;
+какие GTs используются.
 ```
 
 ---
