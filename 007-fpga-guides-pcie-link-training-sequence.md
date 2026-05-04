@@ -572,7 +572,10 @@ TI notes описывает L0 как normal operational state, где data и p
 AMD configuration status interface показывает несколько уровней link status:
 
 ```
-00 — no receivers detected01 — link training in progress10 — link up, DL initialization in progress11 — link up, DL initialization completed
+00 — no receivers detected
+01 — link training in progress
+10 — link up, DL initialization in progress
+11 — link up, DL initialization completed
 ```
 
 То есть для полноценной работы желательно видеть не только Physical Layer link-up, но и завершенную Data Link initialization.
