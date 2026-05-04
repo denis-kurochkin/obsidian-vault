@@ -894,7 +894,16 @@ driver.
 PCIe FPGA bugs часто отличаются между cold boot и warm reboot.
 
 ```
-Cold boot:    power rails ramp;    FPGA configuration;    PERST# timing;    host enumeration window.Warm reboot:    FPGA уже может быть configured;    link может быть ready быстрее;    host повторяет enumeration.
+Cold boot:
+    power rails ramp;
+    FPGA configuration;
+    PERST# timing;
+    host enumeration window.
+
+Warm reboot:
+    FPGA уже может быть configured;
+    link может быть ready быстрее;
+    host повторяет enumeration.
 ```
 
 Если warm reboot помогает, подозревать:
