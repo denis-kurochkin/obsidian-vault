@@ -69,9 +69,9 @@
 	- [Timing sensitivity](007-fpga-guides-ddr-training-timing-sensitivity.md)
 	
 - [PCIe architecture (layers + LTSSM + link bring-up)](007-fpga-guides-pcie-architecture.md)
-	- [PCIe Layers](007-fpga-guides-pcie-layers)
-	- [PCIe Link Training Sequence](007-fpga-guides-pcie-link-training-sequence)
-	- [PCIe bring-up phases](007-fpga-guides-pcie-bring-up-phases)
+	- [PCIe Layers](007-fpga-guides-pcie-layers.md)
+	- [PCIe Link Training Sequence](007-fpga-guides-pcie-link-training-sequence.md)
+	- [PCIe bring-up phases](007-fpga-guides-pcie-bring-up-phases.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
