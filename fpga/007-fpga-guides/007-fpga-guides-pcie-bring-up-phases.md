@@ -909,7 +909,11 @@ Warm reboot:
 Если warm reboot помогает, подозревать:
 
 ```
-FPGA configuration time;PERST# timing;Tandem requirement;host enumeration too early;reset sequencing.
+FPGA configuration time;
+PERST# timing;
+Tandem requirement;
+host enumeration too early;
+reset sequencing.
 ```
 
 ---
@@ -919,7 +923,13 @@ FPGA configuration time;PERST# timing;Tandem requirement;host enumeration too ea
 Отдельно проверить:
 
 ```
-soft reset через driver;FPGA internal reset;PCIe core reset;DMA reset;user logic reset;link retrain;driver reload.
+soft reset через driver;
+FPGA internal reset;
+PCIe core reset;
+DMA reset;
+user logic reset;
+link retrain;
+driver reload.
 ```
 
 PCIe link может остаться в L0, но user logic быть в reset.
