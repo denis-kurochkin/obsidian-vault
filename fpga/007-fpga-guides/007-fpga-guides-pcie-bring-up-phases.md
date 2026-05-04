@@ -1088,7 +1088,15 @@ link_down_seen count;
 Если работаешь без XDMA/QDMA, через raw TLP streams, фазы сложнее:
 
 ```
-CQ receive path;BAR decode;CC completion path;RQ request generation;RC completion receive path;tag management;split completions;flow control;error handling.
+CQ receive path;
+BAR decode;
+CC completion path;
+RQ request generation;
+RC completion receive path;
+tag management;
+split completions;
+flow control;
+error handling.
 ```
 
 Тогда basic BAR read/write особенно важен, потому что он проверяет Completer path.
