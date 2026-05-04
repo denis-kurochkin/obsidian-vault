@@ -323,7 +323,9 @@ retimer issue;
 Смотреть не только текущее состояние, а trace:
 
 ```
-L0 -> Recovery -> L0L0 -> Recovery -> DetectPolling -> Recovery -> Polling
+L0 -> Recovery -> L0
+L0 -> Recovery -> Detect
+Polling -> Recovery -> Polling
 ```
 
 Trace часто важнее одиночного снимка state.
