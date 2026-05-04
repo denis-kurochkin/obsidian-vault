@@ -50,7 +50,17 @@ Phase 10: Stability and performance validation
 Проверить:
 
 ```
-Endpoint или Root Port;target PCIe generation;target link width;правильное FPGA family/package;правильный PCIe block/GT quad;BAR sizes;AXI4-Stream / AXI Bridge / XDMA / QDMA mode;MSI/MSI-X support;reference clock settings;reset polarity;example design availability.
+Endpoint или Root Port;
+target PCIe generation;
+target link width;
+правильное FPGA family/package;
+правильный PCIe block/GT quad;
+BAR sizes;
+AXI4-Stream / AXI Bridge / XDMA / QDMA mode;
+MSI/MSI-X support;
+reference clock settings;
+reset polarity;
+example design availability.
 ```
 
 В Vivado лучше первым шагом поднять **PCIe example design**, а не сразу сложную application logic. Так ты отделяешь проблемы PCIe core/board от ошибок своего BAR/DMA/CDC.
