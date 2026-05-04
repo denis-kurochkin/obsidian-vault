@@ -254,7 +254,18 @@ AMD debug checklist прямо предлагает: если IP не виден
 Упрощенный bring-up PCIe Endpoint в FPGA выглядит так:
 
 ```
-1. FPGA configured2. PCIe REFCLK present and stable3. PCIe reset released correctly4. GT / PHY initialization done5. LTSSM starts training6. Receiver detect sees link partner7. Link negotiates width and speed8. LTSSM reaches L09. Root Complex enumerates Endpoint10. Host assigns bus/device/function and BARs11. OS/driver enables memory/bus mastering12. User logic starts real transactions
+1. FPGA configured
+2. PCIe REFCLK present and stable
+3. PCIe reset released correctly
+4. GT / PHY initialization done
+5. LTSSM starts training
+6. Receiver detect sees link partner
+7. Link negotiates width and speed
+8. LTSSM reaches L0
+9. Root Complex enumerates Endpoint
+10. Host assigns bus/device/function and BARs
+11. OS/driver enables memory/bus mastering
+12. User logic starts real transactions
 ```
 
 В Vivado/AMD flow полезно отличать:
