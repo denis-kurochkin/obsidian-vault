@@ -380,7 +380,17 @@ RC: FPGA получает completion на свои read requests
 Допустим, host пишет register FPGA:
 
 ```
-CPU store to mapped BAR address        |Root Complex creates Memory Write TLP        |PCIe link        |FPGA PCIe IP receives TLP        |BAR hit        |AXI/logic register write
+CPU store to mapped BAR address
+        |
+Root Complex creates Memory Write TLP
+        |
+PCIe link
+        |
+FPGA PCIe IP receives TLP
+        |
+BAR hit
+        |
+AXI/logic register write
 ```
 
 Если host читает register FPGA:
