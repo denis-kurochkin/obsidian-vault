@@ -107,7 +107,12 @@ equalization scenarios
 Перед тем как PCIe link сможет тренироваться, должны быть выполнены базовые условия:
 
 ```
-питание стабильно;REFCLK присутствует и стабилен;PERST# / reset корректно отпущен;FPGA PCIe IP сконфигурирован;GT/PHY reset sequence завершена;link partner тоже готов.
+питание стабильно;
+REFCLK присутствует и стабилен;
+PERST# / reset корректно отпущен;
+FPGA PCIe IP сконфигурирован;
+GT/PHY reset sequence завершена;
+link partner тоже готов.
 ```
 
 TI application note описывает, что после питания и наличия reference clock PCIe device начинает link training, состоящий из receiver detection, polling и configuration.
