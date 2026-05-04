@@ -499,7 +499,11 @@ clear/set control bit.
 Минимальный register map:
 
 ```
-0x00: FPGA_ID0x04: VERSION0x08: SCRATCH0x0C: STATUS0x10: CONTROL
+0x00: FPGA_ID
+0x04: VERSION
+0x08: SCRATCH
+0x0C: STATUS
+0x10: CONTROL
 ```
 
 Если scratch register не работает, DMA debug начинать рано.
