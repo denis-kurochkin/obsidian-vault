@@ -652,7 +652,12 @@ FPGA -> Host Memory Read RequestHost -> FPGA Completion with Data
 Сложнее, потому что нужно:
 
 ```
-выдать read request;отслеживать tag;принять completions;собрать данные;обработать split completions;соблюдать ordering/credits.
+выдать read request;
+отслеживать tag;
+принять completions;
+собрать данные;
+обработать split completions;
+соблюдать ordering/credits.
 ```
 
 Поэтому DMA write часто поднимают раньше, чем DMA read.
