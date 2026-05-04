@@ -328,7 +328,8 @@ FPGA работает как **Completer**.
 В AMD UltraScale+/Versal-style interfaces это часто выражается через отдельные streams:
 
 ```
-CQ — Completer RequestCC — Completer Completion
+CQ — Completer Request
+CC — Completer Completion
 ```
 
 Идея:
