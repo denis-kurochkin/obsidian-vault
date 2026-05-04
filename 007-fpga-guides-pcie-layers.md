@@ -987,7 +987,11 @@ XDMA/QDMA скрывают много TLP деталей.
 Например, вместо ручной генерации Memory Read/Write TLP пользователь работает с:
 
 ```
-AXI memory-mapped interfaceAXI4-Stream interfacedescriptor ringDMA control registersinterrupts
+AXI memory-mapped interface
+AXI4-Stream interface
+descriptor ring
+DMA control registers
+interrupts
 ```
 
 PCIe subsystem сам делает request/completion machinery.
