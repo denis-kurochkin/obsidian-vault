@@ -615,7 +615,16 @@ DMA bring-up — отдельный слой.
 Для DMA нужно:
 
 ```
-Bus Master Enable;корректные host memory buffers;правильные physical/IOVA addresses;descriptor setup;MPS/MRRS;outstanding request handling;completion handling;interrupt или polling completion;cache/IOMMU considerations;AXI/stream side ready.
+Bus Master Enable;
+корректные host memory buffers;
+правильные physical/IOVA addresses;
+descriptor setup;
+MPS/MRRS;
+outstanding request handling;
+completion handling;
+interrupt или polling completion;
+cache/IOMMU considerations;
+AXI/stream side ready.
 ```
 
 Если используется XDMA/QDMA, часть этого уже реализована IP/driver stack.
