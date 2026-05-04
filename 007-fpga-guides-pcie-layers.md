@@ -1091,7 +1091,12 @@ Configuration space itself — это набор registers/capabilities, чер�
 User logic может видеть status/config signals:
 
 ```
-Memory Space EnableBus Master EnableMax Payload SizeMax Read Request Sizepower statelink status
+Memory Space Enable
+Bus Master Enable
+Max Payload Size
+Max Read Request Size
+power state
+link status
 ```
 
 AMD configuration status interface перечисляет такие signals, включая command register bits, Max Payload, Max Read Request, link status, width и speed.
