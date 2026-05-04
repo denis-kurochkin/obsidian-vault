@@ -810,20 +810,30 @@ Vivado Hardware Manager PCIe Link Debug показывает core properties, LT
 
 На Linux:
 
-```
-lspcilspci -vvlspci -nnlspci -s <bus:dev.fn> -vv
+```bash
+lspci
+lspci -vv
+lspci -nn
+lspci -s <bus:dev.fn> -vv
 ```
 
 Для command register и capability debug иногда используют:
 
-```
+```bash
 setpci
 ```
 
 Практически важны:
 
 ```
-Vendor ID / Device ID;BAR regions;Kernel driver in use;LnkSta speed/width;Command register;Memory Space Enable;Bus Master Enable;MSI/MSI-X enabled.
+Vendor ID / Device ID;
+BAR regions;
+Kernel driver in use;
+LnkSta speed/width;
+Command register;
+Memory Space Enable;
+Bus Master Enable;
+MSI/MSI-X enabled.
 ```
 
 ---
