@@ -401,7 +401,10 @@ retimer/redriver issue.
 Упрощенно:
 
 ```
-Polling.Configuration:    link partner уже виден;    ordered sets принимаются;    идет подготовка к lane/link configuration.
+Polling.Configuration:
+    link partner уже виден;
+    ordered sets принимаются;
+    идет подготовка к lane/link configuration.
 ```
 
 Если stuck здесь, значит physical contact есть, но параметры link еще не согласованы достаточно для Configuration.
@@ -415,7 +418,12 @@ Polling.Configuration:    link partner уже виден;    ordered sets при
 Задачи Configuration:
 
 ```
-определить link width;назначить lane numbers;согласовать link number;выполнить lane-to-lane deskew;учесть lane reversal;подготовить переход в L0.
+определить link width;
+назначить lane numbers;
+согласовать link number;
+выполнить lane-to-lane deskew;
+учесть lane reversal;
+подготовить переход в L0.
 ```
 
 TI notes описывает Configuration как stage, где выполняется lane-to-lane deskew, определяется link width, и каждая lane получает link number и lane number.
