@@ -172,13 +172,22 @@ link нестабилен под нагрузкой.
 Практическая логика:
 
 ```
-PERST# asserted:    PCIe Endpoint удерживается в reset.PERST# deasserted:    Endpoint может начинать link initialization.
+PERST# asserted:
+    PCIe Endpoint удерживается в reset.
+
+PERST# deasserted:
+    Endpoint может начинать link initialization.
 ```
 
 Для FPGA важно не просто подключить `PERST#`, а правильно связать его с:
 
 ```
-PCIe IP reset;GT reset;user logic reset;configuration done;PLL/MMCM lock;local reset synchronizers.
+PCIe IP reset;
+GT reset;
+user logic reset;
+configuration done;
+PLL/MMCM lock;
+local reset synchronizers.
 ```
 
 Неправильный reset sequencing может дать ситуацию, где LTSSM иногда стартует, иногда нет.
