@@ -588,13 +588,20 @@ Driver обычно делает:
 Полезный принцип:
 
 ```
-сначала доказать hardware register access;потом debug driver;потом DMA.
+сначала доказать hardware register access;
+потом debug driver;
+потом DMA.
 ```
 
 Минимальные проверки:
 
 ```
-lspci видит устройство;BAR назначен;Memory Space Enable включен;scratch register read/write работает;interrupt status register работает;DMA control registers доступны.
+lspci видит устройство;
+BAR назначен;
+Memory Space Enable включен;
+scratch register read/write работает;
+interrupt status register работает;
+DMA control registers доступны.
 ```
 
 Если это не работает, driver высокого уровня не спасет.
