@@ -536,7 +536,18 @@ reset user logic
 Для PCIe IP в Vivado на первом этапе особенно важны:
 
 ```
-device/package supportGT quad locationREFCLK pin / MGTREFCLKlane pinsPERST# inputuser clock outputreset outputs/statuslink up / phy link upltssm statenegotiated speed/widthAXI4-Stream или AXI bridge interfaceexample design
+device/package support
+GT quad location
+REFCLK pin / MGTREFCLK
+lane pins
+PERST# input
+user clock output
+reset outputs/status
+link up / phy link up
+ltssm state
+negotiated speed/width
+AXI4-Stream или AXI bridge interface
+example design
 ```
 
 При первом запуске лучше не начинать сразу со сложной application logic.
