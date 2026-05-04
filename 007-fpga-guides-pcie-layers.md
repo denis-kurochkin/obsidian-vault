@@ -30,13 +30,25 @@ GT / PCB / Connector / Link Partner
 Упрощенно:
 
 ```
-Transaction Layer:    что нужно сделать?    Memory Read, Memory Write, Completion, Config, MessageData Link Layer:    как надежно доставить packet соседнему PCIe устройству?    ACK/NAK, replay, LCRC, DLLPPhysical Layer:    как передать bits/symbols по lanes?    SerDes, encoding, scrambling, equalization, lane training
+Transaction Layer:
+    что нужно сделать?
+    Memory Read, Memory Write, Completion, Config, Message
+
+Data Link Layer:
+    как надежно доставить packet соседнему PCIe устройству?
+    ACK/NAK, replay, LCRC, DLLP
+
+Physical Layer:
+    как передать bits/symbols по lanes?
+    SerDes, encoding, scrambling, equalization, lane training
 ```
 
 Еще короче:
 
 ```
-Transaction Layer — смысл операцииData Link Layer   — надежность на одном linkPhysical Layer    — электрическая/serial передача
+Transaction Layer — смысл операции
+Data Link Layer   — надежность на одном link
+Physical Layer    — электрическая/serial передача
 ```
 
 ---
