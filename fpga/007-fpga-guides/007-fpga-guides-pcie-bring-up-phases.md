@@ -1167,13 +1167,24 @@ DMA test result.
 Минимальный успех для PCIe Endpoint FPGA:
 
 ```
-LTSSM reaches L0;Data Link init complete;device visible in lspci;expected speed/width or acceptable fallback;BAR assigned;Memory Space Enable set;scratch register read/write works.
+LTSSM reaches L0;
+Data Link init complete;
+device visible in lspci;
+expected speed/width or acceptable fallback;
+BAR assigned;
+Memory Space Enable set;
+scratch register read/write works.
 ```
 
 Минимальный успех для DMA design:
 
 ```
-previous list+ Bus Master Enable set;+ DMA write works;+ DMA read works;+ interrupt/completion works;+ long-run test stable.
+previous list
++ Bus Master Enable set;
++ DMA write works;
++ DMA read works;
++ interrupt/completion works;
++ long-run test stable.
 ```
 
 ---
