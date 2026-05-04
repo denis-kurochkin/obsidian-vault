@@ -442,7 +442,8 @@ Configuration Read/Write TLP — это тоже Transaction Layer.
 На Transaction Layer важны параметры:
 
 ```
-MPS  = Max Payload SizeMRRS = Max Read Request Size
+MPS  = Max Payload Size
+MRRS = Max Read Request Size
 ```
 
 MPS ограничивает payload size TLP.
