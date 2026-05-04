@@ -1068,7 +1068,15 @@ link_down_seen count;
 Если используется XDMA/QDMA, bring-up обычно делится так:
 
 ```
-1. PCIe link up.2. Device visible in lspci.3. XDMA/QDMA driver loaded.4. BAR/control registers visible.5. DMA channels detected.6. Host-to-card transfer works.7. Card-to-host transfer works.8. Interrupt/completion path works.9. Throughput/stress tests pass.
+1. PCIe link up.
+2. Device visible in lspci.
+3. XDMA/QDMA driver loaded.
+4. BAR/control registers visible.
+5. DMA channels detected.
+6. Host-to-card transfer works.
+7. Card-to-host transfer works.
+8. Interrupt/completion path works.
+9. Throughput/stress tests pass.
 ```
 
 Если driver не видит DMA channel, это уже не обязательно LTSSM. Проверять нужно IP config, driver compatibility, BAR, interrupts, descriptors и OS view.
