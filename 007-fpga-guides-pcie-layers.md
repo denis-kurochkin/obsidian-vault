@@ -127,7 +127,12 @@ TLP = Transaction Layer Packet
 TLP — это packet, который описывает операцию:
 
 ```
-Memory ReadMemory WriteCompletionConfiguration ReadConfiguration WriteMessage
+Memory Read
+Memory Write
+Completion
+Configuration Read
+Configuration Write
+Message
 ```
 
 Если host пишет в BAR FPGA, это приходит как Memory Write TLP.
