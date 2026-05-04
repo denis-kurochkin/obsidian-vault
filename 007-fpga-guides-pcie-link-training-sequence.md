@@ -728,7 +728,12 @@ fallback to Gen1
 После L0 начинается нормальная работа lower layers:
 
 ```
-Data Link initializationflow control initializationDLLP exchangeconfiguration transactionsenumerationTLP traffic
+Data Link initialization
+flow control initialization
+DLLP exchange
+configuration transactions
+enumeration
+TLP traffic
 ```
 
 Важно:
