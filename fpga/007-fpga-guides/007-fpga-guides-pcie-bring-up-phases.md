@@ -646,7 +646,8 @@ FPGA -> Host Memory Write
 DMA read:
 
 ```
-FPGA -> Host Memory Read RequestHost -> FPGA Completion with Data
+FPGA -> Host Memory Read Request
+Host -> FPGA Completion with Data
 ```
 
 Сложнее, потому что нужно:
@@ -671,13 +672,19 @@ Interrupt проверяется после basic BAR и DMA/status.
 Для modern PCIe обычно используются:
 
 ```
-MSI;MSI-X.
+MSI;
+MSI-X.
 ```
 
 Bring-up interrupt:
 
 ```
-host включает MSI/MSI-X;driver настраивает vectors;FPGA генерирует interrupt request;host вызывает ISR;driver читает status;driver очищает interrupt.
+host включает MSI/MSI-X;
+driver настраивает vectors;
+FPGA генерирует interrupt request;
+host вызывает ISR;
+driver читает status;
+driver очищает interrupt.
 ```
 
 Если interrupt не приходит, проверять:
