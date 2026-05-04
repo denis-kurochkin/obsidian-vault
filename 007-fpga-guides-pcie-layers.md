@@ -711,7 +711,13 @@ serial lanes передают signal
 На этом уровне уже работают:
 
 ```
-lane deskewlane reversal supportpolarity inversionequalizationreceiver detectionelectrical idlespeed change
+lane deskew
+lane reversal support
+polarity inversion
+equalization
+receiver detection
+electrical idle
+speed change
 ```
 
 Часть этих возможностей зависит от конкретного FPGA family/IP.
@@ -723,7 +729,8 @@ lane deskewlane reversal supportpolarity inversionequalizationreceiver detection
 Physical Layer отвечает за negotiated:
 
 ```
-link width: x1, x2, x4, x8, x16link speed: Gen1, Gen2, Gen3, Gen4, Gen5...
+link width: x1, x2, x4, x8, x16
+link speed: Gen1, Gen2, Gen3, Gen4, Gen5...
 ```
 
 В Vivado/AMD IP можно задавать максимальные capabilities, но фактический результат определяется training и link partner.
@@ -731,7 +738,8 @@ link width: x1, x2, x4, x8, x16link speed: Gen1, Gen2, Gen3, Gen4, Gen5...
 Например:
 
 ```
-configured capability: Gen3 x4actual negotiated:     Gen1 x1
+configured capability: Gen3 x4
+actual negotiated:     Gen1 x1
 ```
 
 Это уже не Transaction Layer проблема. Это lower-layer/link-training вопрос.
