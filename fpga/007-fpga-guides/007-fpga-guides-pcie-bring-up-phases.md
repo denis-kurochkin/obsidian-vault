@@ -359,7 +359,14 @@ DL initialization completed.
 Он читает configuration space Endpoint:
 
 ```
-Vendor ID;Device ID;Class Code;BAR size;Capabilities;MSI/MSI-X capability;PCIe capability;link capability/status.
+Vendor ID;
+Device ID;
+Class Code;
+BAR size;
+Capabilities;
+MSI/MSI-X capability;
+PCIe capability;
+link capability/status.
 ```
 
 На Linux базовая проверка:
@@ -379,7 +386,15 @@ AMD PCIe debug checklist предлагает сначала проверить,
 Возможные причины:
 
 ```
-FPGA Endpoint был не готов во время host enumeration;PERST# timing нарушен;host не сделал rescan;configuration space некорректен;endpoint mode настроен неверно;BIOS/UEFI отключил port;slot работает не так, как ожидается;FPGA загружается слишком долго;требуется warm reboot/rescan.
+FPGA Endpoint был не готов во время host enumeration;
+PERST# timing нарушен;
+host не сделал rescan;
+configuration space некорректен;
+endpoint mode настроен неверно;
+BIOS/UEFI отключил port;
+slot работает не так, как ожидается;
+FPGA загружается слишком долго;
+требуется warm reboot/rescan.
 ```
 
 Практические действия:
