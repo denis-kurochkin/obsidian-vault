@@ -90,7 +90,14 @@ Detect -> Polling -> Configuration -> L0
 Подробный разбор всех состояний LTSSM лучше вынести в отдельную заметку, потому что там уже будут:
 
 ```
-substatesRecoveryHot ResetDisabledLoopbackL0s / L1 / L2directed speed changesequalization scenarios
+substates
+Recovery
+Hot Reset
+Disabled
+Loopback
+L0s / L1 / L2
+directed speed changes
+equalization scenarios
 ```
 
 ---
