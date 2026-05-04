@@ -689,7 +689,9 @@ link training
 Практический смысл:
 
 ```
-часть Physical Layer — protocol logic внутри PCIe hard blockчасть Physical Layer — GT transceiversчасть Physical Layer — плата, connector, host/device link partner
+часть Physical Layer — protocol logic внутри PCIe hard block
+часть Physical Layer — GT transceivers
+часть Physical Layer — плата, connector, host/device link partner
 ```
 
 ---
@@ -699,7 +701,11 @@ link training
 Упрощенно:
 
 ```
-Data Link Layer передает packet внизPhysical Layer делает framing/encoding/scramblingGT превращает parallel data в serial streamserial lanes передают signalприемник делает обратное преобразование
+Data Link Layer передает packet вниз
+Physical Layer делает framing/encoding/scrambling
+GT превращает parallel data в serial stream
+serial lanes передают signal
+приемник делает обратное преобразование
 ```
 
 На этом уровне уже работают:
