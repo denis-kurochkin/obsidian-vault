@@ -201,7 +201,13 @@ local reset synchronizers.
 Проверять:
 
 ```
-GT reset done;PLL/QPLL/CPLL lock;TX/RX reset done;user clock stable;PCIe hard block out of reset;lane pins соответствуют Vivado constraints;GT quad выбран правильно.
+GT reset done;
+PLL/QPLL/CPLL lock;
+TX/RX reset done;
+user clock stable;
+PCIe hard block out of reset;
+lane pins соответствуют Vivado constraints;
+GT quad выбран правильно.
 ```
 
 Если GT не готов, LTSSM может не пойти дальше ранних состояний.
