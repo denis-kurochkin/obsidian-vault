@@ -484,7 +484,13 @@ AMD PCIe debug checklist для link training issues предлагает про
 Возможные причины:
 
 ```
-FPGA подняла link слишком поздно для host enumerationhost не сделал rescanconfiguration space некорректенPERST#/fundamental reset timing неправильныйdevice disabled в BIOS/UEFIошибка mode Endpoint/Root Portне тот slot/topology
+FPGA подняла link слишком поздно для host enumeration  
+host не сделал rescan  
+configuration space некорректен  
+PERST#/fundamental reset timing неправильный  
+device disabled в BIOS/UEFI  
+ошибка mode Endpoint/Root Port  
+не тот slot/topology
 ```
 
 Практически часто помогают:
