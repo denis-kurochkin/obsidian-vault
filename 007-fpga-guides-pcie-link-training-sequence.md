@@ -374,13 +374,22 @@ lane polarity / reversal-related information;
 Типичная интуиция:
 
 ```
-Polling.Active:    активно посылаются training sequences;    стороны пытаются получить lock;    проверяется, что link partner отвечает.
+Polling.Active:
+    активно посылаются training sequences;
+    стороны пытаются получить lock;
+    проверяется, что link partner отвечает.
 ```
 
 Если LTSSM застрял в Polling.Active, возможные причины:
 
 ```
-receiver найден, но reliable decode не получается;проблемы signal integrity;ошибка lane mapping;перепутана polarity без корректной инверсии;REFCLK/jitter проблема;неправильная speed capability/config;retimer/redriver issue.
+receiver найден, но reliable decode не получается;
+проблемы signal integrity;
+ошибка lane mapping;
+перепутана polarity без корректной инверсии;
+REFCLK/jitter проблема;
+неправильная speed capability/config;
+retimer/redriver issue.
 ```
 
 ---
