@@ -257,13 +257,15 @@ TI описывает Rx Detect как первый шаг link training: пос
 В реальных LTSSM есть подстадии Detect, например:
 
 ```
-Detect.QuietDetect.Active
+Detect.Quiet
+Detect.Active
 ```
 
 Упрощенная интуиция:
 
 ```
-Detect.Quiet  — ожидание/пауза/idle часть DetectDetect.Active — активная попытка receiver detection
+Detect.Quiet  — ожидание/пауза/idle часть Detect
+Detect.Active — активная попытка receiver detection
 ```
 
 При debug можно видеть циклические переходы между ними.
@@ -271,7 +273,8 @@ Detect.Quiet  — ожидание/пауза/idle часть DetectDetect.Activ
 Это обычно означает:
 
 ```
-core пытается найти receiver,но не получает условий для перехода дальше.
+core пытается найти receiver,
+но не получает условий для перехода дальше.
 ```
 
 ---
