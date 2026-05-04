@@ -567,7 +567,13 @@ Physical Layer отправил по lanes
 На приемной стороне:
 
 ```
-Physical Layer принял packet        |        vData Link Layer проверил link-level integrity        |        vTransaction Layer получил TLP
+Physical Layer принял packet
+        |
+        v
+Data Link Layer проверил link-level integrity
+        |
+        v
+Transaction Layer получил TLP
 ```
 
 Если обнаружена ошибка, Data Link Layer может использовать NAK/replay mechanism.
@@ -583,7 +589,10 @@ Data Link Layer использует механизм подтверждений
 Упрощенно:
 
 ```
-Sender отправил TLPReceiver проверилReceiver отправил ACK или NAK через DLLPSender удаляет TLP из replay buffer или переотправляет
+Sender отправил TLP
+Receiver проверил
+Receiver отправил ACK или NAK через DLLP
+Sender удаляет TLP из replay buffer или переотправляет
 ```
 
 На уровне FPGA-разработчика это обычно скрыто внутри PCIe IP.
