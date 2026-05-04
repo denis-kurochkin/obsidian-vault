@@ -212,7 +212,9 @@ AMD PG054 показывает, что header TLP может занимать 3 
 PCIe transactions часто делят на три большие группы:
 
 ```
-PostedNon-PostedCompletion
+Posted
+Non-Posted
+Completion
 ```
 
 ## Posted
