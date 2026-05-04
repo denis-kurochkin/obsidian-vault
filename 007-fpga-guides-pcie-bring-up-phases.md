@@ -130,7 +130,11 @@ AMD PCIe documentation указывает важное требование ст
 Это часто указывает на timing между:
 
 ```
-host boot / PERST# releaseFPGA configuration completionPCIe IP readinesslink trainingenumeration
+host boot / PERST# release
+FPGA configuration completion
+PCIe IP readiness
+link training
+enumeration
 ```
 
 Для таких случаев существуют подходы вроде Tandem PCIe / fast configuration, но это уже отдельная тема.
