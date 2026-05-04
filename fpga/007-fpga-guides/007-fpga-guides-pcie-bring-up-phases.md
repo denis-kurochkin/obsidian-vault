@@ -399,13 +399,14 @@ FPGA загружается слишком долго;
 
 Практические действия:
 
-```
-lspcilspci -vv
+```bash
+lspci
+lspci -vv
 ```
 
 Иногда на Linux применяют rescan:
 
-```
+```bash
 echo 1 | sudo tee /sys/bus/pci/rescan
 ```
 
@@ -421,14 +422,19 @@ BAR — это окно, через которое software обращается
 
 После успешного назначения можно увидеть:
 
-```
+```bash
 lspci -vv
 ```
 
 И проверить:
 
 ```
-Region 0;Region 1;Memory at ...;I/O или Memory BAR;prefetchable / non-prefetchable;BAR size.
+Region 0;
+Region 1;
+Memory at ...;
+I/O или Memory BAR;
+prefetchable / non-prefetchable;
+BAR size.
 ```
 
 Если BAR не назначен или размер неверный, basic register access не заработает.
