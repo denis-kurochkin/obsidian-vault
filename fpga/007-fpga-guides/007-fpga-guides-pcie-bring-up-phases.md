@@ -146,13 +146,21 @@ enumeration
 PCIe REFCLK должен быть:
 
 ```
-правильной частоты;стабильным;с допустимым jitter;подключенным к правильному MGTREFCLK;совместимым с выбранным PCIe IP/GT quad.
+правильной частоты;
+стабильным;
+с допустимым jitter;
+подключенным к правильному MGTREFCLK;
+совместимым с выбранным PCIe IP/GT quad.
 ```
 
 Если REFCLK отсутствует или плохой, возможны симптомы:
 
 ```
-LTSSM не выходит из Detect;LTSSM циклично ходит Detect/Polling;link не поднимается выше Gen1;link падает в Recovery;link нестабилен под нагрузкой.
+LTSSM не выходит из Detect;
+LTSSM циклично ходит Detect/Polling;
+link не поднимается выше Gen1;
+link падает в Recovery;
+link нестабилен под нагрузкой.
 ```
 
 ---
