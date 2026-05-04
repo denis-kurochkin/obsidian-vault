@@ -924,13 +924,19 @@ AMD PG054 описывает TLP format on AXI4-Stream interface, включая
 В UltraScale+/Versal-style integrated blocks часто используются четыре логически разделенных stream:
 
 ```
-CQ — Completer RequestCC — Completer CompletionRQ — Requester RequestRC — Requester Completion
+CQ — Completer Request
+CC — Completer Completion
+RQ — Requester Request
+RC — Requester Completion
 ```
 
 Это удобно, потому что разделяет роли:
 
 ```
-host requests into FPGAFPGA completions to hostFPGA requests to hosthost completions into FPGA
+host requests into FPGA
+FPGA completions to host
+FPGA requests to host
+host completions into FPGA
 ```
 
 Versal PL PCIe4 features explicitly mention AXI4-Stream interface to customer logic with four independent Initiator/Target Request/Completion streams.
