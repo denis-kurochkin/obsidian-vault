@@ -739,7 +739,8 @@ TLP traffic
 Важно:
 
 ```
-L0 — это не конец всей PCIe bring-up истории.L0 — это конец базовой physical link training истории.
+L0 — это не конец всей PCIe bring-up истории.
+L0 — это конец базовой physical link training истории.
 ```
 
 Дальше host должен перечислить устройство, назначить BAR, включить command bits и т.д.
