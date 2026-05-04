@@ -1274,7 +1274,51 @@ Warm reboot может маскировать FPGA configuration timing проб
 # 46. Практический bring-up checklist
 
 ```
-Board / hardware:    power rails    REFCLK    PERST#    lane mapping    AC coupling    connector/slotVivado / IP:    Endpoint/Root Port mode    speed/width    BAR config    GT quad    constraints    example designLink:    LTSSM trace    L0 reached    DL init complete    negotiated width    current speedOS:    lspci visible    BAR regions assigned    command register    Memory Space Enable    Bus Master Enable    driver boundFPGA user logic:    reset released    BAR scratch works    DMA ready    interrupts enabled    errors clearStress:    cold boot    warm reboot    driver reload    long DMA    throughput    link stability
+Board / hardware:
+    power rails
+    REFCLK
+    PERST#
+    lane mapping
+    AC coupling
+    connector/slot
+
+Vivado / IP:
+    Endpoint/Root Port mode
+    speed/width
+    BAR config
+    GT quad
+    constraints
+    example design
+
+Link:
+    LTSSM trace
+    L0 reached
+    DL init complete
+    negotiated width
+    current speed
+
+OS:
+    lspci visible
+    BAR regions assigned
+    command register
+    Memory Space Enable
+    Bus Master Enable
+    driver bound
+
+FPGA user logic:
+    reset released
+    BAR scratch works
+    DMA ready
+    interrupts enabled
+    errors clear
+
+Stress:
+    cold boot
+    warm reboot
+    driver reload
+    long DMA
+    throughput
+    link stability
 ```
 
 ---
