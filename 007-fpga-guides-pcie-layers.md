@@ -1178,7 +1178,15 @@ Transaction Layer / user logic: вероятный источник пробле
 Сначала проверять:
 
 ```
-REFCLKPERST#lane mappingGT resetполярность laneslink partnerpowersignal integrityVivado PCIe IP config
+REFCLK
+PERST#
+lane mapping
+GT reset
+полярность lanes
+link partner
+power
+signal integrity
+Vivado PCIe IP config
 ```
 
 Это Physical Layer / link training problem.
@@ -1194,7 +1202,14 @@ REFCLKPERST#lane mappingGT resetполярность laneslink partnerpowersigna
 Возможные уровни:
 
 ```
-Data Link Layer:    replay, ACK/NAK, link-level errorsPhysical Layer:    SI проблемы, equalization, channel lossTransaction/flow control:    credits, buffer limitations, MPS/MRRS, outstanding requests
+Data Link Layer:
+    replay, ACK/NAK, link-level errors
+
+Physical Layer:
+    SI проблемы, equalization, channel loss
+
+Transaction/flow control:
+    credits, buffer limitations, MPS/MRRS, outstanding requests
 ```
 
 Здесь уже важно разделять Data Link reliability и Transaction-level throughput.
