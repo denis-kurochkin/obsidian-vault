@@ -852,7 +852,10 @@ FPGA sends Completion with Data TLP
 Здесь участвуют все уровни, но ошибка может быть на разных местах:
 
 ```
-нет link — Physical/LTSSMlink есть, но packet corrupted/replay storm — Data Link / SIrequest пришел, completion не отправлен — Transaction/user logiccompletion malformed — Transaction/user logic
+нет link — Physical/LTSSM
+link есть, но packet corrupted/replay storm — Data Link / SI
+request пришел, completion не отправлен — Transaction/user logic
+completion malformed — Transaction/user logic
 ```
 
 ---
