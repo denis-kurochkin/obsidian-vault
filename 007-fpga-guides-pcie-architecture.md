@@ -74,7 +74,13 @@ BAR decode / AXI / user logic
 Или наоборот, FPGA может делать DMA-запись в память host:
 
 ```
-FPGA DMA engine        |Memory Write TLP        |PCIe link        |Host memory
+FPGA DMA engine
+        |
+Memory Write TLP
+        |
+PCIe link
+        |
+Host memory
 ```
 
 ---
