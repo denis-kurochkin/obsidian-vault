@@ -1113,17 +1113,36 @@ Vivado PCIe Link Debug особенно полезен, потому что по
 Главные этапы:
 
 ```
-Detect:    найти receiverPolling:    получить bit/symbol lock через training sequencesConfiguration:    согласовать lanes, width, numbering, deskewL0:    normal operational stateRecovery/Equalization:    speed change, retraining, higher-speed stabilization
+Detect:
+    найти receiver
+
+Polling:
+    получить bit/symbol lock через training sequences
+
+Configuration:
+    согласовать lanes, width, numbering, deskew
+
+L0:
+    normal operational state
+
+Recovery/Equalization:
+    speed change, retraining, higher-speed stabilization
 ```
 
 Короткая формула:
 
 ```
-Detect отвечает: “есть ли кто-то на другом конце?”Polling отвечает: “можем ли мы понимать друг друга?”Configuration отвечает: “какими lanes и шириной работаем?”L0 отвечает: “link готов к нормальному обмену.”Recovery отвечает: “переобучаемся, ускоряемся или восстанавливаемся.”
+Detect отвечает: “есть ли кто-то на другом конце?”
+Polling отвечает: “можем ли мы понимать друг друга?”
+Configuration отвечает: “какими lanes и шириной работаем?”
+L0 отвечает: “link готов к нормальному обмену.”
+Recovery отвечает: “переобучаемся, ускоряемся или восстанавливаемся.”
 ```
 
 В FPGA/Vivado debug первое правило:
 
 ```
-если LTSSM не дошел до L0,не начинай debug с BAR, DMA или driver.Сначала проверь physical/link training path.
+если LTSSM не дошел до L0,
+не начинай debug с BAR, DMA или driver.
+Сначала проверь physical/link training path.
 ```

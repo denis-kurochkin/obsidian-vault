@@ -71,6 +71,7 @@
 - [PCIe architecture (layers + LTSSM + link bring-up)](007-fpga-guides-pcie-architecture.md)
 	- [PCIe Layers](007-fpga-guides-pcie-layers)
 	- [PCIe Link Training Sequence](007-fpga-guides-pcie-link-training-sequence)
+	- [PCIe Link Training Sequence](007-fpga-guides-pcie-link-training-sequence)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
