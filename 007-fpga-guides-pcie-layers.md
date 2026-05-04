@@ -365,7 +365,8 @@ RC — Requester Completion
 Идея:
 
 ```
-RQ: FPGA отправляет requestRC: FPGA получает completion на свои read requests
+RQ: FPGA отправляет request
+RC: FPGA получает completion на свои read requests
 ```
 
 Для DMA write completions обычно нет, потому что Memory Write — posted.
