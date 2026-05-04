@@ -218,7 +218,8 @@ L0s / L1 power states
 Для первого bring-up важнее всего понимать:
 
 ```
-если link дошел до L0 — physical/link training в целом прошел;если link застрял до L0 — нужно смотреть LTSSM state, refclk, reset, lanes, SI, host/root complex.
+если link дошел до L0 — physical/link training в целом прошел;
+если link застрял до L0 — нужно смотреть LTSSM state, refclk, reset, lanes, SI, host/root complex.
 ```
 
 ---
@@ -228,7 +229,16 @@ L0s / L1 power states
 В PCIe есть несколько уровней “оно работает”.
 
 ```
-1. GT clocks/resets стабильны2. LTSSM дошел до L03. Link negotiated expected speed/width4. Host увидел устройство5. Enumeration прошла6. BAR назначены7. Driver загрузился8. Memory read/write работают9. DMA работает10. Interrupts работают
+1. GT clocks/resets стабильны
+2. LTSSM дошел до L0
+3. Link negotiated expected speed/width
+4. Host увидел устройство
+5. Enumeration прошла
+6. BAR назначены
+7. Driver загрузился
+8. Memory read/write работают
+9. DMA работает
+10. Interrupts работают
 ```
 
 Очень частая ошибка — считать, что если LTSSM = L0, то “PCIe полностью работает”.
