@@ -55,13 +55,22 @@ AMD описывает LTSSM как часть Physical Layer logical sub-block;
 В Vivado PCIe IP link training обычно находится внутри:
 
 ```
-PCIe hard blockGT transceiversPHY / MAC logicLTSSM
+PCIe hard block
+GT transceivers
+PHY / MAC logic
+LTSSM
 ```
 
 Пользовательская логика обычно видит только status:
 
 ```
-ltssm_statephy_link_up / phy_link_downphy_link_statusnegotiated_widthcurrent_speeduser_reset / user_lnk_upcfg status signals
+ltssm_state
+phy_link_up / phy_link_down
+phy_link_status
+negotiated_width
+current_speed
+user_reset / user_lnk_up
+cfg status signals
 ```
 
 Твой RTL не генерирует TS1/TS2 ordered sets вручную. Это делает PCIe IP.
