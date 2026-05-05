@@ -79,13 +79,15 @@ PCIe full-duplex.
 Это значит:
 
 ```
-TX direction имеет свою bandwidthRX direction имеет свою bandwidth
+TX direction имеет свою bandwidth
+RX direction имеет свою bandwidth
 ```
 
 Например:
 
 ```
-Gen3 x4 ≈ 3.94 GB/s FPGA -> hostGen3 x4 ≈ 3.94 GB/s host -> FPGA
+Gen3 x4 ≈ 3.94 GB/s FPGA -> host
+Gen3 x4 ≈ 3.94 GB/s host -> FPGA
 ```
 
 одновременно, теоретически.
