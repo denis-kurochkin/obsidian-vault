@@ -1470,7 +1470,21 @@ Host может получить timeout.
 # 54. Checklist для buffering architecture
 
 ```
-1. Какие traffic types есть: MWr, MRd, Cpl, BAR, MSI?2. Где границы clock domains?3. Какие paths могут давать backpressure?4. Где packet boundary должен сохраняться?5. Какие metadata идут вместе с data?6. Сколько outstanding read requests разрешено?7. Сколько returning completion data может прийти?8. Есть ли high/low watermarks?9. Какие FIFOs разделены по traffic class?10. Есть ли отдельный completion path?11. Есть ли skid buffers на широких ready/valid paths?12. Что происходит при reset?13. Что происходит при link down?14. Есть ли debug counters уровней FIFO?15. Есть ли stress test на bursts/backpressure?
+1. Какие traffic types есть: MWr, MRd, Cpl, BAR, MSI?
+2. Где границы clock domains?
+3. Какие paths могут давать backpressure?
+4. Где packet boundary должен сохраняться?
+5. Какие metadata идут вместе с data?
+6. Сколько outstanding read requests разрешено?
+7. Сколько returning completion data может прийти?
+8. Есть ли high/low watermarks?
+9. Какие FIFOs разделены по traffic class?
+10. Есть ли отдельный completion path?
+11. Есть ли skid buffers на широких ready/valid paths?
+12. Что происходит при reset?
+13. Что происходит при link down?
+14. Есть ли debug counters уровней FIFO?
+15. Есть ли stress test на bursts/backpressure?
 ```
 
 ---
