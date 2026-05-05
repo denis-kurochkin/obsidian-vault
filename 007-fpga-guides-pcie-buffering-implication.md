@@ -177,7 +177,8 @@ PCIe core выдает TLP,
 Или наоборот:
 
 ```
-твоя DMA logic готова отправлять,а PCIe core временно снял tready.
+твоя DMA logic готова отправлять,
+а PCIe core временно снял tready.
 ```
 
 ---
@@ -189,7 +190,10 @@ Transmit side — это путь из FPGA в PCIe link.
 Примеры:
 
 ```
-FPGA DMA write -> PCIe Memory Write TLPFPGA DMA read request -> PCIe Memory Read RequestFPGA BAR completion -> Completion TLPFPGA interrupt -> MSI/MSI-X message
+FPGA DMA write -> PCIe Memory Write TLP
+FPGA DMA read request -> PCIe Memory Read Request
+FPGA BAR completion -> Completion TLP
+FPGA interrupt -> MSI/MSI-X message
 ```
 
 Буферизация нужна перед PCIe core, потому что core может временно остановить прием TLP.
