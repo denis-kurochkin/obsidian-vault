@@ -562,7 +562,11 @@ AMD Versal PL PCIe4 features указывают, что AXI4-Stream interface к
 Нужно:
 
 ```
-держать tvalid почти постоянно;получать tready почти постоянно;не создавать bubbles между TLP;иметь enough buffering;не ломать packet boundary.
+держать tvalid почти постоянно;
+получать tready почти постоянно;
+не создавать bubbles между TLP;
+иметь enough buffering;
+не ломать packet boundary.
 ```
 
 Если каждый TLP separated by gaps, effective throughput падает.
