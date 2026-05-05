@@ -796,7 +796,11 @@ CplH/CplD — чтобы принять returning completions.
 Но каждый outstanding request занимает ресурсы:
 
 ```
-tag;request context;NPH credit на отправку;completion buffer capacity;downstream processing capacity.
+tag;
+request context;
+NPH credit на отправку;
+completion buffer capacity;
+downstream processing capacity.
 ```
 
 Если NPH credits или tags заканчиваются, read request scheduler должен остановиться.
