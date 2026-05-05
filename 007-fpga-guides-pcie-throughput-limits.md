@@ -703,7 +703,11 @@ TLP overhead относительно payload.
 Лучше:
 
 ```
-batch completions;polling для high-rate tests;interrupt coalescing;larger descriptors;larger buffers.
+batch completions;
+polling для high-rate tests;
+interrupt coalescing;
+larger descriptors;
+larger buffers.
 ```
 
 Interrupt latency и CPU overhead легко становятся bottleneck.
@@ -717,7 +721,18 @@ PCIe throughput зависит не только от FPGA.
 Host side может ограничивать:
 
 ```
-CPU/root complex;memory controller;NUMA topology;IOMMU;chipset;PCIe switch;driver;OS scheduler;cache coherency;DMA mapping;page pinning;thermal/power limits.
+CPU/root complex;
+memory controller;
+NUMA topology;
+IOMMU;
+chipset;
+PCIe switch;
+driver;
+OS scheduler;
+cache coherency;
+DMA mapping;
+page pinning;
+thermal/power limits.
 ```
 
 Если FPGA подключена к одному NUMA node, а memory buffer выделен на другом, throughput может быть хуже.
@@ -731,7 +746,10 @@ IOMMU может добавлять overhead и менять поведение 
 Симптомы:
 
 ```
-низкий throughput;разные результаты с разными drivers/settings;малые transfers особенно медленные;больше latency на DMA mapping.
+низкий throughput;
+разные результаты с разными drivers/settings;
+малые transfers особенно медленные;
+больше latency на DMA mapping.
 ```
 
 Это не значит, что IOMMU нужно всегда отключать. Но при performance debug нужно знать, включен ли он и как driver делает mappings.
