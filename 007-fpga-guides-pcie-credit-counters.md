@@ -207,7 +207,8 @@ Completion with Data 32B
 Credit consumption на transmit side относительно receiver credits:
 
 ```
-CplH = 1CplD = ceil(32 / 16) = 2
+CplH = 1
+CplD = ceil(32 / 16) = 2
 ```
 
 То есть:
