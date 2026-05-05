@@ -201,7 +201,12 @@ FPGA interrupt -> MSI/MSI-X message
 Причины:
 
 ```
-не хватает credits;core internal buffer full;link временно не готов;user reset/link status;flow-control throttling;priority/arbitration между streams.
+не хватает credits;
+core internal buffer full;
+link временно не готов;
+user reset/link status;
+flow-control throttling;
+priority/arbitration между streams.
 ```
 
 ---
@@ -211,7 +216,12 @@ FPGA interrupt -> MSI/MSI-X message
 Tx FIFO может хранить:
 
 ```
-готовый TLP;payload data для будущего TLP;descriptor/context;packet metadata;address/length command;stream packet до packetizer.
+готовый TLP;
+payload data для будущего TLP;
+descriptor/context;
+packet metadata;
+address/length command;
+stream packet до packetizer.
 ```
 
 Выбор зависит от архитектуры.
