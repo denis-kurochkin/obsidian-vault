@@ -989,13 +989,22 @@ FIFO временно сгладит burst, но средняя скорость
 Иногда throughput ограничивает сама FPGA-логика:
 
 ```
-packetizer не держит частоту;wide AXIS path плохо timing closes;BRAM/URAM bandwidth недостаточен;AXI interconnect создает arbitration delays;DDR controller не держит bandwidth;DMA engine имеет bubbles;scheduler не pipelined.
+packetizer не держит частоту;
+wide AXIS path плохо timing closes;
+BRAM/URAM bandwidth недостаточен;
+AXI interconnect создает arbitration delays;
+DDR controller не держит bandwidth;
+DMA engine имеет bubbles;
+scheduler не pipelined.
 ```
 
 В Vivado это проявляется как:
 
 ```
-низкая достижимая user_clk;много register slices;tready bubbles;очереди не успевают drain/fill.
+низкая достижимая user_clk;
+много register slices;
+tready bubbles;
+очереди не успевают drain/fill.
 ```
 
 ---
