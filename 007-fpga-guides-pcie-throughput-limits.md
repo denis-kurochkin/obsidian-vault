@@ -815,7 +815,13 @@ descriptor supply.
 Обычно ограничивают:
 
 ```
-NPH credits;tags;MRRS;completion latency;completion buffering;RC path;sink readiness.
+NPH credits;
+tags;
+MRRS;
+completion latency;
+completion buffering;
+RC path;
+sink readiness.
 ```
 
 ## Host BAR reads/writes
@@ -823,7 +829,11 @@ NPH credits;tags;MRRS;completion latency;completion buffering;RC path;sink readi
 Обычно ограничивают:
 
 ```
-software overhead;completion latency;BAR logic;AXI-lite/register path;small transaction overhead.
+software overhead;
+completion latency;
+BAR logic;
+AXI-lite/register path;
+small transaction overhead.
 ```
 
 BAR не стоит использовать как high-throughput data path, если есть DMA.
