@@ -402,7 +402,9 @@ receive architecture должна разделять Posted и Non-Posted пут
 Лучше:
 
 ```
-separate path for Posted writesseparate path for Non-Posted requestsseparate completion generation path
+separate path for Posted writes
+separate path for Non-Posted requests
+separate completion generation path
 ```
 
 ---
@@ -414,13 +416,19 @@ Completion buffering особенно важен для DMA read.
 Когда FPGA делает DMA read из host memory:
 
 ```
-FPGA sends Memory Read RequestsHost returns Completions with Data
+FPGA sends Memory Read Requests
+Host returns Completions with Data
 ```
 
 Completions могут приходить:
 
 ```
-burst-ами;неравномерно;с разным размером;несколькими TLP на один request;с задержкой;иногда не в том темпе, в котором application готова их принять.
+burst-ами;
+неравномерно;
+с разным размером;
+несколькими TLP на один request;
+с задержкой;
+иногда не в том темпе, в котором application готова их принять.
 ```
 
 Поэтому completion receive path должен иметь достаточный buffer.
