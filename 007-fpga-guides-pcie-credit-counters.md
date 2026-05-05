@@ -408,7 +408,12 @@ user interface throttling.
 Например:
 
 ```
-cfg_fc_sel = выбрать:    available credits    limit    consumed    received credits    другие internal FC views
+cfg_fc_sel = выбрать:
+    available credits
+    limit
+    consumed
+    received credits
+    другие internal FC views
 ```
 
 Точная расшифровка зависит от конкретного PCIe IP: 7-series, UltraScale, UltraScale+, Versal CPM/PL PCIe могут иметь разные таблицы и кодировки. AMD PG213/PG346 прямо указывают, что flow-control information выбирается через `cfg_fc_sel[2:0]`. ([AMD PG213](https://docs.amd.com/r/en-US/pg213-pcie4-ultrascale-plus/Configuration-Flow-Control-Interface?utm_source=chatgpt.com), [AMD PG346](https://docs.amd.com/r/en-US/pg346-cpm-pcie/Configuration-Flow-Control-Interface?utm_source=chatgpt.com))
