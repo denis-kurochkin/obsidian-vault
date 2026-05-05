@@ -623,7 +623,8 @@ CDC FIFO, если source clock != PCIe user_clk.
 Цель:
 
 ```
-формировать достаточно крупные, непрерывные Memory Write TLPи переживать моменты, когда PCIe core снимает ready.
+формировать достаточно крупные, непрерывные Memory Write TLP
+и переживать моменты, когда PCIe core снимает ready.
 ```
 
 ---
@@ -635,7 +636,8 @@ CDC FIFO, если source clock != PCIe user_clk.
 Например:
 
 ```
-source дает 16B chunksMPS = 256B
+source дает 16B chunks
+MPS = 256B
 ```
 
 Можно собрать 16 chunks в один 256B Memory Write.
