@@ -1303,7 +1303,18 @@ link recovery handling.
 Хорошая практика — иметь counters/registers:
 
 ```
-tx_fifo_level;rx_fifo_level;completion_fifo_level;descriptor_fifo_level;max_fifo_level_seen;overflow_seen;underflow_seen;backpressure_counter;tready_low_counter;dropped_packet_counter;outstanding_read_bytes;outstanding_read_count;
+tx_fifo_level;
+rx_fifo_level;
+completion_fifo_level;
+descriptor_fifo_level;
+max_fifo_level_seen;
+overflow_seen;
+underflow_seen;
+backpressure_counter;
+tready_low_counter;
+dropped_packet_counter;
+outstanding_read_bytes;
+outstanding_read_count;
 ```
 
 Это помогает debug-ить без постоянной ILA.
