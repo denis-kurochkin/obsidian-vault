@@ -778,7 +778,14 @@ test меряет PCIe или memory copy/cache speed.
 Примеры:
 
 ```
-слишком маленькие buffers;один transfer at a time;blocking API;лишние memcpy;interrupt на каждый transfer;нет queue depth;не pinned memory;неправильный NUMA node.
+слишком маленькие buffers;
+один transfer at a time;
+blocking API;
+лишние memcpy;
+interrupt на каждый transfer;
+нет queue depth;
+не pinned memory;
+неправильный NUMA node.
 ```
 
 Перед debug FPGA полезно проверить known-good driver/example throughput для этого IP.
@@ -794,7 +801,13 @@ AMD QDMA performance guidance как раз разделяет performance debug
 Обычно ограничивают:
 
 ```
-PD credits;MPS;payload aggregation;source stream rate;RQ tready;host memory write acceptance;descriptor supply.
+PD credits;
+MPS;
+payload aggregation;
+source stream rate;
+RQ tready;
+host memory write acceptance;
+descriptor supply.
 ```
 
 ## Host → FPGA DMA read
