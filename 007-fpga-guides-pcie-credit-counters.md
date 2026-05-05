@@ -602,7 +602,13 @@ Memory Read Request обычно не имеет payload.
 На самом деле read performance зависит от:
 
 ```
-outstanding request depth;completion return latency;completion buffering;CplD bandwidth;tag management;MRRS;host behavior.
+outstanding request depth;
+completion return latency;
+completion buffering;
+CplD bandwidth;
+tag management;
+MRRS;
+host behavior.
 ```
 
 ---
@@ -614,7 +620,11 @@ outstanding request depth;completion return latency;completion buffering;CplD ba
 Если host делает много read requests, FPGA completion path должен выдерживать:
 
 ```
-CplH credits;CplD credits;CC stream bandwidth;user logic read latency;completion formatting.
+CplH credits;
+CplD credits;
+CC stream bandwidth;
+user logic read latency;
+completion formatting.
 ```
 
 Для register access это редко bottleneck.
