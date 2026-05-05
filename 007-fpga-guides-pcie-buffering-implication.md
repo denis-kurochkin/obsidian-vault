@@ -952,7 +952,9 @@ throughput collapse.
 PCIe user side часто имеет широкие datapaths:
 
 ```
-128-bit256-bit512-bit
+128-bit
+256-bit
+512-bit
 ```
 
 и высокие частоты. AMD Versal PL PCIe4 поддерживает AXI4-Stream datapath widths 64/128/256/512 bits к customer logic.
@@ -966,7 +968,9 @@ PCIe user side часто имеет широкие datapaths:
 Register slice:
 
 ```
-маленькая latency;улучшает timing;не дает большой burst absorption.
+маленькая latency;
+улучшает timing;
+не дает большой burst absorption.
 ```
 
 FIFO:
