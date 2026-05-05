@@ -1019,7 +1019,8 @@ completion received counters
 Например:
 
 ```
-PD current = 80PD minimum = 0
+PD current = 80
+PD minimum = 0
 ```
 
 Это говорит, что во время теста PD credits полностью исчерпывались, даже если сейчас они восстановились.
@@ -1029,7 +1030,27 @@ PD current = 80PD minimum = 0
 # 39. Пример debug register map
 
 ```
-0x00 FC_STATUS0x04 FC_SEL0x08 FC_PH_CUR0x0C FC_PD_CUR0x10 FC_NPH_CUR0x14 FC_NPD_CUR0x18 FC_CPLH_CUR0x1C FC_CPLD_CUR0x20 FC_PH_MIN0x24 FC_PD_MIN0x28 FC_NPH_MIN0x2C FC_NPD_MIN0x30 FC_CPLH_MIN0x34 FC_CPLD_MIN0x40 RQ_TREADY_DROP_CNT0x44 CC_TREADY_DROP_CNT0x48 DMA_WR_TLP_CNT0x4C DMA_RD_REQ_CNT0x50 DMA_CPL_CNT
+0x00 FC_STATUS
+0x04 FC_SEL
+0x08 FC_PH_CUR
+0x0C FC_PD_CUR
+0x10 FC_NPH_CUR
+0x14 FC_NPD_CUR
+0x18 FC_CPLH_CUR
+0x1C FC_CPLD_CUR
+
+0x20 FC_PH_MIN
+0x24 FC_PD_MIN
+0x28 FC_NPH_MIN
+0x2C FC_NPD_MIN
+0x30 FC_CPLH_MIN
+0x34 FC_CPLD_MIN
+
+0x40 RQ_TREADY_DROP_CNT
+0x44 CC_TREADY_DROP_CNT
+0x48 DMA_WR_TLP_CNT
+0x4C DMA_RD_REQ_CNT
+0x50 DMA_CPL_CNT
 ```
 
 Так можно debug-ить не только через ILA, но и через software.
@@ -1041,7 +1062,17 @@ PD current = 80PD minimum = 0
 Примеры:
 
 ```
-PD_MIN = 0 during DMA write:    Posted Data credits вероятно ограничивали write burst.NPH_MIN = 0 during DMA read:    read request issue мог упираться в Non-Posted Header credits.CPLD_MIN low during heavy inbound read completions:    completion buffering / receive path стоит проверить.PH_MIN high, PD_MIN low:    ограничивает payload buffer, не header buffer.
+PD_MIN = 0 during DMA write:
+    Posted Data credits вероятно ограничивали write burst.
+
+NPH_MIN = 0 during DMA read:
+    read request issue мог упираться в Non-Posted Header credits.
+
+CPLD_MIN low during heavy inbound read completions:
+    completion buffering / receive path стоит проверить.
+
+PH_MIN high, PD_MIN low:
+    ограничивает payload buffer, не header buffer.
 ```
 
 Но всегда проверять вместе с:
