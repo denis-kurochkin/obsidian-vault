@@ -591,7 +591,11 @@ DMA обычно работает descriptor-ами.
 Descriptor buffer нужен, чтобы:
 
 ```
-хранить команды transfer;развязать software и hardware;держать pipeline заполненным;не простаивать из-за задержек чтения descriptor;разрешить несколько transfers in flight.
+хранить команды transfer;
+развязать software и hardware;
+держать pipeline заполненным;
+не простаивать из-за задержек чтения descriptor;
+разрешить несколько transfers in flight.
 ```
 
 Если descriptor buffer маленький, PCIe link может простаивать даже при свободных credits.
