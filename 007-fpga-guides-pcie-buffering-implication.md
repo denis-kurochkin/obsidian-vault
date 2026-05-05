@@ -752,13 +752,18 @@ PCIe user clock часто не совпадает с application clocks.
 Например:
 
 ```
-pcie_user_clk = 250 MHzprocessing_clk = 200 MHzadc_clk = 156.25 MHz
+pcie_user_clk = 250 MHz
+processing_clk = 200 MHz
+adc_clk = 156.25 MHz
 ```
 
 Тогда между PCIe и application нужны CDC mechanisms:
 
 ```
-async FIFO для streams;handshake для registers/control;dual-clock FIFO для payload;reset-aware CDC для status.
+async FIFO для streams;
+handshake для registers/control;
+dual-clock FIFO для payload;
+reset-aware CDC для status.
 ```
 
 Нельзя просто протянуть AXI4-Stream signals через clock domains.
