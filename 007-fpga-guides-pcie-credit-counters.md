@@ -772,7 +772,8 @@ MPS 512B -> 32 data credits per full TLP
 Например:
 
 ```
-MRRS 512B:    один read request может вернуть до 512B completions
+MRRS 512B:
+    один read request может вернуть до 512B completions
 ```
 
 Completion может прийти несколькими Completion TLP, в зависимости от completer и boundary rules.
