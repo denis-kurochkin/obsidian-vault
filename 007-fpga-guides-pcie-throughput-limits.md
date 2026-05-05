@@ -1440,7 +1440,45 @@ Vivado setting и actual OS-configured value могут отличаться.
 # 53. Practical checklist
 
 ```
-Link:    current_speed    negotiated_width    recovery events    link_down_seenConfig:    MPS    MRRS    Bus Master Enable    Memory Space EnableDMA:    transfer size    descriptor depth    outstanding read count    tags    payload aggregation    completion buffer levelFlow control:    PH/PD/NPH/CplH/CplD minimums    tready low counters    stall reason countersFPGA:    AXIS utilization    FIFO levels    DDR/BRAM bandwidth    CDC FIFO behavior    scheduler bubblesHost:    driver mode    IOMMU    NUMA    pinned memory    CPU overhead    benchmark method
+Link:
+    current_speed
+    negotiated_width
+    recovery events
+    link_down_seen
+
+Config:
+    MPS
+    MRRS
+    Bus Master Enable
+    Memory Space Enable
+
+DMA:
+    transfer size
+    descriptor depth
+    outstanding read count
+    tags
+    payload aggregation
+    completion buffer level
+
+Flow control:
+    PH/PD/NPH/CplH/CplD minimums
+    tready low counters
+    stall reason counters
+
+FPGA:
+    AXIS utilization
+    FIFO levels
+    DDR/BRAM bandwidth
+    CDC FIFO behavior
+    scheduler bubbles
+
+Host:
+    driver mode
+    IOMMU
+    NUMA
+    pinned memory
+    CPU overhead
+    benchmark method
 ```
 
 ---
@@ -1452,17 +1490,37 @@ Throughput limits в PCIe FPGA design складываются из нескол
 Главные правила:
 
 ```
-1. Link speed/width — только верхняя граница.2. MPS уменьшает overhead для write/completion payload.3. MRRS влияет на read request granularity.4. DMA read требует outstanding requests, tags и completion buffering.5. Credits могут throttle-ить TLP transmission.6. Buffers сглаживают bursts, но не исправляют средний throughput mismatch.7. AXI/AXIS valid/ready utilization показывает реальные bubbles.8. Host/software/IOMMU/NUMA могут быть bottleneck.9. BAR/MMIO не заменяет DMA data path.10. Хороший performance debug требует counters причин простоя.
+1. Link speed/width — только верхняя граница.
+2. MPS уменьшает overhead для write/completion payload.
+3. MRRS влияет на read request granularity.
+4. DMA read требует outstanding requests, tags и completion buffering.
+5. Credits могут throttle-ить TLP transmission.
+6. Buffers сглаживают bursts, но не исправляют средний throughput mismatch.
+7. AXI/AXIS valid/ready utilization показывает реальные bubbles.
+8. Host/software/IOMMU/NUMA могут быть bottleneck.
+9. BAR/MMIO не заменяет DMA data path.
+10. Хороший performance debug требует counters причин простоя.
 ```
 
 Короткая формула:
 
 ```
-PCIe throughput =    min(        link bandwidth,        TLP efficiency,        credit availability,        outstanding depth,        buffer bandwidth,        user logic bandwidth,        host memory/software bandwidth    )
+PCIe throughput =
+    min(
+        link bandwidth,
+        TLP efficiency,
+        credit availability,
+        outstanding depth,
+        buffer bandwidth,
+        user logic bandwidth,
+        host memory/software bandwidth
+    )
 ```
 
 Практическая формула для debug:
 
 ```
-Сначала докажи speed/width.Потом найди, где появляются bubbles.Потом оптимизируй именно этот bottleneck.
+Сначала докажи speed/width.
+Потом найди, где появляются bubbles.
+Потом оптимизируй именно этот bottleneck.
 ```
