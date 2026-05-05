@@ -249,7 +249,11 @@ DMA descriptors -> scheduler -> packetizer -> PCIe core
 Иногда лучше хранить не готовый TLP, а команду:
 
 ```
-addresslengthtypetagpointer to payload buffer
+address
+length
+type
+tag
+pointer to payload buffer
 ```
 
 И формировать TLP только когда PCIe core готов.
