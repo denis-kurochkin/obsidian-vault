@@ -335,7 +335,11 @@ Host Memory Read from FPGA BAR
 FPGA должна:
 
 ```
-принять request;сохранить request context;прочитать данные из register/memory;сформировать Completion;отправить Completion.
+принять request;
+сохранить request context;
+прочитать данные из register/memory;
+сформировать Completion;
+отправить Completion.
 ```
 
 Для этого нужны буферы не только под сам request, но и под context:
