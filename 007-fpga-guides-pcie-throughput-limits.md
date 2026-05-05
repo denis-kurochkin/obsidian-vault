@@ -243,13 +243,18 @@ AMD configuration status interface описывает Max Payload Size как п
 Меньше TLP значит:
 
 ```
-меньше headers;меньше PH credit pressure;меньше arbitration overhead;лучше efficiency.
+меньше headers;
+меньше PH credit pressure;
+меньше arbitration overhead;
+лучше efficiency.
 ```
 
 Но больше MPS требует:
 
 ```
-больше payload buffering;больше burst handling;больше PD/CplD credits на один TLP.
+больше payload buffering;
+больше burst handling;
+больше PD/CplD credits на один TLP.
 ```
 
 ---
