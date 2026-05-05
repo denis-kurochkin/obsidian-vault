@@ -376,7 +376,12 @@ AXI/stream width.
 DMA read из host memory требует:
 
 ```
-выдать Memory Read Requests;держать несколько outstanding requests;получить Completions;сопоставить tags;буферизовать completion payload;выдать data downstream.
+выдать Memory Read Requests;
+держать несколько outstanding requests;
+получить Completions;
+сопоставить tags;
+буферизовать completion payload;
+выдать data downstream.
 ```
 
 То есть read performance зависит от round-trip latency.
