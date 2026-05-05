@@ -125,7 +125,13 @@ AMD configuration status interface предоставляет сигналы д�
 Если negotiated width/speed ниже ожидаемых, performance debug начинается не с credits или DMA, а с:
 
 ```
-LTSSM / Recovery;equalization;slot/root port capability;BIOS settings;lane mapping;signal integrity;Vivado PCIe IP configuration.
+LTSSM / Recovery;
+equalization;
+slot/root port capability;
+BIOS settings;
+lane mapping;
+signal integrity;
+Vivado PCIe IP configuration.
 ```
 
 ---
@@ -137,7 +143,16 @@ LTSSM / Recovery;equalization;slot/root port capability;BIOS settings;lane mappi
 Причины:
 
 ```
-TLP headers;DLLP;LCRC;framing;idle/control symbols;packet alignment;completion headers;read request overhead;software/driver overhead;DMA descriptor overhead.
+TLP headers;
+DLLP;
+LCRC;
+framing;
+idle/control symbols;
+packet alignment;
+completion headers;
+read request overhead;
+software/driver overhead;
+DMA descriptor overhead.
 ```
 
 Поэтому лучше различать:
