@@ -300,7 +300,9 @@ available = limit - consumed
 Идея:
 
 ```
-Receiver сообщает transmitter-у initial credits.Transmitter инициализирует свои credit counters.После этого transmitter может отправлять TLP только в пределах этих credits.
+Receiver сообщает transmitter-у initial credits.
+Transmitter инициализирует свои credit counters.
+После этого transmitter может отправлять TLP только в пределах этих credits.
 ```
 
 AMD performance paper описывает, что credit-based flow control устраняет packet discard из-за overflow приемного буфера. ([AMD Performance PDF](https://docs.amd.com/api/khub/documents/4uw~7uS2eK5x7lKbNdxWlw/content?utm_source=chatgpt.com))
