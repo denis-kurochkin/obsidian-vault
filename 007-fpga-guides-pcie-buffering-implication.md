@@ -706,13 +706,19 @@ FPGA должна быстро вернуть Completion.
 Для простых register reads достаточно:
 
 ```
-маленький request context buffer;register read mux;completion output buffer.
+маленький request context buffer;
+register read mux;
+completion output buffer.
 ```
 
 Для BAR reads в memory/window:
 
 ```
-нужен read request queue;memory access pipeline;completion data buffer;split completion handling;backpressure на NP requests.
+нужен read request queue;
+memory access pipeline;
+completion data buffer;
+split completion handling;
+backpressure на NP requests.
 ```
 
 Если read data приходит из медленного clock domain, обязательно нужна staging/buffering логика.
