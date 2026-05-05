@@ -208,7 +208,17 @@ Flow control относится к Transaction Layer / Data Link interaction.
 Упрощенно:
 
 ```
-Transaction Layer:    хочет отправить TLPFlow Control:    проверяет, есть ли creditsData Link Layer:    доставляет TLP через linkPhysical Layer:    передает bits по lanes
+Transaction Layer:
+    хочет отправить TLP
+
+Flow Control:
+    проверяет, есть ли credits
+
+Data Link Layer:
+    доставляет TLP через link
+
+Physical Layer:
+    передает bits по lanes
 ```
 
 То есть flow control не про LTSSM напрямую и не про equalization. Это уже protocol-level ограничение после того, как link работает.
@@ -220,7 +230,12 @@ Transaction Layer:    хочет отправить TLPFlow Control:    пров
 В Vivado PCIe IP flow control обычно проявляется через:
 
 ```
-cfg_fc_* signalsRQ flow control statusavailable creditsTLP interface backpressureAXI4-Stream tready deassertionDMA throughput limitations
+cfg_fc_* signals
+RQ flow control status
+available credits
+TLP interface backpressure
+AXI4-Stream tready deassertion
+DMA throughput limitations
 ```
 
 Например, в UltraScale+ PCIe4 есть Configuration Flow Control Interface с сигналами для Posted, Non-Posted и Completion credits, а выбор того, какую credit-информацию вывести, делается через `cfg_fc_sel[2:0]`.
