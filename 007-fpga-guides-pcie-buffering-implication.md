@@ -976,7 +976,10 @@ Register slice:
 FIFO:
 
 ```
-больше buffering;может пересекать clock domain;может сглаживать bursts;дороже по ресурсам.
+больше buffering;
+может пересекать clock domain;
+может сглаживать bursts;
+дороже по ресурсам.
 ```
 
 Обычно нужны оба:
@@ -994,7 +997,13 @@ PCIe TLP и user packets имеют границы.
 Буфер должен сохранять:
 
 ```
-tlast;tkeep;tuser;metadata;byte enables;address association;descriptor association.
+tlast;
+tkeep;
+tuser;
+metadata;
+byte enables;
+address association;
+descriptor association.
 ```
 
 Если FIFO хранит только `tdata`, но не хранит sideband, packet corrupt.
