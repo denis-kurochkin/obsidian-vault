@@ -108,13 +108,16 @@ read completions хуже держат pipeline;
 Перед любым throughput debug нужно проверить фактические:
 
 ```
-current speednegotiated width
+current speed
+negotiated width
 ```
 
 Vivado IP может быть настроен на Gen4 x8, но реально link может подняться как:
 
 ```
-Gen3 x4Gen2 x1Gen1 x4
+Gen3 x4
+Gen2 x1
+Gen1 x4
 ```
 
 AMD configuration status interface предоставляет сигналы для current speed и negotiated link width; negotiated width валиден, когда link status показывает завершенную Data Link initialization.
