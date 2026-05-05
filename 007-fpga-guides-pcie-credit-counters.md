@@ -660,7 +660,11 @@ Credit counter внутри PCIe core связан с PCIe receive/transmit buff
 Он не равен напрямую:
 
 ```
-occupancy твоего AXI FIFO;occupancy DMA FIFO;числу слов в user stream;числу descriptors;числу outstanding commands.
+occupancy твоего AXI FIFO;
+occupancy DMA FIFO;
+числу слов в user stream;
+числу descriptors;
+числу outstanding commands.
 ```
 
 Между ними есть protocol logic.
@@ -668,7 +672,11 @@ occupancy твоего AXI FIFO;occupancy DMA FIFO;числу слов в user s
 Например:
 
 ```
-PCIe core имеет credits,но твой DMA FIFO пустой -> нечего отправлять.Твой DMA FIFO полный,но PCIe core не имеет credits -> отправка заблокирована.
+PCIe core имеет credits,
+но твой DMA FIFO пустой -> нечего отправлять.
+
+Твой DMA FIFO полный,
+но PCIe core не имеет credits -> отправка заблокирована.
 ```
 
 Нужно смотреть оба уровня.
