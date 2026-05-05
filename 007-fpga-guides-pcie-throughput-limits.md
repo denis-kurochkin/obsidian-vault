@@ -466,13 +466,23 @@ Credit counters могут ограничивать скорость.
 Например:
 
 ```
-DMA write:    PD credits заканчиваются -> write stallsDMA read:    NPH credits заканчиваются -> read requests stallsCompletion receive:    completion buffering/backpressure -> read data stalls
+DMA write:
+    PD credits заканчиваются -> write stalls
+
+DMA read:
+    NPH credits заканчиваются -> read requests stalls
+
+Completion receive:
+    completion buffering/backpressure -> read data stalls
 ```
 
 Credit starvation может выглядеть как:
 
 ```
-tready периодически падает;TLP идут пачками с паузами;DMA scheduler часто idle;link utilization низкий.
+tready периодически падает;
+TLP идут пачками с паузами;
+DMA scheduler часто idle;
+link utilization низкий.
 ```
 
 ---
