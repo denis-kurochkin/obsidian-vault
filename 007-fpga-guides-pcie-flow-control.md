@@ -323,13 +323,24 @@ Flow control напрямую связан с буферами.
 Для хорошего FPGA PCIe design нужны буферы:
 
 ```
-на входе DMA;на выходе DMA;для pending read requests;для received completions;для BAR request/completion path;для stream backpressure;для CDC между PCIe user_clk и application clocks.
+на входе DMA;
+на выходе DMA;
+для pending read requests;
+для received completions;
+для BAR request/completion path;
+для stream backpressure;
+для CDC между PCIe user_clk и application clocks.
 ```
 
 Если буферов мало, будут симптомы:
 
 ```
-низкий throughput;частый backpressure;tready часто падает;DMA не держит line rate;read requests не выдаются достаточно глубоко;completions приходят burst-ами и давят user logic.
+низкий throughput;
+частый backpressure;
+tready часто падает;
+DMA не держит line rate;
+read requests не выдаются достаточно глубоко;
+completions приходят burst-ами и давят user logic.
 ```
 
 ---
