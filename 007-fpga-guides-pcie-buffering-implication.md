@@ -1138,7 +1138,9 @@ Completion traffic важен для forward progress.
 Практическая идея:
 
 ```
-reserve buffer space for completions;дать completion path высокий приоритет;не смешивать completion output с бесконечным posted write stream без arbitration.
+reserve buffer space for completions;
+дать completion path высокий приоритет;
+не смешивать completion output с бесконечным posted write stream без arbitration.
 ```
 
 ---
