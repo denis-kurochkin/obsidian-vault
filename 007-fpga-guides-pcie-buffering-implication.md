@@ -452,7 +452,11 @@ CplD, CplD, CplD, CplD, CplD...
 Если буфера мало:
 
 ```
-RC path начинает давать backpressure;core buffers заполняются;request scheduler должен остановиться;throughput падает;в плохой архитектуре возможен deadlock-like stall.
+RC path начинает давать backpressure;
+core buffers заполняются;
+request scheduler должен остановиться;
+throughput падает;
+в плохой архитектуре возможен deadlock-like stall.
 ```
 
 ---
@@ -462,7 +466,11 @@ RC path начинает давать backpressure;core buffers заполняю
 Для DMA read нужны:
 
 ```
-1. Request-side buffering:   descriptors, tags, outstanding context.2. Completion-side buffering:   returned data, completion metadata, reorder/context handling.
+1. Request-side buffering:
+   descriptors, tags, outstanding context.
+
+2. Completion-side buffering:
+   returned data, completion metadata, reorder/context handling.
 ```
 
 Нельзя оптимизировать только request side.
