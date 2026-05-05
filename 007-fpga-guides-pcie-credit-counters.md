@@ -431,13 +431,24 @@ cfg_fc_sel = выбрать:
 Можно встретить сигналы:
 
 ```
-cfg_fc_phcfg_fc_pdcfg_fc_nphcfg_fc_npdcfg_fc_cplhcfg_fc_cpldcfg_fc_sel
+cfg_fc_ph
+cfg_fc_pd
+cfg_fc_nph
+cfg_fc_npd
+cfg_fc_cplh
+cfg_fc_cpld
+cfg_fc_sel
 ```
 
 Смысл по названиям:
 
 ```
-ph   -> Posted Headerpd   -> Posted Datanph  -> Non-Posted Headernpd  -> Non-Posted Datacplh -> Completion Headercpld -> Completion Data
+ph   -> Posted Header
+pd   -> Posted Data
+nph  -> Non-Posted Header
+npd  -> Non-Posted Data
+cplh -> Completion Header
+cpld -> Completion Data
 ```
 
 В UltraScale+ PG213 эти outputs описаны как Posted/Non-Posted/Completion Header/Data Flow Control Credits, а `cfg_fc_sel` выбирает тип flow-control information, выводимой core. ([AMD PG213](https://docs.amd.com/r/en-US/pg213-pcie4-ultrascale-plus/Configuration-Flow-Control-Interface?utm_source=chatgpt.com))
