@@ -761,7 +761,10 @@ IOMMU может добавлять overhead и менять поведение 
 Для host-to-FPGA или FPGA-to-host tests нужно понимать:
 
 ```
-CPU читает cached memory или uncached;DMA buffer coherent или non-coherent;есть ли cache flush/invalidate;test меряет PCIe или memory copy/cache speed.
+CPU читает cached memory или uncached;
+DMA buffer coherent или non-coherent;
+есть ли cache flush/invalidate;
+test меряет PCIe или memory copy/cache speed.
 ```
 
 Иногда benchmark показывает скорость CPU/cache, а не реальный PCIe throughput.
