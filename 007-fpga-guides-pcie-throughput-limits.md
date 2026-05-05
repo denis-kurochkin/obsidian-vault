@@ -847,7 +847,11 @@ BAR register access обычно медленный по сравнению с D
 Почему:
 
 ```
-small transactions;CPU MMIO overhead;read requires Completion;ordering/serialization effects;driver/software overhead.
+small transactions;
+CPU MMIO overhead;
+read requires Completion;
+ordering/serialization effects;
+driver/software overhead.
 ```
 
 BAR хорош для:
