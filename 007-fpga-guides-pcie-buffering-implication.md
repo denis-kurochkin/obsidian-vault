@@ -531,7 +531,13 @@ completion_buffer >= max_outstanding_read_bytes
 Например:
 
 ```
-tag;target buffer address;remaining byte count;expected completion status;request ID / queue ID;stream packet metadata;ordering information.
+tag;
+target buffer address;
+remaining byte count;
+expected completion status;
+request ID / queue ID;
+stream packet metadata;
+ordering information.
 ```
 
 Completion приходит с tag, и DMA должна понять:
