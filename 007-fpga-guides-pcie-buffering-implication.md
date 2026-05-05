@@ -775,7 +775,13 @@ reset-aware CDC для status.
 Типичная структура:
 
 ```
-PCIe user_clk domain        |        vasync FIFO        |        vapplication_clk domain
+PCIe user_clk domain
+        |
+        v
+async FIFO
+        |
+        v
+application_clk domain
 ```
 
 Для DMA write source:
