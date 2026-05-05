@@ -183,7 +183,11 @@ header overhead неизбежен.
 Например:
 
 ```
-Memory Write 16B:    header заметная доля packetMemory Write 256B:    header намного меньшая доля packet
+Memory Write 16B:
+    header заметная доля packet
+
+Memory Write 256B:
+    header намного меньшая доля packet
 ```
 
 Поэтому крупные TLP обычно эффективнее, чем мелкие.
