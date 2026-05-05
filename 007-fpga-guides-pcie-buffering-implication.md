@@ -267,7 +267,10 @@ pointer to payload buffer
 Минусы:
 
 ```
-packetizer сложнее;нужен доступ к payload buffer;труднее debug.
+меньше ширина FIFO;
+легче менять MPS/MRRS splitting;
+проще scheduling;
+меньше риска держать огромные TLP в регистрах.
 ```
 
 ---
