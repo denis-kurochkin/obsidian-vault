@@ -1326,7 +1326,18 @@ outstanding_read_count;
 Для buffering debug полезно смотреть:
 
 ```
-AXI4-Stream valid/ready/last/user;FIFO level;FIFO almost_full/almost_empty;credit counters;RQ/RC/CQ/CC traffic;DMA scheduler state;outstanding request count;outstanding byte count;tag allocation;completion FIFO level;BAR request/response state;reset/link status.
+AXI4-Stream valid/ready/last/user;
+FIFO level;
+FIFO almost_full/almost_empty;
+credit counters;
+RQ/RC/CQ/CC traffic;
+DMA scheduler state;
+outstanding request count;
+outstanding byte count;
+tag allocation;
+completion FIFO level;
+BAR request/response state;
+reset/link status.
 ```
 
 Главное — смотреть не только один интерфейс, а цепочку:
@@ -1346,7 +1357,16 @@ PCIe core -> parser -> FIFO -> application
 # 51. Типовые симптомы недостаточной буферизации
 
 ```
-низкий throughput;tready часто падает;DMA идет рывками;BAR reads иногда зависают;completion FIFO overflow;posted writes вызывают backpressure;DMA read работает хуже DMA write;Gen3/Gen4 link не используется полностью;работает на малых packets, ломается на больших;работает в simulation, но не держит stress test.
+низкий throughput;
+tready часто падает;
+DMA идет рывками;
+BAR reads иногда зависают;
+completion FIFO overflow;
+posted writes вызывают backpressure;
+DMA read работает хуже DMA write;
+Gen3/Gen4 link не используется полностью;
+работает на малых packets, ломается на больших;
+работает в simulation, но не держит stress test.
 ```
 
 ---
