@@ -1163,7 +1163,10 @@ RQ valid часто 0
 Возможные причины:
 
 ```
-DMA source не дает data;descriptor FIFO empty;scheduler idle;payload aggregation ждет data.
+DMA source не дает data;
+descriptor FIFO empty;
+scheduler idle;
+payload aggregation ждет data.
 ```
 
 ## Pattern 3
@@ -1175,7 +1178,9 @@ RC valid приходит burst-ами, completion FIFO full
 Вероятно:
 
 ```
-completion sink слишком медленный;read scheduler выдает слишком много in-flight data;нужен threshold.
+completion sink слишком медленный;
+read scheduler выдает слишком много in-flight data;
+нужен threshold.
 ```
 
 ## Pattern 4
@@ -1187,7 +1192,8 @@ credits не заканчиваются, но throughput низкий
 Вероятно:
 
 ```
-не credits bottleneck;искать DMA/software/AXI/host limit.
+не credits bottleneck;
+искать DMA/software/AXI/host limit.
 ```
 
 ---
