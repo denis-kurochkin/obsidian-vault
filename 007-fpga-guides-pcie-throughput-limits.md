@@ -652,7 +652,11 @@ DMA не просто гонит данные.
 Он также:
 
 ```
-читает descriptors;обновляет status;пишет completion records;генерирует interrupts;обрабатывает rings/queues.
+читает descriptors;
+обновляет status;
+пишет completion records;
+генерирует interrupts;
+обрабатывает rings/queues.
 ```
 
 Если descriptors маленькие или software часто вмешивается, overhead растет.
