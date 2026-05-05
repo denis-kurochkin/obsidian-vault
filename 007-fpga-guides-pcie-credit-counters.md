@@ -925,13 +925,20 @@ Credits возвращаются не непрерывно каждый такт
 Поэтому traffic может выглядеть bursty:
 
 ```
-несколько TLP подрядпаузаснова несколько TLP
+несколько TLP подряд
+пауза
+снова несколько TLP
 ```
 
 Это особенно заметно при:
 
 ```
-маленьких buffers;маленьких credit pools;большом round-trip latency;switch/retimer topology;host memory latency;burst completions.
+маленьких buffers;
+маленьких credit pools;
+большом round-trip latency;
+switch/retimer topology;
+host memory latency;
+burst completions.
 ```
 
 ---
