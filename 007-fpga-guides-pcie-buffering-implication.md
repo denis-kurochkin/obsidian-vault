@@ -805,7 +805,17 @@ PCIe completion data -> async FIFO -> application stream
 Размер буфера зависит от:
 
 ```
-PCIe link speed/width;user interface width/frequency;MPS/MRRS;burst length;maximum stall time downstream;number of outstanding requests;host latency;clock domain mismatch;packet boundary requirements;политика drop/backpressure;ресурсы BRAM/URAM/DDR.
+PCIe link speed/width;
+user interface width/frequency;
+MPS/MRRS;
+burst length;
+maximum stall time downstream;
+number of outstanding requests;
+host latency;
+clock domain mismatch;
+packet boundary requirements;
+политика drop/backpressure;
+ресурсы BRAM/URAM/DDR.
 ```
 
 Формально идеального универсального числа нет.
