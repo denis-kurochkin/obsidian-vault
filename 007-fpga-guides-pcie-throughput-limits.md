@@ -494,7 +494,19 @@ link utilization низкий.
 Другие причины:
 
 ```
-маленькие TLP;маленький MPS;маленький MRRS;мало outstanding requests;плохая descriptor supply;AXI backpressure;CDC FIFO почти full/empty;host memory latency;IOMMU;cache effects;driver overhead;interrupt overhead;test software не способен читать/писать быстро.
+маленькие TLP;
+маленький MPS;
+маленький MRRS;
+мало outstanding requests;
+плохая descriptor supply;
+AXI backpressure;
+CDC FIFO почти full/empty;
+host memory latency;
+IOMMU;
+cache effects;
+driver overhead;
+interrupt overhead;
+test software не способен читать/писать быстро.
 ```
 
 Поэтому credits — важный, но не единственный performance counter.
