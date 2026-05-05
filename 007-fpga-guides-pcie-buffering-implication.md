@@ -364,7 +364,9 @@ completion status.
 Практический смысл:
 
 ```
-если твой BAR read/completion path временно занят,ты можешь притормозить Non-Posted requests,не блокируя Posted writes.
+если твой BAR read/completion path временно занят,
+ты можешь притормозить Non-Posted requests,
+не блокируя Posted writes.
 ```
 
 Это очень важная архитектурная точка: разные типы traffic не должны бездумно сидеть в одном общем FIFO, если это создает head-of-line blocking.
