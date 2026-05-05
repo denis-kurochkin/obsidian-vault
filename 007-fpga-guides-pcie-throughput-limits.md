@@ -41,7 +41,11 @@ reset/recovery events.
 Например:
 
 ```
-Gen1: 2.5 GT/sGen2: 5.0 GT/sGen3: 8.0 GT/sGen4: 16.0 GT/sGen5: 32.0 GT/s
+Gen1: 2.5 GT/s
+Gen2: 5.0 GT/s
+Gen3: 8.0 GT/s
+Gen4: 16.0 GT/s
+Gen5: 32.0 GT/s
 ```
 
 PCI-SIG указывает, что PCIe 3.0 использует 8.0 GT/s и заменяет 8b/10b на более эффективное 128b/130b encoding; в PCIe 2.0 при 5.0 GT/s 8b/10b дает 20% overhead, а PCIe 3.0 за счет 128b/130b достигает примерно вдвое большей delivered bandwidth.
