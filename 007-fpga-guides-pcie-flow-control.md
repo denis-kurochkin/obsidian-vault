@@ -73,7 +73,9 @@ Root Port <-> Switch <-> FPGA Endpoint
 PCIe TLP делятся на три основные категории:
 
 ```
-PostedNon-PostedCompletion
+Posted
+Non-Posted
+Completion
 ```
 
 ## Posted
