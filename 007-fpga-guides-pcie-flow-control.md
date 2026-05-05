@@ -391,7 +391,8 @@ Read performance часто ограничивается тем, как хоро
 принимать Completions;
 не переполнить completion buffers;
 сопоставлять completions с tags;
-отдавать данные дальше без backpressure.```
+отдавать данные дальше без backpressure.
+```
 
 Если completion path плохо буферизован, PCIe core или user logic может начать тормозить прием completions.
 
@@ -406,7 +407,9 @@ Read performance часто ограничивается тем, как хоро
 Практический смысл для FPGA:
 
 ```
-Если BAR/read-request path не готов,нужно корректно тормозить Non-Posted traffic,не ломая обработку Posted writes.
+Если BAR/read-request path не готов,
+нужно корректно тормозить Non-Posted traffic,
+не ломая обработку Posted writes.
 ```
 
 ---
