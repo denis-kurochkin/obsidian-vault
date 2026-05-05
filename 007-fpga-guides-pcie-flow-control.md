@@ -97,7 +97,9 @@ Non-Posted transaction требует Completion.
 Типичные примеры:
 
 ```
-Memory ReadConfiguration ReadConfiguration Write
+Memory Read
+Configuration Read
+Configuration Write
 ```
 
 Например, DMA read request из FPGA к host memory — это non-posted traffic.
@@ -109,7 +111,10 @@ Completion — это ответ на non-posted request.
 Например:
 
 ```
-Memory Read Request        |        vCompletion with Data
+Memory Read Request
+        |
+        v
+Completion with Data
 ```
 
 ---
@@ -119,13 +124,21 @@ Memory Read Request        |        vCompletion with Data
 Для каждого типа traffic PCIe отдельно учитывает:
 
 ```
-Header creditsData credits
+Header credits
+Data credits
 ```
 
 То есть появляются шесть основных credit pools:
 
 ```
-PH    — Posted HeaderPD    — Posted DataNPH   — Non-Posted HeaderNPD   — Non-Posted DataCplH  — Completion HeaderCplD  — Completion Data
+PH    — Posted Header
+PD    — Posted Data
+
+NPH   — Non-Posted Header
+NPD   — Non-Posted Data
+
+CplH  — Completion Header
+CplD  — Completion Data
 ```
 
 AMD PG054 указывает, что PCIe integrated block предоставляет информацию о credit pools для Posted, Non-Posted и Completion traffic, включая limit/consumed/current credit state.
