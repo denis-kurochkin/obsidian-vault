@@ -684,7 +684,12 @@ DMA не просто гонит данные.
 Причины:
 
 ```
-descriptor overhead;software syscall overhead;interrupt overhead;cache/IOMMU effects;недостаточно времени, чтобы pipeline заполнился;TLP overhead относительно payload.
+descriptor overhead;
+software syscall overhead;
+interrupt overhead;
+cache/IOMMU effects;
+недостаточно времени, чтобы pipeline заполнился;
+TLP overhead относительно payload.
 ```
 
 Для throughput-тестов нужно использовать достаточно большие transfers и warm-up.
