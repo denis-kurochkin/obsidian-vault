@@ -345,7 +345,14 @@ FPGA должна:
 Для этого нужны буферы не только под сам request, но и под context:
 
 ```
-tag;requester ID;address;byte enables;length;attributes;BAR id;completion status.
+tag;
+requester ID;
+address;
+byte enables;
+length;
+attributes;
+BAR id;
+completion status.
 ```
 
 ---
