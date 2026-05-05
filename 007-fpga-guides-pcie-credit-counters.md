@@ -750,7 +750,9 @@ payload_bytes / 16
 Например:
 
 ```
-MPS 128B -> 8 data credits per full TLPMPS 256B -> 16 data credits per full TLPMPS 512B -> 32 data credits per full TLP
+MPS 128B -> 8 data credits per full TLP
+MPS 256B -> 16 data credits per full TLP
+MPS 512B -> 32 data credits per full TLP
 ```
 
 Более крупный payload обычно уменьшает overhead на byte, но требует больше data credits на один TLP.
