@@ -403,7 +403,10 @@ required_in_flight_bytes ≈ target_bandwidth * round_trip_latency
 Пример:
 
 ```
-target = 4 GB/sround_trip_latency = 1 usrequired_in_flight ≈ 4 KB
+target = 4 GB/s
+round_trip_latency = 1 us
+
+required_in_flight ≈ 4 KB
 ```
 
 Если у тебя in-flight только 512B, pipeline будет простаивать.
@@ -419,7 +422,13 @@ target = 4 GB/sround_trip_latency = 1 usrequired_in_flight ≈ 4 KB
 Ограничители:
 
 ```
-NPH credits;free tags;request context table;MRRS;completion buffer space;host/root complex;DMA scheduler policy.
+NPH credits;
+free tags;
+request context table;
+MRRS;
+completion buffer space;
+host/root complex;
+DMA scheduler policy.
 ```
 
 Если free tags закончились — новые reads нельзя выдавать, даже если credits есть.
