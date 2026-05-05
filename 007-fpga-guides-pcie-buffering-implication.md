@@ -380,7 +380,8 @@ PCIe specification требует, чтобы completer request interface про
 Практический вывод:
 
 ```
-receive architecture должна разделять Posted и Non-Posted путиили хотя бы гарантировать, что NP backpressure не блокирует posted progress.
+receive architecture должна разделять Posted и Non-Posted пути
+или хотя бы гарантировать, что NP backpressure не блокирует posted progress.
 ```
 
 ---
@@ -392,7 +393,8 @@ receive architecture должна разделять Posted и Non-Posted пут
 Пример плохой архитектуры:
 
 ```
-единый RX FIFO:    [Non-Posted Read Request, Posted Write, Posted Write, Posted Write]
+единый RX FIFO:
+    [Non-Posted Read Request, Posted Write, Posted Write, Posted Write]
 ```
 
 Если Non-Posted request не может быть обработан, потому что completion path занят, весь FIFO стоит. Posted writes за ним не проходят, хотя их можно было бы принять.
