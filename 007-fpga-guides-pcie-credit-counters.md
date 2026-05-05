@@ -31,7 +31,14 @@ Credit counter считает не “байты на линии” и не “�
 PCIe делит flow control на шесть основных credit pools:
 
 ```
-PH    — Posted HeaderPD    — Posted DataNPH   — Non-Posted HeaderNPD   — Non-Posted DataCplH  — Completion HeaderCplD  — Completion Data
+PH    — Posted Header
+PD    — Posted Data
+
+NPH   — Non-Posted Header
+NPD   — Non-Posted Data
+
+CplH  — Completion Header
+CplD  — Completion Data
 ```
 
 AMD PG213/PG346 описывают отдельные `cfg_fc_ph`, `cfg_fc_pd`, `cfg_fc_nph`, `cfg_fc_npd`, `cfg_fc_cplh`, `cfg_fc_cpld` outputs для этих credit classes; выбор того, какую информацию вывести, делается через `cfg_fc_sel[2:0]`. ([AMD PG213](https://docs.amd.com/r/en-US/pg213-pcie4-ultrascale-plus/Configuration-Flow-Control-Interface?utm_source=chatgpt.com), [AMD PG346](https://docs.amd.com/r/en-US/pg346-cpm-pcie/Configuration-Flow-Control-Interface?utm_source=chatgpt.com))
@@ -43,7 +50,9 @@ AMD PG213/PG346 описывают отдельные `cfg_fc_ph`, `cfg_fc_pd`, 
 PCIe traffic бывает разного типа:
 
 ```
-Posted traffic       — например Memory WriteNon-Posted traffic   — например Memory Read RequestCompletion traffic   — например Completion with Data
+Posted traffic       — например Memory Write
+Non-Posted traffic   — например Memory Read Request
+Completion traffic   — например Completion with Data
 ```
 
 И каждый TLP имеет:
