@@ -303,7 +303,9 @@ MRRS влияет на DMA read request granularity.
 Больше MRRS может означать:
 
 ```
-меньше read requests;меньше request header overhead;больше data per outstanding request.
+меньше read requests;
+меньше request header overhead;
+больше data per outstanding request.
 ```
 
 Но:
