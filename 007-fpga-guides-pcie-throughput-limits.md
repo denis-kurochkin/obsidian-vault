@@ -1335,13 +1335,20 @@ DMA streams — data plane.
 Control plane:
 
 ```
-низкая latency;простая логика;надежный completion path;маленькие transfers.
+низкая latency;
+простая логика;
+надежный completion path;
+маленькие transfers.
 ```
 
 Data plane:
 
 ```
-большие buffers;batching;outstanding requests;aggregation;throughput.
+большие buffers;
+batching;
+outstanding requests;
+aggregation;
+throughput.
 ```
 
 Если data plane забивает control plane, это архитектурная ошибка.
