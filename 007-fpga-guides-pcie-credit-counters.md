@@ -850,7 +850,8 @@ Tag отвечает:
 Например:
 
 ```
-FPGA запросила 1024B readhost вернул несколько completions
+FPGA запросила 1024B read
+host вернул несколько completions
 ```
 
 Каждый Completion TLP потребляет:
@@ -872,7 +873,11 @@ FPGA запросила 1024B readhost вернул несколько completio
 В пользовательском интерфейсе это может проявиться как:
 
 ```
-tready = 0;scheduler stops issuing requests;DMA pauses;request queue stops draining;gaps появляются между TLP.
+tready = 0;
+scheduler stops issuing requests;
+DMA pauses;
+request queue stops draining;
+gaps появляются между TLP.
 ```
 
 Это корректное поведение.
