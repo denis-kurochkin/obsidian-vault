@@ -5,7 +5,10 @@
 Главная идея:
 
 ```
-Receiver имеет ограниченные buffers.Receiver выдает credits.Transmitter тратит credits при отправке TLP.Receiver возвращает credits, когда освобождает buffers.
+Receiver имеет ограниченные buffers.
+Receiver выдает credits.
+Transmitter тратит credits при отправке TLP.
+Receiver возвращает credits, когда освобождает buffers.
 ```
 
 В FPGA/Vivado credit counters важны в основном для понимания:
