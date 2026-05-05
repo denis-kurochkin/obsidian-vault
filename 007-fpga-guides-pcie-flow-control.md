@@ -259,7 +259,8 @@ Memory Write TLP
 Зависит от:
 
 ```
-PH creditsPD credits
+PH credits
+PD credits
 ```
 
 Если Posted Data credits мало, DMA write throughput может упасть.
