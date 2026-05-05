@@ -1150,7 +1150,13 @@ reserve buffer space for completions;
 Хорошая архитектура часто разделяет:
 
 ```
-posted write queue;non-posted request queue;completion output queue;DMA write queue;DMA read request queue;DMA read completion queue;interrupt/message queue.
+posted write queue;
+non-posted request queue;
+completion output queue;
+DMA write queue;
+DMA read request queue;
+DMA read completion queue;
+interrupt/message queue.
 ```
 
 Это уменьшает head-of-line blocking.
@@ -1164,7 +1170,11 @@ posted write queue;non-posted request queue;completion output queue;DMA write qu
 Если несколько источников хотят отправлять TLP:
 
 ```
-DMA Memory Writes;DMA Memory Read Requests;BAR Completions;MSI/MSI-X;internal messages;
+DMA Memory Writes;
+DMA Memory Read Requests;
+BAR Completions;
+MSI/MSI-X;
+internal messages;
 ```
 
 нужен arbiter.
