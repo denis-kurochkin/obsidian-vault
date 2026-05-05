@@ -156,7 +156,8 @@ Memory Write — это Posted TLP.
 Credit consumption:
 
 ```
-PH = 1PD = ceil(256 / 16) = 16
+PH = 1
+PD = ceil(256 / 16) = 16
 ```
 
 То есть:
@@ -178,7 +179,8 @@ Memory Read Request — это Non-Posted TLP без payload.
 Сам request обычно тратит:
 
 ```
-NPH = 1NPD = 0
+NPH = 1
+NPD = 0
 ```
 
 Но потом host вернет Completion with Data.
@@ -186,7 +188,8 @@ NPH = 1NPD = 0
 Эти Completion TLP уже будут потреблять receive-side Completion buffer resources на стороне FPGA/core:
 
 ```
-CplHCplD
+CplH
+CplD
 ```
 
 То есть DMA read ограничивается не только тем, сколько read requests можно отправить, но и тем, насколько хорошо FPGA/core может принять и обработать completions.
