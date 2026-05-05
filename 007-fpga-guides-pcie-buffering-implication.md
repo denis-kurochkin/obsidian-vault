@@ -1182,7 +1182,14 @@ internal messages;
 Arbiter должен учитывать:
 
 ```
-credits;completion priority;fairness;starvation;available payload data;available tags;link readiness;packet boundaries.
+credits;
+completion priority;
+fairness;
+starvation;
+available payload data;
+available tags;
+link readiness;
+packet boundaries.
 ```
 
 ---
@@ -1192,7 +1199,9 @@ credits;completion priority;fairness;starvation;available payload data;available
 Плохая ситуация:
 
 ```
-DMA write stream постоянно занимает transmit path;BAR read Completion ждет;host read timeout.
+DMA write stream постоянно занимает transmit path;
+BAR read Completion ждет;
+host read timeout.
 ```
 
 Даже если bandwidth хороший, system-level behavior плохой.
