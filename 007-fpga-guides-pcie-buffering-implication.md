@@ -486,7 +486,8 @@ QDMA documentation описывает performance control для H2C Stream Engi
 Смысл для собственной архитектуры:
 
 ```
-scheduler должен знать не только “есть ли tags/credits”,но и “хватит ли downstream buffer для возвращающихся completions”.
+scheduler должен знать не только “есть ли tags/credits”,
+но и “хватит ли downstream buffer для возвращающихся completions”.
 ```
 
 ---
