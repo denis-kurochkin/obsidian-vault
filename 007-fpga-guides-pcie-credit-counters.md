@@ -1161,7 +1161,21 @@ Credits одинаковы на всем PCIe path.
 # 43. Checklist для credit counter debug
 
 ```
-1. Link в L0 и Data Link init completed?2. Какой traffic сейчас идет: MWr, MRd, Cpl?3. Какие credit pools должны использоваться?4. Какой cfg_fc_sel выбран?5. Учитываются ли scale signals?6. Какие current credit values?7. Какие minimum credit values за тест?8. Есть ли tready drops?9. На каком stream падает ready: RQ, CC, CQ, RC?10. Какой payload size?11. Какие MPS/MRRS?12. Сколько outstanding read requests?13. Хватает ли tags?14. Есть ли backpressure после PCIe core?15. Есть ли host/software/IOMMU ограничения?
+1. Link в L0 и Data Link init completed?
+2. Какой traffic сейчас идет: MWr, MRd, Cpl?
+3. Какие credit pools должны использоваться?
+4. Какой cfg_fc_sel выбран?
+5. Учитываются ли scale signals?
+6. Какие current credit values?
+7. Какие minimum credit values за тест?
+8. Есть ли tready drops?
+9. На каком stream падает ready: RQ, CC, CQ, RC?
+10. Какой payload size?
+11. Какие MPS/MRRS?
+12. Сколько outstanding read requests?
+13. Хватает ли tags?
+14. Есть ли backpressure после PCIe core?
+15. Есть ли host/software/IOMMU ограничения?
 ```
 
 ---
@@ -1173,17 +1187,39 @@ Credits одинаковы на всем PCIe path.
 Главные правила:
 
 ```
-1. Есть шесть основных credit pools: PH, PD, NPH, NPD, CplH, CplD.2. Header credit обычно тратится по 1 на TLP.3. Data credit соответствует 16 bytes payload.4. Memory Write тратит Posted credits.5. Memory Read Request тратит Non-Posted Header credits.6. Completion with Data тратит Completion Header/Data credits.7. Credits link-local: они относятся к соседнему PCIe port.8. Нехватка credits проявляется как throttling/backpressure.9. `cfg_fc_*` нужно интерпретировать по Product Guide конкретного IP.10. Credit counters полезны только вместе с TLP type, valid/ready и DMA state.
+1. Link в L0 и Data Link init completed?
+2. Какой traffic сейчас идет: MWr, MRd, Cpl?
+3. Какие credit pools должны использоваться?
+4. Какой cfg_fc_sel выбран?
+5. Учитываются ли scale signals?
+6. Какие current credit values?
+7. Какие minimum credit values за тест?
+8. Есть ли tready drops?
+9. На каком stream падает ready: RQ, CC, CQ, RC?
+10. Какой payload size?
+11. Какие MPS/MRRS?
+12. Сколько outstanding read requests?
+13. Хватает ли tags?
+14. Есть ли backpressure после PCIe core?
+15. Есть ли host/software/IOMMU ограничения?
 ```
 
 Короткая формула:
 
 ```
-Header credits отвечают: “сколько TLP headers можно принять?”Data credits отвечают: “сколько payload bytes можно принять?”
+Header credits отвечают: “сколько TLP headers можно принять?”
+Data credits отвечают: “сколько payload bytes можно принять?”
 ```
 
 Практическая формула:
 
 ```
-Memory Write N bytes:    1 PH + ceil(N/16) PDMemory Read Request:    1 NPHCompletion N bytes:    1 CplH + ceil(N/16) CplD
+Memory Write N bytes:
+    1 PH + ceil(N/16) PD
+
+Memory Read Request:
+    1 NPH
+
+Completion N bytes:
+    1 CplH + ceil(N/16) CplD
 ```
