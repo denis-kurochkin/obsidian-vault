@@ -885,7 +885,11 @@ gaps появляются между TLP.
 Ошибка начинается тогда, когда user logic:
 
 ```
-игнорирует tready;теряет TLP;не удерживает payload stable;нарушает AXI4-Stream handshake;не умеет продолжить после паузы.
+игнорирует tready;
+теряет TLP;
+не удерживает payload stable;
+нарушает AXI4-Stream handshake;
+не умеет продолжить после паузы.
 ```
 
 ---
