@@ -654,7 +654,9 @@ MPS = 256B
 Минусы:
 
 ```
-больше latency;нужен aggregation buffer;нужно правильно обрабатывать packet boundary/flush.
+больше latency;
+нужен aggregation buffer;
+нужно правильно обрабатывать packet boundary/flush.
 ```
 
 ---
@@ -664,7 +666,15 @@ MPS = 256B
 DMA read из host memory:
 
 ```
-read descriptor    |issue Memory Read Requests    |receive Completions    |buffer returned data    |deliver to user logic
+read descriptor
+    |
+issue Memory Read Requests
+    |
+receive Completions
+    |
+buffer returned data
+    |
+deliver to user logic
 ```
 
 Нужны буферы:
