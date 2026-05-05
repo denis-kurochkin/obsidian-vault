@@ -28,13 +28,21 @@ PCIe traffic почти всегда bursty.
 Даже если средний throughput умеренный, данные приходят и уходят пачками:
 
 ```
-несколько TLP подрядпаузаснова несколько TLP
+несколько TLP подряд
+пауза
+снова несколько TLP
 ```
 
 Причины:
 
 ```
-credit updates приходят не каждый такт;host memory latency переменная;DMA работает burst-ами;completions могут возвращаться пачками;AXI/AXIS downstream может давать backpressure;PCIe core имеет внутренние очереди;software/driver работает descriptor-ами.
+credit updates приходят не каждый такт;
+host memory latency переменная;
+DMA работает burst-ами;
+completions могут возвращаться пачками;
+AXI/AXIS downstream может давать backpressure;
+PCIe core имеет внутренние очереди;
+software/driver работает descriptor-ами.
 ```
 
 Поэтому PCIe design без достаточной буферизации может быть функционально корректным, но медленным или нестабильным под нагрузкой.
