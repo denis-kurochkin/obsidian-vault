@@ -444,7 +444,9 @@ DMA scheduler policy.
 Если доступно мало tags:
 
 ```
-мало outstanding reads;плохое latency hiding;низкий read throughput.
+мало outstanding reads;
+плохое latency hiding;
+низкий read throughput.
 ```
 
 Versal PL PCIe4 features упоминают built-in Initiator Read Request/Completion Tag Manager и поддержку большого числа outstanding initiator read request transactions.
