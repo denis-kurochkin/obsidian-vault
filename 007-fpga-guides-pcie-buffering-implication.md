@@ -572,7 +572,12 @@ Payload buffer хранит сами данные.
 Payload buffer может быть:
 
 ```
-BRAM FIFO;URAM FIFO;external DDR;AXI stream FIFO;packet buffer;ring buffer.
+BRAM FIFO;
+URAM FIFO;
+external DDR;
+AXI stream FIFO;
+packet buffer;
+ring buffer.
 ```
 
 Выбор зависит от throughput, latency и размера bursts.
