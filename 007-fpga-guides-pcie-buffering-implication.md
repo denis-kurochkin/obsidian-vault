@@ -891,7 +891,11 @@ request scheduler должен перестать выдавать новые re
 Можно использовать threshold control:
 
 ```
-если completion_fifo_level > HIGH_WATERMARK:    stop issuing new read requestsесли completion_fifo_level < LOW_WATERMARK:    resume issuing read requests
+если completion_fifo_level > HIGH_WATERMARK:
+    stop issuing new read requests
+
+если completion_fifo_level < LOW_WATERMARK:
+    resume issuing read requests
 ```
 
 Это дешевле, чем хранить весь worst-case объем.
