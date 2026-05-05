@@ -538,7 +538,11 @@ PD
 Пример:
 
 ```
-DMA отправляет 256B MWr:    нужно 1 PH + 16 PDЕсли PD часто около 0:    Posted Data credits могут ограничивать write throughput.
+DMA отправляет 256B MWr:
+    нужно 1 PH + 16 PD
+
+Если PD часто около 0:
+    Posted Data credits могут ограничивать write throughput.
 ```
 
 ---
