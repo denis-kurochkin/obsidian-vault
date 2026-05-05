@@ -945,13 +945,22 @@ Throughput часто падает из-за цепочки backpressure.
 Пример:
 
 ```
-application sink full    -> completion FIFO full    -> RC path backpressure    -> read scheduler stops    -> no outstanding reads    -> PCIe link idle    -> throughput low
+application sink full
+    -> completion FIFO full
+    -> RC path backpressure
+    -> read scheduler stops
+    -> no outstanding reads
+    -> PCIe link idle
+    -> throughput low
 ```
 
 Или:
 
 ```
-source stream FIFO empty    -> DMA packetizer idle    -> RQ stream idle    -> link idle
+source stream FIFO empty
+    -> DMA packetizer idle
+    -> RQ stream idle
+    -> link idle
 ```
 
 Нужно искать самый ранний узел, который создает паузу.
@@ -965,7 +974,8 @@ source stream FIFO empty    -> DMA packetizer idle    -> RQ stream idle    -> li
 Например:
 
 ```
-PCIe side может передавать 8 GB/sapplication side может принять 5 GB/s
+PCIe side может передавать 8 GB/s
+application side может принять 5 GB/s
 ```
 
 FIFO временно сгладит burst, но средняя скорость ограничится 5 GB/s.
