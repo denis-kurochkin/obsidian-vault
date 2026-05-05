@@ -386,8 +386,12 @@ Read performance часто ограничивается тем, как хоро
 Для DMA read нужно:
 
 ```
-отправить много Memory Read Requests;держать достаточно outstanding requests;принимать Completions;не переполнить completion buffers;сопоставлять completions с tags;отдавать данные дальше без backpressure.
-```
+отправить много Memory Read Requests;
+держать достаточно outstanding requests;
+принимать Completions;
+не переполнить completion buffers;
+сопоставлять completions с tags;
+отдавать данные дальше без backpressure.```
 
 Если completion path плохо буферизован, PCIe core или user logic может начать тормозить прием completions.
 
