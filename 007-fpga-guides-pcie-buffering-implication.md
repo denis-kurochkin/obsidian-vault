@@ -1236,7 +1236,9 @@ system instability.
 Для медленных операций лучше не делать blocking BAR read. Лучше:
 
 ```
-write command register;poll status register;read result later.
+write command register;
+poll status register;
+read result later.
 ```
 
 ---
