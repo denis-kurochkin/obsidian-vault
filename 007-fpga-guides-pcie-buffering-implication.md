@@ -72,7 +72,10 @@ PCIe credits говорят:
 Они не говорят:
 
 ```
-у твоего DMA FIFO есть место;твой AXI stream sink готов;твой packet parser не переполнен;твоя application clock domain успевает обработать данные.
+у твоего DMA FIFO есть место;
+твой AXI stream sink готов;
+твой packet parser не переполнен;
+твоя application clock domain успевает обработать данные.
 ```
 
 Поэтому внутри FPGA нужны собственные буферы и собственный flow control.
