@@ -899,7 +899,11 @@ gaps появляются между TLP.
 Если PCIe core снимает `tready`, user logic обязана удерживать:
 
 ```
-tvalid;tdata;tkeep;tlast;tuser;
+tvalid;
+tdata;
+tkeep;
+tlast;
+tuser;
 ```
 
 до успешного handshake.
