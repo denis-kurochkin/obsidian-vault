@@ -899,7 +899,11 @@ host poll-ит status;
 Если разные источники конкурируют за PCIe transmit path:
 
 ```
-DMA writes;DMA read requests;BAR completions;MSI/MSI-X;messages;
+DMA writes;
+DMA read requests;
+BAR completions;
+MSI/MSI-X;
+messages;
 ```
 
 arbiter может ограничить throughput или создать starvation.
@@ -907,7 +911,13 @@ arbiter может ограничить throughput или создать starvat
 Хороший arbiter учитывает:
 
 ```
-completion priority;credits;available payload;tags;fairness;latency-sensitive traffic;bulk traffic.
+completion priority;
+credits;
+available payload;
+tags;
+fairness;
+latency-sensitive traffic;
+bulk traffic.
 ```
 
 Плохой arbiter может дать высокий bulk throughput, но сломать BAR reads или interrupts.
