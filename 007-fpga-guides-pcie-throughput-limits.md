@@ -201,7 +201,10 @@ Memory Write 256B:
 Типовые значения:
 
 ```
-128B256B512B1024B
+128B
+256B
+512B
+1024B
 ```
 
 AMD configuration status interface описывает Max Payload Size как поле Device Control register; receiver должен уметь принимать TLP такого размера, а transmitter не должен генерировать TLP payload больше установленного MPS.
@@ -209,7 +212,8 @@ AMD configuration status interface описывает Max Payload Size как п
 Практический смысл:
 
 ```
-чем больше MPS,тем меньше header overhead на byte payload.
+чем больше MPS,
+тем меньше header overhead на byte payload.
 ```
 
 ---
