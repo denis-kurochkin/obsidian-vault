@@ -322,7 +322,11 @@ Receiver возвращает credits, когда освобождает buffer 
 Упрощенно:
 
 ```
-1. Receiver принял TLP.2. TLP занял место в buffer.3. Receiver обработал / передал TLP дальше.4. Buffer освободился.5. Receiver сообщает transmitter-у новые credits.
+1. Receiver принял TLP.
+2. TLP занял место в buffer.
+3. Receiver обработал / передал TLP дальше.
+4. Buffer освободился.
+5. Receiver сообщает transmitter-у новые credits.
 ```
 
 Это не обязательно происходит мгновенно после приема TLP.
@@ -338,7 +342,10 @@ Receiver возвращает credits, когда освобождает buffer 
 Итог:
 
 ```
-TLP отправляются с паузами;AXI4-Stream tready падает;DMA throughput падает;pipeline не держит максимальную скорость.
+TLP отправляются с паузами;
+AXI4-Stream tready падает;
+DMA throughput падает;
+pipeline не держит максимальную скорость.
 ```
 
 Это может происходить даже при:
