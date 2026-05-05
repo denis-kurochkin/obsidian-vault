@@ -158,7 +158,11 @@ DMA descriptor overhead.
 Поэтому лучше различать:
 
 ```
-raw line rate;encoded data rate;PCIe packet throughput;payload throughput;application-level throughput.
+raw line rate;
+encoded data rate;
+PCIe packet throughput;
+payload throughput;
+application-level throughput.
 ```
 
 ---
