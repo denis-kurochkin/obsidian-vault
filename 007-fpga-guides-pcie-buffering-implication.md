@@ -125,7 +125,14 @@ PCIe core не знает твою application semantics.
 Он не знает:
 
 ```
-где границы твоих packets;сколько latency допустимо;можно ли дропать данные;сколько descriptors должно быть in-flight;какой stream приоритетнее;что делать при reset downstream;какой clock domain медленнее;нужно ли сохранить packet atomicity.
+где границы твоих packets;
+сколько latency допустимо;
+можно ли дропать данные;
+сколько descriptors должно быть in-flight;
+какой stream приоритетнее;
+что делать при reset downstream;
+какой clock domain медленнее;
+нужно ли сохранить packet atomicity.
 ```
 
 Поэтому даже если core имеет receive FIFO, твой design должен решить:
