@@ -174,7 +174,8 @@ application-level throughput.
 Упрощенно:
 
 ```
-payload полезен;header overhead неизбежен.
+payload полезен;
+header overhead неизбежен.
 ```
 
 Если payload маленький, overhead большой.
