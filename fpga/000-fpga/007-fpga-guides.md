@@ -75,7 +75,7 @@
 	
 - [PCIe Flow Control](007-fpga-guides-pcie-flow-control.md)
 	- [Credit counters](007-fpga-guides-pcie-credit-counters.md)
-	- 
+	- [Buffering implication](007-fpga-guides-pcie-buffering-implication)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
