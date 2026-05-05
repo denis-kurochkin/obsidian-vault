@@ -311,7 +311,10 @@ MRRS влияет на DMA read request granularity.
 Но:
 
 ```
-completions могут быть split;нужен completion buffering;нужны tags/context;больше in-flight data.
+completions могут быть split;
+нужен completion buffering;
+нужны tags/context;
+больше in-flight data.
 ```
 
 ---
