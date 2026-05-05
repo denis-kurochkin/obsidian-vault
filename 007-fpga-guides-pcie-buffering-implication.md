@@ -921,13 +921,17 @@ available_completion_space > possible_returning_data
 Перед выдачей нового read request нужно подумать:
 
 ```
-если этот request вернется completion-ами,куда они поместятся?
+если этот request вернется completion-ами,
+куда они поместятся?
 ```
 
 Иначе можно получить:
 
 ```
-scheduler продолжал выдавать read requests;completion FIFO переполнился;RC path backpressure;throughput collapse.
+scheduler продолжал выдавать read requests;
+completion FIFO переполнился;
+RC path backpressure;
+throughput collapse.
 ```
 
 ---
@@ -939,7 +943,10 @@ scheduler продолжал выдавать read requests;completion FIFO пе
 Он полезен, когда:
 
 ```
-нужно разорвать длинный ready path;нужно удержать один-два beats при внезапном backpressure;нужно улучшить timing;нужно сделать interface проще для synthesis.
+нужно разорвать длинный ready path;
+нужно удержать один-два beats при внезапном backpressure;
+нужно улучшить timing;
+нужно сделать interface проще для synthesis.
 ```
 
 PCIe user side часто имеет широкие datapaths:
