@@ -518,7 +518,8 @@ completion_buffer >= max_outstanding_read_bytes
 Практически используют threshold/scheduler:
 
 ```
-не выдавать больше read requests,чем completion path способен принять.
+не выдавать больше read requests,
+чем completion path способен принять.
 ```
 
 ---
