@@ -74,6 +74,7 @@
 	- [PCIe bring-up phases](007-fpga-guides-pcie-bring-up-phases.md)
 	
 - [PCIe Flow Control](007-fpga-guides-pcie-flow-control.md)
+	- [Credit counters](007-fpga-guides-pcie-credit counters.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)

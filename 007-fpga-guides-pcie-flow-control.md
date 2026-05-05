@@ -509,5 +509,7 @@ PCIe credits = “сколько еще TLP данного типа приемн
 Еще короче:
 
 ```
-LTSSM поднимает link.Flow control не дает переполнить buffers.DMA architecture определяет, насколько хорошо используются credits.
+LTSSM поднимает link.
+Flow control не дает переполнить buffers.
+DMA architecture определяет, насколько хорошо используются credits.
 ```
