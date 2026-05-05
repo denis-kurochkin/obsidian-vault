@@ -309,7 +309,13 @@ Host пишет блок данных в FPGA BAR/window
 Нужно решить:
 
 ```
-куда складывать payload;как обрабатывать address;можно ли принимать out-of-order;что делать при full;есть ли packet boundary;можно ли тормозить host через flow control;какой latency до application logic.
+куда складывать payload;
+как обрабатывать address;
+можно ли принимать out-of-order;
+что делать при full;
+есть ли packet boundary;
+можно ли тормозить host через flow control;
+какой latency до application logic.
 ```
 
 PCIe core может иметь internal posted FIFO, но если твоя logic не drain-ит его достаточно быстро, backpressure поднимется выше.
