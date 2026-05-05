@@ -447,7 +447,14 @@ core временно блокирует traffic.
 PCIe flow control не исправляет:
 
 ```
-неправильный TLP format;ошибочный BAR decode;отсутствующий Completion;битый DMA descriptor;ошибочный CDC внутри FPGA;неверный reset sequencing;плохую signal integrity;LTSSM проблемы.
+неправильный TLP format;
+ошибочный BAR decode;
+отсутствующий Completion;
+битый DMA descriptor;
+ошибочный CDC внутри FPGA;
+неверный reset sequencing;
+плохую signal integrity;
+LTSSM проблемы.
 ```
 
 Flow control только гарантирует, что packet не будет отправлен, если на следующем hop нет buffer space для этого типа packet.
@@ -459,7 +466,15 @@ Flow control только гарантирует, что packet не будет 
 Если link уже поднялся и устройство видно, но throughput ниже ожиданий, полезный порядок:
 
 ```
-1. Проверить negotiated speed/width.2. Проверить MPS/MRRS.3. Проверить размер DMA bursts.4. Проверить outstanding read requests.5. Проверить AXI/AXIS backpressure.6. Проверить credit-related signals.7. Проверить host/root complex limitations.8. Проверить IOMMU/cache/driver overhead.9. Проверить buffering и CDC внутри FPGA.
+1. Проверить negotiated speed/width.
+2. Проверить MPS/MRRS.
+3. Проверить размер DMA bursts.
+4. Проверить outstanding read requests.
+5. Проверить AXI/AXIS backpressure.
+6. Проверить credit-related signals.
+7. Проверить host/root complex limitations.
+8. Проверить IOMMU/cache/driver overhead.
+9. Проверить buffering и CDC внутри FPGA.
 ```
 
 Flow control — один из центральных пунктов в середине этого списка.
