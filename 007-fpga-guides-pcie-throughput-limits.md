@@ -1016,7 +1016,8 @@ tready bubbles;
 Например:
 
 ```
-PCIe Gen4 x8 может ~15.75 GB/sно DDR path реально дает 8 GB/s
+PCIe Gen4 x8 может ~15.75 GB/s
+но DDR path реально дает 8 GB/s
 ```
 
 Тогда PCIe будет простаивать.
@@ -1024,7 +1025,14 @@ PCIe Gen4 x8 может ~15.75 GB/sно DDR path реально дает 8 GB/s
 Проверять нужно:
 
 ```
-AXI DDR bandwidth;burst length;alignment;bank conflicts;interconnect arbitration;read/write mix;clock ratio;cache/buffer policy.
+AXI DDR bandwidth;
+burst length;
+alignment;
+bank conflicts;
+interconnect arbitration;
+read/write mix;
+clock ratio;
+cache/buffer policy.
 ```
 
 ---
@@ -1034,7 +1042,15 @@ AXI DDR bandwidth;burst length;alignment;bank conflicts;interconnect arbitration
 Для корректного измерения:
 
 ```
-использовать большие buffers;делать warm-up;мерить отдельно H2C и C2H;проверять negotiated speed/width;фиксировать MPS/MRRS;исключать memcpy из измерения;учитывать CPU affinity/NUMA;смотреть ILA/counters;сравнивать с known-good example.
+использовать большие buffers;
+делать warm-up;
+мерить отдельно H2C и C2H;
+проверять negotiated speed/width;
+фиксировать MPS/MRRS;
+исключать memcpy из измерения;
+учитывать CPU affinity/NUMA;
+смотреть ILA/counters;
+сравнивать с known-good example.
 ```
 
 Не смешивать:
