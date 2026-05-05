@@ -421,13 +421,21 @@ Read performance часто ограничивается тем, как хоро
 Например:
 
 ```
-user logic хочет отправить TLPs_axis_tvalid = 1PCIe core не готовs_axis_tready = 0
+user logic хочет отправить TLP
+s_axis_tvalid = 1
+PCIe core не готов
+s_axis_tready = 0
 ```
 
 Причины `tready = 0` могут быть разные:
 
 ```
-нет credits;внутренний buffer full;link не готов;reset;configuration не завершена;core временно блокирует traffic.
+нет credits;
+внутренний buffer full;
+link не готов;
+reset;
+configuration не завершена;
+core временно блокирует traffic.
 ```
 
 Поэтому при debug важно не просто видеть `tready = 0`, а понимать, на каком уровне причина.
