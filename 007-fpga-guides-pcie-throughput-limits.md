@@ -1056,7 +1056,10 @@ cache/buffer policy.
 Не смешивать:
 
 ```
-скорость PCIe DMAскорость user-space copyскорость записи на дискскорость обработки application logic
+скорость PCIe DMA
+скорость user-space copy
+скорость записи на диск
+скорость обработки application logic
 ```
 
 ---
@@ -1066,7 +1069,23 @@ cache/buffer policy.
 Для throughput debug полезны:
 
 ```
-TLP sent count;payload bytes sent;payload bytes received;RQ valid && ready cycles;RC valid && ready cycles;CQ valid && ready cycles;CC valid && ready cycles;tready low counters;FIFO min/max levels;credit min counters;outstanding read count;outstanding read bytes;tag allocation stalls;descriptor empty stalls;completion FIFO full stalls;source FIFO empty stalls;sink FIFO full stalls.
+TLP sent count;
+payload bytes sent;
+payload bytes received;
+RQ valid && ready cycles;
+RC valid && ready cycles;
+CQ valid && ready cycles;
+CC valid && ready cycles;
+tready low counters;
+FIFO min/max levels;
+credit min counters;
+outstanding read count;
+outstanding read bytes;
+tag allocation stalls;
+descriptor empty stalls;
+completion FIFO full stalls;
+source FIFO empty stalls;
+sink FIFO full stalls.
 ```
 
 Главное — считать не только bytes, но и причины простоя.
