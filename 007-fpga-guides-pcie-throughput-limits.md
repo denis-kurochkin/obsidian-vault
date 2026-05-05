@@ -95,7 +95,10 @@ Gen3 x4 ≈ 3.94 GB/s host -> FPGA
 Но реальная система может быть асимметричной:
 
 ```
-DMA write быстрее DMA read;host-to-card быстрее card-to-host;read completions хуже держат pipeline;одна сторона чаще дает backpressure.
+DMA write быстрее DMA read;
+host-to-card быстрее card-to-host;
+read completions хуже держат pipeline;
+одна сторона чаще дает backpressure.
 ```
 
 ---
