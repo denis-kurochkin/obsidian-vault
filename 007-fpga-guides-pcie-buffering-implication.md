@@ -1217,7 +1217,11 @@ Host может ожидать Completion на Memory Read.
 Если FPGA приняла request, но долго не отвечает, возможны:
 
 ```
-software hang;PCIe completion timeout;AER error;driver failure;system instability.
+software hang;
+PCIe completion timeout;
+AER error;
+driver failure;
+system instability.
 ```
 
 Поэтому BAR read path должен быть:
