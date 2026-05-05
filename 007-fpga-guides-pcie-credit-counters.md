@@ -566,7 +566,14 @@ CplH / CplD pressure на приемной стороне
 Смотреть:
 
 ```
-NPH credits для request generation;количество outstanding reads;tag availability;RC/completion path ready;completion buffering;MRRS;split completions;AXI/stream sink backpressure.
+NPH credits для request generation;
+количество outstanding reads;
+tag availability;
+RC/completion path ready;
+completion buffering;
+MRRS;
+split completions;
+AXI/stream sink backpressure.
 ```
 
 Если NPH мало или request scheduler держит мало outstanding запросов, read throughput будет низким.
@@ -580,7 +587,8 @@ Memory Read Request обычно не имеет payload.
 Поэтому он тратит:
 
 ```
-1 NPH0 NPD
+1 NPH
+0 NPD
 ```
 
 Но он создает будущую нагрузку на Completion traffic.
