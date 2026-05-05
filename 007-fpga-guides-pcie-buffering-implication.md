@@ -871,13 +871,15 @@ N outstanding read bytes
 Более практично:
 
 ```
-completion FIFO depth + downstream drain rateзадают threshold для outstanding read bytes.
+completion FIFO depth + downstream drain rate
+задают threshold для outstanding read bytes.
 ```
 
 То есть:
 
 ```
-если completion FIFO почти полный,request scheduler должен перестать выдавать новые read requests.
+если completion FIFO почти полный,
+request scheduler должен перестать выдавать новые read requests.
 ```
 
 ---
