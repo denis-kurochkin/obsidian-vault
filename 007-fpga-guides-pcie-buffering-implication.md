@@ -497,7 +497,14 @@ scheduler должен знать не только “есть ли tags/credit
 Для completion buffer нужно учитывать:
 
 ```
-максимальное число outstanding read requests;MRRS;возможное splitting completions;latency до downstream consumer;burstiness host/root complex;ширину user interface;clock domain crossing;application backpressure.
+максимальное число outstanding read requests;
+MRRS;
+возможное splitting completions;
+latency до downstream consumer;
+burstiness host/root complex;
+ширину user interface;
+clock domain crossing;
+application backpressure.
 ```
 
 Упрощенная верхняя оценка:
