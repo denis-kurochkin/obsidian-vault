@@ -349,13 +349,22 @@ DMA write из FPGA в host memory обычно использует Memory Writ
 Плюсы:
 
 ```
-не нужно ждать Completion;легче держать pipeline;обычно проще достичь высокой скорости.
+не нужно ждать Completion;
+легче держать pipeline;
+обычно проще достичь высокой скорости.
 ```
 
 Ограничения:
 
 ```
-PH/PD credits;MPS;payload aggregation;RQ/AXIS backpressure;DMA source rate;host memory write acceptance;descriptor engine;AXI/stream width.
+PH/PD credits;
+MPS;
+payload aggregation;
+RQ/AXIS backpressure;
+DMA source rate;
+host memory write acceptance;
+descriptor engine;
+AXI/stream width.
 ```
 
 Если источник данных не может обеспечить непрерывный поток, link будет простаивать независимо от credits.
