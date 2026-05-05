@@ -226,7 +226,19 @@ Completion 32B -> 1 CplH + 2 CplD
 Для FPGA Endpoint это удобно связать с направлениями:
 
 ```
-Host -> FPGA BAR write:    FPGA принимает Posted trafficHost -> FPGA BAR read:    FPGA принимает Non-Posted request    FPGA отправляет CompletionFPGA -> Host DMA write:    FPGA отправляет Posted trafficFPGA -> Host DMA read:    FPGA отправляет Non-Posted request    FPGA принимает Completion
+Host -> FPGA BAR write:
+    FPGA принимает Posted traffic
+
+Host -> FPGA BAR read:
+    FPGA принимает Non-Posted request
+    FPGA отправляет Completion
+
+FPGA -> Host DMA write:
+    FPGA отправляет Posted traffic
+
+FPGA -> Host DMA read:
+    FPGA отправляет Non-Posted request
+    FPGA принимает Completion
 ```
 
 То есть разные datapath внутри FPGA нагружают разные credit pools.
