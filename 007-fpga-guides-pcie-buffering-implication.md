@@ -613,7 +613,11 @@ FPGA data source -> buffer -> packetizer -> PCIe Memory Write
 Нужны буферы:
 
 ```
-input stream FIFO;payload aggregation buffer;descriptor/context FIFO;TLP staging buffer;CDC FIFO, если source clock != PCIe user_clk.
+input stream FIFO;
+payload aggregation buffer;
+descriptor/context FIFO;
+TLP staging buffer;
+CDC FIFO, если source clock != PCIe user_clk.
 ```
 
 Цель:
