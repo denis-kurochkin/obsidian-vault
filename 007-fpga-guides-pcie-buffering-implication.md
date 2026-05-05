@@ -1096,13 +1096,22 @@ PCIe flow control и внутренние FIFOs могут создать “з�
 Пример плохой ситуации:
 
 ```
-completion FIFO full    -> RC path stopped    -> DMA read completions не принимаются    -> DMA engine ждет completions, чтобы освободить descriptors    -> descriptors не освобождаются    -> software/engine не двигается
+completion FIFO full
+    -> RC path stopped
+    -> DMA read completions не принимаются
+    -> DMA engine ждет completions, чтобы освободить descriptors
+    -> descriptors не освобождаются
+    -> software/engine не двигается
 ```
 
 Или:
 
 ```
-Non-Posted request accepted    -> needs Completion    -> Completion output FIFO full    -> request context held    -> NP request queue fills
+Non-Posted request accepted
+    -> needs Completion
+    -> Completion output FIFO full
+    -> request context held
+    -> NP request queue fills
 ```
 
 Решение:
