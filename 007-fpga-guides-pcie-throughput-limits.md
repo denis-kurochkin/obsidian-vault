@@ -592,7 +592,12 @@ AMD Versal PL PCIe4 features указывают, что AXI4-Stream interface к
 Ограничения:
 
 ```
-latency;packet boundary;flush policy;buffer depth;alignment;MPS.
+latency;
+packet boundary;
+flush policy;
+buffer depth;
+alignment;
+MPS.
 ```
 
 ---
@@ -604,7 +609,13 @@ Misalignment может ухудшать efficiency.
 Возможные проблемы:
 
 ```
-TLP пересекает boundary;byte enables становятся сложнее;payload splitting;меньше эффективный размер packet;больше completions;AXI burst split;host memory page boundary.
+TLP пересекает boundary;
+byte enables становятся сложнее;
+payload splitting;
+меньше эффективный размер packet;
+больше completions;
+AXI burst split;
+host memory page boundary.
 ```
 
 AMD QDMA performance guidance рекомендует для optimal QDMA streaming performance выравнивать packet buffers descriptor ring как минимум на 256 bytes; также есть рекомендация ограничивать outstanding descriptor fetch до менее 8 KB.
