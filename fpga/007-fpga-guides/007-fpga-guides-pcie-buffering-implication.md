@@ -1498,17 +1498,28 @@ Buffering в PCIe FPGA design — это не “поставить FIFO где-
 Главные правила:
 
 ```
-1. PCIe credits защищают buffers link partner-а, не твои RTL FIFOs.2. Внутренние buffers PCIe IP не заменяют application buffering.3. Posted, Non-Posted и Completion traffic лучше разделять.4. DMA read требует request-side и completion-side buffering.5. Completion path должен иметь гарантированный forward progress.6. Backpressure должен быть корректно обработан через ready/valid.7. Metadata нужно буферизовать вместе с data.8. CDC между PCIe и application clocks требует async FIFO/CDC protocol.9. Scheduler должен учитывать available buffer space, а не только credits/tags.10. Reset/link-down должны очищать или корректно завершать pending state.
+1. PCIe credits защищают buffers link partner-а, не твои RTL FIFOs.
+2. Внутренние buffers PCIe IP не заменяют application buffering.
+3. Posted, Non-Posted и Completion traffic лучше разделять.
+4. DMA read требует request-side и completion-side buffering.
+5. Completion path должен иметь гарантированный forward progress.
+6. Backpressure должен быть корректно обработан через ready/valid.
+7. Metadata нужно буферизовать вместе с data.
+8. CDC между PCIe и application clocks требует async FIFO/CDC protocol.
+9. Scheduler должен учитывать available buffer space, а не только credits/tags.
+10. Reset/link-down должны очищать или корректно завершать pending state.
 ```
 
 Короткая формула:
 
 ```
-Credits говорят: “можно ли отправить TLP?”Buffers отвечают: “куда положить TLP/data/context, пока все остальные не готовы?”
+Credits говорят: “можно ли отправить TLP?”
+Buffers отвечают: “куда положить TLP/data/context, пока все остальные не готовы?”
 ```
 
 Практическая формула для DMA read:
 
 ```
-не выдавай read requests быстрее,чем completion path способен принять возвращающиеся данные.
+не выдавай read requests быстрее,
+чем completion path способен принять возвращающиеся данные.
 ```
