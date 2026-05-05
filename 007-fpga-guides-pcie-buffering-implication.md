@@ -87,7 +87,15 @@ PCIe credits говорят:
 В PCIe FPGA design буферы обычно нужны в нескольких местах:
 
 ```
-1. Перед transmit path в PCIe core.2. После receive path из PCIe core.3. В completion receive path.4. В DMA descriptor path.5. В DMA payload path.6. Между PCIe user clock и application clocks.7. Между packet layer и register/DMA logic.8. Перед external stream source/sink.9. Для interrupt/status/event queues.
+1. Перед transmit path в PCIe core.
+2. После receive path из PCIe core.
+3. В completion receive path.
+4. В DMA descriptor path.
+5. В DMA payload path.
+6. Между PCIe user clock и application clocks.
+7. Между packet layer и register/DMA logic.
+8. Перед external stream source/sink.
+9. Для interrupt/status/event queues.
 ```
 
 Не существует одного универсального “PCIe FIFO”. Буферизация должна соответствовать типу traffic.
