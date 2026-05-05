@@ -680,7 +680,13 @@ deliver to user logic
 Нужны буферы:
 
 ```
-descriptor FIFO;request context/tag table;completion metadata FIFO;completion payload FIFO;output stream FIFO;outstanding byte counter;threshold logic.
+descriptor FIFO;
+request context/tag table;
+completion metadata FIFO;
+completion payload FIFO;
+output stream FIFO;
+outstanding byte counter;
+threshold logic.
 ```
 
 Ключевой риск:
