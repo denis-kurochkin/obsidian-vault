@@ -1298,7 +1298,9 @@ outstanding reads недостаточны
 Например, для Gen3 x4 теоретический one-direction encoded payload ceiling около 3.94 GB/s. Реальная DMA может быть:
 
 ```
-3.2–3.6 GB/s — хорошо для многих систем;2.0 GB/s — надо смотреть bottleneck;500 MB/s — вероятно серьезный configuration/software/architecture limit.
+3.2–3.6 GB/s — хорошо для многих систем;
+2.0 GB/s — надо смотреть bottleneck;
+500 MB/s — вероятно серьезный configuration/software/architecture limit.
 ```
 
 Конкретные цифры зависят от IP, host, direction, MPS/MRRS, driver и test methodology.
@@ -1312,7 +1314,10 @@ outstanding reads недостаточны
 Например:
 
 ```
-больше aggregation buffer -> выше throughput, больше latency;больше outstanding reads -> выше throughput, сложнее buffering;interrupt coalescing -> выше throughput, выше notification latency;large DMA buffers -> выше throughput, хуже responsiveness.
+больше aggregation buffer -> выше throughput, больше latency;
+больше outstanding reads -> выше throughput, сложнее buffering;
+interrupt coalescing -> выше throughput, выше notification latency;
+large DMA buffers -> выше throughput, хуже responsiveness.
 ```
 
 Для control plane и data plane могут быть разные настройки.
