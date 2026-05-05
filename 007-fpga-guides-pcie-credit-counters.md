@@ -14,7 +14,10 @@ Receiver возвращает credits, когда освобождает buffers
 В FPGA/Vivado credit counters важны в основном для понимания:
 
 ```
-почему PCIe core иногда не принимает новые TLP от user logic;почему DMA throughput ниже ожидаемого;какой тип traffic стал bottleneck;как debug-ить backpressure на RQ/CQ/CC/RC или AXI4-Stream интерфейсах.
+почему PCIe core иногда не принимает новые TLP от user logic;
+почему DMA throughput ниже ожидаемого;
+какой тип traffic стал bottleneck;
+как debug-ить backpressure на RQ/CQ/CC/RC или AXI4-Stream интерфейсах.
 ```
 
 AMD/Xilinx PCIe integrated blocks выводят flow-control information через специальные `cfg_fc_*` signals; эти сигналы показывают состояние credit pools для Posted, Non-Posted и Completion traffic. ([AMD PG054](https://docs.amd.com/r/en-US/pg054-7series-pcie/Flow-Control-Credit-Information?utm_source=chatgpt.com))
