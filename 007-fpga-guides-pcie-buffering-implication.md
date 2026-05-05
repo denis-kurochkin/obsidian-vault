@@ -1117,7 +1117,12 @@ Non-Posted request accepted
 Решение:
 
 ```
-separate buffers;reserved space for completions;thresholds;no circular dependencies;clear priority rules;reset/recovery path.
+separate buffers;
+reserved space for completions;
+thresholds;
+no circular dependencies;
+clear priority rules;
+reset/recovery path.
 ```
 
 ---
