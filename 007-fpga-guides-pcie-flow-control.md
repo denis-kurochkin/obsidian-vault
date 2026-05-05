@@ -5,7 +5,11 @@
 Короткая идея:
 
 ```
-Receiver говорит:    "У меня есть место для N таких пакетов"Transmitter отправляет только если:    credits достаточно
+Receiver говорит:
+    "У меня есть место для N таких пакетов"
+
+Transmitter отправляет только если:
+    credits достаточно
 ```
 
 ---
@@ -15,7 +19,11 @@ Receiver говорит:    "У меня есть место для N таких
 PCIe link работает full-duplex и может передавать много traffic:
 
 ```
-Memory WritesMemory ReadsCompletionsConfiguration RequestsMessagesDMA traffic
+Receiver говорит:
+    "У меня есть место для N таких пакетов"
+
+Transmitter отправляет только если:
+    credits достаточно
 ```
 
 Если бы передатчик просто слал пакеты без ограничений, приемник мог бы переполнить internal buffers.
