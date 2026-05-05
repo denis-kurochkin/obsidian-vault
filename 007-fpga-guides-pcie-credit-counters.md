@@ -642,7 +642,11 @@ Memory Writes — posted, поэтому они не требуют Completion.
 Но большой поток posted writes может создать pressure на:
 
 ```
-Posted receive buffers;BAR/AXI write path;DMA receive path;internal FIFOs;CDC buffers.
+Posted receive buffers;
+BAR/AXI write path;
+DMA receive path;
+internal FIFOs;
+CDC buffers.
 ```
 
 PCIe flow control защищает от overflow на link level, но твоя user logic должна корректно принимать backpressure от PCIe core.
