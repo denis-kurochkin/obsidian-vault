@@ -72,6 +72,8 @@
 	- [PCIe Layers](007-fpga-guides-pcie-layers.md)
 	- [PCIe Link Training Sequence](007-fpga-guides-pcie-link-training-sequence.md)
 	- [PCIe bring-up phases](007-fpga-guides-pcie-bring-up-phases.md)
+	
+- [PCIe Flow Control](007-fpga-guides-pcie-architecture.md)
 ## FPGA/Prototyping
 
 - [FPGA design flow](007-fpga-guides-design-flow.md)
