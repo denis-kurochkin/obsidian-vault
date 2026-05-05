@@ -158,7 +158,11 @@ transfer happens when tvalid && tready
 Источник должен удерживать:
 
 ```
-tvalidtdatatkeeptlasttuser
+tvalid
+tdata
+tkeep
+tlast
+tuser
 ```
 
 до handshake.
@@ -166,7 +170,8 @@ tvalidtdatatkeeptlasttuser
 Буфер нужен, чтобы не потерять данные, когда:
 
 ```
-PCIe core выдает TLP,а твой parser/DMA/application временно не готов.
+PCIe core выдает TLP,
+а твой parser/DMA/application временно не готов.
 ```
 
 Или наоборот:
