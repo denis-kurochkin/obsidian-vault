@@ -645,7 +645,10 @@ MPS = 256B
 Плюсы:
 
 ```
-меньше header overhead;лучше efficiency;меньше PH pressure;лучше throughput.
+меньше header overhead;
+лучше efficiency;
+меньше PH pressure;
+лучше throughput.
 ```
 
 Минусы:
