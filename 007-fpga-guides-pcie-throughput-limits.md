@@ -857,7 +857,11 @@ driver/software overhead.
 BAR хорош для:
 
 ```
-control registers;status;small configuration;doorbells;debug.
+control registers;
+status;
+small configuration;
+doorbells;
+debug.
 ```
 
 Для data plane лучше DMA.
@@ -873,13 +877,19 @@ control registers;status;small configuration;doorbells;debug.
 Поэтому BAR read path должен быть:
 
 ```
-маленьким;быстрым;приоритетным;не зависящим от перегруженной DMA data path.
+маленьким;
+быстрым;
+приоритетным;
+не зависящим от перегруженной DMA data path.
 ```
 
 Для долгих операций лучше:
 
 ```
-host пишет command;FPGA выполняет;host poll-ит status;потом читает result.
+host пишет command;
+FPGA выполняет;
+host poll-ит status;
+потом читает result.
 ```
 
 ---
