@@ -1001,7 +1001,17 @@ AMD PG054 receiver credits section описывает values credits available i
 Для debug можно сделать register block, который показывает:
 
 ```
-min observed PHmin observed PDmin observed NPHmin observed NPDmin observed CplHmin observed CplDcurrent selected valuestready drop countersTLP sent counters by typecompletion received counters
+min observed PH
+min observed PD
+min observed NPH
+min observed NPD
+min observed CplH
+min observed CplD
+
+current selected values
+tready drop counters
+TLP sent counters by type
+completion received counters
 ```
 
 Полезнее всего не только текущее значение, но и minimum за период.
