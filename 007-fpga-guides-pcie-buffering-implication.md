@@ -282,7 +282,10 @@ Receive side — это путь из PCIe core в FPGA logic.
 Примеры:
 
 ```
-Host Memory Write to BARHost Memory Read Request to BARHost Completion for FPGA DMA ReadConfiguration/Message-related traffic
+Host Memory Write to BAR
+Host Memory Read Request to BAR
+Host Completion for FPGA DMA Read
+Configuration/Message-related traffic
 ```
 
 Буферизация нужна, потому что incoming TLP может прийти burst-ом, а user logic может обрабатывать медленнее.
