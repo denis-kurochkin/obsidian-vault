@@ -1286,7 +1286,12 @@ DMA descriptors могут остаться pending.
 Нужно иметь политику:
 
 ```
-flush;error flag;driver notification;DMA abort;reinitialization;link recovery handling.
+flush;
+error flag;
+driver notification;
+DMA abort;
+reinitialization;
+link recovery handling.
 ```
 
 Иначе после link recovery design может продолжить со старым inconsistent state.
