@@ -1075,13 +1075,16 @@ descriptor association.
 Плюсы:
 
 ```
-ниже latency;меньше buffering.
+ниже latency;
+меньше buffering.
 ```
 
 Минусы:
 
 ```
-сложнее backpressure;сложнее error handling;нужно гарантировать downstream readiness.
+сложнее backpressure;
+сложнее error handling;
+нужно гарантировать downstream readiness.
 ```
 
 ---
