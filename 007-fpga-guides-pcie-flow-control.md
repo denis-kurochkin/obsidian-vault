@@ -352,13 +352,22 @@ Flow control может ограничить throughput даже при хоро
 Например:
 
 ```
-Link: Gen3 x4Но throughput низкий
+Link: Gen3 x4
+Но throughput низкий
 ```
 
 Причины могут быть не в LTSSM, а в:
 
 ```
-маленький MPS;маленький MRRS;мало outstanding read requests;заканчиваются credits;маленькие DMA bursts;недостаточные buffers;AXI/AXIS backpressure;host/root complex limitations;driver/IOMMU/cache effects.
+маленький MPS;
+маленький MRRS;
+мало outstanding read requests;
+заканчиваются credits;
+маленькие DMA bursts;
+недостаточные buffers;
+AXI/AXIS backpressure;
+host/root complex limitations;
+driver/IOMMU/cache effects.
 ```
 
 Это важное разделение:
