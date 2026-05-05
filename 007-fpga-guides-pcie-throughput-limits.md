@@ -266,7 +266,14 @@ MPS выбирается не только FPGA.
 Он зависит от:
 
 ```
-capability FPGA Endpoint;Root Complex;switches;BIOS/UEFI;OS;driver;PCIe hierarchy;Device Control register.
+capability FPGA Endpoint;
+Root Complex;
+switches;
+BIOS/UEFI;
+OS;
+driver;
+PCIe hierarchy;
+Device Control register.
 ```
 
 Устройство может рекламировать поддержку 512B, но система может установить 128B.
