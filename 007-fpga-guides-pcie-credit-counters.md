@@ -518,13 +518,21 @@ DMA write из FPGA в host memory — это Posted Memory Write.
 Главные credit pools:
 
 ```
-PHPD
+PH
+PD
 ```
 
 Если DMA write тормозит, смотреть:
 
 ```
-достаточно ли PH;достаточно ли PD;какой payload size;как часто RQ/AXIS tready падает;нет ли backpressure от PCIe core;не слишком ли маленькие bursts;не ограничен ли MPS;нет ли reset/link events.
+достаточно ли PH;
+достаточно ли PD;
+какой payload size;
+как часто RQ/AXIS tready падает;
+нет ли backpressure от PCIe core;
+не слишком ли маленькие bursts;
+не ограничен ли MPS;
+нет ли reset/link events.
 ```
 
 Пример:
