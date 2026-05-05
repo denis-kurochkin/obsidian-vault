@@ -104,7 +104,14 @@ AMD documentation указывает, что один Header Credit соотве
 Примеры:
 
 ```
-Memory Write TLP:    - 1 PHMemory Read Request:    - 1 NPHCompletion with Data:    - 1 CplH
+Memory Write TLP:
+    - 1 PH
+
+Memory Read Request:
+    - 1 NPH
+
+Completion with Data:
+    - 1 CplH
 ```
 
 ---
@@ -124,7 +131,12 @@ Data credits = ceil(payload_bytes / 16)
 Примеры:
 
 ```
-Payload 16 bytes  -> 1 data creditPayload 32 bytes  -> 2 data creditsPayload 64 bytes  -> 4 data creditsPayload 128 bytes -> 8 data creditsPayload 256 bytes -> 16 data creditsPayload 512 bytes -> 32 data credits
+Payload 16 bytes  -> 1 data credit
+Payload 32 bytes  -> 2 data credits
+Payload 64 bytes  -> 4 data credits
+Payload 128 bytes -> 8 data credits
+Payload 256 bytes -> 16 data credits
+Payload 512 bytes -> 32 data credits
 ```
 
 Если payload отсутствует:
