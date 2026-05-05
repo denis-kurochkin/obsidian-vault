@@ -1277,7 +1277,10 @@ restart cleanly.
 Если link падает:
 
 ```
-outstanding requests могут не завершиться;Tx queues могут содержать неотправленные TLP;Rx buffers могут иметь partial state;DMA descriptors могут остаться pending.
+outstanding requests могут не завершиться;
+Tx queues могут содержать неотправленные TLP;
+Rx buffers могут иметь partial state;
+DMA descriptors могут остаться pending.
 ```
 
 Нужно иметь политику:
