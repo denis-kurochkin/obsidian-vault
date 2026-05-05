@@ -948,7 +948,8 @@ burst completions.
 Если между Root Port и FPGA есть PCIe switch, flow control работает на каждом link отдельно:
 
 ```
-Root Port <-> SwitchSwitch <-> FPGA Endpoint
+Root Port <-> Switch
+Switch <-> FPGA Endpoint
 ```
 
 FPGA видит credits своего непосредственного link partner — switch downstream/upstream port, а не обязательно конечного host memory subsystem.
