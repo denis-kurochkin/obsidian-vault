@@ -1097,7 +1097,16 @@ sink FIFO full stalls.
 Очень полезно сделать counters:
 
 ```
-stall_no_credit;stall_no_tag;stall_no_descriptor;stall_payload_fifo_empty;stall_completion_fifo_full;stall_axis_not_ready;stall_link_not_ready;stall_reset;stall_alignment_split;stall_mps_split;
+stall_no_credit;
+stall_no_tag;
+stall_no_descriptor;
+stall_payload_fifo_empty;
+stall_completion_fifo_full;
+stall_axis_not_ready;
+stall_link_not_ready;
+stall_reset;
+stall_alignment_split;
+stall_mps_split;
 ```
 
 Тогда performance debug становится не гаданием, а анализом.
@@ -1109,7 +1118,19 @@ stall_no_credit;stall_no_tag;stall_no_descriptor;stall_payload_fifo_empty;stall_
 В ILA смотреть:
 
 ```
-RQ/RC/CQ/CC valid/ready;tlast/tkeep;credit counters;MPS/MRRS config;current speed/width;DMA scheduler state;outstanding read count;completion FIFO level;payload FIFO level;descriptor FIFO level;tag free count;arbiter grant;reset/link events.
+RQ/RC/CQ/CC valid/ready;
+tlast/tkeep;
+credit counters;
+MPS/MRRS config;
+current speed/width;
+DMA scheduler state;
+outstanding read count;
+completion FIFO level;
+payload FIFO level;
+descriptor FIFO level;
+tag free count;
+arbiter grant;
+reset/link events.
 ```
 
 Смотреть нужно одновременно поток и причину пауз.
@@ -1127,7 +1148,10 @@ RQ valid часто 1, RQ ready часто 0
 Возможные причины:
 
 ```
-credits;core backpressure;link/config not ready;internal PCIe IP limits.
+credits;
+core backpressure;
+link/config not ready;
+internal PCIe IP limits.
 ```
 
 ## Pattern 2
