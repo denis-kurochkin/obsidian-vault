@@ -1046,19 +1046,24 @@ descriptor association.
 ## Store-and-forward
 
 ```
-сначала принять весь packet в buffer,потом обрабатывать/отправлять.
+сначала принять весь packet в buffer,
+потом обрабатывать/отправлять.
 ```
 
 Плюсы:
 
 ```
-проще packet-level decisions;легче проверять boundaries;можно drop/retry на packet level;удобно для variable latency.
+проще packet-level decisions;
+легче проверять boundaries;
+можно drop/retry на packet level;
+удобно для variable latency.
 ```
 
 Минусы:
 
 ```
-больше latency;больше buffer memory.
+больше latency;
+больше buffer memory.
 ```
 
 ## Cut-through
