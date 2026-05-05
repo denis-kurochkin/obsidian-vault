@@ -284,7 +284,10 @@ Completion with Data
 То есть DMA read зависит от:
 
 ```
-NPH credits на отправку read requestsCplH/CplD buffering на прием completionstag/outstanding request capacityhost/root complex behavior
+NPH credits на отправку read requests
+CplH/CplD buffering на прием completions
+tag/outstanding request capacity
+host/root complex behavior
 ```
 
 Поэтому DMA read часто сложнее оптимизировать, чем DMA write.
