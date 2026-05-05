@@ -186,13 +186,15 @@ Memory Write несет payload.
 Completion может быть:
 
 ```
-Completion without DataCompletion with Data
+Completion without Data
+Completion with Data
 ```
 
 Поэтому PCIe отдельно контролирует:
 
 ```
-сколько packet headers можно принять;сколько payload data можно принять.
+сколько packet headers можно принять;
+сколько payload data можно принять.
 ```
 
 AMD документация по receiver flow-control credits указывает, что один Header Credit соответствует 3- или 4-DWORD TLP header, а один Data Credit соответствует 16 bytes payload.
