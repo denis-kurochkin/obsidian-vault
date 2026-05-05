@@ -543,7 +543,10 @@ ordering information.
 Completion приходит с tag, и DMA должна понять:
 
 ```
-куда положить данные;какому descriptor они соответствуют;закрыт ли request;нужно ли отправить completion event software.
+куда положить данные;
+какому descriptor они соответствуют;
+закрыт ли request;
+нужно ли отправить completion event software.
 ```
 
 Это отдельный буфер, не payload FIFO.
