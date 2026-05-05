@@ -1029,7 +1029,10 @@ descriptor association.
 Нужно либо:
 
 ```
-гарантировать space для whole packet before accepting;или поддерживать beat-by-beat backpressure корректно;или иметь packet buffer достаточного размера;или не начинать передачу downstream без места.
+гарантировать space для whole packet before accepting;
+или поддерживать beat-by-beat backpressure корректно;
+или иметь packet buffer достаточного размера;
+или не начинать передачу downstream без места.
 ```
 
 Для AXI stream это особенно важно, если downstream не допускает разрыв packet.
