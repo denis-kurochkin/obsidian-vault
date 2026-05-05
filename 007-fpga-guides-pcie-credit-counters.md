@@ -58,19 +58,31 @@ Completion traffic   — например Completion with Data
 И каждый TLP имеет:
 
 ```
-headeroptional payload
+header
+optional payload
 ```
 
 Поэтому нужен отдельный учет:
 
 ```
-места под headers;места под payload data.
+места под headers;
+места под payload data.
 ```
 
 Например:
 
 ```
-Memory Write 64 bytes:    требует Posted Header credit    требует Posted Data creditsMemory Read Request:    требует Non-Posted Header credit    обычно не требует Non-Posted Data creditCompletion with Data 128 bytes:    требует Completion Header credit    требует Completion Data credits
+Memory Write 64 bytes:
+    требует Posted Header credit
+    требует Posted Data credits
+
+Memory Read Request:
+    требует Non-Posted Header credit
+    обычно не требует Non-Posted Data credit
+
+Completion with Data 128 bytes:
+    требует Completion Header credit
+    требует Completion Data credits
 ```
 
 ---
