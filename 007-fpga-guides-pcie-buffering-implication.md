@@ -1250,7 +1250,12 @@ Reset может ломать буферы.
 Нужно определить:
 
 ```
-что происходит с pending requests;очищаются ли FIFOs;что происходит с outstanding DMA reads;как сообщается error software;когда можно снова выдавать requests;можно ли сбросить user logic при активном PCIe link.
+что происходит с pending requests;
+очищаются ли FIFOs;
+что происходит с outstanding DMA reads;
+как сообщается error software;
+когда можно снова выдавать requests;
+можно ли сбросить user logic при активном PCIe link.
 ```
 
 Если reset очищает completion context table, но completions еще могут вернуться, это опасно.
@@ -1258,7 +1263,11 @@ Reset может ломать буферы.
 Нужен recovery protocol:
 
 ```
-quiesce traffic;stop issuing requests;wait for outstanding completions or timeout;reset buffers;restart cleanly.
+quiesce traffic;
+stop issuing requests;
+wait for outstanding completions or timeout;
+reset buffers;
+restart cleanly.
 ```
 
 ---
