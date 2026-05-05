@@ -1211,7 +1211,9 @@ MPS = 256B
 Для 4096B:
 
 ```
-MPS 128B -> 32 TLPMPS 256B -> 16 TLPMPS 512B -> 8 TLP
+MPS 128B -> 32 TLP
+MPS 256B -> 16 TLP
+MPS 512B -> 8 TLP
 ```
 
 То есть увеличение MPS уменьшает packet count.
@@ -1225,7 +1227,8 @@ MPS 128B -> 32 TLPMPS 256B -> 16 TLPMPS 512B -> 8 TLP
 Для read throughput:
 
 ```
-Memory Read Request header отправляется FPGACompletion headers + data возвращаются от host
+Memory Read Request header отправляется FPGA
+Completion headers + data возвращаются от host
 ```
 
 Если MRRS маленький, нужно больше requests.
